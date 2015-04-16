@@ -1,0 +1,106 @@
+@font-face{
+  font-family:'ubuntu';
+  font-style:normal;
+  font-weight:400;
+  src:url(fonts/Ubuntu-R.eot) format('eot'); /* IE9 호환성 보기 모드 */
+  src:url(fonts/Ubuntu-R.eot?#iefix) format("embedded-opentype"), /* IE6 ~ IE8 */
+      url(fonts/Ubuntu-R.woff) format("woff"), /* Modern Browser */
+      url(fonts/Ubuntu-R.ttf) format('truetype'); /* Safari, Android, Ios */
+}
+
+@font-face{
+  font-family:'ubuntu';
+  font-style:normal;
+  font-weight:700;
+  src:url(fonts/Ubuntu-M.eot) format('eot'); /* IE9 호환성 보기 모드 */
+  src:url(fonts/Ubuntu-M.eot?#iefix) format("embedded-opentype"), /* IE6 ~ IE8 */
+      url(fonts/Ubuntu-M.woff) format("woff"), /* Modern Browser */
+      url(fonts/Ubuntu-M.ttf) format('truetype'); /* Safari, Android, Ios */
+}
+
+@font-face{
+  font-family:'ubuntu';
+  font-style:normal;
+  font-weight:800;
+  src:url(fonts/Ubuntu-B.eot) format('eot'); /* IE9 호환성 보기 모드 */
+  src:url(fonts/Ubuntu-B.eot?#iefix) format("embedded-opentype"), /* IE6 ~ IE8 */
+      url(fonts/Ubuntu-B.woff) format("woff"), /* Modern Browser */
+      url(fonts/Ubuntu-B.ttf) format('truetype'); /* Safari, Android, Ios */
+}
+
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+html{
+  overflow-y:scroll;
+}
+body {
+  // global font style
+  font-family:$font-stack-l;
+  font-size:$size12;
+  color:$dark;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// custom reset
+a{
+  color:$dark;
+  text-decoration:none;
+}
+select, input, button, textarea {
+  display:block;
+  font-family:$font-stack-l;
+  font-size:$size12;
+  color:$dark;
+  box-sizing:border-box;
+}
+
+embed, object{
+  position:absolute;
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  display:block;
+}
