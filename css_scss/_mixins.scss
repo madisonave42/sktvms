@@ -17,25 +17,29 @@
 }
 
 // btn style
-@mixin btn($color, $background, $border, $border-radius, $width: auto, $height: $width, $line-height: 0) {
+@mixin btn( $width, $height, $line-height, $border, $color, $background, $border-radius) {
 
 	@include size($width, $height);
 
-	$line-height: $height + $line-height;
-
-	line-height: $line-height;
+	line-height: $line-height - 5px;
 	color:$color;
 	background:$background;
 	border:$border;
 	border-radius:$border-radius;
+	font-weight:bold;
 	text-align:center;
+	box-sizing: border-box;
 	cursor:pointer;
 }
 
 // set form frame
-@mixin form-frame($border-width, $border-style, $border-color, $border-radius) {
+@mixin form-frame($width, $height, $border-width, $border-style, $border-color, $border-radius) {
+	width:$width;
+	height:$height;
+	padding: ( ( $height - 21px ) / 2 - 2px ) 5px 0 5px;
 	border:$border-width $border-style $border-color;
 	border-radius:$border-radius;
+	box-sizing:border-box;
 	text-align:center;
 	cursor:pointer;
 }

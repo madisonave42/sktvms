@@ -1,0 +1,25 @@
+.left-float{
+  float:left;
+
+  &.left{
+    margin-right:10px;
+  }
+
+  &.right{
+    margin-left:10px;
+  }
+
+}
+
+.right-float{
+  float:right;
+
+  &.left{
+    margin-right:10px;
+  }
+
+  &.right{
+    margin-left:10px;
+  }
+
+}
