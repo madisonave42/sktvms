@@ -116,6 +116,7 @@ img {
   height: 56px;
   border-bottom: 2px solid #ee6247;
   background-color: #141414;
+  min-width: 1760px;
 }
 .header-user {
   float: right;
@@ -321,6 +322,9 @@ img {
   display: none;
 }
 
+.main {
+  min-width: 1760px;
+}
 .main-header {
   height: 72px;
   border-bottom: 1px solid #708080;

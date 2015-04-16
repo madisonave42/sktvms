@@ -7,6 +7,7 @@
 	@include size(auto, 56);
 	border-bottom:2px solid $orange;
 	background-color:#141414;
+	min-width:1760px;
 
 	&-user {
 		float:right;
@@ -255,6 +256,8 @@
 }
 
 .main {
+	min-width:1760px;
+
 	&-header {
 		@include size(auto, 72);
 		border-bottom:1px solid #708080;
