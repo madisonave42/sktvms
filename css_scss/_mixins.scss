@@ -1,15 +1,14 @@
 // element width, height
-@mixin size($width: a, $height: $width) {
+@mixin size($width: auto, $height: $width) {
 	@if (type_of($width) == 'number') and (unit($width) == '') {
 		$width: $width + px;
 	}
 	@if (type_of($height) == 'number') and (unit($height) == '') {
 		$height: $height + px;
 	}
-
-	@if ($width == 'a') {
+	@if ($width == 'auto') {
 		height: $height;
-	} @else if ($height == 'a') {
+	} @else if ($height == 'auto') {
 		width: $width;
 	} @else {
 		width: $width;
@@ -17,31 +16,34 @@
 	}
 }
 
-// btn width, height, line-height
-@mixin size-mid($width: a, $height: $width, $line-height: 0) {
+// btn style
+@mixin btn($color, $background, $border, $border-radius, $width: auto, $height: $width, $line-height: 0) {
+
 	@include size($width, $height);
 
 	$line-height: $height + $line-height;
-	@if (unit($line-height) == '') {
-		$line-height: $line-height + px;
-	}
+
 	line-height: $line-height;
-}
-
-// set position horizental center
-@mixin center() {
-	display:block;
-	margin:0 auto;
-}
-
-// set button frame
-@mixin btn-frame($color, $background, $border, $border-radius) {
 	color:$color;
 	background:$background;
 	border:$border;
 	border-radius:$border-radius;
 	text-align:center;
 	cursor:pointer;
+}
+
+// set form frame
+@mixin form-frame($border-width, $border-style, $border-color, $border-radius) {
+	border:$border-width $border-style $border-color;
+	border-radius:$border-radius;
+	text-align:center;
+	cursor:pointer;
+}
+
+// set position horizontal center
+@mixin center() {
+	display:block;
+	margin:0 auto;
 }
 
 // clear float
