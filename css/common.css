@@ -238,7 +238,7 @@ img {
   top: 56px;
   left: 0;
   width: 100%;
-  padding: 14px 0;
+  padding: 13px 0;
   border-bottom: 2px solid #cbcfd2;
   background-color: #ee6247;
 }
@@ -278,7 +278,7 @@ img {
 .gnb-sub-item:after {
   content: "";
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 0;
   display: block;
   width: 1px;
@@ -307,7 +307,7 @@ img {
   content: "";
   display: block;
   position: absolute;
-  top: 10px;
+  top: 7px;
   left: -7px;
   background-color: #f7b1a3;
 }
