@@ -10,7 +10,7 @@
 
 	&-user {
 		float:right;
-		margin-top:10px;
+		margin-top:9px;
 
 		&-name {
 			float:right;
@@ -21,10 +21,9 @@
 		&-path {
 			clear:right;
 			float:right;
+			margin-top:2px;
 			font-size:$font-size-base;
-			color:#fff;
 			border:0;
-			background-color:transparent;
 		}
 	}
 }
