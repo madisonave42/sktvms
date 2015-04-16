@@ -116,10 +116,11 @@ img {
   height: 56px;
   border-bottom: 2px solid #ee6247;
   background-color: #141414;
+  min-width: 1760px;
 }
 .header-user {
   float: right;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 .header-user-name {
   float: right;
@@ -129,10 +130,9 @@ img {
 .header-user-path {
   clear: right;
   float: right;
+  margin-top: 2px;
   font-size: 13px;
-  color: #fff;
   border: 0;
-  background-color: transparent;
 }
 
 .logo {
@@ -238,7 +238,8 @@ img {
   top: 56px;
   left: 0;
   width: 100%;
-  padding: 14px 0;
+  min-width: 1760px;
+  padding: 13px 0;
   border-bottom: 2px solid #cbcfd2;
   background-color: #ee6247;
 }
@@ -278,7 +279,7 @@ img {
 .gnb-sub-item:after {
   content: "";
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 0;
   display: block;
   width: 1px;
@@ -307,7 +308,7 @@ img {
   content: "";
   display: block;
   position: absolute;
-  top: 10px;
+  top: 7px;
   left: -7px;
   background-color: #f7b1a3;
 }
@@ -322,6 +323,9 @@ img {
   display: none;
 }
 
+.main {
+  min-width: 1760px;
+}
 .main-header {
   height: 72px;
   border-bottom: 1px solid #708080;

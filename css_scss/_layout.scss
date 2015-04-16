@@ -7,10 +7,11 @@
 	@include size(auto, 56);
 	border-bottom:2px solid $orange;
 	background-color:#141414;
+	min-width:1760px;
 
 	&-user {
 		float:right;
-		margin-top:10px;
+		margin-top:9px;
 
 		&-name {
 			float:right;
@@ -21,10 +22,9 @@
 		&-path {
 			clear:right;
 			float:right;
+			margin-top:2px;
 			font-size:$font-size-base;
-			color:#fff;
 			border:0;
-			background-color:transparent;
 		}
 	}
 }
@@ -157,7 +157,8 @@
 		top:56px;
 		left:0;
 		width:100%;
-		padding:14px 0;
+		min-width:1760px;
+		padding:13px 0;
 		border-bottom:2px solid #cbcfd2;
 		background-color:$orange;
 
@@ -203,7 +204,7 @@
 		&:after {
 			content:"";
 			position:absolute;
-			top:6px;
+			top:4px;
 			left:0;
 			display:block;
 			@include size(1, 9);
@@ -234,7 +235,7 @@
 			content:"";
 			display:block;
 			position:absolute;
-			top:10px;
+			top:7px;
 			left:-7px;
 			background-color:#f7b1a3;
 		}
@@ -256,6 +257,8 @@
 }
 
 .main {
+	min-width:1760px;
+
 	&-header {
 		@include size(auto, 72);
 		border-bottom:1px solid #708080;
