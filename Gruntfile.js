@@ -8,47 +8,89 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
     includes: {
-    	html: {
-    		cwd:'html_src',
+    	root: {
+    		cwd:'pub_src',
     		src: ['*.html'],
-    		dest: 'html/',
+    		dest: 'pub/',
     		options: {
     			flatten:true,
-    			includePath: 'html_src/include'
+    			includePath: 'pub_src/include'
     		}
-    	}
+    	},
+
+			admin: {
+				cwd:'pub_src/admin',
+				src: ['*.html'],
+				dest: 'pub/admin',
+				options: {
+					flatten:true,
+					includePath: 'pub_src/include'
+				}
+			},
+
+      log: {
+        cwd:'pub_src/log',
+        src: ['*.html'],
+        dest: 'pub/log',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/include'
+        }
+      },
+
+      monitoring: {
+        cwd:'pub_src/monitoring',
+        src: ['*.html'],
+        dest: 'pub/monitoring',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/include'
+        }
+      },
+
+      setting: {
+        cwd:'pub_src/setting',
+        src: ['*.html'],
+        dest: 'pub/setting',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/include'
+        }
+      },
+
+      stats: {
+        cwd:'pub_src/stats',
+        src: ['*.html'],
+        dest: 'pub/stats',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/include'
+        }
+      },
+
+      vnfManagement: {
+        cwd:'pub_src/vnf_management',
+        src: ['*.html'],
+        dest: 'pub/vnf_management',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/include'
+        }
+      }
     },
     
     concat: {
     	dist: {
     		src: ['js_src/*.js'],
-    		dest: 'js_concat/function.js'
+    		dest: 'js/function.js'
     	}
-    	
-    	//distLib: {
-    	//	src: [
-    	//	      'js_src/lib/jquery-1.11.0.min.js',
-    	//	      'js_src/lib/jquery-ui-1.11.2.min.js',
-			//				'js_src/lib/jquery.slides.min.js',
-			//				'js_src/lib/jquery.mousewheel.min.js',
-    	//	      '!js_src/lib/html5shiv.min.js',
-    	//	      '!js_src/lib/IE9.js'
-    	//	      ],
-    		      
-    	//	dest: 'js_concat/lib/jquery.library.js'
-    	//}
     },
     
     uglify: {
     	build: {
-        src: 'js_concat/function.js',
+        src: 'js/function.js',
         dest: 'js/function.min.js'
      	}
-    
-	    //buildLib: {
-			//	src: 'js_concat/lib/jquery.library.js',
-	    //  dest: 'js/lib/jquery.library.min.js'
-	   	//}
     },
     
     sass:{
@@ -84,45 +126,48 @@ module.exports = function(grunt) {
     },
     
     copy: {
+
     	jsLib: {
     		files:[{
     			expand: true,
     			cwd: 'js_src/lib/',
-    			src: ['html5shiv.min.js', 'IE9.js', 'jquery-1.11.0.min.map'],
+    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui-1.11.2.min.js'],
     			dest: 'js/lib/'
     		}]
-
     	},
     	
     	// output
     	html: {
     		expand:true,
-    		src:'html/*.html',
+    		src:'pub/**',
     		dest:'_output/'
     	},
+
     	js: {
-    		expand: true,
-    		src:'js/**',
-    		dest:'_output/'
+        files:[{
+          expand: true,
+          cwd: 'js/',
+          src: ['function.min.js'],
+          dest: '_output/js/'
+        }]
     	},
+
     	css: {
 				expand: true,
 				src:'css/*.css',
-				dest: '_output/',
-				options:{
-					process: function(content){
-						return content.replace('/*# sourceMappingURL=style.css.map */', '');
-					}
-				}
+				dest: '_output/'
     	},
+
     	images: {
     		expand: true,
     		src:'images/**',
     		dest:'_output/'
     	}
+
     },
     
     watch: {
+
     	js: {
     		files: ['js_src/*.js'],
     		tasks: ['concat:dist', 'uglify:build', 'reload'],
@@ -130,6 +175,7 @@ module.exports = function(grunt) {
       		livereload : true
       	}
     	},
+
     	html: {
     		files: ['html_src/**'],
     		tasks: ['includes', 'reload'],
@@ -137,6 +183,7 @@ module.exports = function(grunt) {
       		livereload : true
       	}
     	},
+
     	css: {
     		files: ['css_scss/**'],
     		tasks: ['sass', 'reload'],
@@ -144,6 +191,7 @@ module.exports = function(grunt) {
       		livereload : true
       	}
     	}
+
     },
     
     reload: {

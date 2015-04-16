@@ -1,9 +1,9 @@
 {
-  "name": "Pulmuone",
-  "description": "Site Management System",
+  "name": "SKT vIMS",
+  "description": "Monitoring System",
   "repository" : {
   	"type" : "git",
-  	"url" : "https://github.com/madisonave42/pulmuone"
+  	"url" : "https://github.com/madisonave42/sktvms"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
