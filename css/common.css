@@ -374,6 +374,46 @@ img {
   box-sizing: border-box;
 }
 
+.pagination {
+  text-align: center;
+  font-size: 0;
+}
+.pagination .page-item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #777;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.pagination .page-item:hover {
+  border-color: #c2cbcb;
+}
+.pagination .page-first,
+.pagination .page-prev,
+.pagination .page-next,
+.pagination .page-last {
+  text-indent: -9999px;
+  background: url(../images/sprite_pagination.png) no-repeat;
+}
+.pagination .page-prev {
+  background-position: -28px 0;
+}
+.pagination .page-next {
+  background-position: -56px 0;
+}
+.pagination .page-last {
+  background-position: -84px 0;
+}
+.pagination .page-item.current {
+  color: #ee6247;
+}
+
 .select, .input {
   width: 120px;
   height: 30px;
