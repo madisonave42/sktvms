@@ -60,9 +60,8 @@ html {
 }
 
 body {
-  font-family: "RixSGo L", "Dotum", sans-serif;
-  font-size: 12px;
-  color: #231f20;
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
 }
 
 ol, ul {
@@ -85,15 +84,13 @@ table {
 }
 
 a {
-  color: #231f20;
   text-decoration: none;
 }
 
 select, input, button, textarea {
   display: block;
-  font-family: "RixSGo L", "Dotum", sans-serif;
-  font-size: 12px;
-  color: #231f20;
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
   box-sizing: border-box;
 }
 

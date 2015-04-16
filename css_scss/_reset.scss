@@ -61,9 +61,8 @@ html{
 }
 body {
   // global font style
-  font-family:$font-stack-l;
-  font-size:$size12;
-  color:$dark;
+  font-family:$font-stack;
+  font-size:$font-size-base;
 }
 ol, ul {
   list-style: none;
@@ -82,14 +81,12 @@ table {
 }
 // custom reset
 a{
-  color:$dark;
   text-decoration:none;
 }
 select, input, button, textarea {
   display:block;
-  font-family:$font-stack-l;
-  font-size:$size12;
-  color:$dark;
+  font-family:$font-stack;
+  font-size:$font-size-base;
   box-sizing:border-box;
 }
 
