@@ -1,82 +1,515 @@
-/*
-Error: Undefined variable: "$color-orange".
-        on line 8 of css_scss/_layout.scss
-        from line 7 of css_scss/common.scss
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../css/fonts/Ubuntu-R.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-R.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-R.woff) format("woff"), url(../css/fonts/Ubuntu-R.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../css/fonts/Ubuntu-M.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-M.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-M.woff) format("woff"), url(../css/fonts/Ubuntu-M.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../css/fonts/Ubuntu-B.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-B.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-B.woff) format("woff"), url(../css/fonts/Ubuntu-B.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
 
-3: @import "mixins";
-4: 
-5: @import "reset";
-6: 
-7: @import "layout";
-8: 
-9: @import "form";
-10: 
-11: @import "specific";
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 
-Backtrace:
-css_scss/_layout.scss:8
-css_scss/common.scss:7
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/list_literal.rb:63:in `map'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/list_literal.rb:63:in `_perform'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:430:in `map'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:325:in `map'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/engine.rb:285:in `render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/exec/sass_scss.rb:407:in `run'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.12/bin/sass:13:in `<top (required)>'
-C:/Ruby21/bin/sass:23:in `load'
-C:/Ruby21/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$color-orange\".\A         on line 8 of css_scss/_layout.scss\A         from line 7 of css_scss/common.scss\A \A 3: @import \"mixins\";\A 4: \A 5: @import \"reset\";\A 6: \A 7: @import \"layout\";\A 8: \A 9: @import \"form\";\A 10: \A 11: @import \"specific\";"; }
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+select, input, button, textarea {
+  display: block;
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+embed, object {
+  position: absolute;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 1760px;
+}
+
+.header {
+  height: 56px;
+  border-bottom: 2px solid #ee6247;
+  background-color: #141414;
+}
+.header-user {
+  float: right;
+  margin-top: 10px;
+}
+.header-user-name {
+  float: right;
+  font-size: 13px;
+  color: #919191;
+}
+.header-user-path {
+  clear: right;
+  float: right;
+  font-size: 13px;
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+}
+
+.logo {
+  float: left;
+  margin: 11px 0 0 -14px;
+}
+
+.gnb {
+  float: left;
+  margin-left: 280px;
+  padding-top: 26px;
+}
+.gnb-item {
+  float: left;
+}
+.gnb-item:hover .gnb-main-link {
+  color: #fff;
+}
+.gnb-item:hover .gnb-main-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  margin-left: 0;
+  border: 8px solid #ee6247;
+  border-top: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.gnb-item:hover .gnb-main-link01 {
+  background-position: 40px -59px;
+}
+.gnb-item:hover .gnb-main-link01:after {
+  left: 90px;
+}
+.gnb-item:hover .gnb-main-link02 {
+  background-position: 40px -177px;
+}
+.gnb-item:hover .gnb-main-link02:after {
+  left: 90px;
+}
+.gnb-item:hover .gnb-main-link03 {
+  background-position: 40px -295px;
+}
+.gnb-item:hover .gnb-main-link03:after {
+  left: 79px;
+}
+.gnb-item:hover .gnb-main-link04 {
+  background-position: 40px -413px;
+}
+.gnb-item:hover .gnb-main-link04:after {
+  left: 79px;
+}
+.gnb-item:hover .gnb-main-link05 {
+  background-position: 40px -530px;
+}
+.gnb-item:hover .gnb-main-link05:after {
+  left: 85px;
+}
+.gnb-item:hover .gnb-main-link06 {
+  background-position: 43px -648px;
+}
+.gnb-item:hover .gnb-main-link06:after {
+  left: 79px;
+}
+.gnb-item:hover .gnb-main-link:hover + .gnb-sub-wrap {
+  display: block;
+}
+.gnb-main-link {
+  height: 30px;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 70px;
+  padding-right: 40px;
+  line-height: 1;
+  color: #bababa;
+  font-size: 15px;
+  font-weight: bold;
+  background: url(../images/sprite_gnb.png) no-repeat 40px 0;
+}
+.gnb-main-link01 {
+  background-position: 40px 0;
+}
+.gnb-main-link02 {
+  background-position: 40px -118px;
+}
+.gnb-main-link03 {
+  background-position: 40px -236px;
+}
+.gnb-main-link04 {
+  background-position: 40px -354px;
+}
+.gnb-main-link05 {
+  background-position: 40px -471px;
+}
+.gnb-main-link06 {
+  background-position: 43px -589px;
+}
+.gnb-sub-wrap {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  border-bottom: 2px solid #cbcfd2;
+  background-color: #ee6247;
+}
+.gnb-sub-wrap:hover {
+  display: block;
+}
+.gnb-sub01, .gnb-sub02, .gnb-sub03, .gnb-sub04, .gnb-sub05 {
+  display: block;
+  margin: 0 auto;
+  width: 1760px;
+  box-sizing: border-box;
+  padding-left: 516px;
+}
+.gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.gnb-sub02 {
+  padding-left: 689px;
+}
+.gnb-sub03 {
+  padding-left: 863px;
+}
+.gnb-sub04 {
+  padding-left: 1004px;
+}
+.gnb-sub05 {
+  padding-left: 1143px;
+}
+.gnb-sub-item {
+  position: relative;
+  float: left;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+.gnb-sub-item:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  width: 1px;
+  height: 9px;
+  background-color: #f7b1a3;
+}
+.gnb-sub-item:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.gnb-sub-item:first-child:after {
+  display: none;
+}
+.gnb-sub-link {
+  position: relative;
+  float: left;
+  margin-left: 12px;
+  padding-bottom: 2px;
+  line-height: 1;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+.gnb-sub-link:after {
+  width: 2px;
+  height: 2px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: -7px;
+  background-color: #f7b1a3;
+}
+.gnb-sub-link:hover {
+  border-bottom: 1px solid #fff;
+}
+.gnb-sub-link:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.gnb-sub-link:first-child:after {
+  display: none;
+}
+
+.main-header {
+  height: 72px;
+  border-bottom: 1px solid #708080;
+}
+.main-content {
+  padding: 5px 0 20px;
+  border-top: 3px solid #cbcfd2;
+  background-color: #e6eaeb;
+}
+
+.main-heading {
+  float: left;
+  margin-top: 13px;
+}
+.main-heading-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #576363;
+  line-height: 1;
+}
+.main-heading-overview {
+  margin-top: 5px;
+  color: #9da3a3;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.main-option {
+  float: left;
+}
+.main-option-item {
+  float: left;
+}
+
+.main-actions {
+  float: right;
+}
+
+.select, .input {
+  width: 120px;
+  height: 30px;
+  padding: 2.5px 5px 0 5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+.select-small, .input-small {
+  width: 60px;
+  height: 30px;
+  padding: 2.5px 5px 0 5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+.select-form, .input-form {
+  display: inline-block;
+  width: 100%;
+  height: 21px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.btn-fill-orange {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #ffffff;
+  background: #ee6247;
+  border: 0;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-light {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #afbdbd;
+  background: #ffffff;
+  border: 1px solid #afbdbd;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-dark {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #576363;
+  background: #ffffff;
+  border: 1px solid #576363;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-orange {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #ee6247;
+  background: #ffffff;
+  border: 1px solid #ee6247;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.check-wrap {
+  position: relative;
+}
+.check-wrap.center {
+  display: inline-block;
+}
+.check-box {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.check-box:checked + .check-label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 6px;
+  left: 6px;
+  width: 10px;
+  height: 8px;
+  background: url(../images/icon_checked.gif) no-repeat center;
+}
+.check-label {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 30px;
+}
+.check-label:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #c2cbcb;
+  background: #ffffff;
+}
+.check-label-blank {
+  width: 0;
+  padding-left: 20px;
+  text-indent: -9999px;
+}
+
+.form-label {
+  height: 30px;
+  line-height: 26px;
+}
+
+.left-float {
+  float: left;
+}
+.left-float.left {
+  margin-right: 10px;
+}
+.left-float.right {
+  margin-left: 10px;
+}
+
+.right-float {
+  float: right;
+}
+.right-float.left {
+  margin-right: 10px;
+}
+.right-float.right {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=common.css.map */

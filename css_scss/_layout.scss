@@ -5,7 +5,7 @@
 
 .header {
 	@include size(auto, 56);
-	border-bottom:2px solid $color-orange;
+	border-bottom:2px solid $orange;
 	background-color:#141414;
 
 	&-user {
@@ -51,7 +51,7 @@
 				bottom:0;
 				display:block;
 				margin-left:0;
-				border:8px solid $color-orange;
+				border:8px solid $orange;
 				border-top:0;
 				border-left-color:transparent;
 				border-right-color:transparent;
@@ -159,7 +159,7 @@
 		width:100%;
 		padding:14px 0;
 		border-bottom:2px solid #cbcfd2;
-		background-color:$color-orange;
+		background-color:$orange;
 
 		&:hover {
 			display:block;
@@ -275,7 +275,7 @@
 	&-title {
 		font-size:24px;
 		font-weight:bold;
-		color:$color-gray;
+		color:$dark;
 		line-height:1;
 	}
 
