@@ -17,3 +17,36 @@ if( navigator.userAgent.indexOf('Safari') > 0 ){
 } else if( navigator.userAgent.indexOf('MSIE 8.0') > 0 ){
 	$('html').addClass('ie8');
 }
+
+$(function(){
+
+	// GNB
+
+	$('.js-gnb').on({
+
+		mouseenter : function(){
+
+			$('.header-gnb-list').data( 'current', $('.js-gnb').index( $('.js-gnb.on') ) );
+
+			$('.header-gnb-item').removeClass('side');
+			$('.header-gnb-link').removeClass('on').removeClass('on-left').removeClass('on-right');
+			$(this).addClass('on').parents('.header-gnb-item').prev().addClass('side').find('.js-gnb').addClass('on-left');
+			$(this).parents('.header-gnb-item').next().addClass('side').find('.js-gnb').addClass('on-right');
+
+		},
+
+		mouseleave : function(){
+
+			var $gnbLink = $('.header-gnb-link');
+			var $gnbList = $('.header-gnb-list');
+
+			$('.header-gnb-item').removeClass('side');
+			$gnbLink.removeClass('on').removeClass('on-left').removeClass('on-right');
+			$gnbLink.eq( $gnbList.data( 'current') ).addClass('on').parents('.header-gnb-item').prev().addClass('side').find('.js-gnb').addClass('on-left');
+			$gnbLink.eq( $gnbList.data( 'current') ).parents('.header-gnb-item').next().addClass('side').find('.js-gnb').addClass('on-right');
+
+		}
+
+	});
+
+});
