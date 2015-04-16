@@ -1,0 +1,239 @@
+.wrapper {
+	@include center();
+	@include size(1760, a);
+}
+
+.header {
+	@include size(a, 56);
+	border-bottom:2px solid $color-orange;
+	background-color:#141414;
+
+	&-user {
+		float:right;
+		margin-top:10px;
+
+		&-name {
+			float:right;
+			font-size:$font-size-base;
+			color:#919191;
+		}
+
+		&-path {
+			clear:right;
+			float:right;
+			font-size:$font-size-base;
+			color:#fff;
+			border:0;
+			background-color:transparent;
+		}
+	}
+}
+
+.main {
+	&-header {
+		@include size(a, 72);
+		border-bottom:1px solid #708080;
+	}
+
+	&-content {
+		padding:5px 0 20px;
+		border-top:3px solid #cbcfd2;
+		background-color:#e6eaeb;
+	}
+}
+
+.logo {
+	float:left;
+	margin:11px 0 0 -14px;
+}
+
+.gnb {
+	float:left;
+	margin-left:280px;
+	padding-top:26px;
+
+	&-item {
+		float:left;
+	}
+
+	&-main-link01 {
+		@include size(a, 30);
+		position:relative;
+		display:block;
+		box-sizing:border-box;
+		padding-left:70px;
+		padding-right:40px;
+		line-height:1;
+		color:#bababa;
+		font-size:15px;
+		font-weight:bold;
+		background:url(../images/sprite_gnb.png) no-repeat 40px 0;
+
+		&:hover {
+			color:#fff;
+			background-position:40px -59px;
+
+			&:after {
+				content:"";
+				position:absolute;
+				left:90px;
+				bottom:0;
+				display:block;
+				margin-left:0;
+				border:8px solid $color-orange;
+				border-top:0;
+				border-left-color:transparent;
+				border-right-color:transparent;
+			}
+		}
+
+		&:hover + .gnb-sub-wrap {
+			display:block;
+		}
+
+	}
+
+	&-main-link02 {
+		@extend .gnb-main-link01;
+		background-position:40px -118px;
+
+		&:hover {
+			background-position:40px -177px;
+
+			&:after {
+				left:90px;
+			}
+		}
+	}
+
+	&-main-link03 {
+		@extend .gnb-main-link01;
+		background-position:40px -236px;
+
+		&:hover {
+			background-position:40px -295px;
+
+			&:after {
+				left:79px;
+			}
+		}
+	}
+
+	&-main-link04 {
+		@extend .gnb-main-link01;
+		background-position:40px -354px;
+
+		&:hover {
+			background-position:40px -413px;
+
+			&:after {
+				left:79px;
+			}
+		}
+	}
+
+	&-main-link05 {
+		@extend .gnb-main-link01;
+		background-position:40px -471px;
+
+		&:hover {
+			background-position:40px -530px;
+
+			&:after {
+				left:85px;
+			}
+		}
+	}
+
+	&-main-link06 {
+		@extend .gnb-main-link01;
+		background-position:43px -589px;
+
+		&:hover {
+			background-position:43px -648px;
+
+			&:after {
+				left:79px;
+			}
+		}
+	}
+
+	&-sub-wrap {
+		display:none;
+		position:absolute;
+		top:56px;
+		left:0;
+		width:100%;
+		padding:14px 0;
+		border-bottom:2px solid #cbcfd2;
+		background-color:$color-orange;
+
+		&:hover {
+			display:block;
+		}
+	}
+
+	&-sub01 {
+		@include clear();
+		margin-left:500px;
+	}
+
+	&-sub-item {
+		position:relative;
+		float:left;
+		margin-left:15px;
+		padding-left:15px;
+
+		&:after {
+			content:"";
+			position:absolute;
+			top:6px;
+			left:0;
+			display:block;
+			@include size(1, 9);
+			background-color:#f7b1a3;
+		}
+
+		&:first-child {
+			margin-left:0;
+			padding-left:0;
+
+			&:after {
+				display:none;
+			}
+		}
+	}
+
+	&-sub-link {
+		position:relative;
+		float:left;
+		margin-left:5px;
+		padding-left:7px;
+		color:#fff;
+		border-bottom:1px solid transparent;
+
+		&:after {
+			@include size(2);
+			content:"";
+			display:block;
+			position:absolute;
+			top:10px;
+			left:0;
+			background-color:#f7b1a3;
+		}
+
+		&:hover {
+			border-bottom:1px solid #fff;
+		}
+
+		&:first-child {
+			margin-left:0;
+			padding-left:0;
+
+			&:after {
+				display:none;
+			}
+		}
+	}
+
+}

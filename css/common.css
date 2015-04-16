@@ -106,4 +106,206 @@ img {
   display: block;
 }
 
+.wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 1760px;
+}
+
+.header {
+  height: 56px;
+  border-bottom: 2px solid #ee6247;
+  background-color: #141414;
+}
+.header-user {
+  float: right;
+  margin-top: 10px;
+}
+.header-user-name {
+  float: right;
+  font-size: 13px;
+  color: #919191;
+}
+.header-user-path {
+  clear: right;
+  float: right;
+  font-size: 13px;
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+}
+
+.main-header {
+  height: 72px;
+  border-bottom: 1px solid #708080;
+}
+.main-content {
+  padding: 5px 0 20px;
+  border-top: 3px solid #cbcfd2;
+  background-color: #e6eaeb;
+}
+
+.logo {
+  float: left;
+  margin: 11px 0 0 -14px;
+}
+
+.gnb {
+  float: left;
+  margin-left: 280px;
+  padding-top: 26px;
+}
+.gnb-item {
+  float: left;
+}
+.gnb-main-link01, .gnb-main-link02, .gnb-main-link03, .gnb-main-link04, .gnb-main-link05, .gnb-main-link06 {
+  height: 30px;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 70px;
+  padding-right: 40px;
+  line-height: 1;
+  color: #bababa;
+  font-size: 15px;
+  font-weight: bold;
+  background: url(../images/sprite_gnb.png) no-repeat 40px 0;
+}
+.gnb-main-link01:hover, .gnb-main-link02:hover, .gnb-main-link03:hover, .gnb-main-link04:hover, .gnb-main-link05:hover, .gnb-main-link06:hover {
+  color: #fff;
+  background-position: 40px -59px;
+}
+.gnb-main-link01:hover:after, .gnb-main-link02:hover:after, .gnb-main-link03:hover:after, .gnb-main-link04:hover:after, .gnb-main-link05:hover:after, .gnb-main-link06:hover:after {
+  content: "";
+  position: absolute;
+  left: 90px;
+  bottom: 0;
+  display: block;
+  margin-left: 0;
+  border: 8px solid #ee6247;
+  border-top: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.gnb-main-link01:hover + .gnb-sub-wrap, .gnb-main-link02:hover + .gnb-sub-wrap, .gnb-main-link03:hover + .gnb-sub-wrap, .gnb-main-link04:hover + .gnb-sub-wrap, .gnb-main-link05:hover + .gnb-sub-wrap, .gnb-main-link06:hover + .gnb-sub-wrap {
+  display: block;
+}
+.gnb-main-link02 {
+  background-position: 40px -118px;
+}
+.gnb-main-link02:hover {
+  background-position: 40px -177px;
+}
+.gnb-main-link02:hover:after {
+  left: 90px;
+}
+.gnb-main-link03 {
+  background-position: 40px -236px;
+}
+.gnb-main-link03:hover {
+  background-position: 40px -295px;
+}
+.gnb-main-link03:hover:after {
+  left: 79px;
+}
+.gnb-main-link04 {
+  background-position: 40px -354px;
+}
+.gnb-main-link04:hover {
+  background-position: 40px -413px;
+}
+.gnb-main-link04:hover:after {
+  left: 79px;
+}
+.gnb-main-link05 {
+  background-position: 40px -471px;
+}
+.gnb-main-link05:hover {
+  background-position: 40px -530px;
+}
+.gnb-main-link05:hover:after {
+  left: 85px;
+}
+.gnb-main-link06 {
+  background-position: 43px -589px;
+}
+.gnb-main-link06:hover {
+  background-position: 43px -648px;
+}
+.gnb-main-link06:hover:after {
+  left: 79px;
+}
+.gnb-sub-wrap {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  border-bottom: 2px solid #cbcfd2;
+  background-color: #ee6247;
+}
+.gnb-sub-wrap:hover {
+  display: block;
+}
+.gnb-sub01 {
+  margin-left: 500px;
+}
+.gnb-sub01:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.gnb-sub-item {
+  position: relative;
+  float: left;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+.gnb-sub-item:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  width: 1px;
+  height: 9px;
+  background-color: #f7b1a3;
+}
+.gnb-sub-item:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.gnb-sub-item:first-child:after {
+  display: none;
+}
+.gnb-sub-link {
+  position: relative;
+  float: left;
+  margin-left: 5px;
+  padding-left: 7px;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+.gnb-sub-link:after {
+  width: 2px;
+  height: 2px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #f7b1a3;
+}
+.gnb-sub-link:hover {
+  border-bottom: 1px solid #fff;
+}
+.gnb-sub-link:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.gnb-sub-link:first-child:after {
+  display: none;
+}
+
 /*# sourceMappingURL=common.css.map */
