@@ -373,6 +373,22 @@ img {
   background: #ffffff;
   box-sizing: border-box;
 }
+.contents-section-top {
+  margin-bottom: 10px;
+}
+.contents-section-top:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.contents-section-bottom {
+  margin-top: 10px;
+}
+.contents-section-bottom:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 .select, .input {
   width: 120px;
@@ -473,27 +489,33 @@ img {
   display: block;
   position: absolute;
   z-index: 10;
-  top: 6px;
-  left: 6px;
-  width: 10px;
-  height: 8px;
+  top: 9px;
+  left: 7px;
+  width: 11px;
+  height: 9px;
   background: url(../images/icon_checked.gif) no-repeat center;
 }
 .check-label {
   display: block;
-  height: 20px;
-  line-height: 20px;
+  height: 25px;
+  line-height: 25px;
   padding-left: 30px;
+}
+.check-label.blind {
+  width: 0;
+  text-indent: -99999em;
+  overflow: hidden;
 }
 .check-label:after {
   content: "";
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 23px;
+  height: 23px;
   position: absolute;
   top: 0;
   left: 0;
   border: 1px solid #c2cbcb;
+  border-radius: 5px;
   background: #ffffff;
 }
 .check-label-blank {
@@ -513,8 +535,14 @@ img {
 .left-float.left {
   margin-right: 10px;
 }
+.left-float.left.group {
+  margin-right: 20px;
+}
 .left-float.right {
   margin-left: 10px;
+}
+.left-float.right.group {
+  margin-left: 20px;
 }
 
 .right-float {
@@ -523,8 +551,18 @@ img {
 .right-float.left {
   margin-right: 10px;
 }
+.right-float.left.group {
+  margin-right: 20px;
+}
 .right-float.right {
   margin-left: 10px;
+}
+.right-float.right.group {
+  margin-left: 20px;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=common.css.map */

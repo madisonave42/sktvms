@@ -16,42 +16,46 @@ include "header.html"
 
 		<section class="contents-section">
 
-			<div>
+			<div class="contents-section-top">
 
-				<div class="select">
-					<select class="select-form">
-						<option>전체 VNF</option>
-					</select>
+				<div class="left-float">
+
+					<div class="select left-float left">
+						<select class="select-form">
+							<option>전체 VNF</option>
+						</select>
+					</div>
+
+					<div class="select left-float left">
+						<select class="select-form">
+							<option>전체 Vendor</option>
+						</select>
+					</div>
+
+					<div class="select left-float">
+						<select class="select-form">
+							<option>전체 Status</option>
+						</select>
+					</div>
+
 				</div>
 
-				<div class="select">
-					<select class="select-form">
-						<option>전체 Vendor</option>
-					</select>
-				</div>
+				<div class="right-float">
 
-				<div class="select">
-					<select class="select-form">
-						<option>전체 Status</option>
-					</select>
+					<button type="button" class="btn-fill-orange left-float left">Enable</button>
+					<button type="button" class="btn-stroke-light left-float left group">Disable</button>
+
+					<button type="button" class="btn-stroke-dark left-float left">패키지등록</button>
+					<button type="button" class="btn-stroke-orange">패키지삭제</button>
+
 				</div>
 
 			</div>
 
 			<div>
+				<table class="vt-table">
 
-				<button type="button" class="btn-fill-orange">Enable</button>
-				<button type="button" class="btn-stroke-light">Disable</button>
-
-				<button type="button" class="btn-stroke-dark">패키지등록</button>
-				<button type="button" class="btn-stroke-orange">패키지삭제</button>
-
-			</div>
-
-			<div>
-				<table width="100%" border="0">
-
-					<caption>목록</caption>
+					<caption class="hide">목록</caption>
 
 					<colgroup>
 						<col width="" />
@@ -68,42 +72,46 @@ include "header.html"
 
 					<thead>
 						<tr>
-							<th scope="col">
-								<input type="checkbox">
+							<th scope="col" class="vt-table-th">
+								<div class="check-wrap center">
+									<input id="chk-label-1" class="check-box" type="checkbox">
+									<label for="chk-label-1" class="check-label blind">선택</label>
+								</div>
 							</th>
-							<th scope="col">No</th>
-							<th scope="col">Package Name</th>
-							<th scope="col">Create Time</th>
-							<th scope="col">Vendor</th>
-							<th scope="col">Version</th>
-							<th scope="col">Status</th>
-							<th scope="col">VNF Instance 수</th>
-							<th scope="col">Description</th>
-							<th scope="col">실행</th>
+							<th scope="col" class="vt-table-th">No</th>
+							<th scope="col" class="vt-table-th">Package Name</th>
+							<th scope="col" class="vt-table-th">Create Time</th>
+							<th scope="col" class="vt-table-th">Vendor</th>
+							<th scope="col" class="vt-table-th">Version</th>
+							<th scope="col" class="vt-table-th">Status</th>
+							<th scope="col" class="vt-table-th">VNF Instance 수</th>
+							<th scope="col" class="vt-table-th">Description</th>
+							<th scope="col" class="vt-table-th">실행</th>
 						</tr>
 					</thead>
 
 					<tr>
-						<td>
-							<input type="checkbox">
+						<td class="vt-table-td center">
+							<div class="check-wrap center">
+								<input id="chk-label-2" class="check-box" type="checkbox">
+								<label for="chk-label-2" class="check-label blind">선택</label>
+							</div>
 						</td>
-						<td>1</td>
-						<td>MSS</td>
-						<td>2015/02/12 13:22:03</td>
-						<td>Telcoware</td>
-						<td>1.0.0</td>
-						<td>Enabled</td>
-						<td>2</td>
-						<td></td>
-						<td>
-							<button type="button">삭제</button>
-						</td>
+						<td class="vt-table-td">1</td>
+						<td class="vt-table-td">MSS</td>
+						<td class="vt-table-td">2015/02/12 13:22:03</td>
+						<td class="vt-table-td">Telcoware</td>
+						<td class="vt-table-td">1.0.0</td>
+						<td class="vt-table-td">Enabled</td>
+						<td class="vt-table-td">2</td>
+						<td class="vt-table-td"></td>
+						<td class="vt-table-td"><button type="button">삭제</button></td>
 					</tr>
 
 				</table>
 			</div>
 
-			<div>
+			<div class="contents-section-bottom">
 
 				<div class="form-label left-float left">페이지당</div>
 

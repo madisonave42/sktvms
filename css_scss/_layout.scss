@@ -310,4 +310,14 @@
 	border-radius:5px;
 	background:$white;
 	box-sizing:border-box;
+
+	&-top{
+		margin-bottom:10px;
+		@include clear();
+	}
+
+	&-bottom{
+		margin-top:10px;
+		@include clear();
+	}
 }

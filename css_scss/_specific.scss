@@ -3,10 +3,18 @@
 
   &.left{
     margin-right:10px;
+
+    &.group{
+      margin-right:20px;
+    }
   }
 
   &.right{
     margin-left:10px;
+
+    &.group{
+      margin-left:20px;
+    }
   }
 
 }
@@ -16,10 +24,22 @@
 
   &.left{
     margin-right:10px;
+
+    &.group{
+      margin-right:20px;
+    }
   }
 
   &.right{
     margin-left:10px;
+
+    &.group{
+      margin-left:20px;
+    }
   }
 
+}
+
+.hide{
+  display:none;
 }

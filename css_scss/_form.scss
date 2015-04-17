@@ -59,10 +59,10 @@
       display:block;
       position:absolute;
       z-index:10;
-      top:6px;
-      left:6px;
-      width:10px;
-      height:8px;
+      top:9px;
+      left:7px;
+      width:11px;
+      height:9px;
       background:url(../images/icon_checked.gif) no-repeat center;
     }
   }
@@ -70,23 +70,30 @@
   &-label{
     display:block;
 
-    height:20px;
-    line-height:20px;
+    height:25px;
+    line-height:25px;
 
     padding-left:30px;
+
+    &.blind{
+      width:0;
+      text-indent:-99999em;
+      overflow:hidden;
+    }
 
     &:after{
       content:"";
       display:block;
 
-      width:18px;
-      height:18px;
+      width:23px;
+      height:23px;
 
       position:absolute;
       top:0;
       left:0;
 
       border:1px solid $light-gray;
+      border-radius: 5px;
       background:$white;
     }
   }
