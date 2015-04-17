@@ -1,0 +1,138 @@
+include "header.html"
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">운용자 목록</h2>
+				<p class="main-heading-overview">vIMS Center에 등록된 운용자 목록을 제공합니다</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper">
+
+		<section class="contents-section">
+
+			<div>
+
+				<div class="select">
+					<select class="select-form">
+						<option>전체 유형</option>
+					</select>
+				</div>
+
+			</div>
+
+			<div>
+
+				<button type="button" class="btn-stroke-dark">운용자 추가</button>
+				<button type="button" class="btn-stroke-orange">운용자 삭제</button>
+
+			</div>
+
+			<div>
+				<table width="100%" border="0">
+
+					<caption>목록</caption>
+
+					<colgroup>
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+					</colgroup>
+
+					<thead>
+						<tr>
+							<th scope="col">
+								<input type="checkbox">
+							</th>
+							<th scope="col">No</th>
+							<th scope="col">계정 이름</th>
+							<th scope="col">계정 유형</th>
+							<th scope="col">최종 로그인 시각</th>
+							<th scope="col">최종 로그아웃 시각</th>
+							<th scope="col">성명</th>
+							<th scope="col">소속 회사</th>
+							<th scope="col">부서</th>
+							<th scope="col">직급</th>
+							<th scope="col">전화번호</th>
+							<th scope="col">이메일</th>
+							<th scope="col">마지막 접속 IP</th>
+							<th scope="col">실행</th>
+						</tr>
+					</thead>
+
+					<tr>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>1</td>
+						<td>root</td>
+						<td>system_admin</td>
+						<td>2015/02/12 13:22:03</td>
+						<td>2015/02/12 13:22:03</td>
+						<td>김종범</td>
+						<td>SK Telecom</td>
+						<td>중부 NOC</td>
+						<td>사원</td>
+						<td>02-1234-1234</td>
+						<td>abc@sktelecom.co.kr</td>
+						<td>10.10.1.239</td>
+						<td>
+							<button type="button" class="btn-table-edit">수정</button>
+							<button type="button" class="btn-table-del">삭제</button>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+
+			<div class="table-sort-amount">
+
+				<div class="form-label left-float left">페이지당</div>
+
+				<div class="select-small left-float">
+					<select class="select-form">
+						<option>20</option>
+					</select>
+				</div>
+
+				<div class="form-label left-float right">항목 출력</div>
+
+			</div>
+
+			<!-- [D] 현재페이지에 클래스 current추가 -->
+			<div class="pagination table-page">
+				<a href="#" class="page-item page-first">처음페이지</a>
+				<a href="#" class="page-item page-prev">이전페이지</a>
+				<a href="#" class="page-item current">1</a>
+				<a href="#" class="page-item">2</a>
+				<a href="#" class="page-item">3</a>
+				<a href="#" class="page-item">4</a>
+				<a href="#" class="page-item">5</a>
+				<a href="#" class="page-item page-next">다음페이지</a>
+				<a href="#" class="page-item page-last">마지막페이지</a>
+			</div>
+
+		</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"

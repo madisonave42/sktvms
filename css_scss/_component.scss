@@ -1,0 +1,45 @@
+.pagination {
+  text-align:center;
+  font-size:0;
+
+  .page-item {
+    display:inline-block;
+    box-sizing:border-box;
+    @include size(30);
+    line-height:28px;
+    text-align:center;
+    font-size:11px;
+    font-weight:bold;
+    color:$dark-gray;
+    border-radius:5px;
+    border:1px solid transparent;
+  }
+
+  .page-item:hover {
+    border-color:$light-gray;
+  }
+
+  .page-first,
+  .page-prev,
+  .page-next,
+  .page-last {
+    text-indent:-9999px;
+    background:url(../images/sprite_pagination.png) no-repeat;
+  }
+
+  .page-prev {
+    background-position:-28px 0;
+  }
+
+  .page-next {
+    background-position:-56px 0;
+  }
+
+  .page-last {
+    background-position:-84px 0;
+  }
+
+  .page-item.current {
+    color:$orange;
+  }
+}

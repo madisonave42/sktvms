@@ -1,20 +1,44 @@
 @import "variables";
+@import "mixins";
 
-.vt-table{
-  width:100%;
-  border-top:2px solid $light-gray;
+.vt-table {
+	width: 100%;
+	border-top: 2px solid $light-gray;
 
-  &-th{
-    height:39px;
-    border-bottom:1px solid $light-gray;
-  }
+	&-th {
+		height: 39px;
+		border-bottom: 1px solid $light-gray;
+	}
 
-  &-td{
-    height:39px;
-    border-bottom:1px solid $clean-gray;
+	&-td {
+		height: 39px;
+		border-bottom: 1px solid $clean-gray;
 
-    &.center{
-      text-align:center;
-    }
-  }
+		&.center {
+			text-align: center;
+		}
+	}
+}
+
+.btn-table {
+	&-edit {
+		@include btn(25px, 25px, 25px, 0, $white, $blue, 4px);
+		float:left;
+		margin:0 2px;
+		text-indent:-9999px;
+		background:$blue url(../images/table/sprite_btn_icons.png) no-repeat 50% 0;
+	}
+
+	&-del {
+		@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
+		float:left;
+		margin:0 2px;
+		text-indent:-9999px;
+		background:$orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+	}
+}
+
+.table-page {
+	float:right;
+	margin-top:10px;
 }

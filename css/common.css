@@ -57,6 +57,7 @@ footer, header, hgroup, menu, nav, section {
 
 html {
   overflow-y: scroll;
+  background-color: #e6eaeb;
 }
 
 body {
@@ -120,7 +121,7 @@ img {
 }
 .header-user {
   float: right;
-  margin-top: 9px;
+  margin-top: 10px;
 }
 .header-user-name {
   float: right;
@@ -130,7 +131,8 @@ img {
 .header-user-path {
   clear: right;
   float: right;
-  margin-top: 2px;
+  margin-top: 3px;
+  height: 16px;
   font-size: 13px;
   border: 0;
 }
@@ -329,11 +331,11 @@ img {
 .main-header {
   height: 72px;
   border-bottom: 1px solid #708080;
+  background-color: #ffffff;
 }
 .main-content {
   padding: 5px 0 20px;
   border-top: 3px solid #cbcfd2;
-  background-color: #e6eaeb;
 }
 
 .main-heading {
@@ -366,12 +368,17 @@ img {
 }
 
 .contents-section {
-  width: 1758px;
+  width: 1760px;
   padding: 10px 20px;
   border: 1px solid #c2cbcb;
   border-radius: 5px;
   background: #ffffff;
   box-sizing: border-box;
+}
+.contents-section:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .contents-section-top {
   margin-bottom: 10px;
@@ -388,6 +395,46 @@ img {
   content: "";
   display: block;
   clear: both;
+}
+
+.pagination {
+  text-align: center;
+  font-size: 0;
+}
+.pagination .page-item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #777;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.pagination .page-item:hover {
+  border-color: #c2cbcb;
+}
+.pagination .page-first,
+.pagination .page-prev,
+.pagination .page-next,
+.pagination .page-last {
+  text-indent: -9999px;
+  background: url(../images/sprite_pagination.png) no-repeat;
+}
+.pagination .page-prev {
+  background-position: -28px 0;
+}
+.pagination .page-next {
+  background-position: -56px 0;
+}
+.pagination .page-last {
+  background-position: -84px 0;
+}
+.pagination .page-item.current {
+  color: #ee6247;
 }
 
 .select, .input {
@@ -418,6 +465,8 @@ img {
   height: 21px;
   border: 0;
   box-sizing: border-box;
+  color: #888;
+  font-size: 11px;
 }
 
 .btn-fill-orange {
@@ -526,7 +575,9 @@ img {
 
 .form-label {
   height: 30px;
-  line-height: 26px;
+  line-height: 27px;
+  color: #777;
+  font-size: 12px;
 }
 
 .left-float {
