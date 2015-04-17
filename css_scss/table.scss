@@ -1,0 +1,32 @@
+@import "variables";
+@import "mixins";
+
+.btn-table {
+	&-edit {
+		@include btn(25px, 25px, 25px, 0, $white, $blue, 4px);
+		float:left;
+		margin:0 2px;
+		text-indent:-9999px;
+		background:$blue url(../images/table/sprite_btn_icons.png) no-repeat 50% 0;
+	}
+
+	&-del {
+		@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
+		float:left;
+		margin:0 2px;
+		text-indent:-9999px;
+		background:$orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+	}
+}
+
+.table-sort-amount {
+	float:left;
+	margin-top:10px;
+	overflow:hidden;
+}
+
+.table-page {
+	float:right;
+	margin-top:10px;
+
+}

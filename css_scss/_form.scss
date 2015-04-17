@@ -13,6 +13,9 @@
 
     border:0;
     box-sizing: border-box;
+
+    color:#888;
+    font-size:11px;
   }
 
 }
@@ -101,5 +104,8 @@
 
 .form-label{
   height:30px;
-  line-height:26px;
+  line-height:27px;
+  color:$dark-gray;
+  font-size:12px;
+
 }

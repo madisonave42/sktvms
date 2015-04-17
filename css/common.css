@@ -57,6 +57,7 @@ footer, header, hgroup, menu, nav, section {
 
 html {
   overflow-y: scroll;
+  background-color: #e6eaeb;
 }
 
 body {
@@ -120,7 +121,7 @@ img {
 }
 .header-user {
   float: right;
-  margin-top: 9px;
+  margin-top: 10px;
 }
 .header-user-name {
   float: right;
@@ -130,7 +131,8 @@ img {
 .header-user-path {
   clear: right;
   float: right;
-  margin-top: 2px;
+  margin-top: 3px;
+  height: 16px;
   font-size: 13px;
   border: 0;
 }
@@ -329,11 +331,11 @@ img {
 .main-header {
   height: 72px;
   border-bottom: 1px solid #708080;
+  background-color: #ffffff;
 }
 .main-content {
   padding: 5px 0 20px;
   border-top: 3px solid #cbcfd2;
-  background-color: #e6eaeb;
 }
 
 .main-heading {
@@ -366,12 +368,17 @@ img {
 }
 
 .contents-section {
-  width: 1758px;
+  width: 1760px;
   padding: 10px 20px;
   border: 1px solid #c2cbcb;
   border-radius: 5px;
   background: #ffffff;
   box-sizing: border-box;
+}
+.contents-section:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .pagination {
@@ -442,6 +449,8 @@ img {
   height: 21px;
   border: 0;
   box-sizing: border-box;
+  color: #888;
+  font-size: 11px;
 }
 
 .btn-fill-orange {
@@ -544,7 +553,9 @@ img {
 
 .form-label {
   height: 30px;
-  line-height: 26px;
+  line-height: 27px;
+  color: #777;
+  font-size: 12px;
 }
 
 .left-float {
