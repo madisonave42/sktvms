@@ -7,11 +7,42 @@
 
 	&-th {
 		height: 39px;
+		position:relative;
+
+		padding-left:10px;
+
+		font-weight:bold;
+		color:$dark;
+
+		text-align:left;
+
 		border-bottom: 1px solid $light-gray;
+
+		&.center {
+			text-align: center;
+		}
+
+		&.first:after{
+			display:none;
+		}
+
+		&:after{
+			content:"";
+			display:block;
+
+			width:1px;
+			height:15px;
+
+			position:absolute;
+			top:12px;
+			left:0;
+			background:$light-gray;
+		}
 	}
 
 	&-td {
 		height: 39px;
+		padding-left:10px;
 		border-bottom: 1px solid $clean-gray;
 
 		&.center {
@@ -20,25 +51,43 @@
 	}
 }
 
-.btn-table {
-	&-edit {
-		@include btn(25px, 25px, 25px, 0, $white, $blue, 4px);
-		float:left;
-		margin:0 2px;
-		text-indent:-9999px;
-		background:$blue url(../images/table/sprite_btn_icons.png) no-repeat 50% 0;
+.tb-form {
+
+	&-btn {
+
+		&-sort{
+			@include btn(7px, 4px, 7px, 0, $light-gray, $white, 0);
+			text-indent:-99999em;
+			background:url(../images/table/sprite_btn_icons.png) no-repeat 0 0px;
+			padding:0;
+			margin:3px 15px 3px 0;
+
+			&.asc{
+				background-position:0 -57px;
+			}
+
+			&.desc{
+				background-position:0 -66px;
+			}
+		}
+
+		&-edit {
+			@include inline-block();
+			@include btn(25px, 25px, 25px, 0, $white, $blue, 4px);
+			text-indent: -9999px;
+			background: $blue url(../images/table/sprite_btn_icons.png) no-repeat 50% 0;
+		}
+
+		&-del {
+			@include inline-block();
+			@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
+			text-indent: -9999px;
+			background: $orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+		}
 	}
 
-	&-del {
-		@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
-		float:left;
-		margin:0 2px;
-		text-indent:-9999px;
-		background:$orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+	&-select{
+		width:95%;
+		border:0;
 	}
-}
-
-.table-page {
-	float:right;
-	margin-top:10px;
 }

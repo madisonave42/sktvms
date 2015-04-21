@@ -16,116 +16,193 @@ include "header.html"
 
 		<section class="contents-section">
 
-			<div>
+			<div class="contents-section-top">
 
-				<div class="select">
-					<select class="select-form">
-						<option>전체 유형</option>
-					</select>
+				<div class="left-float">
+
+					<div class="select">
+						<select class="select-form">
+							<option>전체 유형</option>
+						</select>
+					</div>
+
+				</div>
+
+				<div class="right-float">
+
+					<button type="button" class="btn-stroke-dark left-float left">운용자 추가</button>
+					<button type="button" class="btn-stroke-orange left-float">운용자 삭제</button>
+
 				</div>
 
 			</div>
 
 			<div>
+				<table class="vt-table">
 
-				<button type="button" class="btn-stroke-dark">운용자 추가</button>
-				<button type="button" class="btn-stroke-orange">운용자 삭제</button>
-
-			</div>
-
-			<div>
-				<table width="100%" border="0">
-
-					<caption>목록</caption>
+					<caption class="hide">목록</caption>
 
 					<colgroup>
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
+						<col width="50px" />
+						<col width="60px" />
+						<col width="120px" />
+						<col width="120px" />
+						<col width="175px" />
+						<col width="175px" />
+						<col width="95px" />
+						<col width="140px" />
+						<col width="160px" />
+						<col width="70px" />
+						<col width="130px" />
+						<col width="auto" />
+						<col width="130px" />
+						<col width="75px" />
 					</colgroup>
 
 					<thead>
 						<tr>
-							<th scope="col">
-								<input type="checkbox">
+							<th scope="col" class="vt-table-th first center">
+								<div class="check-wrap center">
+									<input id="chk-label-1" class="check-box" type="checkbox">
+									<label for="chk-label-1" class="check-label blind">선택</label>
+								</div>
 							</th>
-							<th scope="col">No</th>
-							<th scope="col">계정 이름</th>
-							<th scope="col">계정 유형</th>
-							<th scope="col">최종 로그인 시각</th>
-							<th scope="col">최종 로그아웃 시각</th>
-							<th scope="col">성명</th>
-							<th scope="col">소속 회사</th>
-							<th scope="col">부서</th>
-							<th scope="col">직급</th>
-							<th scope="col">전화번호</th>
-							<th scope="col">이메일</th>
-							<th scope="col">마지막 접속 IP</th>
-							<th scope="col">실행</th>
+							<th scope="col" class="vt-table-th">No</th>
+							<th scope="col" class="vt-table-th">
+								<select class="tb-form-select">
+									<option>계정 이름</option>
+								</select>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">계정 유형</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">최종 로그인 시각</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">최종 로그아웃 시각</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">성명</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">소속 회사</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">부서</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">직급</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">전화번호</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">이메일</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">마지막 접속 IP</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th center">실행</th>
 						</tr>
 					</thead>
 
 					<tr>
-						<td>
-							<input type="checkbox">
+						<td class="vt-table-td center">
+							<div class="check-wrap center">
+								<input id="chk-label-2" class="check-box" type="checkbox">
+								<label for="chk-label-2" class="check-label blind">선택</label>
+							</div>
 						</td>
-						<td>1</td>
-						<td>root</td>
-						<td>system_admin</td>
-						<td>2015/02/12 13:22:03</td>
-						<td>2015/02/12 13:22:03</td>
-						<td>김종범</td>
-						<td>SK Telecom</td>
-						<td>중부 NOC</td>
-						<td>사원</td>
-						<td>02-1234-1234</td>
-						<td>abc@sktelecom.co.kr</td>
-						<td>10.10.1.239</td>
-						<td>
-							<button type="button" class="btn-table-edit">수정</button>
-							<button type="button" class="btn-table-del">삭제</button>
+						<td class="vt-table-td">1</td>
+						<td class="vt-table-td">root</td>
+						<td class="vt-table-td">system_admin</td>
+						<td class="vt-table-td">2015/02/12 13:22:03</td>
+						<td class="vt-table-td">2015/02/12 13:22:03</td>
+						<td class="vt-table-td">김종범</td>
+						<td class="vt-table-td">SK Telecom</td>
+						<td class="vt-table-td">중부 NOC</td>
+						<td class="vt-table-td">사원</td>
+						<td class="vt-table-td">02-1234-1234</td>
+						<td class="vt-table-td">abc@sktelecom.co.kr</td>
+						<td class="vt-table-td">10.10.1.239</td>
+						<td class="vt-table-td center">
+							<button type="button" class="tb-form-btn-edit">수정</button>
+							<button type="button" class="tb-form-btn-del">삭제</button>
 						</td>
 					</tr>
 
 				</table>
 			</div>
 
-			<div class="table-sort-amount">
+			<div class="contents-section-bottom">
 
-				<div class="form-label left-float left">페이지당</div>
+				<div class="left-float">
 
-				<div class="select-small left-float">
-					<select class="select-form">
-						<option>20</option>
-					</select>
+					<div class="form-label left-float left">페이지당</div>
+
+					<div class="select-small left-float">
+						<select class="select-form">
+							<option>20</option>
+						</select>
+					</div>
+
+					<div class="form-label left-float right">항목 출력</div>
+
 				</div>
 
-				<div class="form-label left-float right">항목 출력</div>
+				<div class="pagination right-float">
+					<a href="#" class="page-item page-first">처음페이지</a>
+					<a href="#" class="page-item page-prev">이전페이지</a>
+					<a href="#" class="page-item current">1</a>
+					<a href="#" class="page-item">2</a>
+					<a href="#" class="page-item">3</a>
+					<a href="#" class="page-item">4</a>
+					<a href="#" class="page-item">5</a>
+					<a href="#" class="page-item page-next">다음페이지</a>
+					<a href="#" class="page-item page-last">마지막페이지</a>
+				</div>
 
-			</div>
-
-			<!-- [D] 현재페이지에 클래스 current추가 -->
-			<div class="pagination table-page">
-				<a href="#" class="page-item page-first">처음페이지</a>
-				<a href="#" class="page-item page-prev">이전페이지</a>
-				<a href="#" class="page-item current">1</a>
-				<a href="#" class="page-item">2</a>
-				<a href="#" class="page-item">3</a>
-				<a href="#" class="page-item">4</a>
-				<a href="#" class="page-item">5</a>
-				<a href="#" class="page-item page-next">다음페이지</a>
-				<a href="#" class="page-item page-last">마지막페이지</a>
 			</div>
 
 		</section>

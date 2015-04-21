@@ -58,35 +58,69 @@ include "header.html"
 					<caption class="hide">목록</caption>
 
 					<colgroup>
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
-						<col width="" />
+						<col width="50px" />
+						<col width="60px" />
+						<col width="190px" />
+						<col width="190px" />
+						<col width="140px" />
+						<col width="110px" />
+						<col width="110px" />
+						<col width="140px" />
+						<col width="auto" />
+						<col width="75px" />
 					</colgroup>
 
 					<thead>
 						<tr>
-							<th scope="col" class="vt-table-th">
+							<th scope="col" class="vt-table-th first center">
 								<div class="check-wrap center">
 									<input id="chk-label-1" class="check-box" type="checkbox">
 									<label for="chk-label-1" class="check-label blind">선택</label>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">No</th>
-							<th scope="col" class="vt-table-th">Package Name</th>
-							<th scope="col" class="vt-table-th">Create Time</th>
-							<th scope="col" class="vt-table-th">Vendor</th>
-							<th scope="col" class="vt-table-th">Version</th>
-							<th scope="col" class="vt-table-th">Status</th>
-							<th scope="col" class="vt-table-th">VNF Instance 수</th>
+							<th scope="col" class="vt-table-th">
+								<select class="tb-form-select">
+									<option>Package Name</option>
+								</select>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Create Time</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Vendor</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Version</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Status</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">VNF Instance 수</div>
+								<div class="right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
 							<th scope="col" class="vt-table-th">Description</th>
-							<th scope="col" class="vt-table-th">실행</th>
+							<th scope="col" class="vt-table-th center">실행</th>
 						</tr>
 					</thead>
 
@@ -105,7 +139,7 @@ include "header.html"
 						<td class="vt-table-td">Enabled</td>
 						<td class="vt-table-td">2</td>
 						<td class="vt-table-td"></td>
-						<td class="vt-table-td"><button type="button" class="btn-table-del">삭제</button></td>
+						<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
 					</tr>
 
 				</table>
@@ -113,28 +147,32 @@ include "header.html"
 
 			<div class="contents-section-bottom">
 
-				<div class="form-label left-float left">페이지당</div>
+				<div class="left-float">
 
-				<div class="select-small left-float">
-					<select class="select-form">
-						<option>20</option>
-					</select>
+					<div class="form-label left-float left">페이지당</div>
+
+					<div class="select-small left-float">
+						<select class="select-form">
+							<option>20</option>
+						</select>
+					</div>
+
+					<div class="form-label left-float right">항목 출력</div>
+
 				</div>
 
-				<div class="form-label left-float right">항목 출력</div>
+				<div class="pagination right-float">
+					<a href="#" class="page-item page-first">처음페이지</a>
+					<a href="#" class="page-item page-prev">이전페이지</a>
+					<a href="#" class="page-item current">1</a>
+					<a href="#" class="page-item">2</a>
+					<a href="#" class="page-item">3</a>
+					<a href="#" class="page-item">4</a>
+					<a href="#" class="page-item">5</a>
+					<a href="#" class="page-item page-next">다음페이지</a>
+					<a href="#" class="page-item page-last">마지막페이지</a>
+				</div>
 
-			</div>
-
-			<div class="pagination table-page">
-				<a href="#" class="page-item page-first">처음페이지</a>
-				<a href="#" class="page-item page-prev">이전페이지</a>
-				<a href="#" class="page-item current">1</a>
-				<a href="#" class="page-item">2</a>
-				<a href="#" class="page-item">3</a>
-				<a href="#" class="page-item">4</a>
-				<a href="#" class="page-item">5</a>
-				<a href="#" class="page-item page-next">다음페이지</a>
-				<a href="#" class="page-item page-last">마지막페이지</a>
 			</div>
 
 		</section>

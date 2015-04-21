@@ -147,15 +147,18 @@ module.exports = function(grunt) {
         files:[{
           expand: true,
           cwd: 'js/',
-          src: ['function.min.js'],
+          src: ['**', '!function.js'],
           dest: '_output/js/'
         }]
     	},
 
     	css: {
-				expand: true,
-				src:'css/*.css',
-				dest: '_output/'
+				files:[{
+					expand: true,
+					cwd: 'css/',
+					src: ['**', '!*.map'],
+					dest: '_output/css/'
+				}]
     	},
 
     	images: {

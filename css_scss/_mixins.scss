@@ -51,6 +51,11 @@
 	margin:0 auto;
 }
 
+// inline block
+@mixin inline-block(){
+	display:inline-block;
+}
+
 // clear float
 @mixin clear() {
 	&:after {
