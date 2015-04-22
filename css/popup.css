@@ -1,0 +1,442 @@
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../css/fonts/Ubuntu-R.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-R.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-R.woff) format("woff"), url(../css/fonts/Ubuntu-R.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../css/fonts/Ubuntu-M.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-M.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-M.woff) format("woff"), url(../css/fonts/Ubuntu-M.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+@font-face {
+  font-family: 'ubuntu';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../css/fonts/Ubuntu-B.eot) format("eot");
+  /* for IE9 */
+  src: url(../css/fonts/Ubuntu-B.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-B.woff) format("woff"), url(../css/fonts/Ubuntu-B.ttf) format("truetype");
+  /* Safari, Android, Ios */
+}
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  overflow-y: scroll;
+  background-color: #e6eaeb;
+}
+
+body {
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
+  color: #777;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+select, input, button, textarea {
+  display: block;
+  font-family: "ubuntu", "Malgun Gothic", sans-serif;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+embed, object {
+  position: absolute;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hide {
+  display: none;
+}
+
+.select, .input {
+  width: 120px;
+  height: 30px;
+  padding: 2.5px 5px 0 5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  cursor: pointer;
+}
+.select-form, .input-form {
+  display: inline-block;
+  width: 100%;
+  height: 21px;
+  border: 0;
+  box-sizing: border-box;
+  color: #888;
+  font-size: 11px;
+}
+
+.btn-fill-orange {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #ffffff;
+  background: #ee6247;
+  border: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-fill-dark {
+  width: 106px;
+  height: 30px;
+  line-height: 25px;
+  color: #ffffff;
+  background: #777;
+  border: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-light {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #afbdbd;
+  background: #ffffff;
+  border: 1px solid #afbdbd;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-dark {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #576363;
+  background: #ffffff;
+  border: 1px solid #576363;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-orange {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #ee6247;
+  background: #ffffff;
+  border: 1px solid #ee6247;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.left-float {
+  float: left;
+}
+.left-float.left {
+  margin-right: 10px;
+}
+.left-float.left.group {
+  margin-right: 20px;
+}
+.left-float.right {
+  margin-left: 10px;
+}
+.left-float.right.group {
+  margin-left: 20px;
+}
+
+.right-float {
+  float: right;
+}
+.right-float.left {
+  margin-right: 10px;
+}
+.right-float.left.group {
+  margin-right: 20px;
+}
+.right-float.right {
+  margin-left: 10px;
+}
+.right-float.right.group {
+  margin-left: 20px;
+}
+
+/* popup common : S */
+.popup {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -400px;
+  padding: 22px;
+  width: 750px;
+  border: 3px solid #ee6247;
+  background: #ffffff;
+  z-index: 100;
+}
+.popup-heading {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00b9b0;
+  line-height: 1;
+}
+.popup-content {
+  padding-bottom: 22px;
+  border-bottom: 2px solid #becacc;
+}
+.popup-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.popup-content-section {
+  margin-top: 18px;
+  padding: 11px;
+  background: #ececec;
+  border-radius: 2px;
+}
+.popup-content-section:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.popup-bottom {
+  margin-top: 22px;
+}
+.popup-input-wrap {
+  margin-top: 10px;
+}
+.popup-input-wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.popup-input-wrap:first-child {
+  margin-top: 0;
+}
+.popup-gray-wrap {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  background: #f9f9f9;
+}
+.popup-white-wrap {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  background: #ffffff;
+}
+.popup-label {
+  box-sizing: border-box;
+  padding-right: 9px;
+  height: 30px;
+  line-height: 27px;
+  color: #576363;
+  font-weight: bold;
+  text-align: right;
+}
+.popup-graph {
+  margin: 5px 10px;
+  padding: 2px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  background: #ffffff;
+}
+.popup-graph-bar {
+  height: 21px;
+  background: #479dee;
+}
+.popup-graph-msg {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.width-small {
+  width: 95px;
+}
+.width-small + .input, .width-small + .popup-gray-wrap, .width-small + .popup-white-wrap {
+  width: calc(100% - 95px);
+}
+.width-normal {
+  width: 118px;
+}
+.width-normal + .input, .width-normal + .popup-gray-wrap, .width-normal + .popup-white-wrap {
+  width: calc(100% - 118px);
+}
+.width-wide {
+  width: 170px;
+}
+.width-wide + .input, .width-wide + .popup-gray-wrap, .width-wide + .popup-white-wrap {
+  width: calc(100% - 170px);
+}
+
+.col-width-4 {
+  width: 40%;
+}
+.col-width-5 {
+  width: 50%;
+}
+.col-width-6 {
+  width: 60%;
+}
+
+.text-gray {
+  color: #c2cbcb;
+}
+.text-dark {
+  color: #576363;
+}
+.text-red {
+  color: #e70000;
+}
+.text-blue {
+  color: #479dee;
+}
+
+.req {
+  margin-right: 2px;
+  color: #ee6247;
+  font-weight: bold;
+  vertical-align: -2px;
+}
+
+/* popup common : E */
+/* add vnf package : s */
+.width-add-pkg.input {
+  width: 517px;
+}
+
+.add-vnf-step {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.add-vnf-step-item {
+  margin-top: 20px;
+  line-height: 14px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.add-vnf-step-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.add-vnf-step-item:first-child {
+  margin-top: 0;
+}
+.add-vnf-step-icon {
+  width: 23px;
+  line-height: 13px;
+}
+.add-vnf-step-text {
+  width: 190px;
+}
+.add-vnf-state-ok {
+  padding-left: 14px;
+  color: #0057b9;
+  background: url(../images/popup/bg_dots_blue.png) no-repeat 0 center;
+}
+.add-vnf-state-fail {
+  padding-left: 14px;
+  color: #e70000;
+  background: url(../images/popup/bg_dots_red.png) no-repeat 0 center;
+}
+.add-vnf-detail {
+  height: 170px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.updatable-list {
+  height: 110px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* add vnf package : e */
+
+/*# sourceMappingURL=popup.css.map */
