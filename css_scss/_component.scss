@@ -8,7 +8,7 @@
     @include size(30);
     line-height:28px;
     text-align:center;
-    font-size:11px;
+    font-size: $font-size-mini;
     font-weight:bold;
     color:$dark-gray;
     border-radius:5px;
@@ -42,4 +42,13 @@
   .page-item.current {
     color:$orange;
   }
+}
+
+
+.scroll-area{
+  border:1px solid $light-gray;
+  border-radius:3px;
+
+  overflow-x:hidden;
+  overflow-y:auto;
 }

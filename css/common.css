@@ -112,6 +112,16 @@ img {
   display: block;
   margin: 0 auto;
   width: 1760px;
+  position: relative;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.wrapper.fix-height {
+  height: 910px;
+  background: red;
 }
 
 .header {
@@ -356,6 +366,15 @@ img {
   font-size: 12px;
   line-height: 1;
 }
+.main-heading-form-group {
+  position: relative;
+  padding-top: 30px;
+}
+.main-heading-form-group > .group-label {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+}
 
 .main-option {
   float: left;
@@ -369,12 +388,11 @@ img {
 }
 
 .contents-section {
-  width: 1760px;
+  width: 1720px;
   padding: 10px 20px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 3px;
   background: #ffffff;
-  box-sizing: border-box;
 }
 .contents-section:after {
   content: "";
@@ -438,23 +456,52 @@ img {
   color: #ee6247;
 }
 
+.scroll-area {
+  border: 1px solid #c2cbcb;
+  border-radius: 3px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .select, .input {
   width: 120px;
   height: 30px;
-  padding: 2.5px 5px 0 5px;
+  padding-top: 2.5px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
   box-sizing: border-box;
   text-align: center;
   background: #ffffff;
   cursor: pointer;
 }
-.select-small, .input-small {
+.select.mini, .input.mini {
+  width: 50px;
+  height: 30px;
+  padding-top: 2.5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  cursor: pointer;
+}
+.select.small, .input.small {
   width: 60px;
   height: 30px;
-  padding: 2.5px 5px 0 5px;
+  padding-top: 2.5px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  cursor: pointer;
+}
+.select.med, .input.med {
+  width: 80px;
+  height: 30px;
+  padding-top: 2.5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
   box-sizing: border-box;
   text-align: center;
   background: #ffffff;
@@ -466,8 +513,13 @@ img {
   height: 21px;
   border: 0;
   box-sizing: border-box;
-  color: #888;
+  color: #777;
   font-size: 11px;
+  font-weight: bold;
+}
+
+.input {
+  padding-left: 5px;
 }
 
 .btn-fill-orange {
@@ -477,11 +529,25 @@ img {
   color: #ffffff;
   background: #ee6247;
   border: 0;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
+}
+.btn-fill-green-med {
+  width: 80px;
+  height: 30px;
+  line-height: 25px;
+  color: #ffffff;
+  background: #0bc17a;
+  border: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 11px;
 }
 .btn-stroke-light {
   width: 120px;
@@ -490,11 +556,38 @@ img {
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
+}
+.btn-stroke-light-gray {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  color: #777;
+  background: #ffffff;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn-stroke-light-gray-med {
+  width: 80px;
+  height: 30px;
+  line-height: 25px;
+  color: #777;
+  background: #ffffff;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 11px;
 }
 .btn-stroke-dark {
   width: 120px;
@@ -503,7 +596,7 @@ img {
   color: #576363;
   background: #ffffff;
   border: 1px solid #576363;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
@@ -516,11 +609,18 @@ img {
   color: #ee6247;
   background: #ffffff;
   border: 1px solid #ee6247;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
+}
+.btn-calendar {
+  width: 14px;
+  height: 30px;
+  text-indent: -99999em;
+  border: 0;
+  background: url(../images/icon_btn_calendar.gif) no-repeat;
 }
 
 .check-wrap {
@@ -548,7 +648,7 @@ img {
 .check-label {
   display: block;
   height: 25px;
-  line-height: 25px;
+  line-height: 23px;
   padding-left: 30px;
 }
 .check-label.blind {
@@ -565,7 +665,7 @@ img {
   top: 0;
   left: 0;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
   background: #ffffff;
 }
 .check-label-blank {
@@ -578,7 +678,6 @@ img {
   height: 30px;
   line-height: 27px;
   color: #777;
-  font-size: 12px;
 }
 
 .left-float {
@@ -590,11 +689,17 @@ img {
 .left-float.left.group {
   margin-right: 20px;
 }
+.left-float.left.half {
+  margin-right: 5px;
+}
 .left-float.right {
   margin-left: 10px;
 }
 .left-float.right.group {
   margin-left: 20px;
+}
+.left-float.right.half {
+  margin-left: 5px;
 }
 
 .right-float {
@@ -606,15 +711,34 @@ img {
 .right-float.left.group {
   margin-right: 20px;
 }
+.right-float.left.half {
+  margin-right: 5px;
+}
 .right-float.right {
   margin-left: 10px;
 }
 .right-float.right.group {
   margin-left: 20px;
 }
+.right-float.right.half {
+  margin-left: 5px;
+}
 
 .hide {
   display: none;
+}
+
+.em-dark {
+  color: #576363;
+  font-weight: bold;
+}
+
+.small-font {
+  font-size: 12px;
+}
+
+.mini-font {
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=common.css.map */

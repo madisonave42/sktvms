@@ -36,7 +36,7 @@
 @mixin form-frame($width, $height, $border-width, $border-style, $border-color, $border-radius) {
 	width:$width;
 	height:$height;
-	padding: ( ( $height - 21px ) / 2 - 2px ) 5px 0 5px;
+	padding-top: ( ( $height - 21px ) / 2 - 2px );
 	border:$border-width $border-style $border-color;
 	border-radius:$border-radius;
 	box-sizing:border-box;

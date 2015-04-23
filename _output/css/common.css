@@ -372,7 +372,7 @@ img {
   width: 1760px;
   padding: 10px 20px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 3px;
   background: #ffffff;
   box-sizing: border-box;
 }
@@ -443,7 +443,7 @@ img {
   height: 30px;
   padding: 2.5px 5px 0 5px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
   box-sizing: border-box;
   text-align: center;
   background: #ffffff;
@@ -454,7 +454,7 @@ img {
   height: 30px;
   padding: 2.5px 5px 0 5px;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
   box-sizing: border-box;
   text-align: center;
   background: #ffffff;
@@ -477,7 +477,7 @@ img {
   color: #ffffff;
   background: #ee6247;
   border: 0;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
@@ -490,7 +490,7 @@ img {
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
@@ -503,7 +503,7 @@ img {
   color: #576363;
   background: #ffffff;
   border: 1px solid #576363;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
@@ -516,7 +516,7 @@ img {
   color: #ee6247;
   background: #ffffff;
   border: 1px solid #ee6247;
-  border-radius: 0;
+  border-radius: 2px;
   font-weight: bold;
   text-align: center;
   box-sizing: border-box;
@@ -565,7 +565,7 @@ img {
   top: 0;
   left: 0;
   border: 1px solid #c2cbcb;
-  border-radius: 5px;
+  border-radius: 2px;
   background: #ffffff;
 }
 .check-label-blank {

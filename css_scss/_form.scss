@@ -1,9 +1,17 @@
 .select, .input{
 
-  @include form-frame($box-default-width, $box-default-height, 1px, solid, $light-gray, 5px);
+  @include form-frame($box-default-width, $box-default-height, 1px, solid, $light-gray, 2px);
 
-  &-small{
-    @include form-frame(60px, $box-default-height, 1px, solid, $light-gray, 5px);
+  &.mini{
+    @include form-frame(50px, $box-default-height, 1px, solid, $light-gray, 2px);
+  }
+
+  &.small{
+    @include form-frame(60px, $box-default-height, 1px, solid, $light-gray, 2px);
+  }
+
+  &.med{
+    @include form-frame(80px, $box-default-height, 1px, solid, $light-gray, 2px);
   }
 
   &-form{
@@ -14,30 +22,55 @@
     border:0;
     box-sizing: border-box;
 
-    color:#888;
+    color:$dark-gray;
     font-size:11px;
+    font-weight:bold;
   }
 
+}
+
+.input{
+  padding-left:5px;
 }
 
 .btn{
 
   &-fill{
     &-orange{
-      @include btn($box-default-width, $box-default-height, $box-default-height, 0, $white, $orange, 0);
+      @include btn($box-default-width, $box-default-height, $box-default-height, 0, $white, $orange, 2px);
+    }
+    &-green-med{
+      @include btn(80px, $box-default-height, $box-default-height, 0, $white, $green, 2px);
+      font-size:$font-size-mini;
     }
   }
 
-  &-stroke{
-    &-light{
-      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $white-gray, $white-gray, $white, 0);
+  &-stroke {
+    &-light {
+      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $white-gray, $white-gray, $white, 2px);
     }
-    &-dark{
-      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $dark, $dark, $white, 0);
+    &-light-gray {
+      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $light-gray, $dark-gray, $white, 2px);
     }
-    &-orange{
-      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $orange, $orange, $white, 0);
+    &-light-gray-med {
+      @include btn(80px, $box-default-height, $box-default-height, 1px solid $light-gray, $dark-gray, $white, 2px);
+      font-size:$font-size-mini;
     }
+    &-dark {
+      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $dark, $dark, $white, 2px);
+    }
+    &-orange {
+      @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $orange, $orange, $white, 2px);
+    }
+  }
+
+  &-calendar{
+    width:14px;
+    height:30px;
+
+    text-indent:-99999em;
+    border:0;
+    background:url(../images/icon_btn_calendar.gif) no-repeat;
   }
 
 }
@@ -74,7 +107,7 @@
     display:block;
 
     height:25px;
-    line-height:25px;
+    line-height:23px;
 
     padding-left:30px;
 
@@ -96,7 +129,7 @@
       left:0;
 
       border:1px solid $light-gray;
-      border-radius: 5px;
+      border-radius: 2px;
       background:$white;
     }
   }
@@ -113,6 +146,4 @@
   height:30px;
   line-height:27px;
   color:$dark-gray;
-  font-size:12px;
-
 }

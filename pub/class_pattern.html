@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script>
+    function Directory(name){
+      // public
+      this.name = name;
+      // private
+      var private = 'private';
+
+      function prfunc(){
+        return private;
+      }
+
+      Directory.prototype = {
+        greet : function(){
+          var temp = prfunc();
+          return 'hello  ' + this.name + temp;
+        }
+      }
+
+      return Directory;
+
+
+    }
+
+
+
+
+
+
+  </script>
+
+<script>
+  var test = new Directory('joon-seok');
+
+  console.log(test.greet());
+</script>
+</body>
+</html>

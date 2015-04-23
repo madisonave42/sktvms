@@ -1,0 +1,50 @@
+.contents-section {
+  padding: 0;
+}
+.contents-section.narrow {
+  width: 430px;
+  position: absolute;
+}
+.contents-section.narrow.top {
+  top: 0;
+  left: 0;
+  height: 323px;
+}
+.contents-section.narrow.bottom {
+  bottom: 0;
+  left: 0;
+  height: 581px;
+}
+.contents-section.wide {
+  width: 1320px;
+  position: absolute;
+}
+.contents-section.wide.top {
+  top: 0;
+  right: 0;
+  height: 473px;
+}
+.contents-section.wide.bottom {
+  bottom: 0;
+  right: 0;
+  height: 431px;
+}
+.contents-section .ui-resizable-handle.ui-resizable-s {
+  position: absolute;
+  width: 83px;
+  height: 13px;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -40px;
+  background: url(../images/icon_resizable.gif) no-repeat;
+}
+.contents-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=stats.css.map */

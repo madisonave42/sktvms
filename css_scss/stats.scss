@@ -1,0 +1,61 @@
+.contents{
+
+  &-section {
+    padding:0;
+
+    &.narrow {
+      width: 430px;
+      position: absolute;
+
+      &.top {
+        top: 0;
+        left: 0;
+        height: 323px;
+      }
+
+      &.bottom {
+        bottom: 0;
+        left: 0;
+        height: 581px;
+      }
+    }
+
+    &.wide {
+      width: 1320px;
+      position: absolute;
+
+      &.top {
+        top: 0;
+        right: 0;
+        height: 473px;
+      }
+
+      &.bottom {
+        bottom: 0;
+        right: 0;
+        height: 431px;
+      }
+    }
+
+    .ui-resizable-handle.ui-resizable-s{
+      position:absolute;
+      width:83px;
+      height:13px;
+
+      bottom:-8px;
+      left:50%;
+      margin-left:-40px;
+
+      background:url(../images/icon_resizable.gif) no-repeat;
+    }
+  }
+
+  &-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    padding:10px 20px;
+    overflow-y:scroll;
+    box-sizing:border-box;
+  }
+}

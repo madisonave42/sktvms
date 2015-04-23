@@ -7,6 +7,10 @@
     &.group{
       margin-right:20px;
     }
+
+    &.half{
+      margin-right:5px;
+    }
   }
 
   &.right{
@@ -14,6 +18,10 @@
 
     &.group{
       margin-left:20px;
+    }
+
+    &.half{
+      margin-left:5px;
     }
   }
 
@@ -28,6 +36,10 @@
     &.group{
       margin-right:20px;
     }
+
+    &.half{
+      margin-right:5px;
+    }
   }
 
   &.right{
@@ -36,10 +48,27 @@
     &.group{
       margin-left:20px;
     }
+
+    &.half{
+      margin-left:5px;
+    }
   }
 
 }
 
 .hide{
   display:none;
+}
+
+.em-dark{
+  color:$dark;
+  font-weight:bold;
+}
+
+.small-font{
+  font-size:$font-size-small;
+}
+
+.mini-font{
+  font-size:$font-size-mini;
 }

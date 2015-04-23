@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     		dest: 'pub/',
     		options: {
     			flatten:true,
-    			includePath: 'pub_src/include'
+    			includePath: 'pub_src/_include'
     		}
     	},
 
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				dest: 'pub/admin',
 				options: {
 					flatten:true,
-					includePath: 'pub_src/include'
+					includePath: 'pub_src/_include'
 				}
 			},
 
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         dest: 'pub/log',
         options: {
           flatten:true,
-          includePath: 'pub_src/include'
+          includePath: 'pub_src/_include'
         }
       },
 
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         dest: 'pub/monitoring',
         options: {
           flatten:true,
-          includePath: 'pub_src/include'
+          includePath: 'pub_src/_include'
         }
       },
 
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         dest: 'pub/setting',
         options: {
           flatten:true,
-          includePath: 'pub_src/include'
+          includePath: 'pub_src/_include'
         }
       },
 
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         dest: 'pub/stats',
         options: {
           flatten:true,
-          includePath: 'pub_src/include'
+          includePath: 'pub_src/_include'
         }
       },
 
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
         dest: 'pub/vnf_management',
         options: {
           flatten:true,
-          includePath: 'pub_src/include'
+          includePath: 'pub_src/_include'
         }
       }
     },
@@ -131,16 +131,19 @@ module.exports = function(grunt) {
     		files:[{
     			expand: true,
     			cwd: 'js_src/lib/',
-    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui-1.11.2.min.js'],
+    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'right.js', 'resizable.js'],
     			dest: 'js/lib/'
     		}]
     	},
 
     	// output
     	html: {
-    		expand:true,
-    		src:'pub/**',
-    		dest:'_output/'
+				files:[{
+					expand: true,
+					cwd: 'pub/',
+					src: ['**', '!**/@tmp.*'],
+					dest: '_output/pub/'
+				}]
     	},
 
     	js: {

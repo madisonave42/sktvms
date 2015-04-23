@@ -1,6 +1,14 @@
 .wrapper {
 	@include center();
 	@include size(1760, auto);
+	@include clear();
+
+	position:relative;
+
+	&.fix-height{
+		height:910px;
+		background:red;
+	}
 }
 
 .header {
@@ -290,6 +298,17 @@
 		font-size:12px;
 		line-height:1;
 	}
+
+	&-form-group {
+		position:relative;
+		padding-top:30px;
+
+		>.group-label{
+			position:absolute;
+			top:8px;
+			left:5px;
+		}
+	}
 }
 
 .main-option {
@@ -306,12 +325,11 @@
 
 .contents-section{
 	@include clear();
-	width:1760px;
+	width:1720px;
 	padding:10px 20px;
 	border:1px solid $light-gray;
-	border-radius:5px;
+	border-radius:3px;
 	background:$white;
-	box-sizing:border-box;
 
 	&-top{
 		margin-bottom:10px;
