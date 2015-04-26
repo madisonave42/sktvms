@@ -131,7 +131,7 @@ module.exports = function(grunt) {
     		files:[{
     			expand: true,
     			cwd: 'js_src/lib/',
-    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'right.js', 'resizable.js'],
+    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'jquery.selectric.min.js'],
     			dest: 'js/lib/'
     		}]
     	},

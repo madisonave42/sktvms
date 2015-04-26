@@ -112,7 +112,6 @@ img {
   display: block;
   margin: 0 auto;
   width: 1760px;
-  position: relative;
 }
 .wrapper:after {
   content: "";
@@ -121,7 +120,6 @@ img {
 }
 .wrapper.fix-height {
   height: 910px;
-  background: red;
 }
 
 .header {
@@ -129,6 +127,8 @@ img {
   border-bottom: 2px solid #ee6247;
   background-color: #141414;
   min-width: 1760px;
+  position: relative;
+  z-index: 90;
 }
 .header-user {
   float: right;
@@ -416,6 +416,12 @@ img {
   clear: both;
 }
 
+.section-heading {
+  font-weight: bold;
+  color: #576363;
+  line-height: 25px;
+}
+
 .pagination {
   text-align: center;
   font-size: 0;
@@ -463,59 +469,34 @@ img {
   overflow-y: auto;
 }
 
-.select, .input {
-  width: 120px;
-  height: 30px;
-  padding-top: 2.5px;
-  border: 1px solid #c2cbcb;
-  border-radius: 2px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #ffffff;
-  cursor: pointer;
-}
-.select.mini, .input.mini {
+.selectric-mini {
   width: 50px;
-  height: 30px;
-  padding-top: 2.5px;
-  border: 1px solid #c2cbcb;
-  border-radius: 2px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #ffffff;
-  cursor: pointer;
 }
-.select.small, .input.small {
+.selectric-small {
   width: 60px;
-  height: 30px;
-  padding-top: 2.5px;
-  border: 1px solid #c2cbcb;
-  border-radius: 2px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #ffffff;
-  cursor: pointer;
 }
-.select.med, .input.med {
+.selectric-med {
   width: 80px;
-  height: 30px;
-  padding-top: 2.5px;
-  border: 1px solid #c2cbcb;
-  border-radius: 2px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #ffffff;
-  cursor: pointer;
 }
-.select-form, .input-form {
-  display: inline-block;
-  width: 100%;
-  height: 21px;
-  border: 0;
-  box-sizing: border-box;
+.selectric-default {
+  width: 120px;
+}
+.selectric .label {
   color: #777;
   font-size: 11px;
   font-weight: bold;
+}
+.selectric-items li {
+  padding: 4px 6px;
+  font-size: 11px;
+  color: #777;
+}
+.selectric-left-float {
+  float: left;
+}
+.selectric-left-float-left {
+  float: left;
+  margin-right: 10px;
 }
 
 .input {
@@ -678,6 +659,106 @@ img {
   height: 30px;
   line-height: 27px;
   color: #777;
+}
+
+.tree-list {
+  position: relative;
+  padding-bottom: 15px;
+}
+.tree-list:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  background: url(../images/sprite_tree_line.png) repeat-y 0px;
+}
+.tree-list.last:after {
+  display: none;
+}
+.tree-item {
+  height: 15px;
+  position: relative;
+}
+.tree-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.tree-item-btn-fold {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: #fff url(../images/icon_tree_fold.png) no-repeat;
+}
+.tree-item-name {
+  padding: 0;
+  margin: 0 0 0 7px;
+  border: 0;
+  background: transparent;
+  line-height: 15px;
+}
+.tree-float {
+  float: left;
+}
+.tree-depth-2 {
+  padding: 15px 0 0 15px;
+  background: url(../images/sprite_tree_line.png) repeat-y -93px;
+}
+.tree-depth-2 .tree-list {
+  position: relative;
+  padding-bottom: 15px;
+}
+.tree-depth-2 .tree-list.is-depth {
+  padding-left: 30px;
+  margin-left: -8px;
+}
+.tree-depth-2 .tree-list.is-depth:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/sprite_tree_line.png) no-repeat 0 -47px;
+}
+.tree-depth-2 .tree-list.is-depth:after {
+  left: 22px;
+}
+.tree-depth-2 .tree-list.is-depth .tree-item {
+  margin-left: -15px;
+}
+.tree-depth-2 .tree-list.no-children .tree-item-btn-fold {
+  background: none;
+}
+.tree-depth-2 .tree-list.no-children .tree-item-name {
+  cursor: pointer;
+}
+.tree-depth-2 .tree-list.no-children .tree-item:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+}
+.tree-depth-2 .tree-list.no-children:after {
+  display: none;
+}
+.tree-depth-2 .tree-list.last:after {
+  display: none;
+}
+.tree-depth-over {
+  margin-left: -15px;
+  padding: 15px 0 0 15px;
+  background: url(../images/sprite_tree_line.png) repeat-y -93px;
 }
 
 .left-float {

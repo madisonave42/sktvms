@@ -16,9 +16,28 @@ if( navigator.userAgent.indexOf('Safari') > 0 ){
 
 $(function(){
 
+	// common
+	(function(){
+
+		// custom select box
+		$('.select').selectric();
+
+		// custom select box in table
+		$('.tb-form-select').selectric();
+
+	})();
+
+	// vnf
+	(function(){
+
+	})();
+
 	// stats
-	var statsResizeNarrow = new ResizeDiv( $('.wrapper.fix-height'), $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
-	var statsResizeWide = new ResizeDiv( $('.wrapper.fix-height'), $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
+	(function(){
+		var $wrapper = $('.wrapper.fix-height');
+		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
+		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
+	})();
 
 
 

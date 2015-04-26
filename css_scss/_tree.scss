@@ -1,0 +1,141 @@
+.tree{
+  // object
+
+  &-list{
+    position:relative;
+    padding-bottom:15px;
+
+    &:after{
+      content:"";
+      display:block;
+      width:1px;
+      height:15px;
+
+      position:absolute;
+      bottom:0;
+      left:7px;
+
+      background:url(../images/sprite_tree_line.png) repeat-y 0px;
+    }
+
+    &.last:after{
+      display:none;
+    }
+  }
+
+  &-item{
+    height:15px;
+    position:relative;
+    @include clear();
+    &-btn-fold{
+      width:15px;
+      height:15px;
+      position:relative;
+
+      padding:0;
+
+      border:0;
+      background:#fff url(../images/icon_tree_fold.png) no-repeat;
+    }
+    &-name{
+      padding:0;
+      margin:0 0 0 7px;
+
+      border:0;
+      background:transparent;
+      line-height:15px;
+    }
+  }
+
+  // specific style
+  &-float{
+    float:left;
+  }
+
+  // overriding
+
+  &-depth1{
+
+
+
+  }
+
+  &-depth-2{
+    padding:15px 0 0 15px;
+    background:url(../images/sprite_tree_line.png) repeat-y -93px;
+
+    .tree-list{
+      position:relative;
+      padding-bottom:15px;
+
+      &.is-depth{
+        padding-left:30px;
+        margin-left:-8px;
+
+        &:before{
+          content:"";
+          display:block;
+          width:30px;
+          height:15px;
+
+          position:absolute;
+          top:0;
+          left:0;
+
+          background:url(../images/sprite_tree_line.png) no-repeat 0 -47px;
+        }
+
+        &:after {
+          left:22px;
+        }
+
+        .tree{
+          &-item{
+            margin-left:-15px;
+          }
+        }
+      }
+
+      &.no-children{
+
+        .tree-item{
+          &-btn-fold{
+            background:none;
+          }
+
+          &-name{
+            cursor: pointer;
+          }
+
+          &:after{
+            content:"";
+            display:block;
+            width:100%;
+            height:100%;
+
+            position:absolute;
+            top:0;
+            left:0;
+
+            background:none;
+          }
+        }
+
+        &:after{
+          display:none;
+        }
+      }
+
+      &.last:after{
+        display:none;
+      }
+    }
+  }
+
+  &-depth-over{
+    margin-left:-15px;
+    padding:15px 0 0 15px;
+    background:url(../images/sprite_tree_line.png) repeat-y -93px;
+  }
+
+}

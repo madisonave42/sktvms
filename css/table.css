@@ -9,13 +9,20 @@
   font-weight: bold;
   color: #576363;
   text-align: left;
+  line-height: 38px;
   border-bottom: 1px solid #c2cbcb;
+}
+.vt-table-th.chkbox {
+  line-height: 0;
 }
 .vt-table-th.center {
   text-align: center;
 }
 .vt-table-th.first:after {
   display: none;
+}
+.vt-table-th .area-btn-sort {
+  margin-top: 11px;
 }
 .vt-table-th:after {
   content: "";
@@ -51,13 +58,19 @@
   text-indent: -99999em;
   background: url(../images/table/sprite_btn_icons.png) no-repeat 0 0px;
   padding: 0;
-  margin: 3px 15px 3px 0;
+  margin: 3px 10px 3px 0;
 }
 .tb-form-btn-sort.asc {
   background-position: 0 -57px;
 }
+.tb-form-btn-sort.asc:hover, .tb-form-btn-sort.asc.on {
+  background-position: -18px -57px;
+}
 .tb-form-btn-sort.desc {
   background-position: 0 -66px;
+}
+.tb-form-btn-sort.desc:hover, .tb-form-btn-sort.desc.on {
+  background-position: -18px -66px;
 }
 .tb-form-btn-edit {
   display: inline-block;
@@ -91,10 +104,18 @@
   text-indent: -9999px;
   background: #ee6247 url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
 }
-.tb-form-select {
+
+.selectric-tb-form-select {
   width: 95%;
-  color: #576363;
+}
+.selectric-tb-form-select .selectric {
   border: 0;
+}
+.selectric-tb-form-select .selectric .label {
+  margin-left: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #576363;
 }
 
 /*# sourceMappingURL=table.css.map */

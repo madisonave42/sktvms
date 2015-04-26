@@ -8,7 +8,7 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
     resize: function(){
 
       var divTopHeight = $divTop.outerHeight();
-      var divBottomHeight = wrapperHeight - divTopHeight - 4;
+      var divBottomHeight = wrapperHeight - divTopHeight - 24;
 
       $divBottom.css({height:divBottomHeight});
     }

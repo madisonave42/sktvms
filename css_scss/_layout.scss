@@ -3,11 +3,8 @@
 	@include size(1760, auto);
 	@include clear();
 
-	position:relative;
-
 	&.fix-height{
 		height:910px;
-		background:red;
 	}
 }
 
@@ -16,6 +13,10 @@
 	border-bottom:2px solid $orange;
 	background-color:#141414;
 	min-width:1760px;
+
+	position:relative;
+
+	z-index:90;
 
 	&-user {
 		float:right;
@@ -340,4 +341,10 @@
 		margin-top:10px;
 		@include clear();
 	}
+}
+
+.section-heading{
+	font-weight:bold;
+	color:$dark;
+	line-height:25px;
 }

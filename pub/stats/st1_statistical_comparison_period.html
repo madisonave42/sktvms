@@ -6,12 +6,13 @@
 
 <title>SKT vIMS CENTER</title>
 
+<link rel="stylesheet" href="../../css/lib/selectric.css">
 <link rel="stylesheet" href="../../css/common.css" />
 <link rel="stylesheet" href="../../css/table.css" />
 <link rel="stylesheet" href="../../css/stats.css">
-<link rel="stylesheet" href="../../css/lib/jquery-ui.min.css">
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
 <script src="../../js/function.min.js"></script>
 </head>
 <body>
@@ -198,10 +199,83 @@
 	</div>
 
 	<div class="main-content">
-		<div class="wrapper fix-height">
+		<div class="wrapper stats fix-height">
 
 			<section class="contents-section narrow stats-resizable top">
-				<div class="contents-inner"></div>
+				<div class="contents-section-top stats">
+					<h3 class="section-heading small left-float">시스템</h3>
+					<div class="check-wrap right-float">
+						<input id="chk-label-1" class="check-box" type="checkbox">
+						<label for="chk-label-1" class="check-label em-dark">삭제된 VNF Instance 포함</label>
+					</div>
+				</div>
+				<div class="contents-section-inner">
+
+					<!-- tree -->
+					<ul class="tree depth1">
+
+						<li class="tree-list depth1 unfold">
+
+							<div class="tree-item">
+								<button type="button" class="tree-item-btn-fold tree-float js-fold"></button>
+								<button type="button" class="tree-item-name tree-float js-fold">VNF Manager</button>
+							</div>
+
+							<ul class="tree tree-depth-2">
+
+								<li class="tree-list is-depth">
+
+									<div class="tree-item">
+										<button type="button" class="tree-item-btn-fold tree-float"></button>
+										<button type="button" class="tree-item-name tree-float">VNFM1A</button>
+									</div>
+
+									<ul class="tree-depth-over">
+										<li class="tree-list depth no-children">
+											<div class="tree-item">
+												<button type="button" class="tree-item-btn-fold tree-float"></button>
+												<button type="button" class="tree-item-name tree-float">VNFM1B</button>
+											</div>
+										</li>
+									</ul>
+
+								</li>
+
+								<li class="tree-list is-depth no-children">
+									<div class="tree-item">
+										<button type="button" class="tree-item-btn-fold tree-float"></button>
+										<button type="button" class="tree-item-name tree-float">VNFM1B</button>
+									</div>
+								</li>
+
+								<li class="tree-list is-depth last">
+									<div class="tree-item">
+										<button type="button" class="tree-item-btn-fold tree-float"></button>
+										<button type="button" class="tree-item-name tree-float">VNFM1B</button>
+									</div>
+								</li>
+
+							</ul>
+
+						</li>
+
+						<li class="tree-list depth1 unfold no-children">
+							<div class="tree-item">
+								<button type="button" class="tree-item-btn-fold tree-float"></button>
+								<button type="button" class="tree-item-name tree-float">VNF Manager2</button>
+							</div>
+						</li>
+
+						<li class="tree-list depth1 unfold last">
+							<div class="tree-item">
+								<button type="button" class="tree-item-btn-fold tree-float"></button>
+								<button type="button" class="tree-item-name tree-float">VNF Manager3</button>
+							</div>
+						</li>
+
+					</ul>
+
+				</div>
 			</section>
 
 			<section class="contents-section narrow stats-resizable bottom">

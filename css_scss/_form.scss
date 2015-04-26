@@ -1,32 +1,53 @@
-.select, .input{
+.selectric{
 
-  @include form-frame($box-default-width, $box-default-height, 1px, solid, $light-gray, 2px);
-
-  &.mini{
-    @include form-frame(50px, $box-default-height, 1px, solid, $light-gray, 2px);
+  &-mini{
+    //@include form-frame(50px, $box-default-height, 1px, solid, $light-gray, 2px);
+    width:50px;
   }
 
-  &.small{
-    @include form-frame(60px, $box-default-height, 1px, solid, $light-gray, 2px);
+  &-small{
+    //@include form-frame(60px, $box-default-height, 1px, solid, $light-gray, 2px);
+    width:60px;
   }
 
-  &.med{
-    @include form-frame(80px, $box-default-height, 1px, solid, $light-gray, 2px);
+  &-med{
+    //@include form-frame(80px, $box-default-height, 1px, solid, $light-gray, 2px);
+    width:80px;
   }
 
-  &-form{
-    display:inline-block;
-    width:100%;
-    height:21px;
-
-    border:0;
-    box-sizing: border-box;
-
-    color:$dark-gray;
-    font-size:11px;
-    font-weight:bold;
+  &-default{
+    width:$box-default-width;
   }
 
+  //display:inline-block;
+  //width:100%;
+  //height:21px;
+
+  //border:0;
+  //box-sizing: border-box;
+
+  .label {
+    color: $dark-gray;
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  &-items{
+    li{
+      padding:4px 6px;
+      font-size:11px;
+      color:$dark-gray;
+    }
+  }
+
+  &-left-float{
+    float:left;
+
+    &-left{
+      float:left;
+      margin-right:10px;
+    }
+  }
 }
 
 .input{

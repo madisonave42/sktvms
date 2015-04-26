@@ -22,23 +22,17 @@ include "header_bottom.html"
 
 				<div class="left-float">
 
-					<div class="select left-float left">
-						<select class="select-form">
-							<option>전체 VNF</option>
-						</select>
-					</div>
+					<select class="select default left-float-left">
+						<option>전체 VNF</option>
+					</select>
 
-					<div class="select left-float left">
-						<select class="select-form">
-							<option>전체 Vendor</option>
-						</select>
-					</div>
+					<select class="select default left-float-left">
+						<option>전체 Vendor</option>
+					</select>
 
-					<div class="select left-float">
-						<select class="select-form">
-							<option>전체 Status</option>
-						</select>
-					</div>
+					<select class="select default left-float">
+						<option>전체 Status</option>
+					</select>
 
 				</div>
 
@@ -74,7 +68,7 @@ include "header_bottom.html"
 
 					<thead>
 						<tr>
-							<th scope="col" class="vt-table-th first center">
+							<th scope="col" class="vt-table-th first center chkbox">
 								<div class="check-wrap center">
 									<input id="chk-label-1" class="check-box" type="checkbox">
 									<label for="chk-label-1" class="check-label blind">선택</label>
@@ -84,39 +78,40 @@ include "header_bottom.html"
 							<th scope="col" class="vt-table-th">
 								<select class="tb-form-select">
 									<option>Package Name</option>
+									<option>MSS</option>
 								</select>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">Create Time</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">Vendor</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">Version</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">Status</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">VNF Instance 수</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
@@ -153,11 +148,9 @@ include "header_bottom.html"
 
 					<div class="form-label left-float left small-font">페이지당</div>
 
-					<div class="select-small left-float">
-						<select class="select-form">
-							<option>20</option>
-						</select>
-					</div>
+					<select class="select small left-float">
+						<option>20</option>
+					</select>
 
 					<div class="form-label left-float right small-font">항목 출력</div>
 
