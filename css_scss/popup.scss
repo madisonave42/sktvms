@@ -8,6 +8,10 @@ $green:#00b9b0;
 $red:#e70000;
 $dark-blue:#0057b9;
 
+.input-text{
+	color:$dark-gray;
+	resize:none;
+}
 
 .dimmed {
   position:fixed;
@@ -21,7 +25,7 @@ $dark-blue:#0057b9;
 .hide{
   display:none;
 }
-
+/*
 .select, .input{
 
   @include form-frame($box-default-width, $box-default-height, 1px, solid, $light-gray, 2px);
@@ -40,9 +44,23 @@ $dark-blue:#0057b9;
   }
 
 }
+*/
+.input-form{
 
-.input{
-  padding-left:5px;
+  @include form-frame($box-default-width, $box-default-height, 1px, solid, $light-gray, 2px);
+	
+	display:inline-block;
+  box-sizing: border-box;
+	padding:0 5px;
+  width:100%;
+	
+	color:#888;
+	font-size:11px;
+	font-weight:bold;
+	text-align:left;
+	
+	cursor:text;
+
 }
 
 .btn{
@@ -212,7 +230,7 @@ $dark-blue:#0057b9;
   &-small {
     width:95px;
 
-    & + .input,
+    & + .input-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 95px);
@@ -222,7 +240,7 @@ $dark-blue:#0057b9;
   &-normal {
     width:118px;
 
-    & + .input,
+    & + .input-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 118px);
@@ -232,7 +250,7 @@ $dark-blue:#0057b9;
   &-wide {
     width:170px;
 
-    & + .input,
+    & + .input-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 170px);
@@ -283,7 +301,7 @@ $dark-blue:#0057b9;
 /* popup common : E */
 
 /* add vnf package : s */
-.width-add-pkg.input {
+.width-add-pkg.input-form {
   width:517px;
 }
 .add-vnf {
@@ -339,7 +357,7 @@ $dark-blue:#0057b9;
 
 .updatable-list {
   height:110px;
-  overflow-x:hidden;
-  overflow-y:auto;
+//	overflow-x:hidden;
+//  overflow-y:auto;
 }
 /* add vnf package : e */
