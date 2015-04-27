@@ -36,12 +36,15 @@ include "header_bottom.html"
 
 					<script>
 						$.get('./select.html', function(data){
-							$('#selectboxid').html(data);
-							$('#selectboxid3').html(data);
+							$('#selectboxid').html(data).selectric();
 						});
 
 						$.get('./select2.html', function(data){
-							$('#selectboxid2').html(data);
+							$('#selectboxid2').html(data).selectric();
+						});
+
+						$.get('./select3.html', function(data){
+							$('#selectboxid3').html(data).selectric();
 						});
 					</script>
 

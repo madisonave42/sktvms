@@ -29,10 +29,10 @@ $(function(){
 		});
 
 		// custom select box
-		$('.select').selectric();
+		//$('.select').selectric();
 
 		// custom select box in table
-		$('.tb-form-select').selectric();
+		//$('.tb-form-select').selectric();
 
 		// tree
 		$('.tree-item').data({
