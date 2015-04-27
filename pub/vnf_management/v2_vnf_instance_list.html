@@ -41,8 +41,14 @@
         <div class="gnb-sub-wrap">
           <ul class="gnb-sub02">
             <li class="gnb-sub-item">
-              <a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
-              <a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+              	</li>
+              </ul>
             </li>
             <li class="gnb-sub-item">
               <a href="#" class="gnb-sub-link">VNF Instance 목록</a>
@@ -93,8 +99,14 @@
         <div class="gnb-sub-wrap">
           <ul class="gnb-sub05">
             <li class="gnb-sub-item">
-              <a href="#" class="gnb-sub-link">운용자 목록</a>
-              <a href="#" class="gnb-sub-link">운용자 등록</a>
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 등록</a>
+              	</li>
+              </ul>
             </li>
             <li class="gnb-sub-item">
               <a href="#" class="gnb-sub-link">Session 목록</a>
@@ -111,12 +123,15 @@
       </li>
     </ul>
 
-    <div class="header-user">
-      <p class="header-user-name">system admin</p>
-      <select class="header-user-path">
-        <option>root</option>
-      </select>
-    </div>
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li>Log out</li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </header>
 

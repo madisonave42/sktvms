@@ -135,17 +135,48 @@ img {
   margin-top: 10px;
 }
 .header-user-name {
-  float: right;
   font-size: 13px;
   color: #919191;
 }
 .header-user-path {
-  clear: right;
-  float: right;
+  position: relative;
   margin-top: 3px;
   height: 16px;
   font-size: 13px;
   border: 0;
+  cursor: pointer;
+  padding: 5px 16px 5px 3px;
+}
+.header-user-path:hover, .header-user-path.on {
+  padding: 4px 15px 4px 2px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+}
+.header-user-path:hover:after, .header-user-path.on:after {
+  top: 10px;
+  right: 2px;
+}
+.header-user-path:after {
+  content: " ";
+  position: absolute;
+  top: 11px;
+  right: 3px;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top-color: #c2cbcb;
+  border-bottom: none;
+}
+.header-user-path-submenu {
+  display: none;
+  padding: 5px 3px;
+  border: 1px solid #c2cbcb;
+  border-top: none;
+  background: #141414;
+}
+.header-user-path-submenu.on {
+  display: block;
 }
 
 .logo {
@@ -649,6 +680,30 @@ img {
   color: #777;
 }
 
+.tree-item {
+  height: 15px;
+  position: relative;
+}
+.tree-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.tree-btn-fold {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: #fff url(../images/icon_tree_fold.png) no-repeat;
+}
+.tree-name {
+  padding: 0;
+  margin: 0 0 0 7px;
+  border: 0;
+  background: transparent;
+  line-height: 15px;
+}
 .tree-list {
   position: relative;
   padding-bottom: 15px;
@@ -665,30 +720,6 @@ img {
 }
 .tree-list.last:after {
   display: none;
-}
-.tree-item {
-  height: 15px;
-  position: relative;
-}
-.tree-item:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.tree-item-btn-fold {
-  width: 15px;
-  height: 15px;
-  position: relative;
-  padding: 0;
-  border: 0;
-  background: #fff url(../images/icon_tree_fold.png) no-repeat;
-}
-.tree-item-name {
-  padding: 0;
-  margin: 0 0 0 7px;
-  border: 0;
-  background: transparent;
-  line-height: 15px;
 }
 .tree-float {
   float: left;

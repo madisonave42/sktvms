@@ -37,6 +37,15 @@ $(function(){
 	// common
 	(function(){
 
+		//header user menu
+		$('.header-user-path').data('open', 'false').on('click', function(){
+			if( $(this).data('open') == 'false' ) {
+				$(this).data('open', 'true').addClass('on').next().addClass('on');
+			} else {
+				$(this).data('open', 'false').removeClass('on').next().removeClass('on');
+			}
+		});
+
 		// custom select box
 		$('.select').selectric();
 

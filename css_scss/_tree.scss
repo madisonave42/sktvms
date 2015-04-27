@@ -1,5 +1,31 @@
+// object
 .tree{
-  // object
+
+  &-item {
+    height: 15px;
+    position: relative;
+    @include clear();
+  }
+
+  &-btn-fold{
+    width:15px;
+    height:15px;
+    position:relative;
+
+    padding:0;
+
+    border:0;
+    background:#fff url(../images/icon_tree_fold.png) no-repeat;
+  }
+
+  &-name{
+    padding:0;
+    margin:0 0 0 7px;
+
+    border:0;
+    background:transparent;
+    line-height:15px;
+  }
 
   &-list{
     position:relative;
@@ -18,41 +44,36 @@
       background:url(../images/sprite_tree_line.png) repeat-y 0px;
     }
 
+    // overriding
+
     &.last:after{
       display:none;
     }
+
+    &.no-children{
+
+      &.depth1{
+        
+      }
+
+      &.depth2{
+
+      }
+
+    }
+
+
   }
 
-  &-item{
-    height:15px;
-    position:relative;
-    @include clear();
-    &-btn-fold{
-      width:15px;
-      height:15px;
-      position:relative;
 
-      padding:0;
-
-      border:0;
-      background:#fff url(../images/icon_tree_fold.png) no-repeat;
-    }
-    &-name{
-      padding:0;
-      margin:0 0 0 7px;
-
-      border:0;
-      background:transparent;
-      line-height:15px;
-    }
-  }
 
   // specific style
   &-float{
     float:left;
   }
 
-  // overriding
+
+
 
   &-depth1{
 

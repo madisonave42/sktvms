@@ -5,11 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
 <link rel="stylesheet" href="../../css/popup.css" />
 
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui-1.11.2.min.js"></script>
-<script src="../../js/function_pop.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.min.js"></script>
 </head>
 <body>
 <!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
@@ -29,13 +31,11 @@
 		<div class="popup-content-section">
 			<div class="popup-input-wrap">
 				<label class="popup-label width-normal left-float"><span class="req">*</span> 계정권한 :</label>
-				<div class="input left-float">
-					<select class="select-form">
-						<option>system_admin</option>
-						<option>vnf_admin</option>
-						<option>monitoring_user</option>
-					</select>
-				</div>
+				<select class="select default left-float">
+					<option>system_admin</option>
+					<option>vnf_admin</option>
+					<option>monitoring_user</option>
+				</select>
 			</div>
 			<div class="popup-input-wrap">
 				<label class="popup-label width-normal left-float"><span class="req">*</span> 로그인 ID :</label>

@@ -123,12 +123,15 @@
       </li>
     </ul>
 
-    <div class="header-user">
-      <p class="header-user-name">system admin</p>
-      <select class="header-user-path">
-        <option>root</option>
-      </select>
-    </div>
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li>Log out</li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </header>
 
@@ -226,11 +229,11 @@
 					<!-- tree -->
 					<ul class="tree depth1">
 
-						<li class="tree-list depth1 unfold">
+						<li class="tree-list depth1 ">
 
 							<div class="tree-item">
-								<button type="button" class="tree-item-btn-fold tree-float js-fold"></button>
-								<button type="button" class="tree-item-name tree-float js-fold">VNF Manager</button>
+								<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+								<button type="button" class="tree-name tree-float js-fold">VNF Manager</button>
 							</div>
 
 							<ul class="tree tree-depth-2">
@@ -238,8 +241,8 @@
 								<li class="tree-list is-depth">
 
 									<div class="tree-item">
-										<button type="button" class="tree-item-btn-fold tree-float"></button>
-										<button type="button" class="tree-item-name tree-float">VNFM1A</button>
+										<button type="button" class="tree-item-btn-fold tree-float js-fold"></button>
+										<button type="button" class="tree-item-name tree-float js-fold">VNFM1A</button>
 									</div>
 
 									<ul class="tree-depth-over">
@@ -271,17 +274,17 @@
 
 						</li>
 
-						<li class="tree-list depth1 unfold no-children">
+						<li class="tree-list depth1 no-children">
 							<div class="tree-item">
-								<button type="button" class="tree-item-btn-fold tree-float"></button>
-								<button type="button" class="tree-item-name tree-float">VNF Manager2</button>
+								<button type="button" class="tree-btn-fold tree-float"></button>
+								<button type="button" class="tree-name tree-float">VNF Manager2</button>
 							</div>
 						</li>
 
-						<li class="tree-list depth1 unfold last">
+						<li class="tree-list depth1 last">
 							<div class="tree-item">
-								<button type="button" class="tree-item-btn-fold tree-float"></button>
-								<button type="button" class="tree-item-name tree-float">VNF Manager3</button>
+								<button type="button" class="tree-btn-fold tree-float"></button>
+								<button type="button" class="tree-name tree-float">VNF Manager3</button>
 							</div>
 						</li>
 

@@ -6,17 +6,10 @@
 
 <title>SKT vIMS CENTER</title>
 
-<<<<<<< HEAD
 <link rel="stylesheet" href="../../css/lib/selectric.css">
 <link rel="stylesheet" href="../../css/common.css" />
 <link rel="stylesheet" href="../../css/table.css" />
 <link rel="stylesheet" href="../css/vnf.css">
-=======
-<link rel="stylesheet" href="../../css/common.css" />
-<link rel="stylesheet" href="../../css/table.css" />
-<link rel="stylesheet" href="../css/vnf.css">
-<link rel="stylesheet" href="../../css/lib/jquery-ui.min.css">
->>>>>>> ea55240a35d388bb913fb0c4e69e644a15c7d832
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
 <script src="../../js/lib/jquery.selectric.min.js"></script>
@@ -130,12 +123,15 @@
       </li>
     </ul>
 
-    <div class="header-user">
-      <p class="header-user-name">system admin</p>
-      <select class="header-user-path">
-        <option>root</option>
-      </select>
-    </div>
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li>Log out</li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </header>
 
