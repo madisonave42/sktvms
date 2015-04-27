@@ -99,6 +99,21 @@ $(function(){
 		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
 	})();
 
+	// open layer popup
+	(function(){
 
+		$('.js-open-popup').on('click', function(e) {
+			$('.dimmed').addClass('on');
+			$('.popup').addClass('on');
+			e.preventDefault();
+		});
+
+		$('.js-close-popup').on('click', function(e) {
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
+			e.preventDefault();
+		});
+
+	})();
 
 });
