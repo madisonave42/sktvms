@@ -378,4 +378,9 @@
 	font-weight:bold;
 	color:$dark;
 	line-height:25px;
+
+	&.color{
+		font-size:16px;
+		color:$blue-green;
+	}
 }

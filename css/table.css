@@ -42,6 +42,20 @@
 .vt-table-td.center {
   text-align: center;
 }
+.vt-table-td.vt-border {
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+}
+.vt-table-td.bg-stats-beige {
+  background: #f8f2e5;
+}
+.vt-table-td.bg-stats-white {
+  background: #ffffff;
+}
+.vt-table.stats {
+  width: auto;
+  background: #fbfbfb;
+}
 
 .tb-form-btn-sort {
   width: 7px;

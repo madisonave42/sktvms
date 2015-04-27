@@ -8,10 +8,10 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     includes: {
-    	root: {
-    		cwd:'pub_src',
+    	test: {
+    		cwd:'pub_src/test',
     		src: ['*.html'],
-    		dest: 'pub/',
+    		dest: 'pub/test',
     		options: {
     			flatten:true,
     			includePath: 'pub_src/_include'

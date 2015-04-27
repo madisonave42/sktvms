@@ -440,6 +440,10 @@ img {
   color: #576363;
   line-height: 25px;
 }
+.section-heading.color {
+  font-size: 16px;
+  color: #00b9b0;
+}
 
 .pagination {
   text-align: center;
@@ -695,7 +699,10 @@ img {
   position: relative;
   padding: 0;
   border: 0;
-  background: #fff url(../images/icon_tree_fold.png) no-repeat;
+  background: #fff url(../images/icon_tree_fold.png) no-repeat 0 -16px;
+}
+.tree-btn-fold.unfold {
+  background: #fff url(../images/icon_tree_fold.png) no-repeat 0 0;
 }
 .tree-name {
   padding: 0;
@@ -703,6 +710,11 @@ img {
   border: 0;
   background: transparent;
   line-height: 15px;
+}
+.tree-name.is-select {
+  padding: 0 7px;
+  margin: 0;
+  background: #00b9b0;
 }
 .tree-list {
   position: relative;
@@ -718,66 +730,56 @@ img {
   left: 7px;
   background: url(../images/sprite_tree_line.png) repeat-y 0px;
 }
-.tree-list.last:after {
-  display: none;
-}
-.tree-float {
-  float: left;
-}
-.tree-depth-2 {
-  padding: 15px 0 0 15px;
-  background: url(../images/sprite_tree_line.png) repeat-y -93px;
-}
-.tree-depth-2 .tree-list {
-  position: relative;
-  padding-bottom: 15px;
-}
-.tree-depth-2 .tree-list.is-depth {
+.tree-list.is-depth {
   padding-left: 30px;
   margin-left: -8px;
 }
-.tree-depth-2 .tree-list.is-depth:before {
+.tree-list.is-depth:before {
   content: "";
   display: block;
   width: 30px;
-  height: 15px;
+  height: 30px;
   position: absolute;
   top: 0;
   left: 0;
   background: url(../images/sprite_tree_line.png) no-repeat 0 -47px;
 }
-.tree-depth-2 .tree-list.is-depth:after {
-  left: 22px;
+.tree-list.is-depth.last:before {
+  background: url(../images/sprite_tree_line.png) no-repeat -50px -87px;
 }
-.tree-depth-2 .tree-list.is-depth .tree-item {
-  margin-left: -15px;
+.tree-list.is-depth:after {
+  left: 37px;
 }
-.tree-depth-2 .tree-list.no-children .tree-item-btn-fold {
-  background: none;
+.tree-list.last:after {
+  display: none;
 }
-.tree-depth-2 .tree-list.no-children .tree-item-name {
-  cursor: pointer;
+.tree-list.last > .tree-depth:after {
+  top: -22px;
 }
-.tree-depth-2 .tree-list.no-children .tree-item:after {
+.tree-list.no-children .tree-btn-fold {
+  background-position: 0 -32px;
+}
+.tree-float {
+  float: left;
+}
+.tree-depth {
+  position: relative;
+  padding: 15px 0 0 15px;
+  overflow: hidden;
+  display: none;
+}
+.tree-depth.unfold {
+  display: block;
+}
+.tree-depth:after {
   content: "";
   display: block;
-  width: 100%;
+  width: 1px;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  background: none;
-}
-.tree-depth-2 .tree-list.no-children:after {
-  display: none;
-}
-.tree-depth-2 .tree-list.last:after {
-  display: none;
-}
-.tree-depth-over {
-  margin-left: -15px;
-  padding: 15px 0 0 15px;
-  background: url(../images/sprite_tree_line.png) repeat-y -93px;
+  left: 7px;
+  background: url(../images/sprite_tree_line.png) repeat-y 0px;
 }
 
 .left-float {

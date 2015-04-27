@@ -39,8 +39,10 @@
   position: relative;
   width: 100%;
   height: calc(100% - 45px);
-  overflow-y: scroll;
+  overflow: auto;
+  padding: 20px;
   border: 1px solid #c2cbcb;
+  border-radius: 3px;
   box-sizing: border-box;
 }
 .contents-section .ui-resizable-handle.ui-resizable-s {

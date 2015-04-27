@@ -52,6 +52,39 @@ $(function(){
 		// custom select box in table
 		$('.tb-form-select').selectric();
 
+		// tree
+		$('.tree-item').data({
+			'fold' : 'true',
+			'select' : 'false'
+		});
+
+		$('.js-fold').on('click', function(){
+
+			var $clickTreeItem = $(this).parent('.tree-item');
+			var $clickTreeList = $clickTreeItem.parent('.tree-list');
+			var hasParentChild = $clickTreeList.hasClass('no-children');
+
+			if( !hasParentChild ) {
+				if ($clickTreeItem.data('fold') == 'true') {
+					$(this).addClass('unfold').siblings().addClass('unfold');
+					$clickTreeItem.data('fold', 'false').next('.tree-depth').addClass('unfold');
+				} else {
+					$(this).removeClass('unfold').siblings().removeClass('unfold');
+					$clickTreeItem.data('fold', 'true').next('.tree-depth').removeClass('unfold');
+				}
+			} else {
+				if ($clickTreeItem.data('select') == 'false') {
+					$(this).attr('data-select','selected').addClass('is-select')
+						.siblings().attr('data-select','selected').addClass('is-select');
+					$clickTreeItem.data('select', 'true');
+				} else {
+					$(this).removeAttr('data-select').removeClass('is-select')
+						.siblings().removeAttr('data-select').removeClass('is-select');
+					$clickTreeItem.data('select', 'false');
+				}
+			}
+		});
+
 	})();
 
 	// vnf
