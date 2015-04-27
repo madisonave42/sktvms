@@ -29,18 +29,18 @@ $(function(){
 		});
 
 		// custom select box
-		//$('.select').selectric();
-
-		// custom select box in table
-		//$('.tb-form-select').selectric();
+		$('.select').selectric();
 
 		// tree
-		$('.tree-item').data({
+		var $treeItem = $('.tree-item');
+
+		$treeItem.data({
 			'fold' : 'true',
 			'select' : 'false'
-		});
+		})
 
-		$('.js-fold').on('click', function(){
+		//$('.js-fold').on('click', function(){
+		$(document).on('click', '.js-fold', function(){
 
 			var $clickTreeItem = $(this).parent('.tree-item');
 			var $clickTreeList = $clickTreeItem.parent('.tree-list');
@@ -79,6 +79,18 @@ $(function(){
 		var $wrapper = $('.wrapper.fix-height');
 		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
 		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
+
+		// icon chart
+		$('.view-chart').data('select', 'false').on('click', function(){
+
+			if( $(this).data('select') == 'false' ){
+				$(this).addClass('on').data('select', 'true');
+			} else {
+				$(this).removeClass('on').data('select', 'false');
+			}
+
+		});
+
 	})();
 
 	// open layer popup

@@ -21,6 +21,7 @@
 	&-user {
 		float:right;
 		margin-top:10px;
+		position:relative;
 
 		&-name {
 			//text-align:right;
@@ -67,14 +68,27 @@
 
 			&-submenu{
 				display:none;
+
+				position:absolute;
+				width:100%;
 				//text-align:right;
 				padding:5px 3px;
 				border:1px solid $light-gray;
 				border-top:none;
 				background:#141414;
+				box-sizing:border-box;
 
 				&.on{
 					display:block;
+				}
+
+				.submenu-link{
+
+					color:$dark-gray;
+
+					&:hover {
+					color: $white;
+					}
 				}
 			}
 		}

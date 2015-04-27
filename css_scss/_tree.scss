@@ -37,6 +37,11 @@
     }
   }
 
+  &-radio,
+  &-check{
+    margin-left:5px;
+  }
+
   &-list{
     position:relative;
     padding-bottom:15px;

@@ -52,3 +52,38 @@
   overflow-x:hidden;
   overflow-y:auto;
 }
+
+.chart{
+
+  &-view {
+    width: 25px;
+    height: 25px;
+
+    display: inline-block;
+
+    line-height: 25px;
+    text-indent: -99999em;
+
+    border: 0;
+
+    background: url(../images/icon_chart.png) no-repeat 0 -40px;
+
+    &.on {
+      background-position: 0 0;
+    }
+  }
+
+  &-delete{
+    width: 25px;
+    height: 25px;
+
+    display: inline-block;
+
+    line-height: 25px;
+    text-indent: -99999em;
+
+    border: 0;
+
+    background: url(../images/icon_btn_delete.png) no-repeat 0 0;
+  }
+}
