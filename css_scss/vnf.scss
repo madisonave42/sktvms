@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 .contents-section{
 
   &.general{
@@ -39,6 +42,59 @@
   &.instance-list{
 
     margin-bottom:6px;
+  }
+
+}
+
+.vnf {
+  &-btn-refresh {
+    @include size(24, 30);
+    background:url(../images/ico_refresh.png) no-repeat 50% 50%;
+    border:0;
+    text-indent:-9999px;
+  }
+
+  &-icon {
+
+    &-green,
+    &-red {
+      position:relative;
+      padding-left:20px;
+
+      &:after {
+        @include size(13);
+        content:"";
+        position:absolute;
+        top:50%;
+        left:0;
+        display:block;
+        margin-top:-7px;
+        border-radius:100%;
+        background:$light-green;
+      }
+
+    }
+
+    &-red {
+
+      &:after {
+        background:$red;
+      }
+
+    }
+
+    &-loading {
+      position:relative;
+      padding-left:22px;
+      background:url(../images/ico_spinner.gif) no-repeat 0 50%;
+    }
+
+    &-warn {
+      position:relative;
+      padding-left:22px;
+      background:url(../images/ico_caution.png) no-repeat 0 50%;
+    }
+
   }
 
 }

@@ -156,7 +156,7 @@
 				<div class="left-float">
 
 					<select class="select default left-float-left">
-						<option>전체 NS</option>
+						<option>전체 NS</option>z
 					</select>
 
 					<select class="select default left-float-left">
@@ -171,12 +171,9 @@
 
 				<div class="right-float">
 
-					<button type="button" class="btn-fill-orange left-float left">Enable</button>
-					<button type="button" class="btn-stroke-light left-float left group">Disable</button>
-
-					<button type="button" class="btn-stroke-dark left-float left">패키지등록</button>
-					<button type="button" class="btn-stroke-orange left-float">패키지삭제</button>
-
+					<button type="button" class="btn-stroke-light left-float left" disabled="disabled">Instance 삭제</button>
+					<button type="button" class="btn-stroke-orange left-float left">Instance 삭제</button>
+					<button type="button" class="vnf-btn-refresh left-float">새로고침</button>
 				</div>
 
 			</div>
@@ -190,11 +187,13 @@
 						<col width="50px" />
 						<col width="60px" />
 						<col width="190px" />
+						<col width="150px" />
+						<col width="140px" />
+						<col width="110px" />
+						<col width="110px" />
 						<col width="190px" />
-						<col width="140px" />
-						<col width="110px" />
-						<col width="110px" />
-						<col width="140px" />
+						<col width="150px" />
+						<col width="120px" />
 						<col width="auto" />
 						<col width="75px" />
 					</colgroup>
@@ -209,13 +208,14 @@
 							</th>
 							<th scope="col" class="vt-table-th">No</th>
 							<th scope="col" class="vt-table-th">
-								<select class="tb-form-select">
-									<option>Package Name</option>
-									<option>MSS</option>
-								</select>
+								<div class="left-float">VNF Instance Name</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">Create Time</div>
+								<div class="left-float">NS Name</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
@@ -236,14 +236,28 @@
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">Status</div>
+								<div class="left-float">Favor</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">VNF Instance 수</div>
+								<div class="left-float">Create Time</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">State</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Job</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
@@ -254,23 +268,77 @@
 						</tr>
 					</thead>
 
-					<tr>
-						<td class="vt-table-td center">
-							<div class="check-wrap center">
-								<input id="chk-label-2" class="check-box" type="checkbox">
-								<label for="chk-label-2" class="check-label blind">선택</label>
-							</div>
-						</td>
-						<td class="vt-table-td">1</td>
-						<td class="vt-table-td">MSS</td>
-						<td class="vt-table-td">2015/02/12 13:22:03</td>
-						<td class="vt-table-td">Telcoware</td>
-						<td class="vt-table-td">1.0.0</td>
-						<td class="vt-table-td">Enabled</td>
-						<td class="vt-table-td">2</td>
-						<td class="vt-table-td"></td>
-						<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
-					</tr>
+					<tbody>
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-2" class="check-box" type="checkbox">
+									<label for="chk-label-2" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">MSS</td>
+							<td class="vt-table-td">HD Voice</td>
+							<td class="vt-table-td">Telcoware</td>
+							<td class="vt-table-td">1.0.0</td>
+							<td class="vt-table-td">Gold</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">
+								<div class="vnf-icon-green">In-Service</div>
+							</td>
+							<td class="vt-table-td">-</td>
+							<td class="vt-table-td"></td>
+							<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+						</tr>
+
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-3" class="check-box" type="checkbox" disabled="disabled">
+									<label for="chk-label-3" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">MSS</td>
+							<td class="vt-table-td">HD Voice</td>
+							<td class="vt-table-td">Telcoware</td>
+							<td class="vt-table-td">1.0.0</td>
+							<td class="vt-table-td">Gold</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">
+								<div class="vnf-icon-red">Error</div>
+							</td>
+							<td class="vt-table-td">
+								<div class="vnf-icon-loading">Instantiation</div>
+							</td>
+							<td class="vt-table-td"></td>
+							<td class="vt-table-td center"><button type="button" class="tb-form-btn-del" disabled="disabled">삭제</button></td>
+						</tr>
+
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-4" class="check-box" type="checkbox">
+									<label for="chk-label-4" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">MSS</td>
+							<td class="vt-table-td">HD Voice</td>
+							<td class="vt-table-td">Telcoware</td>
+							<td class="vt-table-td">1.0.0</td>
+							<td class="vt-table-td">Gold</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">
+								<div class="vnf-icon-red">Stopped</div>
+							</td>
+							<td class="vt-table-td">
+								<div class="vnf-icon-warn">Termination</div>
+							</td>
+							<td class="vt-table-td"></td>
+							<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+						</tr>
+					</tbody>
 
 				</table>
 			</div>

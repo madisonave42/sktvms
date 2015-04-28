@@ -4,9 +4,9 @@
 
 @import "reset";
 
-$green:#00b9b0;
-$red:#e70000;
-$dark-blue:#0057b9;
+$pop-green:#00b9b0;
+$pop-red:#e70000;
+$pop-dark-blue:#0057b9;
 
 .input-text{
 	color:$dark-gray;
@@ -215,6 +215,16 @@ $dark-blue:#0057b9;
   background:$white;
   z-index:100;
 
+  &-small-width {
+    margin-left:-270px;
+    width:540px;
+  }
+
+  &-wide-width {
+    margin-left:-500px;
+    width:1000px;
+  }
+
   &.on {
     display:block;
   }
@@ -223,7 +233,7 @@ $dark-blue:#0057b9;
     margin-bottom:20px;
     font-size:20px;
     font-weight:bold;
-    color:$green;
+    color:$pop-green;
     line-height:1;
   }
 
@@ -298,6 +308,19 @@ $dark-blue:#0057b9;
       font-weight:bold;
     }
   }
+
+  &-msg {
+    color:$dark;
+    font-weight:bold;
+    line-height:1.4;
+
+    &-icon {
+      margin-top:3px;
+      margin-right:8px;
+    }
+
+  }
+
 }
 
 .width {
@@ -361,7 +384,7 @@ $dark-blue:#0057b9;
   }
 
   &-red {
-    color:$red;
+    color:$pop-red;
   }
 
   &-blue {
@@ -377,7 +400,7 @@ $dark-blue:#0057b9;
 }
 /* popup common : E */
 
-/* add vnf package : s */
+/* add vnf package : S */
 .width-add-pkg.input-form {
   width:517px;
 }
@@ -413,13 +436,13 @@ $dark-blue:#0057b9;
 
     &-ok {
       padding-left:14px;
-      color:$dark-blue;
+      color:$pop-dark-blue;
       background:url(../images/popup/bg_dots_blue.png) no-repeat 0 center;
     }
 
     &-fail {
       padding-left:14px;
-      color:$red;
+      color:$pop-red;
       background:url(../images/popup/bg_dots_red.png) no-repeat 0 center;
     }
 
@@ -473,5 +496,5 @@ $dark-blue:#0057b9;
 //  overflow-x:hidden;
 //  overflow-y:auto;
 }
-/* add vnf package : e */
+/* add vnf package : E */
 

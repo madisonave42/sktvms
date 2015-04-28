@@ -313,6 +313,14 @@ img {
   background: #ffffff;
   z-index: 100;
 }
+.popup-small-width {
+  margin-left: -270px;
+  width: 540px;
+}
+.popup-wide-width {
+  margin-left: -500px;
+  width: 1000px;
+}
 .popup.on {
   display: block;
 }
@@ -396,6 +404,15 @@ img {
   font-size: 12px;
   font-weight: bold;
 }
+.popup-msg {
+  color: #576363;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.popup-msg-icon {
+  margin-top: 3px;
+  margin-right: 8px;
+}
 
 .width-small {
   width: 95px;
@@ -447,7 +464,7 @@ img {
 }
 
 /* popup common : E */
-/* add vnf package : s */
+/* add vnf package : S */
 .width-add-pkg.input-form {
   width: 517px;
 }
@@ -534,6 +551,6 @@ img {
   height: 110px;
 }
 
-/* add vnf package : e */
+/* add vnf package : E */
 
 /*# sourceMappingURL=popup.css.map */

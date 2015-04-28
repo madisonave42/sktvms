@@ -858,6 +858,9 @@ table.emphasis > tbody > tr > td.email > span {
   box-sizing: border-box;
   cursor: pointer;
 }
+.btn-stroke-light:disabled {
+  cursor: default;
+}
 .btn-stroke-light-gray {
   width: 120px;
   height: 30px;
@@ -957,6 +960,9 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .check-box.small.partial:checked + .check-label:after {
   background: #c2cbcb;
+}
+.check-box:disabled + .check-label:after {
+  background-color: #c2cbcb;
 }
 .check-label {
   display: block;

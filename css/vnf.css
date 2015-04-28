@@ -27,4 +27,41 @@
   margin-bottom: 6px;
 }
 
+.vnf-btn-refresh {
+  width: 24px;
+  height: 30px;
+  background: url(../images/ico_refresh.png) no-repeat 50% 50%;
+  border: 0;
+  text-indent: -9999px;
+}
+.vnf-icon-green, .vnf-icon-red {
+  position: relative;
+  padding-left: 20px;
+}
+.vnf-icon-green:after, .vnf-icon-red:after {
+  width: 13px;
+  height: 13px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  margin-top: -7px;
+  border-radius: 100%;
+  background: #54d9ac;
+}
+.vnf-icon-red:after {
+  background: #e70000;
+}
+.vnf-icon-loading {
+  position: relative;
+  padding-left: 22px;
+  background: url(../images/ico_spinner.gif) no-repeat 0 50%;
+}
+.vnf-icon-warn {
+  position: relative;
+  padding-left: 22px;
+  background: url(../images/ico_caution.png) no-repeat 0 50%;
+}
+
 /*# sourceMappingURL=vnf.css.map */
