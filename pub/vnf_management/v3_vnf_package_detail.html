@@ -147,47 +147,48 @@
 	</div>
 
 	<div class="main-content">
+
 		<div class="wrapper">
 
-		<section class="contents-section">
-
-			<div class="contents-section-top">
-
-				<div class="left-float">
-
-					<select id="selectboxid" class="select default left-float-left">
-
-					</select>
-
-					<select id="selectboxid2" class="select default left-float-left">
-
-					</select>
-
-					<select id="selectboxid3" class="select default left-float">
-
-					</select>
-
-					<script>
-						$.get('./select.html', function(data){
-							$('#selectboxid').html(data).selectric();
-						});
-
-						$.get('./select2.html', function(data){
-							$('#selectboxid2').html(data).selectric();
-						});
-
-						$.get('./select3.html', function(data){
-							$('#selectboxid3').html(data).selectric();
-						});
-					</script>
-
+			<section class="contents-section general">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">General</h3>
 				</div>
+				<div></div>
+			</section>
 
-			</div>
+			<section class="contents-section config">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Config Parameter</h3>
+				</div>
+			</section>
 
-		</section>
+			<section class="contents-section upgrade">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Upgrade</h3>
+				</div>
+			</section>
+
+			<section class="contents-section flavors">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Flavors</h3>
+				</div>
+			</section>
+
+			<section class="contents-section auto-scaling">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Auto Scaling Policy</h3>
+				</div>
+			</section>
+
+			<section class="contents-section instance-list">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">VNF Instance List</h3>
+				</div>
+			</section>
 
 		</div>
+
 	</div>
 
 </section>

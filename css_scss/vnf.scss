@@ -1,0 +1,30 @@
+.contents-section{
+
+  &.general{
+    width:896px;
+    //height:225px;
+    box-sizing:border-box;
+  }
+
+  &.config{
+    width:600px;
+    //height:225px;
+    box-sizing:border-box;
+  }
+
+  &.upgrade{
+    width:252px;
+    //height:225px;
+    box-sizing:border-box;
+  }
+
+  &.flavors{
+  }
+
+  &.auto-scaling{
+  }
+
+  &.instance-list{
+  }
+
+}

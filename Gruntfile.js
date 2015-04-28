@@ -18,6 +18,16 @@ module.exports = function(grunt) {
     		}
     	},
 
+			login: {
+				cwd:'pub_src/login',
+				src: ['*.html'],
+				dest: 'pub/login',
+				options: {
+					flatten:true,
+					includePath: 'pub_src/_include'
+				}
+			},
+
 			admin: {
 				cwd:'pub_src/admin',
 				src: ['*.html'],
