@@ -107,16 +107,30 @@ $dark-blue:#0057b9;
 
   @include form-frame(100%, $box-default-height, 1px, solid, $light-gray, 2px);
 
+  display:inline-block;
+  box-sizing: border-box;
+  padding:0 5px;
+
+  color:#888;
+  font-size:11px;
+  font-weight:bold;
+  text-align:left;
+
+  cursor:text;
+
+}
+
+.file-form{
+
+  @include form-frame(100%, $box-default-height, 1px, solid, $light-gray, 2px);
+
 	display:inline-block;
   box-sizing: border-box;
-	padding:0 5px;
+  text-align:left;
 
 	color:#888;
 	font-size:11px;
 	font-weight:bold;
-	text-align:left;
-
-	cursor:text;
 
 }
 
@@ -291,6 +305,7 @@ $dark-blue:#0057b9;
     width:95px;
 
     & + .input-form,
+    & + .file-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 95px);
@@ -301,6 +316,7 @@ $dark-blue:#0057b9;
     width:118px;
 
     & + .input-form,
+    & + .file-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 118px);
@@ -311,6 +327,7 @@ $dark-blue:#0057b9;
     width:170px;
 
     & + .input-form,
+    & + .file-form,
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 170px);
@@ -409,15 +426,52 @@ $dark-blue:#0057b9;
   }
 
   &-detail {
+    position:relative;
     height:170px;
-    overflow-x:hidden;
-    overflow-y:auto;
+    // overflow-x:hidden;
+    // overflow-y:auto;
+
   }
+}
+
+.stage01:after,
+.stage02:after,
+.stage03:after,
+.stage04:after,
+.stage05:after {
+  width:10px;
+  height:10px;
+  content:"";
+  position:absolute;
+  top:10px;
+  left:-7px;
+  display:block;
+  background:$white;
+  border-left:1px solid $light-gray;
+  border-bottom:1px solid $light-gray;
+  transform:rotate(45deg);
+}
+
+.stage01:after {
+  top:10px;
+}
+.stage02:after {
+  top:43px;
+}
+.stage03:after {
+  top:77px;
+}
+.stage04:after {
+  top:110px;
+}
+.stage05:after {
+  top:145px;
 }
 
 .updatable-list {
   height:110px;
-//	overflow-x:hidden;
+//  overflow-x:hidden;
 //  overflow-y:auto;
 }
 /* add vnf package : e */
+
