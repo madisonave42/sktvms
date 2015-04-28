@@ -60,6 +60,10 @@ html {
   background-color: #e6eaeb;
 }
 
+html.login {
+  background: #fff;
+}
+
 body {
   font-family: "ubuntu", "Malgun Gothic", sans-serif;
   font-size: 13px;
@@ -417,7 +421,7 @@ img {
 }
 
 .contents-section {
-  width: 1720px;
+  width: 1718px;
   padding: 10px 20px;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
@@ -453,6 +457,165 @@ img {
 .section-heading.color {
   font-size: 16px;
   color: #00b9b0;
+}
+.section-heading.eng {
+  font-size: 20px;
+}
+
+.login_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -314px;
+  margin-top: -166px;
+  line-height: 1;
+}
+
+.login_wrap .login {
+  position: relative;
+  padding: 130px 97px 0px 98px;
+  height: 200px;
+  width: 431px;
+  border: 1px solid #757575;
+  border-top: 1px solid #b2b2b2;
+}
+
+.login_wrap .login:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 86px;
+  background: #fafafa url(../images/logo_sk_telecom.png) 50% 21px no-repeat;
+}
+
+.login_wrap .login h1 {
+  font-size: 40px;
+  color: #242424;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login_wrap .login table.emphasis {
+  margin-top: 35px;
+  display: block;
+}
+
+.login_wrap .login table.emphasis > tbody > tr > th,
+.login_wrap .login table.emphasis > tbody > tr > td {
+  border-bottom: 8px solid #fff;
+}
+
+.login_wrap .login table.emphasis > tbody > tr > td input.btn {
+  width: 100px;
+  height: 76px;
+  color: #fffff2;
+  background-color: #ff743d;
+  line-height: 70px;
+  border: 2px solid #d76500;
+  font-weight: bold;
+}
+
+/* table emphasis */
+table.emphasis {
+  width: 100%;
+}
+
+table.emphasis > tbody > tr > th {
+  padding: 0 15px 0 15px;
+  height: 34px;
+  font-size: 13px;
+  vertical-align: top;
+  text-align: left;
+  line-height: 34px;
+  border-bottom: 8px solid #fcfcfd;
+  background: #fceee9 url(../images/bg_label_line.gif) repeat-y;
+}
+
+table.emphasis > tbody > tr > th > label {
+  font-weight: bold;
+  color: #000;
+}
+
+table.emphasis > tbody > tr > td {
+  padding: 0 0 0 10px;
+  height: 34px;
+  font-size: 13px;
+  vertical-align: top;
+  border-bottom: 8px solid #fcfcfd;
+}
+
+table.emphasis > tbody > tr > td input[type=text],
+table.emphasis > tbody > tr > td input[type=password],
+table.emphasis > tbody > tr > td input[type=file] {
+  box-sizing: border-box;
+  padding-left: 10px;
+  width: 100%;
+  font-size: 13px;
+  /*line-height: 32px;*/
+  border: 1px solid #ddd;
+  height: 34px;
+}
+
+table.emphasis > tbody > tr > td input[type=file] {
+  line-height: 23px;
+  padding: 6px 0 5px 10px;
+  height: 37px;
+}
+
+table.emphasis > tbody > tr > td input[readonly=readonly] {
+  background-color: #eee;
+}
+
+table.emphasis > tbody > tr > td input.inline {
+  width: auto;
+}
+
+table.emphasis > tbody > tr > td > p {
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+table.emphasis > tbody > tr > td > p:first-child {
+  margin-top: 0;
+}
+
+table.emphasis > tbody > tr > td > p > input[type=text] {
+  float: left;
+}
+
+table.emphasis > tbody > tr > td select {
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  border: 1px solid #ddd;
+}
+
+table.emphasis > tbody > tr > td.phone select,
+table.emphasis > tbody > tr > td.phone input {
+  float: left;
+  width: 30%;
+}
+
+table.emphasis > tbody > tr > td.phone > span {
+  float: left;
+  width: 5%;
+  text-align: center;
+  line-height: 32px;
+}
+
+table.emphasis > tbody > tr > td.email select,
+table.emphasis > tbody > tr > td.email input {
+  float: left;
+  width: 47%;
+}
+
+table.emphasis > tbody > tr > td.email > span {
+  float: left;
+  width: 6%;
+  text-align: center;
+  line-height: 32px;
 }
 
 .pagination {

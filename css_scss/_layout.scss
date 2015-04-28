@@ -371,7 +371,7 @@
 
 .contents-section{
 	@include clear();
-	width:1720px;
+	width:1718px;
 	padding:10px 20px;
 	border:1px solid $light-gray;
 	border-radius:3px;
@@ -396,5 +396,9 @@
 	&.color{
 		font-size:16px;
 		color:$blue-green;
+	}
+
+	&.eng{
+		font-size:20px;
 	}
 }

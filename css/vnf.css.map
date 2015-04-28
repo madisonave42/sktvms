@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEE,yBAAS;EACP,KAAK,EAAC,KAAK;EAEX,UAAU,EAAC,UAAU;;AAGvB,wBAAQ;EACN,KAAK,EAAC,KAAK;EAEX,UAAU,EAAC,UAAU;;AAGvB,yBAAS;EACP,KAAK,EAAC,KAAK;EAEX,UAAU,EAAC,UAAU",
+"sources": ["../css_scss/vnf.scss"],
+"names": [],
+"file": "vnf.css"
+}

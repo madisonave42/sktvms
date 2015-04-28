@@ -1,0 +1,14 @@
+.contents-section.general {
+  width: 896px;
+  box-sizing: border-box;
+}
+.contents-section.config {
+  width: 600px;
+  box-sizing: border-box;
+}
+.contents-section.upgrade {
+  width: 252px;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=vnf.css.map */

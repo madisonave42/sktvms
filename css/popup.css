@@ -60,6 +60,10 @@ html {
   background-color: #e6eaeb;
 }
 
+html.login {
+  background: #fff;
+}
+
 body {
   font-family: "ubuntu", "Malgun Gothic", sans-serif;
   font-size: 13px;
