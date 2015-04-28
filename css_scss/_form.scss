@@ -93,6 +93,10 @@
   &-stroke {
     &-light {
       @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $white-gray, $white-gray, $white, 2px);
+
+      &:disabled {
+        cursor:default;
+      }
     }
     &-light-gray {
       @include btn($box-default-width, $box-default-height, $box-default-height, 1px solid $light-gray, $dark-gray, $white, 2px);

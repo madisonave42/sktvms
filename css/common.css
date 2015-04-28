@@ -779,6 +779,9 @@ table.emphasis > tbody > tr > td.email > span {
   box-sizing: border-box;
   cursor: pointer;
 }
+.btn-stroke-light:disabled {
+  cursor: default;
+}
 .btn-stroke-light-gray {
   width: 120px;
   height: 30px;
