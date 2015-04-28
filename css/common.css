@@ -871,6 +871,9 @@ table.emphasis > tbody > tr > td.email > span {
 .check-box.small.partial:checked + .check-label:after {
   background: #c2cbcb;
 }
+.check-box:disabled + .check-label:after {
+  background-color: #c2cbcb;
+}
 .check-label {
   display: block;
   height: 25px;

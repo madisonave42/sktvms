@@ -158,6 +158,10 @@
     &.small.partial:checked + .check-label:after{
       background:$light-gray;
     }
+
+    &:disabled + .check-label:after {
+      background-color:$light-gray;
+    }
   }
 
   &-label{

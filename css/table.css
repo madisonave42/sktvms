@@ -120,6 +120,10 @@
   text-indent: -9999px;
   background: #ee6247 url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
 }
+.tb-form-btn-del:disabled {
+  background-color: #f6d4cd;
+  cursor: default;
+}
 
 .selectric-tb-form-select {
   width: 95%;

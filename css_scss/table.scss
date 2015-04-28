@@ -120,6 +120,11 @@
 			@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
 			text-indent: -9999px;
 			background: $orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+
+			&:disabled {
+				background-color:$white-orange;
+				cursor:default;
+			}
 		}
 	}
 }
