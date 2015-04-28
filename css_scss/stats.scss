@@ -46,18 +46,7 @@
       box-sizing:border-box;
     }
 
-    &-inner{
-      position:relative;
-      width:100%;
-      height:calc(100% - 45px);
-      overflow:auto;
 
-      padding:20px;
-
-      border:1px solid #c2cbcb;
-      border-radius:3px;
-      box-sizing:border-box;
-    }
 
     .ui-resizable-handle.ui-resizable-s{
       position:absolute;

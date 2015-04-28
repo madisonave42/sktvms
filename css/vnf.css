@@ -1,14 +1,30 @@
 .contents-section.general {
   width: 896px;
+  height: 230px;
+  margin-bottom: 6px;
   box-sizing: border-box;
 }
 .contents-section.config {
   width: 600px;
+  height: 230px;
+  margin-bottom: 6px;
   box-sizing: border-box;
 }
 .contents-section.upgrade {
   width: 252px;
+  height: 230px;
+  margin-bottom: 6px;
   box-sizing: border-box;
+}
+.contents-section.flavors {
+  margin-bottom: 6px;
+  clear: both;
+}
+.contents-section.auto-scaling {
+  margin-bottom: 6px;
+}
+.contents-section.instance-list {
+  margin-bottom: 6px;
 }
 
 /*# sourceMappingURL=vnf.css.map */

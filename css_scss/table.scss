@@ -5,8 +5,12 @@
 	width: 100%;
 	border-top: 2px solid $light-gray;
 
+	&.out-border{
+		border-top:0;
+	}
+
 	&-th {
-		height: 39px;
+		height: 40px;
 		position:relative;
 
 		padding-left:10px;
@@ -80,6 +84,26 @@
 	}
 }
 
+.hr-table{
+	border-top: 2px solid $light-gray;
+
+	&-th{
+		height:39px;
+		text-align:left;
+		padding-left:10px;
+		border-bottom: 1px solid $clean-gray;
+		background:$white-bg-gray;
+	}
+
+	&-td{
+		height:39px;
+		padding-left:10px;
+
+		font-weight:bold;
+		border-bottom: 1px solid $clean-gray;
+	}
+}
+
 .tb-form {
 
 	&-btn {
@@ -124,21 +148,3 @@
 	}
 }
 
-.selectric{
-	&-tb-form{
-		&-select{
-			width:95%;
-
-			.selectric{
-				border:0;
-
-				.label{
-					margin-left:0;
-					font-size:$font-size-base;
-					font-weight:bold;
-					color:$dark;
-				}
-			}
-		}
-	}
-}

@@ -2,8 +2,11 @@
   width: 100%;
   border-top: 2px solid #c2cbcb;
 }
+.vt-table.out-border {
+  border-top: 0;
+}
 .vt-table-th {
-  height: 39px;
+  height: 40px;
   position: relative;
   padding-left: 10px;
   font-weight: bold;
@@ -56,7 +59,24 @@
 }
 .vt-table.stats {
   width: auto;
-  background: #fbfbfb;
+  background: #f5f8f8;
+}
+
+.hr-table {
+  border-top: 2px solid #c2cbcb;
+}
+.hr-table-th {
+  height: 39px;
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #f5f8f8;
+}
+.hr-table-td {
+  height: 39px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .tb-form-btn-sort {
@@ -119,19 +139,6 @@
   cursor: pointer;
   text-indent: -9999px;
   background: #ee6247 url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
-}
-
-.selectric-tb-form-select {
-  width: 95%;
-}
-.selectric-tb-form-select .selectric {
-  border: 0;
-}
-.selectric-tb-form-select .selectric .label {
-  margin-left: 0;
-  font-size: 13px;
-  font-weight: bold;
-  color: #576363;
 }
 
 /*# sourceMappingURL=table.css.map */
