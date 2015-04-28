@@ -180,6 +180,24 @@ img {
   cursor: text;
 }
 
+.file-form {
+  width: 100%;
+  height: 30px;
+  padding-top: 2.5px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: left;
+  color: #888;
+  font-size: 11px;
+  font-weight: bold;
+}
+
 .btn-fill-orange {
   width: 120px;
   height: 30px;
@@ -378,19 +396,19 @@ img {
 .width-small {
   width: 95px;
 }
-.width-small + .input-form, .width-small + .popup-gray-wrap, .width-small + .popup-white-wrap {
+.width-small + .input-form, .width-small + .file-form, .width-small + .popup-gray-wrap, .width-small + .popup-white-wrap {
   width: calc(100% - 95px);
 }
 .width-normal {
   width: 118px;
 }
-.width-normal + .input-form, .width-normal + .popup-gray-wrap, .width-normal + .popup-white-wrap {
+.width-normal + .input-form, .width-normal + .file-form, .width-normal + .popup-gray-wrap, .width-normal + .popup-white-wrap {
   width: calc(100% - 118px);
 }
 .width-wide {
   width: 170px;
 }
-.width-wide + .input-form, .width-wide + .popup-gray-wrap, .width-wide + .popup-white-wrap {
+.width-wide + .input-form, .width-wide + .file-form, .width-wide + .popup-gray-wrap, .width-wide + .popup-white-wrap {
   width: calc(100% - 170px);
 }
 
@@ -466,9 +484,46 @@ img {
   background: url(../images/popup/bg_dots_red.png) no-repeat 0 center;
 }
 .add-vnf-detail {
+  position: relative;
   height: 170px;
-  overflow-x: hidden;
-  overflow-y: auto;
+}
+
+.stage01:after,
+.stage02:after,
+.stage03:after,
+.stage04:after,
+.stage05:after {
+  width: 10px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -7px;
+  display: block;
+  background: #ffffff;
+  border-left: 1px solid #c2cbcb;
+  border-bottom: 1px solid #c2cbcb;
+  transform: rotate(45deg);
+}
+
+.stage01:after {
+  top: 10px;
+}
+
+.stage02:after {
+  top: 43px;
+}
+
+.stage03:after {
+  top: 77px;
+}
+
+.stage04:after {
+  top: 110px;
+}
+
+.stage05:after {
+  top: 145px;
 }
 
 .updatable-list {
