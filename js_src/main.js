@@ -69,20 +69,10 @@ $(function(){
 
 		});
 
-		// open layerpop
-		$('.js-open-popup').on('click', function(e) {
-			$('.dimmed').addClass('on');
-			$('.popup').addClass('on');
-			e.preventDefault();
-		});
+	})();
 
-		// close layerpop
-		$('.js-close-popup').on('click', function(e) {
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
-			e.preventDefault();
-		});
-
+	// calendar
+	(function(){
 		// calendar - initialize
 		$('.js-cal-start, .js-cal-end').datepicker({
 			dateFormat: 'yy-mm-dd',
@@ -107,7 +97,6 @@ $(function(){
 		$('.js-btn-cal-end').on('click', function(e) {
 			$('.js-cal-end').datepicker('show');
 		});
-
 	})();
 
 	/*
@@ -140,8 +129,6 @@ $(function(){
 			prevMainHeight = currentMainHeight;
 			currentMainHeight = mainHeight;
 			deltaHeight = prevMainHeight - currentMainHeight;
-
-
 
 			console.log('p : ' + prevMainHeight);
 			console.log('c : ' + currentMainHeight);
