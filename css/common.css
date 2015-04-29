@@ -739,6 +739,102 @@ table.emphasis > tbody > tr > td.email > span {
   background: url(../images/icon_btn_delete.png) no-repeat 0 0;
 }
 
+.ui-datepicker {
+  margin-top: 2px;
+  padding: 10px;
+  border: 2px solid #ee6247;
+  background: #ffffff;
+}
+.ui-datepicker-header {
+  position: relative;
+  padding: 10px 0;
+  background: #f5f8f8;
+  border-radius: 2px;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #c2cbcb;
+  text-indent: -9999px;
+  background: #ffffff url(../images/sprite_pagination.png) no-repeat;
+  cursor: pointer;
+}
+.ui-datepicker-prev {
+  left: 10px;
+  background-position: -28px 0;
+}
+.ui-datepicker-next {
+  right: 10px;
+  background-position: -56px 0;
+}
+.ui-datepicker-title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #576363;
+  text-align: center;
+}
+.ui-datepicker-calendar {
+  width: 259px;
+}
+.ui-datepicker-calendar th,
+.ui-datepicker-calendar td {
+  width: 37px;
+  height: 37px;
+}
+.ui-datepicker-calendar th {
+  font-weight: bold;
+}
+.ui-datepicker-calendar span,
+.ui-datepicker-calendar a {
+  position: relative;
+  display: block;
+  height: 100%;
+  line-height: 37px;
+  text-align: center;
+  color: #576363;
+}
+.ui-datepicker-calendar th span[title="Saturday"],
+.ui-datepicker-calendar .ui-datepicker-sat a {
+  color: #479dee;
+}
+.ui-datepicker-calendar th span[title="Sunday"],
+.ui-datepicker-calendar .ui-datepicker-sun a {
+  color: #e70000;
+}
+.ui-datepicker .ui-state-highlight {
+  color: #ffffff;
+  font-weight: bold;
+}
+.ui-datepicker .ui-state-highlight:after {
+  width: 29px;
+  height: 29px;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: block;
+  border-radius: 100%;
+  background: #ee6247;
+  z-index: -1;
+}
+.ui-datepicker .ui-state-active:after {
+  width: 28px;
+  height: 28px;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: block;
+  border: 1px solid #ee6247;
+  border-radius: 100%;
+}
+
 .selectric-mini {
   width: 50px;
 }

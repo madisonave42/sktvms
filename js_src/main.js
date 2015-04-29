@@ -81,20 +81,27 @@ $(function(){
 			e.preventDefault();
 		});
 
-		// calendar - start date
-		$('.js-cal-start').datepicker({
-			dateFormat: "yy-mm-dd"
+		// calendar - initialize
+		$('.js-cal-start, .js-cal-end').datepicker({
+			dateFormat: 'yy-mm-dd',
+			beforeShowDay: function(date) {
+				var className = '';
+				if (date.getDay() == 6) {
+					className = 'ui-datepicker-sat';
+				}
+				if (date.getDay() == 0) {
+					className = 'ui-datepicker-sun';
+				}
+				return [true, className];
+			}
 		});
 
+		// calendar - start date
 		$('.js-btn-cal-start').on('click', function(e) {
 			$('.js-cal-start').datepicker('show');
 		});
 
 		// calendar - end date
-		$('.js-cal-end').datepicker({
-			dateFormat: "yy-mm-dd"
-		});
-
 		$('.js-btn-cal-end').on('click', function(e) {
 			$('.js-cal-end').datepicker('show');
 		});
