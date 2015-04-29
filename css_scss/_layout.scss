@@ -4,7 +4,7 @@
 	@include clear();
 
 	&.fix-height{
-		height:910px;
+		min-height:500px;
 	}
 }
 
@@ -315,13 +315,13 @@
 	min-width:1760px;
 
 	&-header {
-		@include size(auto, 72);
+		@include size(auto, 73);
 		border-bottom:1px solid #708080;
 		background-color:$white;
 	}
 
 	&-content {
-		padding:5px 0 20px;
+		padding:10px 0 15px;
 		border-top:3px solid #cbcfd2;
 	}
 }
