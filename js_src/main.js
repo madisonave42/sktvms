@@ -67,6 +67,38 @@ $(function(){
 			}
 		});
 
+		// open layerpop
+		$('.js-open-popup').on('click', function(e) {
+			$('.dimmed').addClass('on');
+			$('.popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// close layerpop
+		$('.js-close-popup').on('click', function(e) {
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
+			e.preventDefault();
+		});
+
+		// calendar - start date
+		$('.js-cal-start').datepicker({
+			dateFormat: "yy-mm-dd"
+		});
+
+		$('.js-btn-cal-start').on('click', function(e) {
+			$('.js-cal-start').datepicker('show');
+		});
+
+		// calendar - end date
+		$('.js-cal-end').datepicker({
+			dateFormat: "yy-mm-dd"
+		});
+
+		$('.js-btn-cal-end').on('click', function(e) {
+			$('.js-cal-end').datepicker('show');
+		});
+
 	})();
 
 	// vnf
@@ -89,23 +121,6 @@ $(function(){
 				$(this).removeClass('on').data('select', 'false');
 			}
 
-		});
-
-	})();
-
-	// open layer popup
-	(function(){
-
-		$('.js-open-popup').on('click', function(e) {
-			$('.dimmed').addClass('on');
-			$('.popup').addClass('on');
-			e.preventDefault();
-		});
-
-		$('.js-close-popup').on('click', function(e) {
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
-			e.preventDefault();
 		});
 
 	})();
