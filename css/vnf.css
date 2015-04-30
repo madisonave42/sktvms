@@ -20,6 +20,9 @@
   margin-bottom: 6px;
   clear: both;
 }
+.contents-section.flavors .topology {
+  height: 768px;
+}
 .contents-section.auto-scaling {
   margin-bottom: 6px;
 }
@@ -205,6 +208,13 @@
 }
 .state-box-normal {
   background: #00b9b0;
+}
+
+.topology-section.small {
+  width: 178px;
+  height: 158px;
+  border: 1px solid #c2cbcb;
+  border-radius: 3px;
 }
 
 /*# sourceMappingURL=vnf.css.map */

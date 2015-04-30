@@ -39,7 +39,7 @@
 }
 
 .dashboard {
-  min-height: 752px;
+  min-height: 756px;
 }
 .dashboard-list {
   position: absolute;
@@ -102,9 +102,12 @@
   width: 24px;
   height: 30px;
   padding: 0;
-  background: url(../images/ico_arrow_up.png) no-repeat 50% 50%;
+  background: url(../images/ico_arrow_up.png) no-repeat 0 0;
   border: 0;
   text-indent: -9999px;
+}
+.dashboard-btn-expand.expand {
+  background-position: 0 -31px;
 }
 .dashboard-icon-alarm-on, .dashboard-icon-alarm-off {
   width: 25px;

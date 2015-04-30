@@ -59,8 +59,7 @@
 }
 
 .dashboard {
-  min-height:752px;
-
+  min-height:756px;
 
   &-list {
     position:absolute;
@@ -124,9 +123,13 @@
   &-btn-expand {
     @include size(24, 30);
     padding:0;
-    background:url(../images/ico_arrow_up.png) no-repeat 50% 50%;
+    background:url(../images/ico_arrow_up.png) no-repeat 0 0;
     border:0;
     text-indent:-9999px;
+
+    &.expand{
+      background-position:0 -31px;
+    }
   }
 
   &-icon {

@@ -4,6 +4,7 @@
 
 // Constant
 var HEADER_HEIGHT = 160;
+var DASHBOARD_MIN_HEIGHT = 756;
 
 // Resize box with drag
 var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
@@ -115,28 +116,55 @@ var FoldTree = function($clickTreeItem, $clickTreeList, hasParentChild ){
 };
 
 // Resize dash board list to fit in height of window
-var ResizeDashboardList = function($divDashboard){
+var ResizeDashboardList = function( $divDashboard, $btnExpand ){
 
   // private
-  var graphHeight = 624;
+  var graphHeight = 628;
   var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
   var dashboardListHeight = mainHeight - graphHeight;
+
+  // Set expand button status data
+  $btnExpand.data('expand', 'false');
 
   // Set height of dashboard list in monitoring
   $divDashboard.css({height:dashboardListHeight});
 
-  this.resizeDashboardListFitWin = function(){
+  var _resizeDashboardListExpand = function(){
+    mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    if( mainHeight < DASHBOARD_MIN_HEIGHT ){
+      mainHeight = DASHBOARD_MIN_HEIGHT;
+    }
+    $divDashboard.css({height:mainHeight - 22});
+    $btnExpand.data( 'expand', 'true' );
+  };
+
+  var _resizeDashboardListReduce = function( $dashboardList ){
     mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
     dashboardListHeight = mainHeight - graphHeight;
     $divDashboard.css({height:dashboardListHeight});
+    $btnExpand.data( 'expand', 'false' );
+  };
+
+  var _resizeDashboardList = function(){
+    if( $btnExpand.data('expand') == 'false' ){
+      _resizeDashboardListReduce();
+    } else {
+      _resizeDashboardListExpand();
+    }
+  };
+
+  this.resizeDashboardListFitWin = function(){
+    _resizeDashboardList();
   };
 
   this.expandDashboardListHeight = function(){
-
+    $btnExpand.addClass('expand');
+    _resizeDashboardListExpand();
   };
 
   this.reduceDashboardListHeight = function(){
-
+    $btnExpand.removeClass('expand');
+    _resizeDashboardListReduce();
   };
 
 };

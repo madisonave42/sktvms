@@ -32,6 +32,10 @@
     margin-bottom:6px;
 
     clear:both;
+
+    .topology{
+      height:768px;
+    }
   }
 
   &.auto-scaling{
@@ -85,11 +89,9 @@
     }
 
     &-red {
-
       &:after {
         background:$red;
       }
-
     }
 
     &-loading {
@@ -272,4 +274,24 @@
   &-normal {
     background:$normal;
   }
+}
+
+.topology{
+
+  &-wrap{
+
+  }
+
+  &-section{
+
+    &.small{
+      width:178px;
+      height:158px;
+
+      border:1px solid $light-gray;
+      border-radius:3px;
+    }
+
+  }
+
 }
