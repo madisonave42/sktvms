@@ -336,8 +336,10 @@ img {
   border-bottom: 2px solid #becacc;
 }
 .popup-content:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .popup-content-section {
@@ -347,8 +349,10 @@ img {
   border-radius: 2px;
 }
 .popup-content-section:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .popup-bottom {
@@ -358,8 +362,10 @@ img {
   margin-top: 10px;
 }
 .popup-input-wrap:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .popup-input-wrap:first-child {
@@ -480,8 +486,10 @@ img {
   font-weight: bold;
 }
 .add-vnf-step-item:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .add-vnf-step-item:first-child {

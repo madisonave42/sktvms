@@ -30,6 +30,7 @@
 .vnf-btn-refresh {
   width: 24px;
   height: 30px;
+  padding: 0;
   background: url(../images/ico_refresh.png) no-repeat 50% 50%;
   border: 0;
   text-indent: -9999px;
