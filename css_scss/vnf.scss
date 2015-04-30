@@ -34,7 +34,7 @@
     clear:both;
 
     .topology{
-      height:768px;
+      height:858px;
     }
   }
 
@@ -280,16 +280,91 @@
 
   &-wrap{
 
+    width:1260px;
+    margin:100px auto 0;
+    @include clear();
+
   }
 
   &-section{
+    position:relative;
+
+    &.side{
+      width:180px;
+      margin-left:220px;
+
+      &.invert{
+        margin:0 220px 0 0;
+      }
+    }
+  }
+
+}
+
+.vm{
+
+  &-wrap{
+
+  }
+
+  &-section{
+    border:1px solid $light-gray;
+    border-radius:3px;
 
     &.small{
       width:178px;
-      height:158px;
+      min-height:158px;
 
-      border:1px solid $light-gray;
-      border-radius:3px;
+      &.center{
+        margin:0 auto;
+      }
+    }
+
+    &.large{
+      width:458px;
+      min-height:158px;
+
+      margin-top:40px;
+    }
+
+  }
+
+  &-line-label{
+
+    font-size:12px;
+
+    &.center{
+      margin:0 auto;
+    }
+
+    &.hr{
+      margin:107px auto 27px;
+    }
+
+    &.vt{
+      width:160px;
+
+      position:absolute;
+      top:0px;
+      left:0px;
+
+      transform:rotate(90deg);
+      -webkit-transform-origin: 80px 80px 0;
+      -moz-transform-origin: 80px 80px 0;
+      -ms-transform-origin: 80px 80px 0;
+      -o-transform-origin: 80px 80px 0;
+      transform-origin: 80px 80px 0;
+    }
+
+    &.vt.invert{
+      left:0px;
+
+      transform:rotate(270deg);
+      -webkit-transform-origin: 80px 80px 0;
+      -moz-transform-origin: 80px 80px 0;
+      -ms-transform-origin: 80px 80px 0;
+      -o-transform-origin: 80px 80px 0;
+      transform-origin: 80px 80px 0;
     }
 
   }
