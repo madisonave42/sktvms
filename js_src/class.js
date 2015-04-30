@@ -2,21 +2,86 @@
  * Class Function *
  ******************/
 
+// Constant
+var HEADER_HEIGHT = 160;
+
 // Resize box with drag
 var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 
-  var wrapperHeight = $wrapper.height();
+  // private
+  var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  var lastTopHeight = $divTop.height();
+  var currentMainHeight =$(window).outerHeight() - HEADER_HEIGHT;
+  var prevMainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  var deltaHeight = 0;
+
+  var divMinHeight = 100;
+  var divMaxHeight = mainHeight - (divMinHeight + 22*2);
+
+  var _deltaUAHeight = function(mainHeight){
+    prevMainHeight = currentMainHeight;
+    currentMainHeight = mainHeight;
+    deltaHeight = prevMainHeight - currentMainHeight;
+
+    return deltaHeight;
+  }
+
+  var _resizeDivFitWin = function(){
+
+    divMaxHeight = mainHeight - (divMinHeight + 22*2);
+
+    mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    if( mainHeight < 245 ){
+      mainHeight = 245;
+    }
+    $('.main-content .wrapper.fix-height').css({height: mainHeight});
+
+    var dUAHeight = _deltaUAHeight(mainHeight);
+
+    if( lastTopHeight < divMinHeight ){
+      lastTopHeight = divMinHeight;
+    }
+    else if( lastTopHeight > divMaxHeight ){
+      console.log('?');
+      lastTopHeight = divMaxHeight;
+    }
+    else{
+      lastTopHeight = lastTopHeight - dUAHeight/2;
+    }
+
+    $divTop.css({height:lastTopHeight});
+
+    var divTopHeight = $divTop.outerHeight();
+    var divBottomHeight = mainHeight - divTopHeight - 24;
+    $divBottom.css({height:divBottomHeight});
+
+    $divTop.resizable({
+      maxHeight:divMaxHeight
+    });
+
+  };
 
   $divTop.resizable({
+
     handles:'s',
+    minHeight:divMinHeight,
+    maxHeight:divMaxHeight,
+
     resize: function(){
-
       var divTopHeight = $divTop.outerHeight();
-      var divBottomHeight = wrapperHeight - divTopHeight - 24;
-
+      var divBottomHeight = mainHeight - divTopHeight - 24;
       $divBottom.css({height:divBottomHeight});
+    },
+    stop: function(e, ui){
+      $('.ui-resizable-handle').trigger('mouseup');
+      lastTopHeight = ui.size.height;
     }
   });
+
+  // privileged
+  this.resizeDivFitWin = function(){
+    _resizeDivFitWin();
+  }
 
 };
 

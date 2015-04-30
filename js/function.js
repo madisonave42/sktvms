@@ -2,21 +2,86 @@
  * Class Function *
  ******************/
 
+// Constant
+var HEADER_HEIGHT = 160;
+
 // Resize box with drag
 var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 
-  var wrapperHeight = $wrapper.height();
+  // private
+  var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  var lastTopHeight = $divTop.height();
+  var currentMainHeight =$(window).outerHeight() - HEADER_HEIGHT;
+  var prevMainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  var deltaHeight = 0;
+
+  var divMinHeight = 100;
+  var divMaxHeight = mainHeight - (divMinHeight + 22*2);
+
+  var _deltaUAHeight = function(mainHeight){
+    prevMainHeight = currentMainHeight;
+    currentMainHeight = mainHeight;
+    deltaHeight = prevMainHeight - currentMainHeight;
+
+    return deltaHeight;
+  }
+
+  var _resizeDivFitWin = function(){
+
+    divMaxHeight = mainHeight - (divMinHeight + 22*2);
+
+    mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    if( mainHeight < 245 ){
+      mainHeight = 245;
+    }
+    $('.main-content .wrapper.fix-height').css({height: mainHeight});
+
+    var dUAHeight = _deltaUAHeight(mainHeight);
+
+    if( lastTopHeight < divMinHeight ){
+      lastTopHeight = divMinHeight;
+    }
+    else if( lastTopHeight > divMaxHeight ){
+      console.log('?');
+      lastTopHeight = divMaxHeight;
+    }
+    else{
+      lastTopHeight = lastTopHeight - dUAHeight/2;
+    }
+
+    $divTop.css({height:lastTopHeight});
+
+    var divTopHeight = $divTop.outerHeight();
+    var divBottomHeight = mainHeight - divTopHeight - 24;
+    $divBottom.css({height:divBottomHeight});
+
+    $divTop.resizable({
+      maxHeight:divMaxHeight
+    });
+
+  };
 
   $divTop.resizable({
+
     handles:'s',
+    minHeight:divMinHeight,
+    maxHeight:divMaxHeight,
+
     resize: function(){
-
       var divTopHeight = $divTop.outerHeight();
-      var divBottomHeight = wrapperHeight - divTopHeight - 24;
-
+      var divBottomHeight = mainHeight - divTopHeight - 24;
       $divBottom.css({height:divBottomHeight});
+    },
+    stop: function(e, ui){
+      $('.ui-resizable-handle').trigger('mouseup');
+      lastTopHeight = ui.size.height;
     }
   });
+
+  // privileged
+  this.resizeDivFitWin = function(){
+    _resizeDivFitWin();
+  }
 
 };
 
@@ -64,9 +129,6 @@ if( navigator.userAgent.indexOf('Safari') > 0 ){
 	$('html').addClass('ie10');
 }
 
-// Constant
-var HEADER_HEIGHT = 160;
-
 $(function(){
 
 	/*
@@ -84,14 +146,16 @@ $(function(){
 	})();
 
 	// React about event of user-menu in header
-	$('.header-user-path').data('open', 'false').on('click', function(e){
-		e.preventDefault();
-		if( $(this).data('open') == 'false' ) {
-			$(this).data('open', 'true').addClass('on').next().addClass('on');
-		} else {
-			$(this).data('open', 'false').removeClass('on').next().removeClass('on');
-		}
-	});
+	(function(){
+		$('.header-user-path').data('open', 'false').on('click', function(e){
+			e.preventDefault();
+			if( $(this).data('open') == 'false' ) {
+				$(this).data('open', 'true').addClass('on').next().addClass('on');
+			} else {
+				$(this).data('open', 'false').removeClass('on').next().removeClass('on');
+			}
+		});
+	})();
 
 	// Apply selectric library
 	$('.select').selectric();
@@ -158,67 +222,75 @@ $(function(){
 	 * stats
 	 */
 
-	// Resize height of box to fit in browser height
+	// Resize by dragging and to fit in height of browser
 	(function(){
+		var $wrapper = $('.wrapper.fix-height');
 
+		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
+		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
 
-		var currentMainHeight = 0, prevMainHeight = 0, deltaHeight = 0;
-		var boxNarrowHeight, boxWideHeight;
-		var narrowHeight = $('.stats-resizable.narrow.top').height();
-		var wideHeight = $('.stats-resizable.wide.top').height();
+		$(window).on('resize',function(){
+			statsResizeNarrow.resizeDivFitWin();
+			statsResizeWide.resizeDivFitWin();
+		});
 
-		$(window).on('resize', function(){
-			var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
-
-
-			$('.main-content .wrapper.fix-height').css({height: mainHeight});
-
-			prevMainHeight = currentMainHeight;
-			currentMainHeight = mainHeight;
-			deltaHeight = prevMainHeight - currentMainHeight;
-
-			console.log('p : ' + prevMainHeight);
-			console.log('c : ' + currentMainHeight);
-			console.log('d : ' + deltaHeight);
-
+		$('.ui-resizable-handle').on({
+			'mousedown' : function(){
+				$(window).unbind('resize');
+			},
+			'mouseup' : function(){
+				$(window).bind('resize', statsResizeNarrow.resizeDivFitWin);
+				$(window).bind('resize', statsResizeWide.resizeDivFitWin);
+			}
 		});
 
 	})();
 
-	// Resize Box by dragging
-	(function(){
-		var $wrapper = $('.wrapper.fix-height');
-		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
-		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
-	})();
-
 	// React about event of chart icon
-	$('.chart-view').data('select', 'false').on('click', function(e){
+	(function(){
+		$('.chart-view').data('select', 'false').on('click', function(e){
 
-		e.preventDefault();
+			e.preventDefault();
 
-		if( $(this).data('select') == 'false' ){
-			$(this).addClass('on').data('select', 'true');
-		} else {
-			$(this).removeClass('on').data('select', 'false');
-		}
+			if( $(this).data('select') == 'false' ){
+				$(this).addClass('on').data('select', 'true');
+			} else {
+				$(this).removeClass('on').data('select', 'false');
+			}
 
-	});
+		});
+	})();
 
 	/*
 	 * popup
 	 */
 
-	// Open layer popup
+	// React about event of layer popup
 	(function(){
 
+		// Open general popup
 		$('.js-open-popup').on('click', function(e) {
 			$('.dimmed').addClass('on');
 			$('.popup').addClass('on');
 			e.preventDefault();
 		});
 
+		// Close general popup
 		$('.js-close-popup').on('click', function(e) {
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
+			e.preventDefault();
+		});
+
+		// Confirm OK
+		$('.js-confirm-ok').on('click', function(e) {
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
+			e.preventDefault();
+		});
+
+		// Confirm Cancel
+		$('.js-confirm-cancel').on('click', function(e) {
 			$('.dimmed').removeClass('on');
 			$('.popup').removeClass('on');
 			e.preventDefault();
