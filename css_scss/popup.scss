@@ -237,6 +237,13 @@ $pop-dark-blue:#0057b9;
     line-height:1;
   }
 
+  &-subheading {
+    margin-bottom:10px;
+    font-weight:bold;
+    color:$dark;
+    line-height:1;
+  }
+
   &-content {
     @include clear();
     padding-bottom:22px;

@@ -26,6 +26,9 @@
 .contents-section.instance-list {
   margin-bottom: 6px;
 }
+.contents-section.instance-general {
+  margin-bottom: 6px;
+}
 
 .vnf-btn-refresh {
   width: 24px;

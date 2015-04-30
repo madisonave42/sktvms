@@ -331,6 +331,12 @@ img {
   color: #00b9b0;
   line-height: 1;
 }
+.popup-subheading {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #576363;
+  line-height: 1;
+}
 .popup-content {
   padding-bottom: 22px;
   border-bottom: 2px solid #becacc;

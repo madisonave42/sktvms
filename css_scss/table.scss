@@ -82,6 +82,7 @@
 		width:auto;
 		background:$white-bg-gray;
 	}
+
 }
 
 .hr-table{
@@ -153,3 +154,7 @@
 	}
 }
 
+.table-link {
+	color:$dark-gray;
+	text-decoration:underline;
+}
