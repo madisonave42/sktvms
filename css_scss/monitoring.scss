@@ -31,6 +31,27 @@
     clear:both;
   }
 
+  &.stats-monitoring{
+    position:relative;
+    width:1760px;
+    height:100%;
+    padding:20px;
+
+    box-sizing:border-box;
+  }
+
+  &-inner{
+
+    &.stats-monitoring{
+      position:relative;
+      height:100%;
+      margin:0;
+      text-align:center;
+      box-sizing:border-box;
+    }
+
+  }
+
 }
 
 .dashboard {
@@ -173,7 +194,6 @@
   }
 }
 
-
 .overload {
 
   &-pannel {
@@ -213,6 +233,37 @@
   &-graph {
     margin-top:8px;
     height:62px;
+  }
+
+}
+
+.sm{
+
+  &-msg{
+
+    &-add{
+
+      &-page{
+
+        width:400px;
+        height:56px;
+
+        position:absolute;
+        top:50%;
+        left:50%;
+
+        padding-left:70px;
+        margin:-28px 0 0 -200px;
+
+        font-size:21px;
+        color: $dark-gray;
+
+        background:url(../images/ico_sm_caution.png) no-repeat 0 6px;
+
+      }
+
+    }
+
   }
 
 }
