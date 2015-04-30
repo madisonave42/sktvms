@@ -152,8 +152,151 @@
 		<div class="wrapper monitoring dashboard fix-height">
 
 			<section class="contents-section topology left-float left">
-				<div class="contents-section-inner no-border">
+				<div class="diagram-dashboard">
 
+					<div class="diag-group left-float">
+
+						<div class="diag-group-item orchestrator">Orchestrator</div>
+
+						<div class="diag-group-item">
+							<div class="diag-group-title">VNF Manager</div>
+							<div class="diag-group-cont">
+
+								<div class="vm-wrap">
+									<button type="button" class="vm critical">CRITICAL</button>
+									<div class="vm-icon-a">A</div>
+								</div>
+
+								<div class="vm-wrap">
+									<button type="button" class="vm normal">NORMAL</button>
+									<div class="vm-icon-s">S</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="diag-group-item">
+							<div class="diag-group-title">VIM</div>
+							<div class="diag-group-cont">
+
+								<div class="diag-com-wrap">
+									<button type="button" class="diag-com state-min">MINOR</button>
+									<div class="diag-com-icon-a">A</div>
+								</div>
+
+								<div class="diag-com-wrap">
+									<button type="button" class="diag-com state-maj">MAJOR</button>
+									<div class="diag-com-icon-s">S</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="diag-list left-float">
+
+						<div class="diag-list-item">
+							<div class="diag-list-title">VNF Instance</div>
+
+							<div class="diag-list-cont">
+								<button type="button" class="diag-instance state-normal">
+									<span class="diag-instance-so">SO</span>
+									vMSS1
+								</button>
+
+								<button type="button" class="diag-instance state-maj">vMSS1</button>
+
+								<button type="button" class="diag-instance state-cri">
+									<span class="diag-instance-te">TE</span>
+									vMSS1
+								</button>
+
+							</div>
+						</div>
+
+						<div class="diag-list-item">
+							<div class="diag-list-title">NFVI</div>
+
+							<div class="diag-list-cont">
+								<button type="button" class="diag-com state-cri">CRITICAL</button>
+								<button type="button" class="diag-com state-maj">MAJOR</button>
+								<button type="button" class="diag-com state-min">MINOR</button>
+								<button type="button" class="diag-com state-normal">NOMAL</button>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="diag-lines">
+						<div class="diag-line-dash-orvi">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="71.51px" height="413.9px" viewBox="0 0 71.51 413.9" enable-background="new 0 0 71.51 413.9" xml:space="preserve">
+								<g>
+									<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M64.026,7.396H12.839c0,0-6.625,0.625-6.625,8.625
+										v380.75c0,0-0.5,8.875,9.5,8.875h48.042"/>
+								</g>
+								<circle fill="#06B9AF" cx="64.027" cy="7.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="64.027" cy="405.646" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label green">OR-VI</div>
+						</div>
+
+						<div class="diag-line-dash-orvnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="13.484px" height="105.032px" viewBox="0 0 13.484 105.032" enable-background="new 0 0 13.484 105.032"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.699" y1="6.396" x2="6.699" y2="98.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="98.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label green">OR-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-vivnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="13.484px" height="105.032px" viewBox="0 0 13.484 105.032" enable-background="new 0 0 13.484 105.032"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.699" y1="6.396" x2="6.699" y2="98.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="98.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="diag-line-label green">VI-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-vevnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="160.385px" height="124.851px" viewBox="0 0 160.385 124.851" enable-background="new 0 0 160.385 124.851"
+								 xml:space="preserve">
+								<g>
+									<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M152.477,7.38h-65.5c0,0-7,0.333-7,9.167
+										s0,45.833,0,45.833"/>
+									<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M7.477,117.38h65.5c0,0,7-0.334,7-9.167
+										s0-45.833,0-45.833"/>
+								</g>
+								<circle fill="#B9C3C2" cx="152.477" cy="7.38" r="5.396"/>
+								<circle fill="#B9C3C2" cx="7.477" cy="117.38" r="5.396"/>
+							</svg>
+
+							<div class="diag-line-label gray">VE-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-nfvi">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="159.466px" height="14.024px" viewBox="0 0 159.466 14.024" enable-background="new 0 0 159.466 14.024"
+								 xml:space="preserve">
+								<line fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" x1="152.057" y1="7.283" x2="6.669" y2="7.283"/>
+								<circle fill="#B9C3C2" cx="6.669" cy="7.283" r="5.396"/>
+								<circle fill="#B9C3C2" cx="152.057" cy="7.283" r="5.396"/>
+							</svg>
+
+							<div class="diag-line-label gray">NF-VI</div>
+						</div>
+
+					</div>
 				</div>
 			</section>
 
@@ -348,7 +491,7 @@
 									<td class="vt-table-td">VIM1A</td>
 									<td class="vt-table-td">CRCM1A</td>
 									<td class="vt-table-td">
-										<div class="state-box-red">CRITICAL</div>
+										<div class="state-box-cri">CRITICAL</div>
 									</td>
 									<td class="vt-table-td">DB Fault</td>
 									<td class="vt-table-td">Telcobase replication status abnormal alarm.</td>
@@ -362,7 +505,7 @@
 									<td class="vt-table-td">VIM1A</td>
 									<td class="vt-table-td">CRCM1A</td>
 									<td class="vt-table-td">
-										<div class="state-box-orange">MAJOR</div>
+										<div class="state-box-maj">MAJOR</div>
 									</td>
 									<td class="vt-table-td">CPU Overload</td>
 									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
@@ -376,7 +519,7 @@
 									<td class="vt-table-td">VIM1A</td>
 									<td class="vt-table-td">-</td>
 									<td class="vt-table-td">
-										<div class="state-box-yellow">MINOR</div>
+										<div class="state-box-min">MINOR</div>
 									</td>
 									<td class="vt-table-td">CPU Overload</td>
 									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
@@ -390,7 +533,7 @@
 									<td class="vt-table-td">VIM1A</td>
 									<td class="vt-table-td">-</td>
 									<td class="vt-table-td">
-										<div class="state-box-yellow">MINOR</div>
+										<div class="state-box-min">MINOR</div>
 									</td>
 									<td class="vt-table-td">CPU Overload</td>
 									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
@@ -404,7 +547,7 @@
 									<td class="vt-table-td">VIM1A</td>
 									<td class="vt-table-td">-</td>
 									<td class="vt-table-td">
-										<div class="state-box-red">CRITICAL</div>
+										<div class="state-box-cri">CRITICAL</div>
 									</td>
 									<td class="vt-table-td">DB Fault</td>
 									<td class="vt-table-td">Telcobase replication status abnormal alarm.</td>

@@ -1,0 +1,73 @@
+.vm {
+  @include size(30, 52);
+  display:block;
+  margin:0;
+  padding:0;
+  background:url(../images/ico_com.png) no-repeat 50% 10px;
+  border-radius:3px;
+  border:0;
+  text-indent:-9999px;
+
+  &-wrap {
+    position:relative;
+    display:inline-block;
+    margin:0 18px;
+  }
+
+  &-icon {
+
+    &-a,
+    &-s {
+      @include size(18);
+      position:absolute;
+      bottom:-9px;
+      left:50%;
+      margin-left:-9px;
+      border-radius:100%;
+      line-height:18px;
+      color:$white;
+      text-align:center;
+    }
+
+    &-a {
+      background:$blue;
+    }
+
+    &-s {
+      background:$dark-gray;
+    }
+
+  }
+
+  &.critical {
+    background-color:$critical;
+  }
+
+  &.major {
+    background-color:$major;
+  }
+
+  &.minor {
+    background-color:$minor;
+  }
+
+  &.normal {
+    background-color:$normal;
+  }
+
+  &-line {
+
+    &-label {
+      @include size(180, 30);
+      line-height:30px;
+      text-align:center;
+      color:$white;
+      border-radius:15px;
+      background:$dark-gray;
+    }
+
+  }
+
+
+}
+

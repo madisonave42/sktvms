@@ -139,7 +139,7 @@
   text-align: left;
 }
 
-.state-box-red, .state-box-orange, .state-box-yellow {
+.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
   width: 77px;
   height: 30px;
   box-sizing: border-box;
@@ -149,14 +149,17 @@
   font-weight: bold;
   border-radius: 2px;
 }
-.state-box-red {
-  background: #e70000;
+.state-box-cri {
+  background: #ff7575;
 }
-.state-box-orange {
-  background: #ee6247;
+.state-box-maj {
+  background: #d59b72;
 }
-.state-box-yellow {
-  background: #fcb63c;
+.state-box-min {
+  background: #eedb73;
+}
+.state-box-normal {
+  background: #00b9b0;
 }
 
 .overload-pannel {
@@ -166,7 +169,7 @@
   width: 415px;
   height: 113px;
   border: 1px solid #c2cbcb;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .overload-pannel:nth-child(1), .overload-pannel:nth-child(2) {
   margin-bottom: 5px;
@@ -204,6 +207,41 @@
   font-size: 21px;
   color: #777;
   background: url(../images/ico_sm_caution.png) no-repeat 0 6px;
+}
+
+.diagram-dashboard {
+  position: relative;
+  padding: 35px 25px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.diag-group {
+  margin-left: 95px;
+  width: 180px;
+}
+.diag-group-item {
+  margin-top: 90px;
+  box-sizing: border-box;
+  height: 110px;
+  border: 1px solid #c2cbcb;
+  border-radius: 3px;
+  text-align: center;
+}
+.diag-group-item.orchestrator {
+  margin-top: 0;
+  background: #e8e8e8;
+  font-weight: bold;
+  line-height: 108px;
+}
+.diag-group-title {
+  margin-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+}
+.diag-group-cont {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=monitoring.css.map */
