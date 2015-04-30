@@ -118,8 +118,10 @@ img {
   width: 1760px;
 }
 .wrapper:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 
@@ -310,8 +312,10 @@ img {
   padding-left: 498px;
 }
 .gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .gnb-sub02 {
@@ -425,21 +429,27 @@ img {
   background: #ffffff;
 }
 .contents-section:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .contents-section-top:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .contents-section-bottom {
   margin-top: 10px;
 }
 .contents-section-bottom:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .contents-section-inner {
@@ -473,6 +483,9 @@ img {
 }
 .contents-section-inner.inside-section.solitary {
   margin: 0;
+}
+.contents-section-inner.no-scroll {
+  overflow: visible;
 }
 .contents-section.left-float.left {
   margin-right: 6px;
@@ -737,6 +750,7 @@ table.emphasis > tbody > tr > td.email > span {
 }
 
 .ui-datepicker {
+  display: none;
   margin-top: 2px;
   padding: 10px;
   border: 2px solid #ee6247;
@@ -1163,8 +1177,10 @@ table.emphasis > tbody > tr > td.email > span {
   position: relative;
 }
 .tree-item:after {
-  content: "";
+  content: ".";
   display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .tree-btn-fold {

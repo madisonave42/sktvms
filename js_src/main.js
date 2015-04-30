@@ -150,6 +150,36 @@ $(function(){
 	})();
 
 	/*
+	 * monitoring
+	 */
+
+	// dashboard tab
+	(function(){
+		var tabBtns = $('.js-tab-link'),
+			tabCont = $('.js-tab-cont');
+
+		if (tabBtns.length == 0) {
+			return false;
+		}
+
+		tabBtns.each(function(){
+			$(this).data('target', $(this).attr('href'));
+		});
+
+		tabBtns.on('click', function(e){
+			tabBtns.removeClass('on');
+			tabCont.removeClass('on');
+
+			$(this).addClass('on');
+			$($(this).data('target')).addClass('on');
+
+			e.preventDefault();
+		});
+
+	})();
+
+
+	/*
 	 * popup
 	 */
 
