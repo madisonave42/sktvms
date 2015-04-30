@@ -179,9 +179,10 @@
 
 .state-box {
 
-  &-red,
-  &-orange,
-  &-yellow {
+  &-cri,
+  &-maj,
+  &-min,
+  &-normal {
     @include size(77, 30);
     box-sizing:border-box;
     line-height:30px;
@@ -191,16 +192,20 @@
     border-radius:2px;
   }
 
-  &-red {
-    background:$red;
+  &-cri {
+    background:$critical;
   }
 
-  &-orange {
-    background:$orange;
+  &-maj {
+    background:$major;
   }
 
-  &-yellow {
-    background:$yellow;
+  &-min {
+    background:$minor;
+  }
+
+  &-normal {
+    background:$normal;
   }
 }
 
@@ -213,7 +218,7 @@
     width:415px;
     height:113px;
     border:1px solid $light-gray;
-    border-radius:2px;
+    border-radius:3px;
 
     &:nth-child(1),
     &:nth-child(2) {
@@ -277,3 +282,50 @@
   }
 
 }
+
+.diagram-dashboard {
+  position:relative;
+  padding:35px 25px;
+  box-sizing:border-box;
+  width:100%;
+}
+
+.diag {
+
+  &-group {
+    margin-left:95px;
+    width:180px;
+
+    &-item {
+      margin-top:90px;
+      box-sizing:border-box;
+      height:110px;
+      border:1px solid $light-gray;
+      border-radius:3px;
+      text-align:center;
+
+      &.orchestrator {
+        margin-top:0;
+        background:$clean-gray;
+        font-weight:bold;
+        line-height:108px;
+      }
+    }
+
+    &-title {
+      margin-top:13px;
+      font-size:14px;
+      font-weight:bold;
+      line-height:1;
+    }
+
+    &-cont {
+      margin-top:10px;
+    }
+
+  }
+
+}
+
+
+

@@ -1341,4 +1341,60 @@ table.emphasis > tbody > tr > td.email > span {
   color: #479dee;
 }
 
+.vm {
+  width: 30px;
+  height: 52px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: url(../images/ico_com.png) no-repeat 50% 10px;
+  border-radius: 3px;
+  border: 0;
+  text-indent: -9999px;
+}
+.vm-wrap {
+  position: relative;
+  display: inline-block;
+  margin: 0 18px;
+}
+.vm-icon-a, .vm-icon-s {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -9px;
+  border-radius: 100%;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+}
+.vm-icon-a {
+  background: #479dee;
+}
+.vm-icon-s {
+  background: #777;
+}
+.vm.critical {
+  background-color: #ff7575;
+}
+.vm.major {
+  background-color: #d59b72;
+}
+.vm.minor {
+  background-color: #eedb73;
+}
+.vm.normal {
+  background-color: #00b9b0;
+}
+.vm-line-label {
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 15px;
+  background: #777;
+}
+
 /*# sourceMappingURL=common.css.map */

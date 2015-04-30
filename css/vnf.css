@@ -29,6 +29,9 @@
 .contents-section.instance-general {
   margin-bottom: 6px;
 }
+.contents-section.assurance {
+  margin-bottom: 6px;
+}
 
 .vnf-btn-refresh {
   width: 24px;
@@ -66,6 +69,142 @@
   position: relative;
   padding-left: 22px;
   background: url(../images/ico_caution.png) no-repeat 0 50%;
+}
+.vnf-autoscale {
+  width: 850px;
+}
+
+.scale-group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.scale-text {
+  float: left;
+  margin-right: 9px;
+  height: 27px;
+  line-height: 27px;
+  font-weight: bold;
+}
+.scale-text-out {
+  display: inline-block;
+  height: 26px;
+  border-bottom: 1px solid #e70000;
+}
+.scale-text-in {
+  display: inline-block;
+  height: 26px;
+  border-bottom: 1px solid #fcb63c;
+}
+.scale-box {
+  width: 54px;
+  height: 25px;
+  float: left;
+  line-height: 25px;
+  background: #e8e8e8;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.state-list {
+  position: relative;
+  margin-bottom: 6px;
+}
+.state-tab {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.state-tab:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.state-tab-item {
+  float: left;
+}
+.state-tab-link {
+  width: 80px;
+  height: 30px;
+  display: block;
+  box-sizing: border-box;
+  line-height: 30px;
+  color: #576363;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #c2cbcb;
+  border-bottom: 0;
+}
+.state-tab-link.on {
+  color: #ffffff;
+  background: #c2cbcb;
+}
+.state-tab-link.on .notice-num {
+  color: #576363;
+  background: #ffffff;
+}
+.state-tab-link .notice-num {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-left: 6px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 18px;
+  background: #e8e8e8;
+}
+.state-tab-cont {
+  display: none;
+  height: 100%;
+}
+.state-tab-cont.on {
+  display: block;
+}
+.state-icon-alarm-on, .state-icon-alarm-off {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(../images/ico_alarm.png) no-repeat;
+  border: 0;
+}
+.state-icon-alarm-on {
+  background-position: 50% -21px;
+}
+.state-icon-alarm-off {
+  background-position: 50% 4px;
+}
+.state-table-wrap {
+  max-height: 444px;
+}
+
+.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
+  width: 77px;
+  height: 30px;
+  box-sizing: border-box;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 2px;
+}
+.state-box-cri {
+  background: #ff7575;
+}
+.state-box-maj {
+  background: #d59b72;
+}
+.state-box-min {
+  background: #eedb73;
+}
+.state-box-normal {
+  background: #00b9b0;
 }
 
 /*# sourceMappingURL=vnf.css.map */

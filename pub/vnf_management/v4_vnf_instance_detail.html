@@ -178,7 +178,7 @@
 
 		<div class="wrapper">
 
-			<section class="contents-section instance-general left-float left">
+			<section class="contents-section instance-general">
 				<div class="contents-section-top">
 					<h3 class="section-heading color eng left-float">General</h3>
 				</div>
@@ -259,7 +259,7 @@
 				</div>
 			</section>
 
-			<section class="contents-section flavors">
+			<section class="contents-section assurance">
 				<div class="contents-section-top">
 					<h3 class="section-heading color eng left-float">Assurance Parameter</h3>
 				</div>
@@ -300,11 +300,11 @@
 					<h3 class="section-heading color eng left-float">Auto Scale > CSCM</h3>
 					<div class="right-float">
 						<div class="scale-group left-float left">
-							<div class="scale-text"><div class="scale-text-out">Scale-Out</div> :</div>
+							<div class="scale-text"><span class="scale-text-out">Scale-Out</span> :</div>
 							<div class="scale-box">or</div>
 						</div>
-						<div class="scale-group left-float left">
-							<div class="scale-text"><div class="scale-text-in">Scale-In</div> :</div>
+						<div class="scale-group left-float left group">
+							<div class="scale-text"><span class="scale-text-in">Scale-In</span> :</div>
 							<div class="scale-box">and</div>
 						</div>
 						<button type="button" class="btn-table-setting">setting</button>
@@ -313,103 +313,300 @@
 
 				<div class="contents-section-inner fill-gray">
 
-					<div class="contents-section-inner inside-section solitary">
+					<div class="contents-section-inner inside-section solitary vnf-autoscale left-float">
 
 						<div class="contents-section-top">
-							<h3 class="section-heading small color small-eng left-float">CSCM</h3>
+							<h3 class="section-heading small left-float">CPU_LOAD</h3>
 						</div>
 
-						<div class="contents-section-inner no-border">
+						<div class="contents-section-inner no-border no-scroll">
 
-							<div class="table-top">
-								<h4 class="table-heading">Scale-Out</h4>
-								<button type="button" class="btn-table-setting">setting</button>
-							</div>
-
-							<table class="vt-table">
-								<caption class="hide">config parameter</caption>
-								<colgroup>
-									<col width="150px" />
-									<col width="380px" />
-									<col width="380px" />
-									<col width="380px" />
-									<col width="auto" />
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col" class="vt-table-th first">Group Operation</th>
-										<th scope="col" class="vt-table-th">Resource</th>
-										<th scope="col" class="vt-table-th">Condition</th>
-										<th scope="col" class="vt-table-th">Threshold (%)</th>
-										<th scope="col" class="vt-table-th">Duration (min)</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td rowspan="2" class="vt-table-td">OR</td>
-										<td class="vt-table-td">CSCM_CPU_LOAD</td>
-										<td class="vt-table-td">&gt;=</td>
-										<td class="vt-table-td">70</td>
-										<td class="vt-table-td">5</td>
-									</tr>
-									<tr>
-										<td class="vt-table-td">CSCM_CPU_LOAD</td>
-										<td class="vt-table-td">&gt;=</td>
-										<td class="vt-table-td">70</td>
-										<td class="vt-table-td">5</td>
-									</tr>
-								</tbody>
-							</table>
+							<img src="../../images/temp/instance_graph.png" alt="" />
 
 						</div>
 
-						<div class="contents-section-inner no-border">
+					</div>
 
-							<div class="table-top">
-								<h4 class="table-heading">Scale-In</h4>
-								<button type="button" class="btn-table-setting">setting</button>
-							</div>
+					<div class="contents-section-inner inside-section solitary vnf-autoscale right-float">
 
-							<table class="vt-table">
-								<caption class="hide">config parameter</caption>
-								<colgroup>
-									<col width="150px" />
-									<col width="380px" />
-									<col width="380px" />
-									<col width="380px" />
-									<col width="auto" />
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col" class="vt-table-th first">Group Operation</th>
-										<th scope="col" class="vt-table-th">Resource</th>
-										<th scope="col" class="vt-table-th">Condition</th>
-										<th scope="col" class="vt-table-th">Threshold (%)</th>
-										<th scope="col" class="vt-table-th">Duration (min)</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td rowspan="2" class="vt-table-td">AND</td>
-										<td class="vt-table-td">CSCM_CPU_LOAD</td>
-										<td class="vt-table-td">&gt;=</td>
-										<td class="vt-table-td">70</td>
-										<td class="vt-table-td">5</td>
-									</tr>
-									<tr>
-										<td class="vt-table-td">CSCM_CPU_LOAD</td>
-										<td class="vt-table-td">&gt;=</td>
-										<td class="vt-table-td">70</td>
-										<td class="vt-table-td">5</td>
-									</tr>
-								</tbody>
-							</table>
+						<div class="contents-section-top">
+							<h3 class="section-heading small left-float">MEM_USAGE</h3>
+						</div>
+
+						<div class="contents-section-inner no-border no-scroll">
+
+							<img src="../../images/temp/instance_graph.png" alt="" />
 
 						</div>
 
 					</div>
 
 				</div>
+			</section>
+
+			<section class="contents-section instance-list">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Topology</h3>
+				</div>
+
+				<div class="contents-section-inner no-border">
+
+				</div>
+
+			</section>
+
+			<section class="contents-section state-list">
+				<ul class="state-tab">
+					<li class="state-tab-item">
+						<a href="#state-box" class="state-tab-link on js-tab-link">Alarm <span class="notice-num">3</span></a>
+					</li>
+					<li class="state-tab-item">
+						<a href="#state-event" class="state-tab-link js-tab-link">Event <span class="notice-num">3</span></a>
+					</li>
+				</ul>
+
+				<div id="state-box" class="state-tab-cont on js-tab-cont">
+					<div class="contents-section-top state-table-top">
+						<div class="right-float">
+							<button type="button" class="btn-fill-orange btn-alarm-off left-float left">알람 전체 인지</button>
+							<button type="button" class="btn-stroke-light btn-alarm-on left-float">알람 전체 미인지</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border state-table-wrap">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="vt-table-th first center chkbox">
+										<div class="state-icon-alarm-off">알람</div>
+									</th>
+									<th scope="col" class="vt-table-th">발생시각</th>
+									<th scope="col" class="vt-table-th">시스템 유형</th>
+									<th scope="col" class="vt-table-th">시스템</th>
+									<th scope="col" class="vt-table-th">서브 시스템</th>
+									<th scope="col" class="vt-table-th">알람 등급</th>
+									<th scope="col" class="vt-table-th">알람 분류</th>
+									<th scope="col" class="vt-table-th">알람 내역</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="state-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">VNF</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">CRCM1A</td>
+									<td class="vt-table-td">
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">Telcobase replication status abnormal alarm.</td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">CRCM1A</td>
+									<td class="vt-table-td">
+										<div class="state-box-maj">MAJOR</div>
+									</td>
+									<td class="vt-table-td">CPU Overload</td>
+									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td class="vt-table-td">CPU Overload</td>
+									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td class="vt-table-td">CPU Overload</td>
+									<td class="vt-table-td">System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="state-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">VNF</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">Telcobase replication status abnormal alarm.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="state-event" class="state-tab-cont js-tab-cont">
+					<div class="contents-section-top state-table-top">
+						<div class="right-float">
+							<div class="left-float left">
+								<select class="select default">
+									<option>전체 시스템 유형</option>
+								</select>
+							</div>
+							<button type="button" class="btn-stroke-orange left-float">이벤트 삭제</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border state-table-wrap">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="240px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="vt-table-th first center chkbox">
+										<div class="check-wrap center">
+											<input id="chk-label-1" class="check-box" type="checkbox">
+											<label for="chk-label-1" class="check-label blind">선택</label>
+										</div>
+									</th>
+									<th scope="col" class="vt-table-th">발생시각</th>
+									<th scope="col" class="vt-table-th">시스템 유형</th>
+									<th scope="col" class="vt-table-th">시스템</th>
+									<th scope="col" class="vt-table-th">서브 시스템</th>
+									<th scope="col" class="vt-table-th">이벤트</th>
+									<th scope="col" class="vt-table-th">진행 상태</th>
+									<th scope="col" class="vt-table-th">실패 사유</th>
+									<th scope="col" class="vt-table-th">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="check-wrap center">
+											<input id="chk-label-2" class="check-box" type="checkbox">
+											<label for="chk-label-2" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">CRCM1A</td>
+									<td class="vt-table-td">ha::switchover</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td"></td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="check-wrap center">
+											<input id="chk-label-3" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-3" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">ha::switchover</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td"></td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="check-wrap center">
+											<input id="chk-label-4" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-4" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">ha::switchover</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td"></td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="check-wrap center">
+											<input id="chk-label-5" class="check-box" type="checkbox">
+											<label for="chk-label-5" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">CRCM1A</td>
+									<td class="vt-table-td">ha::switchover</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td"></td>
+								</tr>
+								<tr>
+									<td class="vt-table-td center">
+										<div class="check-wrap center">
+											<input id="chk-label-6" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-6" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td class="vt-table-td">2015/02/24 13:00:12</td>
+									<td class="vt-table-td">NFVI</td>
+									<td class="vt-table-td">VIM1A</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td">ha::switchover</td>
+									<td class="vt-table-td">DB Fault</td>
+									<td class="vt-table-td">-</td>
+									<td class="vt-table-td"></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
 			</section>
 
 			<section class="contents-section instance-list">
