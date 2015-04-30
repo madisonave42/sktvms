@@ -18,6 +18,16 @@ module.exports = function(grunt) {
     		}
     	},
 
+			common: {
+				cwd:'pub_src/common',
+				src: ['*.html'],
+				dest: 'pub/common',
+				options: {
+					flatten:true,
+					includePath: 'pub_src/_include'
+				}
+			},
+
 			login: {
 				cwd:'pub_src/login',
 				src: ['*.html'],
@@ -160,7 +170,7 @@ module.exports = function(grunt) {
         files:[{
           expand: true,
           cwd: 'js/',
-          src: ['**', '!function.js'],
+          src: ['**'],
           dest: '_output/js/'
         }]
     	},
