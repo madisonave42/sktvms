@@ -32,6 +32,10 @@
     margin-bottom:6px;
 
     clear:both;
+
+    .topology{
+      height:768px;
+    }
   }
 
   &.auto-scaling{
@@ -98,6 +102,26 @@
       position:relative;
       padding-left:22px;
       background:url(../images/ico_caution.png) no-repeat 0 50%;
+    }
+
+  }
+
+}
+
+.topology{
+
+  &-wrap{
+
+  }
+
+  &-section{
+
+    &.small{
+      width:178px;
+      height:158px;
+
+      border:1px solid $light-gray;
+      border-radius:3px;
     }
 
   }

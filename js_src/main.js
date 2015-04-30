@@ -151,7 +151,10 @@ $(function(){
 
 	// Resize dashboard list
 	(function(){
-		var resizeDashboardList = new ResizeDashboardList( $('.dashboard-list') );
+		var $btnExpand = $('.js-expand');
+		//$btnExpand.data('expand', 'false');
+
+		var resizeDashboardList = new ResizeDashboardList( $('.dashboard-list'), $btnExpand );
 
 		// Resize dashboard list to fit in height of window
 		$(window).on('resize', function(){
@@ -159,16 +162,12 @@ $(function(){
 		});
 
 		// Expand height of dashboard list up to height of main content
-		$('.js-expand').data('expand', 'false').on('click', function(){
-
+		$btnExpand.on('click', function(){
 			if( $(this).data('expand')  == 'false' ){
-				resizeDashboardList.expandDashboardListHeight( $(this) );
-				$(this).data('expand', 'true');
+				resizeDashboardList.expandDashboardListHeight();
 			} else {
-				resizeDashboardList.reduceDashboardListHeight( $(this) );
-				$(this).data('expand', 'false');
+				resizeDashboardList.reduceDashboardListHeight();
 			}
-
 		});
 
 	})();
