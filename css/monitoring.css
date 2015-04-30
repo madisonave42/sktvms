@@ -1,3 +1,7 @@
+.wrapper.monitoring {
+  position: relative;
+}
+
 .contents-section.topology {
   width: 877px;
   height: 600px;
@@ -34,8 +38,13 @@
   box-sizing: border-box;
 }
 
+.dashboard {
+  min-height: 752px;
+}
 .dashboard-list {
-  position: relative;
+  position: absolute;
+  min-height: 128px;
+  bottom: 0;
 }
 .dashboard-tab {
   position: absolute;
@@ -84,6 +93,7 @@
 }
 .dashboard-tab-cont {
   display: none;
+  height: 100%;
 }
 .dashboard-tab-cont.on {
   display: block;

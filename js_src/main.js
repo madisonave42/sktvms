@@ -27,10 +27,6 @@ $(function(){
 	(function(){
 		var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
 		$('.main-content .wrapper.fix-height').css({height: mainHeight});
-
-		$('.stats-resizable.narrow.top, .stats-resizable.narrow.bottom,' +
-		'.stats-resizable.wide.top, .stats-resizable.wide.bottom').css({height:(mainHeight/2 - 23)});
-
 	})();
 
 	// React about event of user-menu in header
@@ -153,6 +149,30 @@ $(function(){
 	 * monitoring
 	 */
 
+	// Resize dashboard list
+	(function(){
+		var resizeDashboardList = new ResizeDashboardList( $('.dashboard-list') );
+
+		// Resize dashboard list to fit in height of window
+		$(window).on('resize', function(){
+			resizeDashboardList.resizeDashboardListFitWin();
+		});
+
+		// Expand height of dashboard list up to height of main content
+		$('.js-expand').data('expand', 'false').on('click', function(){
+
+			if( $(this).data('expand')  == 'false' ){
+				resizeDashboardList.expandDashboardListHeight( $(this) );
+				$(this).data('expand', 'true');
+			} else {
+				resizeDashboardList.reduceDashboardListHeight( $(this) );
+				$(this).data('expand', 'false');
+			}
+
+		});
+
+	})();
+
 	// dashboard tab
 	(function(){
 		var tabBtns = $('.js-tab-link'),
@@ -177,6 +197,8 @@ $(function(){
 		});
 
 	})();
+
+
 
 
 	/*
