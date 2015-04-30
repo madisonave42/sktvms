@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+.wrapper.monitoring{
+  position:relative;
+}
+
 .contents-section {
 
   &.topology {
@@ -55,8 +59,13 @@
 }
 
 .dashboard {
+  min-height:752px;
+
+
   &-list {
-    position:relative;
+    position:absolute;
+    min-height:128px;
+    bottom:0;
   }
 
   &-tab {
@@ -104,6 +113,7 @@
 
     &-cont {
       display:none;
+      height:100%;
 
       &.on {
         display:block;

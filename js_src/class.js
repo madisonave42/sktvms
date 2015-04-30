@@ -18,13 +18,17 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
   var divMinHeight = 100;
   var divMaxHeight = mainHeight - (divMinHeight + 22*2);
 
+  // Set height of each section in stats
+  $divTop.css({height:(mainHeight/2 - 23)});
+  $divBottom.css({height:(mainHeight/2 - 23)});
+
   var _deltaUAHeight = function(mainHeight){
     prevMainHeight = currentMainHeight;
     currentMainHeight = mainHeight;
     deltaHeight = prevMainHeight - currentMainHeight;
 
     return deltaHeight;
-  }
+  };
 
   var _resizeDivFitWin = function(){
 
@@ -107,5 +111,32 @@ var FoldTree = function($clickTreeItem, $clickTreeList, hasParentChild ){
       $clickTreeItem.data('select', 'false');
     }
   }
+
+};
+
+// Resize dash board list to fit in height of window
+var ResizeDashboardList = function($divDashboard){
+
+  // private
+  var graphHeight = 624;
+  var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  var dashboardListHeight = mainHeight - graphHeight;
+
+  // Set height of dashboard list in monitoring
+  $divDashboard.css({height:dashboardListHeight});
+
+  this.resizeDashboardListFitWin = function(){
+    mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    dashboardListHeight = mainHeight - graphHeight;
+    $divDashboard.css({height:dashboardListHeight});
+  };
+
+  this.expandDashboardListHeight = function(){
+
+  };
+
+  this.reduceDashboardListHeight = function(){
+
+  };
 
 };
