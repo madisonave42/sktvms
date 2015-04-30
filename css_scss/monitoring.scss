@@ -293,7 +293,7 @@
 .diag {
 
   &-group {
-    margin-left:95px;
+    margin-left:90px;
     width:180px;
 
     &-item {
@@ -325,6 +325,178 @@
 
   }
 
+  &-list {
+    margin-left:144px;
+    width:369px;
+
+    &-item {
+      &:first-child {
+        margin-bottom:26px;
+      }
+    }
+
+    &-title {
+      position:relative;
+      margin-bottom:8px;
+      padding-left:19px;
+      font-size:14px;
+      line-height:1;
+
+      &:after{
+        @include size(12);
+        content:"";
+        display:block;
+        position:absolute;
+        top:2px;
+        left:0;
+        border-radius:100%;
+        background:$red;
+      }
+    }
+
+    &-cont {
+      box-sizing:border-box;
+      padding:17px;
+      padding-right:0;
+      height:220px;
+      border:1px solid $light-gray;
+      border-radius:3px;
+      overflow:auto;
+
+      .vm {
+        float:left;
+        margin:0 12px 10px 0;
+
+        &:nth-child(8n) {
+          margin-right:0;
+        }
+      }
+    }
+
+  }
+
+  &-instance {
+    @include size(77, 32);
+    float:left;
+    margin:0 5px 5px 0;
+    line-height:32px;
+    text-align:center;
+    color:$white;
+    border-radius:2px;
+    border:0;
+
+    &:nth-child(4n) {
+      margin-right:0;
+    }
+
+    &.critical {
+      background-color:$critical;
+    }
+
+    &.major {
+      background-color:$major;
+    }
+
+    &.minor {
+      background-color:$minor;
+    }
+
+    &.normal {
+      background-color:$normal;
+    }
+
+    &-so,
+    &-te {
+      display:inline-block;
+      line-height:1;
+      padding:0 1px;
+      font-size:11px;
+      vertical-align:1px;
+    }
+
+    &-so {
+      background:$white;
+      color:$normal;
+    }
+
+    &-te {
+      border:1px solid $white;
+    }
+  }
+
+  &-line {
+
+    &-dash-orvi {
+      position:absolute;
+      top:83px;
+      left:51px;
+
+      .vm-line-label {
+        left:-34px;
+      }
+
+    }
+
+    &-dash-orvnfm {
+      position:absolute;
+      top:138px;
+      left:197px;
+
+      .vm-line-label {
+        left:-81px;
+      }
+
+    }
+
+    &-dash-vivnfm {
+      position:absolute;
+      top:338px;
+      left:197px;
+
+      .vm-line-label {
+        left:-81px;
+      }
+
+    }
+
+    &-dash-vevnfm {
+      position:absolute;
+      top:177px;
+      left:288px;
+
+      .vm-line-label {
+        left:40px;
+      }
+
+    }
+
+    &-dash-nfvi {
+      position:absolute;
+      top:486px;
+      left:288px;
+
+      .vm-line-label {
+        left:40px;
+      }
+
+    }
+
+  }
+
+}
+
+.vm-line-label {
+  position:absolute;
+  top:50%;
+  margin-top:-17px;
+}
+
+.vm-line-label.small {
+  width:80px;
+}
+
+.vm-line-label.green {
+  background:$normal;
 }
 
 
