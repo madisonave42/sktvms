@@ -287,10 +287,17 @@
 }
 
 .diagram-dashboard {
-  position:relative;
-  padding:35px 25px;
-  box-sizing:border-box;
-  width:100%;
+	margin-top:0;
+	height:100%;
+	overflow:hidden;
+	
+	&-wrap {
+		@include clear();
+		position:relative;
+		padding:35px 25px;
+		box-sizing:border-box;
+		width:100%;
+	}
 }
 
 .diag {

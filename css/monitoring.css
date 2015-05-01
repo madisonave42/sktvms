@@ -210,10 +210,22 @@
 }
 
 .diagram-dashboard {
+  margin-top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.diagram-dashboard-wrap {
   position: relative;
   padding: 35px 25px;
   box-sizing: border-box;
   width: 100%;
+}
+.diagram-dashboard-wrap:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
 }
 
 .diag-group {
