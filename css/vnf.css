@@ -22,6 +22,7 @@
 }
 .contents-section.flavors .topology {
   height: 858px;
+  position: relative;
 }
 .contents-section.auto-scaling {
   margin-bottom: 6px;
@@ -221,32 +222,57 @@
   overflow: hidden;
   clear: both;
 }
-.topology-section {
+.topology-center {
   position: relative;
+  margin: 0 220px;
 }
-.topology-section.side {
-  width: 180px;
-  margin-left: 220px;
-}
-.topology-section.side.invert {
-  margin: 0 220px 0 0;
+.topology-lines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .vm-section {
+  min-height: 158px;
+  padding: 10px 0 20px;
+  text-align: center;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
+  box-sizing: border-box;
 }
 .vm-section.small {
   width: 178px;
-  min-height: 158px;
 }
 .vm-section.small.center {
   margin: 0 auto;
 }
 .vm-section.large {
   width: 458px;
-  min-height: 158px;
-  margin-top: 40px;
+  margin: 40px 0 165px;
+}
+.vm-section-title {
+  margin-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+}
+.vm-section-cont {
+  margin-top: 10px;
+}
+.vm-section-cont.single {
+  width: 66px;
+  margin: 10px auto 0;
+}
+.vm-line {
+  position: absolute;
+}
+.vm-line-router {
+  width: 40px;
+  height: 40px;
+  text-indent: -99999em;
+  background: url(../images/ico_router.png) no-repeat;
 }
 .vm-line-label {
   font-size: 12px;

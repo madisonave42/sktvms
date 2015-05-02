@@ -196,19 +196,6 @@
   height: 62px;
 }
 
-.sm-msg-add-page {
-  width: 400px;
-  height: 56px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding-left: 70px;
-  margin: -28px 0 0 -200px;
-  font-size: 21px;
-  color: #777;
-  background: url(../images/ico_sm_caution.png) no-repeat 0 6px;
-}
-
 .diagram-dashboard {
   margin-top: 0;
   height: 100%;
@@ -396,6 +383,20 @@
 
 .vm-line-label.green {
   background: #00b9b0;
+}
+
+/* statistics monitoring */
+.sm-msg-add-page {
+  width: 400px;
+  height: 56px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 70px;
+  margin: -28px 0 0 -200px;
+  font-size: 21px;
+  color: #777;
+  background: url(../images/ico_sm_caution.png) no-repeat 0 6px;
 }
 
 /*# sourceMappingURL=monitoring.css.map */

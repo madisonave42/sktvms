@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/css_scss/vnf.scss" line="287" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b3ae520-3c71-49a4-ab9d-ed0c7719b051" name="Default" comment="" />
+    <list default="true" id="9b3ae520-3c71-49a4-ab9d-ed0c7719b051" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_component.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_component.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_form.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_form.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_layout.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_layout.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_mixins.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_mixins.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_reset.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_reset.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_specific.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_specific.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_variables.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/_variables.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/common.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/common.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/popup.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/popup.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/stats.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/stats.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/table.scssc" afterPath="$PROJECT_DIR$/.sass-cache/2ae8a32e958a6cf5fa92994c2efd229804d33b16/table.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css_scss/_vm.scss" afterPath="$PROJECT_DIR$/css_scss/_vm.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common.css.map" afterPath="$PROJECT_DIR$/css/common.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common.css" afterPath="$PROJECT_DIR$/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/monitoring.css.map" afterPath="$PROJECT_DIR$/css/monitoring.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/monitoring.css" afterPath="$PROJECT_DIR$/css/monitoring.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css_scss/monitoring.scss" afterPath="$PROJECT_DIR$/css_scss/monitoring.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pub/vnf_management/v3_vnf_package_detail.html" afterPath="$PROJECT_DIR$/pub/vnf_management/v3_vnf_package_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pub_src/vnf_management/v3_vnf_package_detail.html" afterPath="$PROJECT_DIR$/pub_src/vnf_management/v3_vnf_package_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vnf.css.map" afterPath="$PROJECT_DIR$/css/vnf.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vnf.css" afterPath="$PROJECT_DIR$/css/vnf.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css_scss/vnf.scss" afterPath="$PROJECT_DIR$/css_scss/vnf.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="sktvms.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +47,113 @@
     <favorites_list name="sktvms" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="monitoring.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css_scss/monitoring.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-2.489796">
+                  <caret line="282" column="11" selection-start-line="282" selection-start-column="11" selection-end-line="282" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#103#768#0" expanded="false" />
+                    <element signature="e#781#2326#0" expanded="false" />
+                    <element signature="e#2333#2707#0" expanded="false" />
+                    <element signature="e#2720#3089#0" expanded="false" />
+                    <element signature="e#3101#3752#0" expanded="false" />
+                    <element signature="e#3773#4025#0" expanded="false" />
+                    <element signature="e#4099#4403#0" expanded="false" />
+                    <element signature="e#6813#6868#0" expanded="false" />
+                    <element signature="e#6891#6908#0" expanded="false" />
+                    <element signature="e#6931#6956#0" expanded="false" />
+                    <element signature="e#6990#7342#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="v3_vnf_package_detail.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pub_src/vnf_management/v3_vnf_package_detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.55945945">
+                  <caret line="476" column="58" selection-start-line="476" selection-start-column="58" selection-end-line="476" selection-end-column="58" />
+                  <folding>
+                    <element signature="n#div#0;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#2;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#2;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="_vm.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css_scss/_vm.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-20.625">
+                  <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#911#1092#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="vnf.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/css_scss/vnf.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5135135">
+                  <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#695#1587#0" expanded="false" />
+                    <element signature="e#1596#2170#0" expanded="false" />
+                    <element signature="e#2179#3514#0" expanded="false" />
+                    <element signature="e#3527#3896#0" expanded="false" />
+                    <element signature="e#4163#4169#0" expanded="false" />
+                    <element signature="e#4182#4725#0" expanded="false" />
+                    <element signature="e#4354#4428#0" expanded="false" />
+                    <element signature="e#4441#4493#0" expanded="false" />
+                    <element signature="e#4959#4991#0" expanded="false" />
+                    <element signature="e#5003#5044#0" expanded="false" />
+                    <element signature="e#5056#5398#0" expanded="false" />
+                    <element signature="e#5417#5694#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="m1_dashboard.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pub_src/monitoring/m1_dashboard.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-26.458334">
+                  <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#svg#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#svg#0;n#div#1;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#svg#0;n#div#2;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#svg#0;n#div#3;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                    <element signature="n#svg#0;n#div#4;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,6 +163,10 @@
       <list>
         <option value="$PROJECT_DIR$/pub_src/module/v1_vnf_package_list.html" />
         <option value="$PROJECT_DIR$/pub_src/stats/module.html" />
+        <option value="$PROJECT_DIR$/css_scss/monitoring.scss" />
+        <option value="$PROJECT_DIR$/css_scss/_vm.scss" />
+        <option value="$PROJECT_DIR$/css_scss/vnf.scss" />
+        <option value="$PROJECT_DIR$/pub_src/vnf_management/v3_vnf_package_detail.html" />
       </list>
     </option>
   </component>
@@ -86,6 +223,46 @@
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Cucumber</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Jade</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -158,7 +335,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stats" />
+              <option name="myItemId" value="monitoring" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -172,25 +349,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sktvms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sktvms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stats" />
+              <option name="myItemId" value="css_scss" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -202,7 +361,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js.buildTools.grunt.node_interpreter" value="/usr/local/bin/node" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="/usr/local/" />
@@ -276,14 +435,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.527439" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5275398" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.47256097" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4724602" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16971545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -291,9 +452,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -314,31 +473,104 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pub_src/stats/st1_statistical_comparison_period.html">
+    <entry file="file://$PROJECT_DIR$/pub_src/vnf_management/v1_vnf_package_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.23529412">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pub_src/stats/module.html">
+    <entry file="file://$PROJECT_DIR$/css_scss/monitoring.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.489796">
+          <caret line="282" column="11" selection-start-line="282" selection-start-column="11" selection-end-line="282" selection-end-column="11" />
+          <folding>
+            <element signature="e#103#768#0" expanded="false" />
+            <element signature="e#781#2326#0" expanded="false" />
+            <element signature="e#2333#2707#0" expanded="false" />
+            <element signature="e#2720#3089#0" expanded="false" />
+            <element signature="e#3101#3752#0" expanded="false" />
+            <element signature="e#3773#4025#0" expanded="false" />
+            <element signature="e#4099#4403#0" expanded="false" />
+            <element signature="e#6813#6868#0" expanded="false" />
+            <element signature="e#6891#6908#0" expanded="false" />
+            <element signature="e#6931#6956#0" expanded="false" />
+            <element signature="e#6990#7342#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pub_src/stats/st1_statistical_comparison_period.html">
+    <entry file="file://$PROJECT_DIR$/pub_src/monitoring/m1_dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        <state vertical-scroll-proportion="-26.458334">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#svg#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#svg#0;n#div#1;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#svg#0;n#div#2;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#svg#0;n#div#3;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#svg#0;n#div#4;n#div#1;n#div#0;n#section#0;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pub_src/stats/module.html">
+    <entry file="file://$PROJECT_DIR$/css_scss/_vm.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12875536">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state vertical-scroll-proportion="-20.625">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#911#1092#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css_scss/vnf.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5135135">
+          <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+          <folding>
+            <element signature="e#695#1587#0" expanded="false" />
+            <element signature="e#1596#2170#0" expanded="false" />
+            <element signature="e#2179#3514#0" expanded="false" />
+            <element signature="e#3527#3896#0" expanded="false" />
+            <element signature="e#4163#4169#0" expanded="false" />
+            <element signature="e#4182#4725#0" expanded="false" />
+            <element signature="e#4354#4428#0" expanded="false" />
+            <element signature="e#4441#4493#0" expanded="false" />
+            <element signature="e#4959#4991#0" expanded="false" />
+            <element signature="e#5003#5044#0" expanded="false" />
+            <element signature="e#5056#5398#0" expanded="false" />
+            <element signature="e#5417#5694#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pub_src/vnf_management/v3_vnf_package_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55945945">
+          <caret line="476" column="58" selection-start-line="476" selection-start-column="58" selection-end-line="476" selection-end-column="58" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#2;n#div#1;n#section#3;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

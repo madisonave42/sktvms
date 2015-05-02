@@ -1361,7 +1361,7 @@ table.emphasis > tbody > tr > td.email > span {
 .vm-wrap {
   position: relative;
   display: inline-block;
-  margin: 0 18px;
+  margin: 10px 18px 0;
 }
 .vm-icon-a, .vm-icon-s {
   width: 18px;
@@ -1392,6 +1392,12 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .vm.normal {
   background-color: #00b9b0;
+}
+.vm.external {
+  background-color: #576363;
+}
+.vm.empty {
+  background-color: #c2cbcb;
 }
 .vm-line-label {
   width: 180px;

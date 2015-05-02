@@ -11,7 +11,7 @@
   &-wrap {
     position:relative;
     display:inline-block;
-    margin:0 18px;
+    margin:10px 18px 0;
   }
 
   &-icon {
@@ -53,6 +53,14 @@
 
   &.normal {
     background-color:$normal;
+  }
+
+  &.external{
+    background-color:$dark;
+  }
+
+  &.empty{
+    background-color:$light-gray;
   }
 
   &-line {
