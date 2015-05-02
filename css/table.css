@@ -2,20 +2,31 @@
   width: 100%;
   border-top: 2px solid #c2cbcb;
 }
+.vt-table.out-border {
+  border-top: 0;
+}
 .vt-table-th {
-  height: 39px;
+  height: 40px;
   position: relative;
   padding-left: 10px;
   font-weight: bold;
   color: #576363;
   text-align: left;
+  line-height: 38px;
   border-bottom: 1px solid #c2cbcb;
 }
+.vt-table-th.chkbox {
+  line-height: 0;
+}
 .vt-table-th.center {
+  padding: 0;
   text-align: center;
 }
 .vt-table-th.first:after {
   display: none;
+}
+.vt-table-th .area-btn-sort {
+  margin-top: 11px;
 }
 .vt-table-th:after {
   content: "";
@@ -23,7 +34,7 @@
   width: 1px;
   height: 15px;
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 0;
   background: #c2cbcb;
 }
@@ -33,7 +44,39 @@
   border-bottom: 1px solid #e8e8e8;
 }
 .vt-table-td.center {
+  padding: 0;
   text-align: center;
+}
+.vt-table-td.vt-border {
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+}
+.vt-table-td.bg-stats-beige {
+  background: #f8f2e5;
+}
+.vt-table-td.bg-stats-white {
+  background: #ffffff;
+}
+.vt-table.stats {
+  width: auto;
+  background: #f5f8f8;
+}
+
+.hr-table {
+  border-top: 2px solid #c2cbcb;
+}
+.hr-table-th {
+  height: 39px;
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #f5f8f8;
+}
+.hr-table-td {
+  height: 39px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .tb-form-btn-sort {
@@ -51,13 +94,19 @@
   text-indent: -99999em;
   background: url(../images/table/sprite_btn_icons.png) no-repeat 0 0px;
   padding: 0;
-  margin: 3px 15px 3px 0;
+  margin: 3px 10px 3px 0;
 }
 .tb-form-btn-sort.asc {
   background-position: 0 -57px;
 }
+.tb-form-btn-sort.asc:hover, .tb-form-btn-sort.asc.on {
+  background-position: -18px -57px;
+}
 .tb-form-btn-sort.desc {
   background-position: 0 -66px;
+}
+.tb-form-btn-sort.desc:hover, .tb-form-btn-sort.desc.on {
+  background-position: -18px -66px;
 }
 .tb-form-btn-edit {
   display: inline-block;
@@ -91,10 +140,14 @@
   text-indent: -9999px;
   background: #ee6247 url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
 }
-.tb-form-select {
-  width: 95%;
-  color: #576363;
-  border: 0;
+.tb-form-btn-del:disabled {
+  background-color: #f6d4cd;
+  cursor: default;
+}
+
+.table-link {
+  color: #777;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=table.css.map */

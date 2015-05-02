@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="../../css/lib/jquery-ui.min.css">
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
-<script src="../../js/function.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
 </head>
 <body>
 <header class="header">
@@ -111,11 +111,14 @@
       </li>
     </ul>
 
-    <div class="header-user">
-      <p class="header-user-name">system admin</p>
-      <select class="header-user-path">
-        <option>root</option>
-      </select>
-    </div>
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </header>

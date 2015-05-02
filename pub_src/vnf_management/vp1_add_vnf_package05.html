@@ -1,7 +1,7 @@
 include "header_pop.html"
 
 <section class="main">
-
+	<button type="button" class="js-open-popup">팝업열기</button>
 </section>
 
 <!-- [D] 팝업 배경 -->
@@ -15,8 +15,7 @@ include "header_pop.html"
 		<div class="popup-content-section">
 			<div class="popup-input-wrap">
 				<label class="popup-label width-small left-float">패키지파일</label>
-				<input type="text" class="input-form width-add-pkg left-float left" value="D:\mss_pkg\vmss_pkg_v1.0.0.tar" />
-				<button type="button" class="btn-fill-dark left-float">파일선택</button>
+				<input type="file" class="file-form left-float" />
 			</div>
 		</div>
 
@@ -91,7 +90,7 @@ include "header_pop.html"
 		</div>
 		<div class="right-float">
 			<button type="button" class="btn-fill-orange left-float left">등록</button>
-			<button type="button" class="btn-stroke-dark left-float left">취소</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
 		</div>
 	</div>
 </section>

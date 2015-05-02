@@ -6,13 +6,14 @@
 
 <title>SKT vIMS CENTER</title>
 
+<link rel="stylesheet" href="../../css/lib/selectric.css">
 <link rel="stylesheet" href="../../css/common.css" />
 <link rel="stylesheet" href="../../css/table.css" />
 
-<link rel="stylesheet" href="../../css/lib/jquery-ui.min.css">
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
-<script src="../../js/function.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
 </head>
 <body>
 <header class="header">
@@ -122,12 +123,15 @@
       </li>
     </ul>
 
-    <div class="header-user">
-      <p class="header-user-name">system admin</p>
-      <select class="header-user-path">
-        <option>root</option>
-      </select>
-    </div>
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </header>
 
@@ -151,11 +155,13 @@
 
 				<div class="left-float">
 
-					<div class="select">
-						<select class="select-form">
-							<option>전체 유형</option>
-						</select>
-					</div>
+					<select class="select default">
+						<option>전체 유형1</option>
+						<option>전체 유형2</option>
+						<option>전체 유형3</option>
+						<option>전체 유형4</option>
+						<option>전체 유형5</option>
+					</select>
 
 				</div>
 
@@ -168,11 +174,9 @@
 
 			</div>
 
-			<div>
+			<div class="contents-section-inner no-border">
 				<table class="vt-table">
-
 					<caption class="hide">목록</caption>
-
 					<colgroup>
 						<col width="50px" />
 						<col width="60px" />
@@ -189,10 +193,9 @@
 						<col width="130px" />
 						<col width="75px" />
 					</colgroup>
-
 					<thead>
 						<tr>
-							<th scope="col" class="vt-table-th first center">
+							<th scope="col" class="vt-table-th first center chkbox">
 								<div class="check-wrap center">
 									<input id="chk-label-1" class="check-box" type="checkbox">
 									<label for="chk-label-1" class="check-label blind">선택</label>
@@ -200,76 +203,78 @@
 							</th>
 							<th scope="col" class="vt-table-th">No</th>
 							<th scope="col" class="vt-table-th">
-								<select class="tb-form-select">
-									<option>계정 이름</option>
-								</select>
+								<div class="left-float">계정 이름</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">계정 유형</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">최종 로그인 시각</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">최종 로그아웃 시각</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">성명</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">소속 회사</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">부서</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">직급</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">전화번호</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">이메일</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
 								<div class="left-float">마지막 접속 IP</div>
-								<div class="right-float">
+								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
@@ -277,32 +282,32 @@
 							<th scope="col" class="vt-table-th center">실행</th>
 						</tr>
 					</thead>
-
-					<tr>
-						<td class="vt-table-td center">
-							<div class="check-wrap center">
-								<input id="chk-label-2" class="check-box" type="checkbox">
-								<label for="chk-label-2" class="check-label blind">선택</label>
-							</div>
-						</td>
-						<td class="vt-table-td">1</td>
-						<td class="vt-table-td">root</td>
-						<td class="vt-table-td">system_admin</td>
-						<td class="vt-table-td">2015/02/12 13:22:03</td>
-						<td class="vt-table-td">2015/02/12 13:22:03</td>
-						<td class="vt-table-td">김종범</td>
-						<td class="vt-table-td">SK Telecom</td>
-						<td class="vt-table-td">중부 NOC</td>
-						<td class="vt-table-td">사원</td>
-						<td class="vt-table-td">02-1234-1234</td>
-						<td class="vt-table-td">abc@sktelecom.co.kr</td>
-						<td class="vt-table-td">10.10.1.239</td>
-						<td class="vt-table-td center">
-							<button type="button" class="tb-form-btn-edit">수정</button>
-							<button type="button" class="tb-form-btn-del">삭제</button>
-						</td>
-					</tr>
-
+					<tbody>
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-2" class="check-box" type="checkbox">
+									<label for="chk-label-2" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">root</td>
+							<td class="vt-table-td">system_admin</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">김종범</td>
+							<td class="vt-table-td">SK Telecom</td>
+							<td class="vt-table-td">중부 NOC</td>
+							<td class="vt-table-td">사원</td>
+							<td class="vt-table-td">02-1234-1234</td>
+							<td class="vt-table-td">abc@sktelecom.co.kr</td>
+							<td class="vt-table-td">10.10.1.239</td>
+							<td class="vt-table-td center">
+								<button type="button" class="tb-form-btn-edit">수정</button>
+								<button type="button" class="tb-form-btn-del">삭제</button>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 
@@ -312,11 +317,9 @@
 
 					<div class="form-label left-float left small-font">페이지당</div>
 
-					<div class="select-small left-float">
-						<select class="select-form">
-							<option>20</option>
-						</select>
-					</div>
+					<select class="select small left-float">
+						<option>20</option>
+					</select>
 
 					<div class="form-label left-float right small-font">항목 출력</div>
 

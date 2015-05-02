@@ -5,8 +5,12 @@
 	width: 100%;
 	border-top: 2px solid $light-gray;
 
+	&.out-border{
+		border-top:0;
+	}
+
 	&-th {
-		height: 39px;
+		height: 40px;
 		position:relative;
 
 		padding-left:10px;
@@ -15,15 +19,25 @@
 		color:$dark;
 
 		text-align:left;
+		line-height:38px;
 
 		border-bottom: 1px solid $light-gray;
 
+		&.chkbox{
+			line-height:0;
+		}
+
 		&.center {
+			padding:0;
 			text-align: center;
 		}
 
 		&.first:after{
 			display:none;
+		}
+
+		.area-btn-sort{
+			margin-top:11px;
 		}
 
 		&:after{
@@ -34,7 +48,7 @@
 			height:15px;
 
 			position:absolute;
-			top:12px;
+			top:14px;
 			left:0;
 			background:$light-gray;
 		}
@@ -46,8 +60,48 @@
 		border-bottom: 1px solid $clean-gray;
 
 		&.center {
+			padding:0;
 			text-align: center;
 		}
+
+		&.vt-border{
+			border-left:1px solid $clean-gray;
+			border-right:1px solid $clean-gray;
+		}
+
+		&.bg-stats-beige{
+			background:$beige;
+		}
+
+		&.bg-stats-white{
+			background:$white;
+		}
+	}
+
+	&.stats{
+		width:auto;
+		background:$white-bg-gray;
+	}
+
+}
+
+.hr-table{
+	border-top: 2px solid $light-gray;
+
+	&-th{
+		height:39px;
+		text-align:left;
+		padding-left:10px;
+		border-bottom: 1px solid $clean-gray;
+		background:$white-bg-gray;
+	}
+
+	&-td{
+		height:39px;
+		padding-left:10px;
+
+		font-weight:bold;
+		border-bottom: 1px solid $clean-gray;
 	}
 }
 
@@ -60,14 +114,22 @@
 			text-indent:-99999em;
 			background:url(../images/table/sprite_btn_icons.png) no-repeat 0 0px;
 			padding:0;
-			margin:3px 15px 3px 0;
+			margin:3px 10px 3px 0;
 
 			&.asc{
 				background-position:0 -57px;
+
+				&:hover, &.on{
+					background-position:-18px -57px;
+				}
 			}
 
 			&.desc{
 				background-position:0 -66px;
+
+				&:hover, &.on{
+					background-position:-18px -66px;
+				}
 			}
 		}
 
@@ -83,12 +145,16 @@
 			@include btn(25px, 25px, 25px, 0, $white, $orange, 4px);
 			text-indent: -9999px;
 			background: $orange url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
+
+			&:disabled {
+				background-color:$white-orange;
+				cursor:default;
+			}
 		}
 	}
+}
 
-	&-select{
-		width:95%;
-		color:$dark;
-		border:0;
-	}
+.table-link {
+	color:$dark-gray;
+	text-decoration:underline;
 }

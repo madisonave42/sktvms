@@ -5,17 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/table.css" />
 <link rel="stylesheet" href="../../css/popup.css" />
 
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
-<script src="../../js/lib/jquery-ui-1.11.2.min.js"></script>
-<script src="../../js/function_pop.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.min.js"></script>
 </head>
 <body>
-
+<!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
 
 <section class="main">
-
+	<button type="button" class="js-open-popup">팝업열기</button>
 </section>
 
 <!-- [D] 팝업 배경 -->
@@ -29,8 +32,7 @@
 		<div class="popup-content-section">
 			<div class="popup-input-wrap">
 				<label class="popup-label width-small left-float">패키지파일</label>
-				<input type="text" class="input-form width-add-pkg left-float left" />
-				<button type="button" class="btn-fill-dark left-float">파일선택</button>
+				<input type="file" class="file-form left-float" />
 			</div>
 		</div>
 
@@ -99,7 +101,7 @@
 		</div>
 		<div class="right-float">
 			<button type="button" class="btn-stroke-light left-float left">등록</button>
-			<button type="button" class="btn-stroke-dark left-float left">취소</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
 		</div>
 	</div>
 </section>

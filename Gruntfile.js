@@ -8,15 +8,35 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     includes: {
-    	root: {
-    		cwd:'pub_src',
+    	test: {
+    		cwd:'pub_src/test',
     		src: ['*.html'],
-    		dest: 'pub/',
+    		dest: 'pub/test',
     		options: {
     			flatten:true,
     			includePath: 'pub_src/_include'
     		}
     	},
+
+			common: {
+				cwd:'pub_src/common',
+				src: ['*.html'],
+				dest: 'pub/common',
+				options: {
+					flatten:true,
+					includePath: 'pub_src/_include'
+				}
+			},
+
+			login: {
+				cwd:'pub_src/login',
+				src: ['*.html'],
+				dest: 'pub/login',
+				options: {
+					flatten:true,
+					includePath: 'pub_src/_include'
+				}
+			},
 
 			admin: {
 				cwd:'pub_src/admin',
@@ -131,7 +151,7 @@ module.exports = function(grunt) {
     		files:[{
     			expand: true,
     			cwd: 'js_src/lib/',
-    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'right.js', 'resizable.js'],
+    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'jquery.selectric.min.js'],
     			dest: 'js/lib/'
     		}]
     	},
@@ -150,7 +170,7 @@ module.exports = function(grunt) {
         files:[{
           expand: true,
           cwd: 'js/',
-          src: ['**', '!function.js'],
+          src: ['**'],
           dest: '_output/js/'
         }]
     	},

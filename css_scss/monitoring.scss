@@ -1,0 +1,522 @@
+@import "variables";
+@import "mixins";
+
+.wrapper.monitoring{
+  position:relative;
+}
+
+.contents-section {
+
+  &.topology {
+    width:877px;
+    height:600px;
+
+    margin-bottom:6px;
+    box-sizing:border-box;
+  }
+
+  &.nfvi-overload {
+    width:877px;
+    height:297px;
+
+    margin-bottom:6px;
+    box-sizing:border-box;
+  }
+
+  &.vm-overload {
+    width:877px;
+    height:297px;
+
+    margin-bottom:6px;
+    box-sizing:border-box;
+  }
+
+  &.dashboard-list {
+    clear:both;
+  }
+
+  &.stats-monitoring{
+    position:relative;
+    width:1760px;
+    height:100%;
+    padding:20px;
+
+    box-sizing:border-box;
+  }
+
+  &-inner{
+
+    &.stats-monitoring{
+      position:relative;
+      height:100%;
+      margin:0;
+      text-align:center;
+      box-sizing:border-box;
+    }
+
+  }
+
+}
+
+.dashboard {
+  min-height:756px;
+
+  &-list {
+    position:absolute;
+    min-height:128px;
+    bottom:0;
+  }
+
+  &-tab {
+    @include clear();
+    position:absolute;
+    top:20px;
+    left:20px;
+
+    &-item {
+      float:left;
+    }
+
+    &-link {
+      @include size(80, 30);
+      display:block;
+      box-sizing:border-box;
+      line-height:30px;
+      color:$dark;
+      font-weight:bold;
+      text-align:center;
+      border:1px solid $light-gray;
+      border-bottom:0;
+
+      &.on {
+        color:$white;
+        background:$light-gray;
+
+        .notice-num {
+          color:$dark;
+          background:$white;
+        }
+      }
+
+      .notice-num {
+        @include size(18);
+        display:inline-block;
+        margin-left:6px;
+        border-radius:100%;
+        text-align:center;
+        line-height:18px;
+        background:$clean-gray;
+      }
+
+    }
+
+    &-cont {
+      display:none;
+      height:100%;
+
+      &.on {
+        display:block;
+      }
+    }
+  }
+
+  &-btn-expand {
+    @include size(24, 30);
+    padding:0;
+    background:url(../images/ico_arrow_up.png) no-repeat 0 0;
+    border:0;
+    text-indent:-9999px;
+
+    &.expand{
+      background-position:0 -31px;
+    }
+  }
+
+  &-icon {
+
+    &-alarm {
+
+      &-on,
+      &-off {
+        @include size(25);
+        display:inline-block;
+        text-indent:-9999px;
+        background:url(../images/ico_alarm.png) no-repeat;
+        border:0;
+      }
+
+      &-on {
+        background-position:50% -21px;
+      }
+
+      &-off {
+        background-position:50% 4px;
+      }
+
+    }
+
+  }
+
+}
+
+.btn {
+  &-alarm {
+
+    &-off {
+      padding:0;
+      padding-left:30px;
+      width:130px;
+      background:$orange url(../images/ico_alarm_btn.png) no-repeat 13px 9px;
+      text-align:left;
+    }
+
+    &-on {
+      padding:0;
+      padding-left:22px;
+      width:130px;
+      background:url(../images/ico_alarm_btn.png) no-repeat 10px -39px;
+      text-align:left;
+    }
+  }
+}
+
+.state-box {
+
+  &-cri,
+  &-maj,
+  &-min,
+  &-normal {
+    @include size(77, 30);
+    box-sizing:border-box;
+    line-height:30px;
+    text-align:center;
+    color:$white;
+    font-weight:bold;
+    border-radius:2px;
+  }
+
+  &-cri {
+    background:$critical;
+  }
+
+  &-maj {
+    background:$major;
+  }
+
+  &-min {
+    background:$minor;
+  }
+
+  &-normal {
+    background:$normal;
+  }
+}
+
+.overload {
+
+  &-pannel {
+    margin-top:0;
+    box-sizing:border-box;
+    padding:9px;
+    width:415px;
+    height:113px;
+    border:1px solid $light-gray;
+    border-radius:3px;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom:5px;
+    }
+  }
+
+  &-view{
+    display:block;
+    padding:0;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    text-indent:-99999em;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    background: url(../images/ico_arrow_left.png) no-repeat 50% 50%;
+  }
+
+  &-title {
+    float:left;
+    color:$dark;
+    font-size:14px;
+    font-weight:bold;
+  }
+
+  &-graph {
+    margin-top:8px;
+    height:62px;
+  }
+
+}
+
+.sm{
+
+  &-msg{
+
+    &-add{
+
+      &-page{
+
+        width:400px;
+        height:56px;
+
+        position:absolute;
+        top:50%;
+        left:50%;
+
+        padding-left:70px;
+        margin:-28px 0 0 -200px;
+
+        font-size:21px;
+        color: $dark-gray;
+
+        background:url(../images/ico_sm_caution.png) no-repeat 0 6px;
+
+      }
+
+    }
+
+  }
+
+}
+
+.diagram-dashboard {
+	margin-top:0;
+	height:100%;
+	overflow:hidden;
+	
+	&-wrap {
+		@include clear();
+		position:relative;
+		padding:35px 25px;
+		box-sizing:border-box;
+		width:100%;
+	}
+	
+	&-lines {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+
+}
+
+.diag {
+
+  &-group {
+    margin-left:90px;
+    width:180px;
+
+    &-item {
+      margin-top:90px;
+      box-sizing:border-box;
+      height:110px;
+      border:1px solid $light-gray;
+      border-radius:3px;
+      text-align:center;
+
+      &.orchestrator {
+        margin-top:0;
+        background:$clean-gray;
+        font-weight:bold;
+        line-height:108px;
+      }
+    }
+
+    &-title {
+      margin-top:13px;
+      font-size:14px;
+      font-weight:bold;
+      line-height:1;
+    }
+
+    &-cont {
+      margin-top:10px;
+    }
+
+  }
+
+  &-list {
+    margin-left:144px;
+    width:369px;
+
+    &-item {
+      &:first-child {
+        margin-bottom:26px;
+      }
+    }
+
+    &-title {
+      position:relative;
+      margin-bottom:8px;
+      padding-left:19px;
+      font-size:14px;
+      line-height:1;
+
+      &:after{
+        @include size(12);
+        content:"";
+        display:block;
+        position:absolute;
+        top:2px;
+        left:0;
+        border-radius:100%;
+        background:$red;
+      }
+    }
+
+    &-cont {
+      box-sizing:border-box;
+      padding:17px;
+      padding-right:0;
+      height:220px;
+      border:1px solid $light-gray;
+      border-radius:3px;
+      overflow:auto;
+
+      .vm {
+        float:left;
+        margin:0 12px 10px 0;
+
+        &:nth-child(8n) {
+          margin-right:0;
+        }
+      }
+    }
+
+  }
+
+  &-instance {
+    @include size(77, 32);
+    float:left;
+    margin:0 5px 5px 0;
+    line-height:32px;
+    text-align:center;
+    color:$white;
+    border-radius:2px;
+    border:0;
+
+    &:nth-child(4n) {
+      margin-right:0;
+    }
+
+    &.critical {
+      background-color:$critical;
+    }
+
+    &.major {
+      background-color:$major;
+    }
+
+    &.minor {
+      background-color:$minor;
+    }
+
+    &.normal {
+      background-color:$normal;
+    }
+
+    &-so,
+    &-te {
+      display:inline-block;
+      line-height:1;
+      padding:0 1px;
+      font-size:11px;
+      vertical-align:1px;
+    }
+
+    &-so {
+      background:$white;
+      color:$normal;
+    }
+
+    &-te {
+      border:1px solid $white;
+    }
+  }
+
+  &-line {
+
+    &-dash-orvi {
+      position:absolute;
+      top:83px;
+      left:51px;
+
+      .vm-line-label {
+        left:-34px;
+      }
+
+    }
+
+    &-dash-orvnfm {
+      position:absolute;
+      top:138px;
+      left:197px;
+
+      .vm-line-label {
+        left:-81px;
+      }
+
+    }
+
+    &-dash-vivnfm {
+      position:absolute;
+      top:338px;
+      left:197px;
+
+      .vm-line-label {
+        left:-81px;
+      }
+
+    }
+
+    &-dash-vevnfm {
+      position:absolute;
+      top:177px;
+      left:288px;
+
+      .vm-line-label {
+        left:40px;
+      }
+
+    }
+
+    &-dash-nfvi {
+      position:absolute;
+      top:486px;
+      left:288px;
+
+      .vm-line-label {
+        left:40px;
+      }
+
+    }
+
+  }
+
+}
+
+.vm-line-label {
+  position:absolute;
+  top:50%;
+  margin-top:-17px;
+}
+
+.vm-line-label.small {
+  width:80px;
+}
+
+.vm-line-label.green {
+  background:$normal;
+}
+
+
+

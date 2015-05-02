@@ -52,3 +52,151 @@
   overflow-x:hidden;
   overflow-y:auto;
 }
+
+.chart{
+
+  &-view {
+    width: 25px;
+    height: 25px;
+
+    display: inline-block;
+
+    line-height: 25px;
+    text-indent: -99999em;
+
+    border: 0;
+
+    background: url(../images/icon_chart.png) no-repeat 0 -40px;
+
+    &.on {
+      background-position: 0 0;
+    }
+  }
+
+  &-delete{
+    width: 25px;
+    height: 25px;
+
+    display: inline-block;
+
+    line-height: 25px;
+    text-indent: -99999em;
+
+    border: 0;
+
+    background: url(../images/icon_btn_delete.png) no-repeat 0 0;
+  }
+}
+
+.ui-datepicker {
+  display:none;
+  margin-top:2px;
+  padding:10px;
+  border:2px solid $orange;
+  background:$white;
+
+  &-header {
+    position:relative;
+    padding:10px 0;
+    background:$white-bg-gray;
+    border-radius:2px;
+  }
+
+  &-prev,
+  &-next {
+    @include size(30);
+    position:absolute;
+    top:10px;
+    box-sizing:border-box;
+    border-radius:5px;
+    border:1px solid $light-gray;
+    text-indent:-9999px;
+    background:$white url(../images/sprite_pagination.png) no-repeat;
+    cursor:pointer;
+  }
+
+  &-prev {
+    left:10px;
+    background-position:-28px 0;
+  }
+
+  &-next {
+    right:10px;
+    background-position:-56px 0;
+  }
+
+  &-title {
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    font-weight:bold;
+    color:$dark;
+    text-align:center;
+  }
+
+  &-calendar {
+    width:259px;
+
+    th,
+    td {
+      width:37px;
+      height:37px;
+    }
+
+    th {
+      font-weight:bold;
+    }
+
+    span,
+    a {
+      position:relative;
+      display:block;
+      height:100%;
+      line-height:37px;
+      text-align:center;
+      color:$dark;
+    }
+
+    th span[title="Saturday"],
+    .ui-datepicker-sat a {
+      color:$blue;
+    }
+
+    th span[title="Sunday"],
+    .ui-datepicker-sun a {
+      color:$red;
+    }
+  }
+
+  .ui-state-highlight {
+    color:$white;
+    font-weight:bold;
+
+    &:after {
+      @include size(29);
+      content:"";
+      position:absolute;
+      top:4px;
+      left:3px;
+      display:block;
+      border-radius:100%;
+      background:$orange;
+      z-index:-1;
+    }
+  }
+
+  .ui-state-active {
+    &:after {
+      @include size(28);
+      content:"";
+      position:absolute;
+      top:4px;
+      left:3px;
+      display:block;
+      border:1px solid $orange;
+      border-radius:100%;
+    }
+  }
+}
+
+

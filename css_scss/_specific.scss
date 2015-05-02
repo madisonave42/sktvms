@@ -72,3 +72,14 @@
 .mini-font{
   font-size:$font-size-mini;
 }
+
+.status-blue{
+  font-weight:bold;
+  color:$blue;
+}
+
+.clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
