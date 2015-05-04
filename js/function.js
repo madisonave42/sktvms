@@ -91,26 +91,30 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 };
 
 // Fold tree node
-var FoldTree = function($clickTreeItem, $clickTreeList, hasParentChild ){
+var FoldTree = function(){
 
-  if( !hasParentChild ) {
-    if ($clickTreeItem.data('fold') == 'true') {
-      $(this).addClass('unfold').siblings().addClass('unfold');
-      $clickTreeItem.data('fold', 'false').next('.tree-depth').addClass('unfold');
+  this.foldAction = function($clickLastNode, $clickTreeItem, $clickTreeList, hasParentChild){
+
+    if( !hasParentChild ) {
+      if ($clickTreeItem.data('fold') == 'true') {
+        $clickLastNode.addClass('unfold').siblings().addClass('unfold');
+        $clickTreeItem.data('fold', 'false').next('.tree-depth').addClass('unfold');
+      } else {
+        $clickLastNode.removeClass('unfold').siblings().removeClass('unfold');
+        $clickTreeItem.data('fold', 'true').next('.tree-depth').removeClass('unfold');
+      }
     } else {
-      $(this).removeClass('unfold').siblings().removeClass('unfold');
-      $clickTreeItem.data('fold', 'true').next('.tree-depth').removeClass('unfold');
+      if ($clickTreeItem.data('select') == 'false') {
+        $clickLastNode.attr('data-select','selected').addClass('is-select')
+          .siblings().attr('data-select','selected').addClass('is-select');
+        $clickTreeItem.data('select', 'true');
+      } else {
+        $clickLastNode.removeAttr('data-select').removeClass('is-select')
+          .siblings().removeAttr('data-select').removeClass('is-select');
+        $clickTreeItem.data('select', 'false');
+      }
     }
-  } else {
-    if ($clickTreeItem.data('select') == 'false') {
-      $(this).attr('data-select','selected').addClass('is-select')
-        .siblings().attr('data-select','selected').addClass('is-select');
-      $clickTreeItem.data('select', 'true');
-    } else {
-      $(this).removeAttr('data-select').removeClass('is-select')
-        .siblings().removeAttr('data-select').removeClass('is-select');
-      $clickTreeItem.data('select', 'false');
-    }
+
   }
 
 };
@@ -220,6 +224,7 @@ $(function(){
 		// Set tree node
 		var $treeItem = $('.tree-item');
 		$treeItem.data({'fold' : 'true', 'select' : 'false'});
+		var fold = new FoldTree();
 
 		// React about event of folding tree
 		$(document).on('click', '.js-fold', function(e){
@@ -230,7 +235,7 @@ $(function(){
 			var $clickTreeList = $clickTreeItem.parent('.tree-list');
 			var hasParentChild = $clickTreeList.hasClass('no-children');
 
-			var fold = new FoldTree($clickTreeItem, $clickTreeList, hasParentChild);
+			fold.foldAction($(this), $clickTreeItem, $clickTreeList, hasParentChild);
 
 		});
 

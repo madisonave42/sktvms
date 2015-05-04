@@ -50,6 +50,7 @@ $(function(){
 		// Set tree node
 		var $treeItem = $('.tree-item');
 		$treeItem.data({'fold' : 'true', 'select' : 'false'});
+		var fold = new FoldTree();
 
 		// React about event of folding tree
 		$(document).on('click', '.js-fold', function(e){
@@ -60,7 +61,7 @@ $(function(){
 			var $clickTreeList = $clickTreeItem.parent('.tree-list');
 			var hasParentChild = $clickTreeList.hasClass('no-children');
 
-			var fold = new FoldTree($clickTreeItem, $clickTreeList, hasParentChild);
+			fold.foldAction($(this), $clickTreeItem, $clickTreeList, hasParentChild);
 
 		});
 

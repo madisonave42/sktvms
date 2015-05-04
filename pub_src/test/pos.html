@@ -1,0 +1,30 @@
+include "header_top.html"
+include "css_vnf.html"
+include "header_bottom.html"
+<style>
+  .box{
+    width:100px;
+    height:100px;
+    background:red;
+
+    position:absolute;
+
+    bottom:100px;
+    right:300px;
+
+  }
+</style>
+<body>
+
+<div class="box">hahah</div>
+<script>
+  $(function(){
+
+    console.log( $('.box').offset().top );
+    console.log( $('.box').offset().left );
+    console.log( $('.box').offset().bottom );
+
+  })
+</script>
+</body>
+</html>
