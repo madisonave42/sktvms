@@ -8,6 +8,9 @@ $pop-green:#00b9b0;
 $pop-red:#e70000;
 $pop-dark-blue:#0057b9;
 
+
+/* form element style in popup : S */
+
 .input-text{
 	color:$dark-gray;
 	resize:none;
@@ -201,8 +204,11 @@ $pop-dark-blue:#0057b9;
   }
 
 }
+/* form element style in popup : S */
+
 
 /* popup common : S */
+
 .popup {
   display:none;
   position:absolute;
@@ -407,7 +413,7 @@ $pop-dark-blue:#0057b9;
 }
 /* popup common : E */
 
-/* add vnf package : S */
+/* vnf : S */
 .width-add-pkg.input-form {
   width:517px;
 }
@@ -503,5 +509,5 @@ $pop-dark-blue:#0057b9;
 //  overflow-x:hidden;
 //  overflow-y:auto;
 }
-/* add vnf package : E */
+/* vnf : E */
 

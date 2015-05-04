@@ -222,7 +222,7 @@
 
 .topology-wrap {
   width: 1280px;
-  margin: 100px auto 0;
+  margin: 100px 0 0 196px;
 }
 .topology-wrap:after {
   content: ".";
@@ -293,14 +293,12 @@
 }
 .vm-line.round-top-opened {
   top: 190px;
-  left: 50%;
-  margin-left: -277px;
+  left: 559px;
 }
 .vm-line.network {
   position: absolute;
   top: 53px;
-  left: 50%;
-  margin-left: -402px;
+  left: 434px;
 }
 .vm-line-router {
   width: 40px;

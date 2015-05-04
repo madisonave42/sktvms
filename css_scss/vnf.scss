@@ -292,7 +292,7 @@
 
   &-wrap{
     width:1280px;
-    margin:100px auto 0;
+    margin:100px 0 0 196px;
     @include clear();
   }
 
@@ -391,15 +391,15 @@
 
     &.round-top-opened{
       top:190px;
-      left:50%;
-      margin-left:-277px;
+      left:559px;
+      //margin-left:-277px;
     }
 
     &.network{
       position:absolute;
       top:53px;
-      left:50%;
-      margin-left:-402px;
+      left:434px;
+      //margin-left:-402px;
     }
 
     &-router{

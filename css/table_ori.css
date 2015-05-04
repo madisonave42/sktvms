@@ -1,9 +1,23 @@
+.t1grid .blind {
+  display: none;
+}
+
+.t1grid .gridList {
+  width: 100%;
+}
+
 .vt-table {
   width: 100%;
   border-top: 2px solid #c2cbcb;
 }
-.vt-table-th {
-  height: 39px;
+.vt-table caption {
+  display: none;
+}
+.vt-table.out-border {
+  border-top: 0;
+}
+.vt-table th {
+  height: 40px;
   position: relative;
   padding-left: 10px;
   font-weight: bold;
@@ -12,51 +26,68 @@
   line-height: 38px;
   border-bottom: 1px solid #c2cbcb;
 }
-.vt-table-th.chkbox {
+.vt-table th.chkbox {
   line-height: 0;
 }
-.vt-table-th.center {
+.vt-table th.center {
   padding: 0;
   text-align: center;
 }
-.vt-table-th.first:after {
+.vt-table th.first:after {
   display: none;
 }
-.vt-table-th .area-btn-sort {
+.vt-table th .area-btn-sort {
   margin-top: 11px;
 }
-.vt-table-th:after {
+.vt-table th:after {
   content: "";
   display: block;
   width: 1px;
   height: 15px;
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 0;
   background: #c2cbcb;
 }
-.vt-table-td {
+.vt-table td {
   height: 39px;
   padding-left: 10px;
   border-bottom: 1px solid #e8e8e8;
 }
-.vt-table-td.center {
+.vt-table td.center {
   padding: 0;
   text-align: center;
 }
-.vt-table-td.vt-border {
+.vt-table td.vt-border {
   border-left: 1px solid #e8e8e8;
   border-right: 1px solid #e8e8e8;
 }
-.vt-table-td.bg-stats-beige {
+.vt-table td.bg-stats-beige {
   background: #f8f2e5;
 }
-.vt-table-td.bg-stats-white {
+.vt-table td.bg-stats-white {
   background: #ffffff;
 }
 .vt-table.stats {
   width: auto;
-  background: #fbfbfb;
+  background: #f5f8f8;
+}
+
+.hr-table {
+  border-top: 2px solid #c2cbcb;
+}
+.hr-table th {
+  height: 39px;
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #f5f8f8;
+}
+.hr-table td {
+  height: 39px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .tb-form-btn-sort {
@@ -120,18 +151,14 @@
   text-indent: -9999px;
   background: #ee6247 url(../images/table/sprite_btn_icons.png) no-repeat 50% -25px;
 }
-
-.selectric-tb-form-select {
-  width: 95%;
-}
-.selectric-tb-form-select .selectric {
-  border: 0;
-}
-.selectric-tb-form-select .selectric .label {
-  margin-left: 0;
-  font-size: 13px;
-  font-weight: bold;
-  color: #576363;
+.tb-form-btn-del:disabled {
+  background-color: #f6d4cd;
+  cursor: default;
 }
 
-/*# sourceMappingURL=table.css.map */
+.table-link {
+  color: #777;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=table_ori.css.map */

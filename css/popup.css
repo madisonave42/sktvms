@@ -112,6 +112,7 @@ img {
   display: block;
 }
 
+/* form element style in popup : S */
 .input-text {
   color: #777;
   resize: none;
@@ -300,6 +301,7 @@ img {
   margin-left: 20px;
 }
 
+/* form element style in popup : S */
 /* popup common : S */
 .popup {
   display: none;
@@ -476,7 +478,7 @@ img {
 }
 
 /* popup common : E */
-/* add vnf package : S */
+/* vnf : S */
 .width-add-pkg.input-form {
   width: 517px;
 }
@@ -565,6 +567,6 @@ img {
   height: 110px;
 }
 
-/* add vnf package : E */
+/* vnf : E */
 
 /*# sourceMappingURL=popup.css.map */

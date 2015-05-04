@@ -1,0 +1,207 @@
+include "header_top.html"
+include "css_vnf.html"
+include "header_bottom.html"
+
+<section class="main">
+
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">모듈</h2>
+				<p class="main-heading-overview">모듈별 페이지입니다.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper">
+
+		<section class="contents-section">
+
+			<div class="contents-section-inner no-border">
+
+				<select class="select default">
+					<option>전체 VNF</option>
+				</select>
+
+				<br />
+				<br />
+				<br />
+
+				<button type="button" class="btn-fill-orange">Enable</button>
+
+				<br />
+				<br />
+				<br />
+
+				<input type="text" class="input med" value="2015-03-06">
+
+				<br />
+				<br />
+				<br />
+
+				<div class="check-wrap center">
+					<input id="chk-module-1" class="check-box" type="checkbox">
+					<label for="chk-module-1" class="check-label blind">선택</label>
+				</div>
+
+				<br />
+				<br />
+				<br />
+
+				<div class="radio-wrap center">
+					<input id="radio-module-1" class="radio" type="radio">
+					<label for="radio-module-1" class="radio-label blind">선택</label>
+				</div>
+
+				<br />
+				<br />
+				<br />
+
+				<table class="vt-table">
+					<caption class="hide">목록</caption>
+					<colgroup>
+						<col width="50px" />
+						<col width="60px" />
+						<col width="190px" />
+						<col width="190px" />
+						<col width="140px" />
+						<col width="110px" />
+						<col width="110px" />
+						<col width="140px" />
+						<col width="auto" />
+						<col width="75px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="vt-table-th first center chkbox">
+								<div class="check-wrap center">
+									<input id="chk-label-1" class="check-box" type="checkbox">
+									<label for="chk-label-1" class="check-label blind">선택</label>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">No</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Package Name</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Create Time</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Vendor</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Version</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">Status</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">
+								<div class="left-float">VNF Instance 수</div>
+								<div class="area-btn-sort right-float">
+									<button type="button" class="tb-form-btn-sort asc">asc</button>
+									<button type="button" class="tb-form-btn-sort desc">desc</button>
+								</div>
+							</th>
+							<th scope="col" class="vt-table-th">Description</th>
+							<th scope="col" class="vt-table-th center">실행</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-2" class="check-box" type="checkbox">
+									<label for="chk-label-2" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">MSS</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">Telcoware</td>
+							<td class="vt-table-td">1.0.0</td>
+							<td class="vt-table-td">Enabled</td>
+							<td class="vt-table-td">2</td>
+							<td class="vt-table-td"></td>
+							<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<br />
+				<br />
+
+				<table class="hr-table">
+					<caption class="hide">general</caption>
+					<colgroup>
+						<col width="150px"/>
+						<col width="270px"/>
+					</colgroup>
+					<tbody>
+					<tr>
+						<th scope="row" class="hr-table-th">Package Name</th>
+						<td class="hr-table-td">vMSS</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Version</th>
+						<td class="hr-table-td">2.0.0</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Vendor</th>
+						<td class="hr-table-td">Telcoware</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Description</th>
+						<td class="hr-table-td">HD Voice 서비스 제공을 위한 vMSS 패...</td>
+					</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<br />
+				<br />
+
+				<div class="pagination">
+					<a href="#" class="page-item page-first">처음페이지</a>
+					<a href="#" class="page-item page-prev">이전페이지</a>
+					<a href="#" class="page-item current">1</a>
+					<a href="#" class="page-item">2</a>
+					<a href="#" class="page-item">3</a>
+					<a href="#" class="page-item">4</a>
+					<a href="#" class="page-item">5</a>
+					<a href="#" class="page-item page-next">다음페이지</a>
+					<a href="#" class="page-item page-last">마지막페이지</a>
+				</div>
+
+			</div>
+
+		</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"

@@ -8,12 +8,13 @@
 
 <link rel="stylesheet" href="../../css/lib/selectric.css">
 <link rel="stylesheet" href="../../css/common.css" />
-<link rel="stylesheet" href="../../css/table.css" />
-
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/pagination.css" />
+<link rel="stylesheet" href="../../css/vnf.css">
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
 <script src="../../js/lib/jquery.selectric.min.js"></script>
-<script src="../../js/function.min.js"></script>
+<script src="../../js/function.js"></script>
 </head>
 <body>
 <header class="header">
@@ -136,11 +137,12 @@
 </header>
 
 <section class="main">
+
 	<div class="main-header">
 		<div class="wrapper">
 			<div class="main-heading">
-				<h2 class="main-heading-title">운용자 목록</h2>
-				<p class="main-heading-overview">vIMS Center에 등록된 운용자 목록을 제공합니다</p>
+				<h2 class="main-heading-title">모듈</h2>
+				<p class="main-heading-overview">모듈별 페이지입니다.</p>
 			</div>
 
 		</div>
@@ -151,51 +153,60 @@
 
 		<section class="contents-section">
 
-			<div class="contents-section-top">
+			<div class="contents-section-inner no-border">
 
-				<div class="left-float">
+				<select class="select default">
+					<option>전체 VNF</option>
+				</select>
 
-					<select class="select default">
-						<option>전체 유형1</option>
-						<option>전체 유형2</option>
-						<option>전체 유형3</option>
-						<option>전체 유형4</option>
-						<option>전체 유형5</option>
-					</select>
+				<br />
+				<br />
+				<br />
 
+				<button type="button" class="btn-fill-orange">Enable</button>
+
+				<br />
+				<br />
+				<br />
+
+				<input type="text" class="input med" value="2015-03-06">
+
+				<br />
+				<br />
+				<br />
+
+				<div class="check-wrap center">
+					<input id="chk-module-1" class="check-box" type="checkbox">
+					<label for="chk-module-1" class="check-label blind">선택</label>
 				</div>
 
-				<div class="right-float">
+				<br />
+				<br />
+				<br />
 
-					<button type="button" class="btn-stroke-dark left-float left">운용자 추가</button>
-					<button type="button" class="btn-stroke-orange left-float">운용자 삭제</button>
-
+				<div class="radio-wrap center">
+					<input id="radio-module-1" class="radio" type="radio">
+					<label for="radio-module-1" class="radio-label blind">선택</label>
 				</div>
 
-			</div>
+				<br />
+				<br />
+				<br />
 
-			<div>
 				<table class="vt-table">
-
 					<caption class="hide">목록</caption>
-
 					<colgroup>
 						<col width="50px" />
 						<col width="60px" />
-						<col width="120px" />
-						<col width="120px" />
-						<col width="175px" />
-						<col width="175px" />
-						<col width="95px" />
+						<col width="190px" />
+						<col width="190px" />
 						<col width="140px" />
-						<col width="160px" />
-						<col width="70px" />
-						<col width="130px" />
+						<col width="110px" />
+						<col width="110px" />
+						<col width="140px" />
 						<col width="auto" />
-						<col width="130px" />
 						<col width="75px" />
 					</colgroup>
-
 					<thead>
 						<tr>
 							<th scope="col" class="vt-table-th first center chkbox">
@@ -206,129 +217,107 @@
 							</th>
 							<th scope="col" class="vt-table-th">No</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">계정 이름</div>
+								<div class="left-float">Package Name</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">계정 유형</div>
+								<div class="left-float">Create Time</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">최종 로그인 시각</div>
+								<div class="left-float">Vendor</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">최종 로그아웃 시각</div>
+								<div class="left-float">Version</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">성명</div>
+								<div class="left-float">Status</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
 							<th scope="col" class="vt-table-th">
-								<div class="left-float">소속 회사</div>
+								<div class="left-float">VNF Instance 수</div>
 								<div class="area-btn-sort right-float">
 									<button type="button" class="tb-form-btn-sort asc">asc</button>
 									<button type="button" class="tb-form-btn-sort desc">desc</button>
 								</div>
 							</th>
-							<th scope="col" class="vt-table-th">
-								<div class="left-float">부서</div>
-								<div class="area-btn-sort right-float">
-									<button type="button" class="tb-form-btn-sort asc">asc</button>
-									<button type="button" class="tb-form-btn-sort desc">desc</button>
-								</div>
-							</th>
-							<th scope="col" class="vt-table-th">
-								<div class="left-float">직급</div>
-								<div class="area-btn-sort right-float">
-									<button type="button" class="tb-form-btn-sort asc">asc</button>
-									<button type="button" class="tb-form-btn-sort desc">desc</button>
-								</div>
-							</th>
-							<th scope="col" class="vt-table-th">
-								<div class="left-float">전화번호</div>
-								<div class="area-btn-sort right-float">
-									<button type="button" class="tb-form-btn-sort asc">asc</button>
-									<button type="button" class="tb-form-btn-sort desc">desc</button>
-								</div>
-							</th>
-							<th scope="col" class="vt-table-th">
-								<div class="left-float">이메일</div>
-								<div class="area-btn-sort right-float">
-									<button type="button" class="tb-form-btn-sort asc">asc</button>
-									<button type="button" class="tb-form-btn-sort desc">desc</button>
-								</div>
-							</th>
-							<th scope="col" class="vt-table-th">
-								<div class="left-float">마지막 접속 IP</div>
-								<div class="area-btn-sort right-float">
-									<button type="button" class="tb-form-btn-sort asc">asc</button>
-									<button type="button" class="tb-form-btn-sort desc">desc</button>
-								</div>
-							</th>
+							<th scope="col" class="vt-table-th">Description</th>
 							<th scope="col" class="vt-table-th center">실행</th>
 						</tr>
 					</thead>
-
-					<tr>
-						<td class="vt-table-td center">
-							<div class="check-wrap center">
-								<input id="chk-label-2" class="check-box" type="checkbox">
-								<label for="chk-label-2" class="check-label blind">선택</label>
-							</div>
-						</td>
-						<td class="vt-table-td">1</td>
-						<td class="vt-table-td">root</td>
-						<td class="vt-table-td">system_admin</td>
-						<td class="vt-table-td">2015/02/12 13:22:03</td>
-						<td class="vt-table-td">2015/02/12 13:22:03</td>
-						<td class="vt-table-td">김종범</td>
-						<td class="vt-table-td">SK Telecom</td>
-						<td class="vt-table-td">중부 NOC</td>
-						<td class="vt-table-td">사원</td>
-						<td class="vt-table-td">02-1234-1234</td>
-						<td class="vt-table-td">abc@sktelecom.co.kr</td>
-						<td class="vt-table-td">10.10.1.239</td>
-						<td class="vt-table-td center">
-							<button type="button" class="tb-form-btn-edit">수정</button>
-							<button type="button" class="tb-form-btn-del">삭제</button>
-						</td>
-					</tr>
-
+					<tbody>
+						<tr>
+							<td class="vt-table-td center">
+								<div class="check-wrap center">
+									<input id="chk-label-2" class="check-box" type="checkbox">
+									<label for="chk-label-2" class="check-label blind">선택</label>
+								</div>
+							</td>
+							<td class="vt-table-td">1</td>
+							<td class="vt-table-td">MSS</td>
+							<td class="vt-table-td">2015/02/12 13:22:03</td>
+							<td class="vt-table-td">Telcoware</td>
+							<td class="vt-table-td">1.0.0</td>
+							<td class="vt-table-td">Enabled</td>
+							<td class="vt-table-td">2</td>
+							<td class="vt-table-td"></td>
+							<td class="vt-table-td center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+						</tr>
+					</tbody>
 				</table>
-			</div>
 
-			<div class="contents-section-bottom">
+				<br />
+				<br />
+				<br />
 
-				<div class="left-float">
+				<table class="hr-table">
+					<caption class="hide">general</caption>
+					<colgroup>
+						<col width="150px"/>
+						<col width="270px"/>
+					</colgroup>
+					<tbody>
+					<tr>
+						<th scope="row" class="hr-table-th">Package Name</th>
+						<td class="hr-table-td">vMSS</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Version</th>
+						<td class="hr-table-td">2.0.0</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Vendor</th>
+						<td class="hr-table-td">Telcoware</td>
+					</tr>
+					<tr>
+						<th scope="row" class="hr-table-th">Description</th>
+						<td class="hr-table-td">HD Voice 서비스 제공을 위한 vMSS 패...</td>
+					</tr>
+					</tbody>
+				</table>
 
-					<div class="form-label left-float left small-font">페이지당</div>
+				<br />
+				<br />
+				<br />
 
-					<select class="select small left-float">
-						<option>20</option>
-					</select>
-
-					<div class="form-label left-float right small-font">항목 출력</div>
-
-				</div>
-
-				<div class="pagination right-float">
+				<div class="pagination">
 					<a href="#" class="page-item page-first">처음페이지</a>
 					<a href="#" class="page-item page-prev">이전페이지</a>
 					<a href="#" class="page-item current">1</a>
