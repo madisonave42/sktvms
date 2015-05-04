@@ -1350,7 +1350,7 @@ table.emphasis > tbody > tr > td.email > span {
 .vm {
   width: 30px;
   height: 52px;
-  display: block;
+  display: inline-block;
   margin: 0;
   padding: 0;
   background: url(../images/ico_com.png) no-repeat 50% 10px;
@@ -1359,15 +1359,16 @@ table.emphasis > tbody > tr > td.email > span {
   text-indent: -9999px;
 }
 .vm-wrap {
+  width: 66px;
   position: relative;
   display: inline-block;
-  margin: 10px 18px 0;
+  text-align: center;
 }
 .vm-icon-a, .vm-icon-s {
   width: 18px;
   height: 18px;
   position: absolute;
-  bottom: -9px;
+  top: 42px;
   left: 50%;
   margin-left: -9px;
   border-radius: 100%;
@@ -1380,6 +1381,10 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .vm-icon-s {
   background: #777;
+}
+.vm-name {
+  font-weight: bold;
+  margin: 20px 0;
 }
 .vm.critical {
   background-color: #ff7575;

@@ -1,6 +1,6 @@
 .vm {
   @include size(30, 52);
-  display:block;
+  display:inline-block;
   margin:0;
   padding:0;
   background:url(../images/ico_com.png) no-repeat 50% 10px;
@@ -9,9 +9,11 @@
   text-indent:-9999px;
 
   &-wrap {
+    width:66px;
     position:relative;
     display:inline-block;
-    margin:10px 18px 0;
+    //margin:0 18px;
+    text-align:center;
   }
 
   &-icon {
@@ -20,7 +22,7 @@
     &-s {
       @include size(18);
       position:absolute;
-      bottom:-9px;
+      top:42px;
       left:50%;
       margin-left:-9px;
       border-radius:100%;
@@ -37,6 +39,11 @@
       background:$dark-gray;
     }
 
+  }
+
+  &-name{
+    font-weight:bold;
+    margin:20px 0;
   }
 
   &.critical {

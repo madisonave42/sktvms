@@ -212,7 +212,7 @@
 }
 
 .topology-wrap {
-  width: 1260px;
+  width: 1280px;
   margin: 100px auto 0;
 }
 .topology-wrap:after {
@@ -224,7 +224,7 @@
 }
 .topology-center {
   position: relative;
-  margin: 0 220px;
+  margin: 0 230px;
 }
 .topology-lines {
   width: 100%;
@@ -235,44 +235,82 @@
 }
 
 .vm-section {
-  min-height: 158px;
-  padding: 10px 0 20px;
+  min-height: 160px;
+  position: relative;
   text-align: center;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
+  background: #ffffff;
   box-sizing: border-box;
 }
 .vm-section.small {
-  width: 178px;
+  width: 180px;
 }
 .vm-section.small.center {
   margin: 0 auto;
 }
 .vm-section.large {
-  width: 458px;
+  width: 460px;
   margin: 40px 0 165px;
 }
 .vm-section-title {
-  margin-top: 13px;
+  height: 14px;
+  margin: 18px 0;
   font-size: 14px;
   font-weight: bold;
   line-height: 1;
 }
-.vm-section-cont {
-  margin-top: 10px;
-}
-.vm-section-cont.single {
-  width: 66px;
-  margin: 10px auto 0;
+.vm-section-cont.no-title {
+  margin-top: 50px;
 }
 .vm-line {
   position: absolute;
 }
+.vm-line.router-vt {
+  top: 453px;
+  left: 830px;
+}
+.vm-line.router-hr-left {
+  top: 170px;
+  left: 369px;
+}
+.vm-line.router-hr-right {
+  top: 170px;
+  left: 1058px;
+}
+.vm-line.router-cross {
+  top: 191px;
+  left: 780px;
+}
+.vm-line.round-top-opened {
+  top: 190px;
+  left: 50%;
+  margin-left: -277px;
+}
+.vm-line.network {
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  margin-left: -402px;
+}
 .vm-line-router {
   width: 40px;
   height: 40px;
+  position: absolute;
   text-indent: -99999em;
   background: url(../images/ico_router.png) no-repeat;
+}
+.vm-line-router.vt {
+  left: -14px;
+  top: 46px;
+}
+.vm-line-router.hr {
+  left: 100px;
+  top: -14px;
+}
+.vm-line-router.cross {
+  left: 36px;
+  top: 34px;
 }
 .vm-line-label {
   font-size: 12px;
@@ -281,13 +319,15 @@
   margin: 0 auto;
 }
 .vm-line-label.hr {
-  margin: 107px auto 27px;
+  position: absolute;
+  top: 515px;
+  left: 312px;
 }
 .vm-line-label.vt {
   width: 160px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 47px;
+  left: -140px;
   transform: rotate(90deg);
   -webkit-transform-origin: 80px 80px 0;
   -moz-transform-origin: 80px 80px 0;
@@ -296,13 +336,29 @@
   transform-origin: 80px 80px 0;
 }
 .vm-line-label.vt.invert {
-  left: 0px;
+  left: 782px;
   transform: rotate(270deg);
   -webkit-transform-origin: 80px 80px 0;
   -moz-transform-origin: 80px 80px 0;
   -ms-transform-origin: 80px 80px 0;
   -o-transform-origin: 80px 80px 0;
   transform-origin: 80px 80px 0;
+}
+
+.svg-arc-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.svg-arc-right {
+  position: absolute;
+  top: 0px;
+  left: 60px;
+}
+.svg-vt-short {
+  position: absolute;
+  top: 63px;
+  left: 50px;
 }
 
 /*# sourceMappingURL=vnf.css.map */

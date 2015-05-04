@@ -233,6 +233,7 @@
   border: 1px solid #c2cbcb;
   border-radius: 3px;
   text-align: center;
+  background: #ffffff;
 }
 .diag-group-item.orchestrator {
   margin-top: 0;
@@ -276,18 +277,19 @@
 }
 .diag-list-cont {
   box-sizing: border-box;
-  padding: 17px;
-  padding-right: 0;
+  padding: 17px 0 17px 17px;
   height: 220px;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
   overflow: auto;
+  background: #ffffff;
 }
-.diag-list-cont .vm {
+.diag-list-cont .vm-wrap {
+  width: auto;
   float: left;
   margin: 0 12px 10px 0;
 }
-.diag-list-cont .vm:nth-child(8n) {
+.diag-list-cont .vm-wrap:nth-child(8n) {
   margin-right: 0;
 }
 .diag-instance {
@@ -357,7 +359,7 @@
 .diag-line-dash-vevnfm {
   position: absolute;
   top: 177px;
-  left: 288px;
+  left: 287px;
 }
 .diag-line-dash-vevnfm .vm-line-label {
   left: 40px;
@@ -365,7 +367,7 @@
 .diag-line-dash-nfvi {
   position: absolute;
   top: 486px;
-  left: 288px;
+  left: 287px;
 }
 .diag-line-dash-nfvi .vm-line-label {
   left: 40px;

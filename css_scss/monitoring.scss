@@ -291,6 +291,7 @@
       border:1px solid $light-gray;
       border-radius:3px;
       text-align:center;
+      background:$white;
 
       &.orchestrator {
         margin-top:0;
@@ -344,14 +345,15 @@
 
     &-cont {
       box-sizing:border-box;
-      padding:17px;
-      padding-right:0;
+      padding:17px 0 17px 17px;
       height:220px;
       border:1px solid $light-gray;
       border-radius:3px;
       overflow:auto;
+      background:$white;
 
-      .vm {
+      .vm-wrap {
+        width:auto;
         float:left;
         margin:0 12px 10px 0;
 
@@ -450,18 +452,17 @@
     &-dash-vevnfm {
       position:absolute;
       top:177px;
-      left:288px;
+      left:287px;
 
       .vm-line-label {
         left:40px;
       }
-
     }
 
     &-dash-nfvi {
       position:absolute;
       top:486px;
-      left:288px;
+      left:287px;
 
       .vm-line-label {
         left:40px;
