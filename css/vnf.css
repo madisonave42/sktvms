@@ -24,16 +24,25 @@
   height: 858px;
   position: relative;
 }
-.contents-section.auto-scaling {
-  margin-bottom: 6px;
-}
-.contents-section.instance-list {
-  margin-bottom: 6px;
-}
 .contents-section.instance-general {
   margin-bottom: 6px;
 }
 .contents-section.assurance {
+  margin-bottom: 6px;
+}
+.contents-section.auto-scaling {
+  margin-bottom: 6px;
+}
+.contents-section.section-topology {
+  margin-bottom: 6px;
+}
+.contents-section.section-topology .topology {
+  position: relative;
+  margin: 0 auto;
+  width: 1672px;
+  height: 858px;
+}
+.contents-section.instance-list {
   margin-bottom: 6px;
 }
 

@@ -39,23 +39,34 @@
     }
   }
 
-  &.auto-scaling{
-
-    margin-bottom:6px;
-  }
-
-  &.instance-list{
-
-    margin-bottom:6px;
-  }
-
   &.instance-general {
     margin-bottom:6px;
   }
 
-  &.assurance {
+  &.assurance{
     margin-bottom:6px;
   }
+
+  &.auto-scaling{
+    margin-bottom:6px;
+  }
+
+  &.section-topology{
+    margin-bottom:6px;
+
+    .topology {
+      position:relative;
+      margin:0 auto;
+      width:1672px;
+      height:858px;
+    }
+  }
+
+  &.instance-list{
+    margin-bottom:6px;
+  }
+
+
 
 }
 
