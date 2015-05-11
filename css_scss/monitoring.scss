@@ -77,6 +77,7 @@
       float:left;
     }
 
+
     &-link {
       @include size(80, 30);
       display:block;
@@ -259,7 +260,7 @@
 	margin-top:0;
 	height:100%;
 	overflow:hidden;
-	
+
 	&-wrap {
 		@include clear();
 		position:relative;
@@ -267,7 +268,7 @@
 		box-sizing:border-box;
 		width:100%;
 	}
-	
+
 	&-lines {
 		position:absolute;
 		top:0;
@@ -521,3 +522,376 @@
 
 }
 
+/* monitoring dashboard popup */
+.dbpopup {
+  @include size(877, 600);
+  display:none;
+  position:absolute;
+  top:0;
+  left:50%;
+  margin-left:3px;
+  padding:15px 18px;
+  box-sizing:border-box;
+  border:1px solid #C2CBCB;
+  border-radius:3px;
+  background:$white;
+
+  &.on {
+    display:block;
+  }
+
+  &-heading {
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:$blue-green;
+    line-height:1;
+  }
+
+  &-content {
+    position:relative;
+  }
+
+  &-tab {
+    @include clear();
+
+    &-item {
+      float:left;
+    }
+
+
+    &-link {
+      @include size(130, 30);
+      display:block;
+      box-sizing:border-box;
+      line-height:30px;
+      color:$dark;
+      font-weight:bold;
+      text-align:center;
+      border:1px solid $light-gray;
+      border-bottom:0;
+
+      &.on {
+        color:$white;
+        background:$light-gray;
+      }
+
+    }
+
+    &-cont {
+      position:relative;
+      display:none;
+
+      &.on {
+        display:block;
+      }
+
+      &-top {
+        position:absolute;
+        top:-30px;
+        right:0;
+      }
+
+      &-inner {
+        padding-top:10px;
+        height:498px;
+        border-top:2px solid $light-gray;
+        overflow:auto;
+      }
+
+    }
+  }
+
+  &-section {
+    margin-top:20px;
+
+    &:first-child {
+      margin-top:0;
+    }
+
+    &.half-width {
+      width:409px;
+    }
+
+    &.left-float,
+    &.right-float {
+      margin-top:0;
+    }
+
+    &-title {
+      padding:0 10px;
+      height:32px;
+      line-height:32px;
+      color:$dark;
+      font-weight:bold;
+      background:$light-yellow;
+      border-radius:2px;
+
+      &-state {
+        @include size(77, 22);
+        float:right;
+        margin-top:5px;
+        line-height:22px;
+        color:$white;
+        font-weight:bold;
+        text-align:center;
+        background:$orange;
+        border-radius:2px;
+      }
+    }
+
+    &-inner {
+      @include clear();
+      margin-top:10px;
+    }
+
+    &-graybox {
+      @include clear();
+      margin-top:10px;
+      padding:10px;
+      border-radius:2px;
+      background:#ececec;
+
+      &:first-child {
+        margin-top:0;
+      }
+
+    }
+
+    &-blankbox {
+      @include clear();
+      margin-top:10px;
+      box-sizing:border-box;
+      padding:10px;
+      border-radius:2px;
+      border:1px solid #ececec;
+
+      &:first-child {
+        margin-top:0;
+      }
+
+      &.high {
+        height:90px;
+      }
+
+      &.row {
+        height:50px;
+      }
+
+    }
+
+  }
+
+  &-input-wrap {
+    @include clear();
+    margin-top:10px;
+
+    &:first-child {
+      margin-top:0;
+    }
+
+    .half-width {
+      width:50%;
+    }
+  }
+
+  &-label {
+    box-sizing:border-box;
+    padding-right:9px;
+    width:115px;
+    height:30px;
+    line-height:27px;
+    color:$dark;
+    font-weight:bold;
+    text-align:right;
+  }
+
+  &-input-form{
+
+    @include form-frame(100%, $box-default-height, 1px, solid, $light-gray, 2px);
+    display:inline-block;
+    width:calc(100% - 115px);
+    box-sizing: border-box;
+    padding:0 5px;
+    color:#888;
+    font-size:11px;
+    font-weight:bold;
+    text-align:left;
+    cursor:text;
+
+  }
+
+  &-roundbox {
+    border:1px solid $light-gray;
+    border-radius:2px;
+  }
+
+  &-btn-refresh {
+    @include size(24, 30);
+    padding:0;
+    background:url("../images/ico_refresh.png") no-repeat scroll 50% 50%;
+    background-size:14px;
+    border:0px none;
+    text-indent:-9999px;
+  }
+
+  &-btn-item {
+    @include size(94, 33);
+    float:left;
+    margin:4px 4px 0 0;
+    line-height:33px;
+    text-align:center;
+    color:$white;
+    border-radius:2px;
+    border:0px none;
+    background-color:$blue-green;
+
+    &:nth-child(4n) {
+      margin-right:0;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      margin-top:0;
+    }
+  }
+
+  &-graph {
+    position:relative;
+    width:90%;
+    height:20px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+
+    &.small {
+      width:65%;
+    }
+
+    &-bar {
+      height:20px;
+      background:$blue-green;
+
+      &.orange {
+        background:$orange;
+      }
+    }
+
+    &-msg {
+      position:absolute;
+      top:0;
+      right:10px;
+      line-height:20px;
+      font-weight:bold;
+      color:$dark;
+    }
+
+    &-label {
+      margin-left:10px;
+      line-height:20px;
+    }
+  }
+
+  &-circle {
+    @include size(273, 174);
+    box-sizing:border-box;
+    margin-left:10px;
+    padding:10px;
+
+    &:first-child {
+      margin-left:0;
+    }
+
+    &-title {
+      margin-bottom:20px;
+      line-height:1;
+      font-weight:bold;
+    }
+
+    &-chart {
+      position:relative;
+      margin-top:2px;
+      margin-left:20px;
+
+      &-bg {
+        @include size(95);
+        border-radius:100%;
+        background:$clean-gray;
+      }
+
+      &-text {
+        @include size(63);
+        position:absolute;
+        top:16px;
+        left:16px;
+        line-height:63px;
+        text-align:center;
+        border-radius:100%;
+        background:$white;
+        font-size:20px;
+        font-weight:bold;
+
+        &.red {
+          color:$red;
+        }
+
+        &.orange {
+          color:$yellow;
+        }
+
+        &.green {
+          color:$blue-green;
+        }
+      }
+
+    }
+
+    &-info {
+      margin-right:5px;
+      min-width:100px;
+
+      &-label {
+        margin-top:12px;
+        font-size:16px;
+        color:$dark;
+
+        &:first-child {
+          margin-top:0;
+        }
+      }
+
+      &-text{
+        color:$dark;
+        line-height:1;
+        font-size:20px;
+        font-weight:bold;
+      }
+    }
+
+  }
+
+  &-table-hwinfo {
+    width:100%;
+    border-top-width:1px;
+
+    &-text {
+      margin:10px 0;
+    }
+
+  }
+
+  &-close {
+    @include size(23);
+    position:absolute;
+    top:15px;
+    right:18px;
+    padding:0;
+    text-indent:-9999px;
+    border:1px solid #576363;
+    border-radius:100%;
+    background:url(../images/ico_close.png) no-repeat 50% 50%;
+  }
+
+}

@@ -172,3 +172,29 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
   };
 
 };
+
+// initialize tab
+var initTab = function( $hasTabArea ){
+
+  var tabBtns = $hasTabArea.find('.js-tab-link'),
+    tabCont = $hasTabArea.find('.js-tab-cont');
+
+  if (tabBtns.length == 0) {
+    return false;
+  }
+
+  tabBtns.each(function(){
+    $(this).data('target', $(this).attr('href'));
+  });
+
+  tabBtns.on('click', function(e){
+    tabBtns.removeClass('on');
+    tabCont.removeClass('on');
+
+    $(this).addClass('on');
+    $($(this).data('target')).addClass('on');
+
+    e.preventDefault();
+  });
+
+};

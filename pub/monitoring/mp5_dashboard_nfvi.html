@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/pagination.css" />
+<link rel="stylesheet" href="../../css/monitoring.css">
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrapper">
+    <h1 class="logo"><img src="../../images/logo.png" alt="SKT vIMS CENTER"></h1>
+    <ul class="gnb">
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link01">모니터링</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub01">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Dashboard</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Statistics Monitoring</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link02">VNF 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub02">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+              	</li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">VNF Instance 목록</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link03">통계</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub03">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">기간 통계</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">비교 통계</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link04">로그</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub04">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">알람로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">VNF 이벤트 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">운용 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 로그</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link05">운용자</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub05">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 등록</a>
+              	</li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Session 목록</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 IP 목록</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link06">설정</a>
+      </li>
+    </ul>
+
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</header>
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+
+			<div class="main-heading">
+				<h2 class="main-heading-title">Dashboard</h2>
+				<p class="main-heading-overview">NFV 전체 시스템의 통합 운용 현황 정보를 제공합니다.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+
+		<div class="wrapper monitoring dashboard fix-height">
+
+			<section class="contents-section topology left-float left">
+
+				<div class="contents-section-inner no-border diagram-dashboard">
+
+					<div class="diagram-dashboard-lines">
+						<div class="diag-line-dash-orvi">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="71.51px" height="413.9px" viewBox="0 0 71.51 413.9" enable-background="new 0 0 71.51 413.9" xml:space="preserve">
+								<g>
+									<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M64.026,7.396H12.839c0,0-6.625,0.625-6.625,8.625
+										v380.75c0,0-0.5,8.875,9.5,8.875h48.042"/>
+								</g>
+								<circle fill="#06B9AF" cx="64.027" cy="7.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="64.027" cy="405.646" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label green small">OR-VI</div>
+						</div>
+
+						<div class="diag-line-dash-orvnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="13.484px" height="105.032px" viewBox="0 0 13.484 105.032" enable-background="new 0 0 13.484 105.032"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.699" y1="6.396" x2="6.699" y2="98.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="98.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label green">OR-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-vivnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="13.484px" height="105.032px" viewBox="0 0 13.484 105.032" enable-background="new 0 0 13.484 105.032"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.699" y1="6.396" x2="6.699" y2="98.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="98.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.699" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label green">VI-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-vevnfm">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="160.385px" height="124.851px" viewBox="0 0 160.385 124.851" enable-background="new 0 0 160.385 124.851"
+								 xml:space="preserve">
+								<g>
+									<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M152.477,7.38h-65.5c0,0-7,0.333-7,9.167
+										s0,45.833,0,45.833"/>
+									<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M7.477,117.38h65.5c0,0,7-0.334,7-9.167
+										s0-45.833,0-45.833"/>
+								</g>
+								<circle fill="#B9C3C2" cx="152.477" cy="7.38" r="5.396"/>
+								<circle fill="#B9C3C2" cx="7.477" cy="117.38" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label small">VE-VNFM</div>
+						</div>
+
+						<div class="diag-line-dash-nfvi">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="159.466px" height="14.024px" viewBox="0 0 159.466 14.024" enable-background="new 0 0 159.466 14.024"
+								 xml:space="preserve">
+								<line fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" x1="152.057" y1="7.283" x2="6.669" y2="7.283"/>
+								<circle fill="#B9C3C2" cx="6.669" cy="7.283" r="5.396"/>
+								<circle fill="#B9C3C2" cx="152.057" cy="7.283" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-label small">NF-VI</div>
+						</div>
+
+					</div>
+
+					<div class="diagram-dashboard-wrap">
+
+						<div class="diag-group left-float">
+
+							<div class="diag-group-item orchestrator">Orchestrator</div>
+
+							<div class="diag-group-item">
+								<div class="diag-group-title">VNF Manager</div>
+								<div class="diag-group-cont">
+
+									<div class="vm-wrap">
+										<button type="button" class="vm critical">CRITICAL</button>
+										<div class="vm-icon-a">A</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm normal">NORMAL</button>
+										<div class="vm-icon-s">S</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="diag-group-item">
+								<div class="diag-group-title">VIM</div>
+								<div class="diag-group-cont">
+
+									<div class="vm-wrap">
+										<button type="button" class="vm minor">MINOR</button>
+										<div class="vm-icon-a">A</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm major">MAJOR</button>
+										<div class="vm-icon-s">S</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+						<div class="diag-list left-float">
+
+							<div class="diag-list-item">
+								<div class="diag-list-title">VNF Instance</div>
+
+								<div class="diag-list-cont">
+									<button type="button" class="diag-instance normal">
+										<span class="diag-instance-so">SO</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance major">vMSS1</button>
+
+									<button type="button" class="diag-instance critical">
+										<span class="diag-instance-te">TE</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance minor">vMSS1</button>
+								</div>
+							</div>
+
+							<div class="diag-list-item">
+								<div class="diag-list-title">NFVI</div>
+
+								<div class="diag-list-cont">
+
+									<div class="vm-wrap">
+										<button type="button" class="vm critical js-open-nfvi">CRITICAL</button>
+									</div>
+									<div class="vm-wrap">
+										<button type="button" class="vm major js-open-nfvi">MAJOR</button>
+									</div>
+									<div class="vm-wrap">
+										<button type="button" class="vm minor js-open-nfvi">MINOR</button>
+									</div>
+									<div class="vm-wrap">
+										<button type="button" class="vm normal js-open-nfvi">NOMAL</button>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<section class="contents-section nfvi-overload left-float">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">NFVI Overload Top</h3>
+					<div class="left-float right">
+						<select class="select mini left-float">
+							<option>10</option>
+						</select>
+					</div>
+				</div>
+				<div class="contents-section-inner no-border no-scroll">
+
+					<div class="overload-pannel left-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">CPU</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel right-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Memory</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel left-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Disk</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel right-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Network</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="contents-section vm-overload left-float">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">VM Overload Top</h3>
+					<div class="left-float right">
+						<select class="select mini left-float">
+							<option>10</option>
+						</select>
+					</div>
+				</div>
+				<div class="contents-section-inner no-border no-scroll">
+
+					<div class="overload-pannel left-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">CPU</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel right-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Memory</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel left-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Disk</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+					<div class="overload-pannel right-float">
+						<div class="contents-section-top">
+							<h4 class="overload-title">Network</h4>
+							<div class="right-float">
+								<button type="button" class="overload-view">Graph View</button>
+							</div>
+						</div>
+						<div class="overload-graph">
+							<img src="../../images/temp/dashboard_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="contents-section dashboard-list">
+				<ul class="dashboard-tab">
+					<li class="dashboard-tab-item">
+						<a href="#state-box" class="dashboard-tab-link on js-tab-link">Alarm <span class="notice-num">3</span></a>
+					</li>
+					<li class="dashboard-tab-item">
+						<a href="#dashboard-event" class="dashboard-tab-link js-tab-link">Event <span class="notice-num">3</span></a>
+					</li>
+				</ul>
+
+				<div id="state-box" class="dashboard-tab-cont on js-tab-cont">
+					<div class="contents-section-top dashboard-table-top">
+						<div class="right-float">
+							<button type="button" class="btn-fill-orange btn-alarm-off left-float left">알람 전체 인지</button>
+							<button type="button" class="btn-stroke-light btn-alarm-on left-float left group">알람 전체 미인지</button>
+
+							<div class="left-float left">
+								<select class="select default">
+									<option>전체 유형</option>
+								</select>
+							</div>
+							<div class="left-float left">
+								<select class="select default">
+									<option>전체 등급</option>
+								</select>
+							</div>
+							<button type="button" class="dashboard-btn-expand left-float js-expand">높이확장</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first center chkbox">
+										<div class="dashboard-icon-alarm-off">알람</div>
+									</th>
+									<th scope="col">발생시각</th>
+									<th scope="col">시스템 유형</th>
+									<th scope="col">시스템</th>
+									<th scope="col">서브 시스템</th>
+									<th scope="col">알람 등급</th>
+									<th scope="col">알람 분류</th>
+									<th scope="col">알람 내역</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center">
+										<div class="dashboard-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>VNF</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td>DB Fault</td>
+									<td>Telcobase replication status abnormal alarm.</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="dashboard-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>
+										<div class="state-box-maj">MAJOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="dashboard-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="dashboard-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="dashboard-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>VNF</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td>DB Fault</td>
+									<td>Telcobase replication status abnormal alarm.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="dashboard-event" class="dashboard-tab-cont js-tab-cont">
+					<div class="contents-section-top dashboard-table-top">
+						<div class="right-float">
+							<div class="left-float left">
+								<select class="select default">
+									<option>전체 시스템 유형</option>
+								</select>
+							</div>
+							<button type="button" class="btn-stroke-orange left-float left">이벤트 삭제</button>
+							<button type="button" class="dashboard-btn-expand left-float js-expand">높이확장</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="240px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first center chkbox">
+										<div class="check-wrap center">
+											<input id="chk-label-1" class="check-box" type="checkbox">
+											<label for="chk-label-1" class="check-label blind">선택</label>
+										</div>
+									</th>
+									<th scope="col">발생시각</th>
+									<th scope="col">시스템 유형</th>
+									<th scope="col">시스템</th>
+									<th scope="col">서브 시스템</th>
+									<th scope="col">이벤트</th>
+									<th scope="col">진행 상태</th>
+									<th scope="col">실패 사유</th>
+									<th scope="col">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-2" class="check-box" type="checkbox">
+											<label for="chk-label-2" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-3" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-3" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-4" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-4" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-5" class="check-box" type="checkbox">
+											<label for="chk-label-5" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-6" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-6" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</section>
+
+			<!-- [D] NFVI 팝업 : S -->
+			<section class="dbpopup js-nfvi-popup">
+				<h1 class="dbpopup-heading">NFVI :: COMP13 정보</h1>
+
+				<div class="dbpopup-content">
+
+					<ul class="dbpopup-tab">
+						<li class="dbpopup-tab-item">
+							<a href="#dbpopup-tab-monitoring" class="dbpopup-tab-link on js-tab-link">Monitoring</a>
+						</li>
+						<li class="dbpopup-tab-item">
+							<a href="#dbpopup-tab-alarm" class="dbpopup-tab-link js-tab-link">Alarm</a>
+						</li>
+						<li class="dbpopup-tab-item">
+							<a href="#dbpopup-tab-sr" class="dbpopup-tab-link js-tab-link">System Resource</a>
+						</li>
+						<li class="dbpopup-tab-item">
+							<a href="#dbpopup-tab-vu" class="dbpopup-tab-link js-tab-link">vResource Usage</a>
+						</li>
+						<li class="dbpopup-tab-item">
+							<a href="#dbpopup-tab-hwinfo" class="dbpopup-tab-link js-tab-link">HW Info</a>
+						</li>
+					</ul>
+
+					<div id="dbpopup-tab-monitoring" class="dbpopup-tab-cont on js-tab-cont">
+						<div class="dbpopup-tab-cont-inner">
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">CPU</h2>
+
+								<div class="dbpopup-section-inner">
+									<div class="dbpopup-roundbox">
+										<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+									</div>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Memory</h2>
+
+								<div class="dbpopup-section-inner">
+									<div class="dbpopup-roundbox">
+										<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+									</div>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Disk</h2>
+
+								<div class="dbpopup-section-inner">
+									<div class="dbpopup-roundbox">
+										<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+									</div>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Network > eth0</h2>
+
+								<div class="dbpopup-section-inner">
+									<div class="dbpopup-roundbox">
+										<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div id="dbpopup-tab-alarm" class="dbpopup-tab-cont js-tab-cont">
+						<div class="dbpopup-tab-cont-inner">
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Alarm List</h2>
+
+								<div class="dbpopup-section-inner">
+									<table class="vt-table">
+										<caption class="hide">목록</caption>
+										<colgroup>
+											<col width="180px" />
+											<col width="130px" />
+											<col width="180px" />
+											<col width="auto" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first">발생시각</th>
+												<th scope="col">알람 등급</th>
+												<th scope="col">알람 분류</th>
+												<th scope="col">알람 내역</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>2015/02/24 13:00:12</td>
+												<td>
+													<div class="state-box-cri">CRITICAL</div>
+												</td>
+												<td>DB Fault</td>
+												<td>Telcobase replication status abnormal alarm.</td>
+											</tr>
+											<tr>
+												<td>2015/02/24 13:00:12</td>
+												<td>
+													<div class="state-box-maj">MAJOR</div>
+												</td>
+												<td>CPU Overload</td>
+												<td>System CPU load critical alarm (95%)</td>
+											</tr>
+											<tr>
+												<td>2015/02/24 13:00:12</td>
+												<td>
+													<div class="state-box-min">MINOR</div>
+												</td>
+												<td>CPU Overload</td>
+												<td>System CPU load critical alarm (95%)</td>
+											</tr>
+											<tr>
+												<td>2015/02/24 13:00:12</td>
+												<td>
+													<div class="state-box-normal">NORMAL</div>
+												</td>
+												<td>CPU Overload</td>
+												<td>System CPU load critical alarm (95%)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div id="dbpopup-tab-sr" class="dbpopup-tab-cont js-tab-cont">
+
+						<div class="dbpopup-tab-cont-top">
+							<div class="right-float">
+								<button type="button" class="dbpopup-btn-refresh" title="새로고침">새로고침</button>
+							</div>
+						</div>
+
+						<div class="dbpopup-tab-cont-inner">
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">CPU</h2>
+
+								<div class="dbpopup-section-inner">
+									<table class="vt-table">
+										<caption class="hide">목록</caption>
+										<colgroup>
+											<col width="140px" />
+											<col width="260px" />
+											<col width="150px" />
+											<col width="150px" />
+											<col width="auto" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first">Resource</th>
+												<th scope="col">Usage</th>
+												<th scope="col">User</th>
+												<th scope="col">System</th>
+												<th scope="col">Wait I/O</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>CPU</td>
+												<td>
+													<div class="dbpopup-graph">
+														<div class="dbpopup-graph-bar" style="width:10%"></div>
+														<div class="dbpopup-graph-msg">10%</div>
+													</div>
+												</td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Memory</h2>
+
+								<div class="dbpopup-section-inner">
+									<table class="vt-table">
+										<caption class="hide">목록</caption>
+										<colgroup>
+											<col width="140px" />
+											<col width="260px" />
+											<col width="150px" />
+											<col width="150px" />
+											<col width="auto" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first">Resource</th>
+												<th scope="col">Usage</th>
+												<th scope="col">Total Size</th>
+												<th scope="col">Used Size</th>
+												<th scope="col">Free Size</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>CPU</td>
+												<td>
+													<div class="dbpopup-graph">
+														<div class="dbpopup-graph-bar" style="width:10%"></div>
+														<div class="dbpopup-graph-msg">10%</div>
+													</div>
+												</td>
+												<td>8G</td>
+												<td>2.4G</td>
+												<td>5.6G</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Disk</h2>
+
+								<div class="dbpopup-section-inner">
+									<table class="vt-table">
+										<caption class="hide">목록</caption>
+										<colgroup>
+											<col width="140px" />
+											<col width="260px" />
+											<col width="150px" />
+											<col width="150px" />
+											<col width="auto" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first">Resource</th>
+												<th scope="col">Usage</th>
+												<th scope="col">Total Size</th>
+												<th scope="col">Used Size</th>
+												<th scope="col">Free Size</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>/</td>
+												<td>
+													<div class="dbpopup-graph">
+														<div class="dbpopup-graph-bar orange" style="width:75%"></div>
+														<div class="dbpopup-graph-msg">75%</div>
+													</div>
+												</td>
+												<td>600G</td>
+												<td>200G</td>
+												<td>400G</td>
+											</tr>
+											<tr>
+												<td>/home</td>
+												<td>
+													<div class="dbpopup-graph">
+														<div class="dbpopup-graph-bar" style="width:10%"></div>
+														<div class="dbpopup-graph-msg">10%</div>
+													</div>
+												</td>
+												<td>1000G</td>
+												<td>250.5G</td>
+												<td>749.5G</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div id="dbpopup-tab-vu" class="dbpopup-tab-cont js-tab-cont">
+
+						<div class="dbpopup-tab-cont-inner">
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">Compute Host</h2>
+
+								<div class="dbpopup-section-inner">
+									<div class="dbpopup-roundbox dbpopup-circle left-float">
+										<div class="dbpopup-circle-title">CPU</div>
+										<div class="dbpopup-circle-chart left-float">
+											<div class="dbpopup-circle-chart-bg"></div>
+											<div class="dbpopup-circle-chart-bar red"></div>
+											<div class="dbpopup-circle-chart-text red">75%</div>
+										</div>
+										<div class="dbpopup-circle-info right-float">
+											<div class="dbpopup-circle-info-label">used</div>
+											<div class="dbpopup-circle-info-text">14 Cores</div>
+											<div class="dbpopup-circle-info-label">total</div>
+											<div class="dbpopup-circle-info-text">86 Cores</div>
+										</div>
+									</div>
+									<div class="dbpopup-roundbox dbpopup-circle left-float">
+										<div class="dbpopup-circle-title">Memory</div>
+										<div class="dbpopup-circle-chart left-float">
+											<div class="dbpopup-circle-chart-bg"></div>
+											<div class="dbpopup-circle-chart-bar orange"></div>
+											<div class="dbpopup-circle-chart-text orange">55%</div>
+										</div>
+										<div class="dbpopup-circle-info right-float">
+											<div class="dbpopup-circle-info-label">used</div>
+											<div class="dbpopup-circle-info-text">68 GBytes</div>
+											<div class="dbpopup-circle-info-label">total</div>
+											<div class="dbpopup-circle-info-text">128 GBytes</div>
+										</div>
+									</div>
+									<div class="dbpopup-roundbox dbpopup-circle left-float">
+										<div class="dbpopup-circle-title">Disk</div>
+										<div class="dbpopup-circle-chart left-float">
+											<div class="dbpopup-circle-chart-bg"></div>
+											<div class="dbpopup-circle-chart-bar green"></div>
+											<div class="dbpopup-circle-chart-text green">25%</div>
+										</div>
+										<div class="dbpopup-circle-info right-float">
+											<div class="dbpopup-circle-info-label">used</div>
+											<div class="dbpopup-circle-info-text">250 GBytes</div>
+											<div class="dbpopup-circle-info-label">total</div>
+											<div class="dbpopup-circle-info-text">1,000 GBytes</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="dbpopup-section">
+
+								<h2 class="dbpopup-section-title">VM(s)</h2>
+
+								<div class="dbpopup-section-inner">
+									<table class="vt-table">
+										<caption class="hide">목록</caption>
+										<colgroup>
+											<col width="125px" />
+											<col width="auto" />
+											<col width="180px" />
+											<col width="180px" />
+											<col width="180px" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first">VNFI Name</th>
+												<th scope="col">VNFC Name</th>
+												<th scope="col">CPU</th>
+												<th scope="col">Memory</th>
+												<th scope="col">Disk</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>vMSS1</td>
+												<td>LBCM1A</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:10%"></div>
+														<div class="dbpopup-graph-msg">10%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">8 Core</div>
+												</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:50%"></div>
+														<div class="dbpopup-graph-msg">50%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">16G</div>
+												</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:70%"></div>
+														<div class="dbpopup-graph-msg">70%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">600G</div>
+												</td>
+											</tr>
+											<tr>
+												<td>vTAS1</td>
+												<td>CRCM1A</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:5%"></div>
+														<div class="dbpopup-graph-msg">5%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">4 Core</div>
+												</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:25%"></div>
+														<div class="dbpopup-graph-msg">25%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">5G</div>
+												</td>
+												<td>
+													<div class="dbpopup-graph small left-float">
+														<div class="dbpopup-graph-bar" style="width:35%"></div>
+														<div class="dbpopup-graph-msg">35%</div>
+													</div>
+													<div class="left-float dbpopup-graph-label">300G</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div id="dbpopup-tab-hwinfo" class="dbpopup-tab-cont js-tab-cont">
+
+						<div class="dbpopup-tab-cont-inner">
+							<table class="hr-table dbpopup-table-hwinfo">
+								<caption class="hide">HardWare Information</caption>
+								<colgroup>
+									<col width="150px">
+									<col width="auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">Manufacturer</th>
+										<td>HP</td>
+									</tr>
+									<tr>
+										<th scope="row">Model</th>
+										<td>DL-380</td>
+									</tr>
+									<tr>
+										<th scope="row">Processor Type</th>
+										<td>Intel(R) Core2 Quad CPU Q8200 @2.3GHz</td>
+									</tr>
+									<tr>
+										<th scope="row">Processors</th>
+										<td>4 CPU x 2.33 GHz</td>
+									</tr>
+									<tr>
+										<th scope="row">Memory</th>
+										<td>8G</td>
+									</tr>
+									<tr>
+										<th scope="row">Disk</th>
+										<td>600G x 4EA</td>
+									</tr>
+									<tr>
+										<th scope="row">Number of NICs</th>
+										<td>2</td>
+									</tr>
+									<tr>
+										<th scope="row">N/W Interface</th>
+										<td>
+											<div class="dbpopup-table-hwinfo-text">10.10.1.234 (VNF Network)</div>
+											<div class="dbpopup-table-hwinfo-text">192.10.1.111 ( … )</div>
+											<div class="dbpopup-table-hwinfo-text">192.10.1.111 ( … )</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+				</div>
+
+				<button type="button" class="dbpopup-close">NFVI 팝업 닫기</button>
+			</section>
+			<!-- [D] NFVI 팝업 : E -->
+
+		</div>
+
+	</div>
+
+</section>
+
+</body>
+</html>

@@ -172,6 +172,33 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
   };
 
 };
+
+// initialize tab
+var initTab = function( $hasTabArea ){
+
+  var tabBtns = $hasTabArea.find('.js-tab-link'),
+    tabCont = $hasTabArea.find('.js-tab-cont');
+
+  if (tabBtns.length == 0) {
+    return false;
+  }
+
+  tabBtns.each(function(){
+    $(this).data('target', $(this).attr('href'));
+  });
+
+  tabBtns.on('click', function(e){
+    tabBtns.removeClass('on');
+    tabCont.removeClass('on');
+
+    $(this).addClass('on');
+    $($(this).data('target')).addClass('on');
+
+    e.preventDefault();
+  });
+
+};
+
 /**************
  * Main Event *
  **************/
@@ -273,8 +300,9 @@ $(function(){
 	 * vnf
 	 */
 
+	// initialize tab
 	(function(){
-
+		initTab( $('.state-list') );
 	})();
 
 	/*
@@ -347,33 +375,46 @@ $(function(){
 
 	})();
 
-	// dashboard tab
+	// initialize tab
 	(function(){
-		var tabBtns = $('.js-tab-link'),
-			tabCont = $('.js-tab-cont');
+		initTab( $('.dashboard-list') );
+		initTab( $('.dbpopup') );
+	})();
 
-		if (tabBtns.length == 0) {
-			return false;
-		}
+	// dashboard popup
+	(function() {
 
-		tabBtns.each(function(){
-			$(this).data('target', $(this).attr('href'));
+		// open vnf-manager popup
+		$('.js-open-vnf-manager').on('click', function(e) {
+			$('.js-vnf-manager-popup').addClass('on');
+			e.preventDefault();
 		});
 
-		tabBtns.on('click', function(e){
-			tabBtns.removeClass('on');
-			tabCont.removeClass('on');
+		// open vim popup
+		$('.js-open-vim').on('click', function(e) {
+			$('.js-vim-popup').addClass('on');
+			e.preventDefault();
+		});
 
-			$(this).addClass('on');
-			$($(this).data('target')).addClass('on');
+		// open NFVI popup
+		$('.js-open-nfvi').on('click', function(e) {
+			$('.js-nfvi-popup').addClass('on');
+			e.preventDefault();
+		});
 
+		// open vnf-instance popup
+		$('.js-open-vnf-instance').on('click', function(e) {
+			$('.js-vnf-instance-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// close dashboard popup (common)
+		$('.dbpopup-close').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			e.preventDefault();
 		});
 
 	})();
-
-
-
 
 	/*
 	 * popup
