@@ -405,9 +405,8 @@
 .dbpopup {
   width: 877px;
   height: 600px;
-  display: none;
   position: absolute;
-  top: 0;
+  top: -9999px;
   left: 50%;
   margin-left: 3px;
   padding: 15px 18px;
@@ -417,7 +416,7 @@
   background: #ffffff;
 }
 .dbpopup.on {
-  display: block;
+  top: 0;
 }
 .dbpopup-heading {
   margin-bottom: 10px;
@@ -456,11 +455,12 @@
   background: #c2cbcb;
 }
 .dbpopup-tab-cont {
-  position: relative;
-  display: none;
+  position: absolute;
+  top: -9999px;
 }
 .dbpopup-tab-cont.on {
-  display: block;
+  position: relative;
+  top: 0;
 }
 .dbpopup-tab-cont-top {
   position: absolute;
@@ -682,11 +682,25 @@
   margin-top: 2px;
   margin-left: 20px;
 }
-.dbpopup-circle-chart-bg {
-  width: 95px;
-  height: 95px;
-  border-radius: 100%;
-  background: #e8e8e8;
+.dbpopup-circle-chart-bar {
+  position: absolute !important;
+  top: -6px;
+  left: -6px;
+  width: 107px !important;
+  height: 107px;
+}
+.dbpopup-circle-chart-bar.red .ct-series.ct-series-a .ct-area, .dbpopup-circle-chart-bar.red .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #e70000;
+}
+.dbpopup-circle-chart-bar.yellow .ct-series.ct-series-a .ct-area, .dbpopup-circle-chart-bar.yellow .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #fcb63c;
+}
+.dbpopup-circle-chart-bar.green .ct-series.ct-series-a .ct-area, .dbpopup-circle-chart-bar.green .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #00b9b0;
+}
+.dbpopup-circle-chart-bar .ct-series.ct-series-b .ct-area,
+.dbpopup-circle-chart-bar .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+  fill: #e8e8e8;
 }
 .dbpopup-circle-chart-text {
   width: 63px;

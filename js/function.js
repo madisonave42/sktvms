@@ -199,6 +199,18 @@ var initTab = function( $hasTabArea ){
 
 };
 
+// make pie chart
+var initPie = function( $chartId, num ) {
+  new Chartist.Pie($chartId, {
+    series: [num, (100 - num)]
+  }, {
+    startAngle: 0,
+    total: 100,
+    showLabel: false
+  });
+};
+
+
 /**************
  * Main Event *
  **************/
@@ -414,6 +426,16 @@ $(function(){
 			e.preventDefault();
 		});
 
+	})();
+
+	// dashboard popup chart
+	(function(){
+		$('.js-pie-chart').each(function() {
+			var el = $(this).find('.dbpopup-circle-chart-bar')[0],
+				num = parseInt($(this).find('.dbpopup-circle-chart-text').text(), 10);
+
+			initPie(el, num);
+		});
 	})();
 
 	/*

@@ -198,3 +198,15 @@ var initTab = function( $hasTabArea ){
   });
 
 };
+
+// make pie chart
+var initPie = function( $chartId, num ) {
+  new Chartist.Pie($chartId, {
+    series: [num, (100 - num)]
+  }, {
+    startAngle: 0,
+    total: 100,
+    showLabel: false
+  });
+};
+

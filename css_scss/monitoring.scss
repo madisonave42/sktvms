@@ -525,9 +525,8 @@
 /* monitoring dashboard popup */
 .dbpopup {
   @include size(877, 600);
-  display:none;
   position:absolute;
-  top:0;
+  top:-9999px;
   left:50%;
   margin-left:3px;
   padding:15px 18px;
@@ -537,7 +536,7 @@
   background:$white;
 
   &.on {
-    display:block;
+    top:0;
   }
 
   &-heading {
@@ -579,11 +578,12 @@
     }
 
     &-cont {
-      position:relative;
-      display:none;
+      position:absolute;
+      top:-9999px;
 
       &.on {
-        display:block;
+        position:relative;
+        top:0;
       }
 
       &-top {
@@ -815,11 +815,34 @@
       margin-top:2px;
       margin-left:20px;
 
-      &-bg {
-        @include size(95);
-        border-radius:100%;
-        background:$clean-gray;
+      &-bar {
+        position:absolute!important;
+        top:-6px;
+        left:-6px;
+        width:107px!important;
+        height:107px;
+
+        &.red .ct-series.ct-series-a .ct-area,
+        &.red .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$red;
+        }
+
+        &.yellow .ct-series.ct-series-a .ct-area,
+        &.yellow .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$yellow;
+        }
+
+        &.green .ct-series.ct-series-a .ct-area,
+        &.green .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$blue-green;
+        }
+
+        .ct-series.ct-series-b .ct-area,
+        .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+          fill:$clean-gray;
+        }
       }
+
 
       &-text {
         @include size(63);
