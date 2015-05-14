@@ -36,12 +36,25 @@
   }
 
   &.stats-monitoring{
-    position:relative;
+    display:none;
     width:1760px;
     height:100%;
-    padding:20px;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    padding:17px;
 
     box-sizing:border-box;
+
+    &:first-child{
+      display:block;
+    }
+
+    &.current{
+      display:block;
+    }
   }
 
   &-inner{
@@ -52,6 +65,7 @@
       margin:0;
       text-align:center;
       box-sizing:border-box;
+      overflow:hidden;
     }
 
   }
@@ -76,7 +90,6 @@
     &-item {
       float:left;
     }
-
 
     &-link {
       @include size(80, 30);
@@ -493,6 +506,117 @@
 
 .sm{
 
+  &-tab{
+    float:left;
+    margin:12px 0 0 70px;
+
+    .tab{
+
+      &-item{
+        @include size(120, 48);
+
+        position:relative;
+
+        float:left;
+        margin-right:10px;
+
+        font-weight:bold;
+        line-height:46px;
+        text-align:center;
+
+        border:1px solid $white-gray;
+        background:#fff;
+        box-sizing:border-box;
+
+        &.current{
+          color:$white;
+          border:0;
+          background:$orange;
+
+          .btn-del{
+            background:url(../images/ico_btn_del.png) no-repeat left top;
+          }
+        }
+      }
+
+    }
+
+    .btn{
+      &-del{
+        @include size(14);
+        position:absolute;
+        top:3px;
+        right:3px;
+        text-indent:-99999em;
+        border:0;
+        background:url(../images/ico_btn_del.png) no-repeat right top;
+      }
+
+      &-add-tab{
+        @include size(38, 48);
+
+        font:{
+          size:18px;
+          weight:bold;
+        }
+
+        color:$white-gray;
+        border:1px solid $white-gray;
+        box-sizing:border-box;
+        background:$white;
+      }
+
+      &-move{
+        &-label{
+          color:$dark;
+          margin:-4px 0 5px;
+        }
+
+        &-prev, &-next{
+          @include size(30);
+
+          position:relative;
+
+          text-indent:-99999em;
+          border:1px solid $white-gray;
+          border-radius:3px;
+
+          background:$white;
+
+          &:after{
+            content:"";
+            display:block;
+
+            width:0;
+            height:0;
+
+            position:absolute;
+
+
+            border:5px solid transparent;
+          }
+        }
+
+        &-prev{
+          &:after{
+            top:9px;
+            left:5px;
+            border-right-color:$white-gray;
+          }
+        }
+
+        &-next{
+          &:after{
+            top:9px;
+            left:12px;
+            border-left-color:$white-gray;
+          }
+        }
+      }
+
+    }
+  }
+
   &-msg{
 
     &-add{
@@ -522,7 +646,126 @@
 
 }
 
+.container{
+  &-list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-item {
+    width: 423px;
+    height: 213px;
+
+    position:relative;
+    float: left;
+
+    margin: 0 6px 6px 0;
+    border: 1px dashed $white-gray;
+    background: url(../images/ico_add_graph.png) no-repeat center;
+    box-sizing: border-box;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.graph{
+  &-list {
+    //width: 100%;
+    //height: 100%;
+
+    position: absolute;
+    top:6px;
+    left:6px;
+  }
+
+  &-item {
+    width: 423px;
+    height: 213px;
+
+    float: left;
+
+    margin: 0 6px 6px 0;
+    border: 1px solid $white-gray;
+    background:$white;
+    box-sizing: border-box;
+
+    cursor:move;
+
+    &.m1x1{
+      width:423px;
+      height:191.75px;
+    }
+
+    &.m1x2{
+      width:423px;
+      height:191.75px * 2 + 6px;
+    }
+    &.m2x1{
+      width:423px * 2 + 6px;
+      height:191.75px;
+    }
+    &.m2x2{
+      width:423px * 2 + 6px;
+      height:191.75px * 2 + 6px;
+    }
+
+    &.m1x3{
+      width:423px;
+      height:191.75px * 3 + 12px;
+    }
+    &.m3x1{
+      width:423px * 3 + 12px;
+      height:191.75px;
+    }
+    &.m2x3{
+      width:423px * 2 + 6px;
+      height:191.75px * 3 + 12px;
+    }
+    &.m3x2{
+      width:423px * 3 + 12px;
+      height:191.75px * 2 + 6px;
+    }
+    &.m3x3{
+      width:423px * 3 + 12px;
+      height:191.75px * 3 + 12px;
+    }
+
+    &.m1x4{
+      width:423px;
+      height:191.75px * 4 + 18px;
+    }
+    &.m4x1{
+      width:423px * 4 + 18px;
+      height:191.75px;
+    }
+    &.m2x4{
+      width:423px * 2 + 6px;
+      height:191.75px * 4 + 18px;
+    }
+    &.m4x2{
+      width:423px * 4 + 18px;
+      height:191.75px * 2 + 6px;
+    }
+    &.m3x4{
+      width:423px * 3 + 12px;
+      height:191.75px * 4 + 18px;
+    }
+    &.m4x3{
+      width:423px * 4 + 18px;
+      height:191.75px * 3 + 12px;
+    }
+    &.m4x4{
+      width:423px * 4 + 18px;
+      height:191.75px * 4 + 18px;
+    }
+  }
+}
+
 /* monitoring dashboard popup */
+
 .dbpopup {
   @include size(877, 600);
   position:absolute;

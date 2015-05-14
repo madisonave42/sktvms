@@ -96,60 +96,85 @@ $(function(){
 	})();
 
 	/*
-	 * vnf
-	 */
-
-	// initialize tab
-	(function(){
-		initTab( $('.state-list') );
-	})();
-
-	/*
-	 * stats
-	 */
-
-	// Resize by dragging and to fit in height of browser
-	(function(){
-		var $wrapper = $('.wrapper.fix-height');
-
-		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
-		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
-
-		$(window).on('resize',function(){
-			statsResizeNarrow.resizeDivFitWin();
-			statsResizeWide.resizeDivFitWin();
-		});
-
-		$('.ui-resizable-handle').on({
-			'mousedown' : function(){
-				$(window).unbind('resize');
-			},
-			'mouseup' : function(){
-				$(window).bind('resize', statsResizeNarrow.resizeDivFitWin);
-				$(window).bind('resize', statsResizeWide.resizeDivFitWin);
-			}
-		});
-
-	})();
-
-	// React about event of chart icon
-	(function(){
-		$('.chart-view').data('select', 'false').on('click', function(e){
-
-			e.preventDefault();
-
-			if( $(this).data('select') == 'false' ){
-				$(this).addClass('on').data('select', 'true');
-			} else {
-				$(this).removeClass('on').data('select', 'false');
-			}
-
-		});
-	})();
-
-	/*
 	 * monitoring
 	 */
+
+	// Add Graph
+	(function(){
+
+		$('body').on('click', '.container-item', function(){
+
+			var ct = new Graph();
+
+			ct.addGraph( $(this) );
+
+		});
+
+	})();
+
+	// Add page
+	(function(){
+
+		var $tabParent = $('.sm-tab .tab-list');
+		var $pageParent = $('.wrapper.monitoring');
+		var tab = new smTab();
+		var $body = $('body');
+
+		$body.on('click', '.js-add', function(){
+			tab.showPopup( $tabParent, 'add' );
+		});
+
+		$body.on('click', '.js-del', function(){
+			tab.showPopup( $tabParent, 'del', $(this) );
+		});
+
+		$body.on('click', '.js-btn-add-page', function(){
+			var pageTitle = $('.js-page-title').val();
+			tab.addPage( $tabParent, pageTitle, $pageParent );
+		});
+
+		$body.on('click', '.js-btn-del-page', function(){
+			tab.delPage();
+		});
+
+		$body.on('click', '.js-tab', function(){
+			tab.active( $(this) );
+		});
+
+		$('.btn-move-prev').on('click', function(){
+			var $tabItem = $('.tab-item');
+			var $pageItem = $('.contents-section.stats-monitoring');
+			var currentIndex = $tabItem.index( $('.tab-item.current') );
+
+			tab.tabMove( 'prev', $tabItem, $pageItem, currentIndex );
+		});
+		$('.btn-move-next').on('click', function(){
+			var $tabItem = $('.tab-item');
+			var $pageItem = $('.contents-section.stats-monitoring');
+			var currentIndex = $tabItem.index( $('.tab-item.current') );
+
+			tab.tabMove( 'next', $tabItem, $pageItem, currentIndex );
+		});
+
+	})();
+
+	// Set container & graph unit height
+	(function(){
+
+		var dragContainer = new ResizeContainer( $('.container-item') );
+		var dragGraph;
+
+		$(window).on('addPage addGraph', function(){
+			dragContainer = new ResizeContainer( $('.container-item') );
+			dragGraph = new ResizeGraph( $('.graph-item') );
+		});
+
+		$(window).on('resize', function(){
+			dragContainer.resizeContainerFitWin();
+			dragGraph.resizeGraphContainer();
+		});
+
+	})();
 
 	// Resize dashboard list
 	(function(){
@@ -226,6 +251,58 @@ $(function(){
 	})();
 
 	/*
+	 * vnf
+	 */
+
+	// initialize tab
+	(function(){
+		initTab( $('.state-list') );
+	})();
+
+	/*
+	 * stats
+	 */
+
+	// Resize by dragging and to fit in height of browser
+	(function(){
+		var $wrapper = $('.wrapper.fix-height');
+
+		var statsResizeNarrow = new ResizeDiv( $wrapper, $('.stats-resizable.narrow.top'), $('.stats-resizable.narrow.bottom'));
+		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
+
+		$(window).on('resize',function(){
+			statsResizeNarrow.resizeDivFitWin();
+			statsResizeWide.resizeDivFitWin();
+		});
+
+		$('.ui-resizable-handle').on({
+			'mousedown' : function(){
+				$(window).unbind('resize');
+			},
+			'mouseup' : function(){
+				$(window).bind('resize', statsResizeNarrow.resizeDivFitWin);
+				$(window).bind('resize', statsResizeWide.resizeDivFitWin);
+			}
+		});
+
+	})();
+
+	// React about event of chart icon
+	(function(){
+		$('.chart-view').data('select', 'false').on('click', function(e){
+
+			e.preventDefault();
+
+			if( $(this).data('select') == 'false' ){
+				$(this).addClass('on').data('select', 'true');
+			} else {
+				$(this).removeClass('on').data('select', 'false');
+			}
+
+		});
+	})();
+
+	/*
 	 * popup
 	 */
 
@@ -233,28 +310,35 @@ $(function(){
 	(function(){
 
 		// Open general popup
-		$('.js-open-popup').on('click', function(e) {
+		$('body').on('click', '.js-open-popup', function(e){
 			$('.dimmed').addClass('on');
 			$('.popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// Close general popup
-		$('.js-close-popup').on('click', function(e) {
+		$('body').on('click', '.js-close-popup', function(e){
 			$('.dimmed').removeClass('on');
 			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
+		// Close Alert
+		$('body').on('click', '.js-close-alert', function(e){
+			$('.dimmed').remove();
+			$('.popup').remove();
+			e.preventDefault();
+		});
+
 		// Confirm OK
-		$('.js-confirm-ok').on('click', function(e) {
+		$('body').on('click', '.js-confirm-ok', function(e){
 			$('.dimmed').removeClass('on');
 			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Confirm Cancel
-		$('.js-confirm-cancel').on('click', function(e) {
+		$('body').on('click', '.js-confirm-cancel', function(e){
 			$('.dimmed').removeClass('on');
 			$('.popup').removeClass('on');
 			e.preventDefault();
