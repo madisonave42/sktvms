@@ -1,0 +1,498 @@
+include "header_pop.html"
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup popup-wide-width">
+	<h1 class="popup-heading">Statistics Monitoring > 그래프 추가</h1>
+	<div class="popup-content">
+
+		<div class="popup-content-section">
+			<div class="col-width-5 left-float">
+				<div class="popup-input-wrap">
+					<label class="popup-label width-small left-float">그래프명 :</label>
+					<input type="text" class="input-form left-float" value="MSS 최근 Session 수" />
+				</div>
+			</div>
+
+			<div class="col-width-5 left-float">
+				<div class="popup-input-wrap">
+					<label class="popup-label width-normal left-float">모니터링 주기 :</label>
+					<select class="select default left-float">
+						<option>10초</option>
+						<option>1분</option>
+						<option>5분</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="popup-content-section">
+			<div class="col-width-5 left-float">
+				<div class="popup-tree-sorting">
+					<select class="select default left-float-left">
+						<option>VNF</option>
+						<option>VNF</option>
+						<option>VNF</option>
+					</select>
+					<select class="select default left-float-left">
+						<option>MSS</option>
+						<option>MSS</option>
+						<option>MSS</option>
+					</select>
+					<select class="select default left-float">
+						<option>MSS1</option>
+						<option>MSS1</option>
+						<option>MSS1</option>
+					</select>
+				</div>
+
+				<div class="popup-tree popup-white-wrap">
+					<div class="popup-tree-inner">
+						<!-- tree -->
+						<ul class="tree">
+
+							<li class="tree-list depth1 ">
+
+								<div class="tree-item">
+									<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+									<div class="check-wrap tree-check tree-float">
+										<span id="transmark"></span><input id="chk-label-2-1" class="check-box small partial" type="checkbox">
+										<label for="chk-label-2-1" class="check-label small blind">선택</label>
+									</div>
+									<button type="button" class="tree-name tree-float js-fold">Flavor 변경 판단 지표</button>
+								</div>
+
+								<ul class="tree-depth">
+
+									<li class="tree-list is-depth">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-3-1" class="check-box small" type="checkbox">
+												<label for="chk-label-3-1" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1A</button>
+										</div>
+
+										<ul class="tree-depth">
+
+											<li class="tree-list is-depth no-children">
+												<div class="tree-item">
+													<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+													<div class="check-wrap tree-check tree-float">
+														<input id="chk-label-4-1" class="check-box small" type="checkbox">
+														<label for="chk-label-4-1" class="check-label small blind">선택</label>
+													</div>
+													<button type="button" class="tree-name tree-float js-fold">VNFM1A</button>
+												</div>
+											</li>
+
+											<li class="tree-list is-depth no-children">
+												<div class="tree-item">
+													<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+													<div class="check-wrap tree-check tree-float">
+														<input id="chk-label-4-2" class="check-box small" type="checkbox">
+														<label for="chk-label-4-2" class="check-label small blind">선택</label>
+													</div>
+													<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+												</div>
+											</li>
+
+											<li class="tree-list is-depth last">
+												<div class="tree-item">
+													<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+													<div class="check-wrap tree-check tree-float">
+														<input id="chk-label-4-3" class="check-box small" type="checkbox">
+														<label for="chk-label-4-3" class="check-label small blind">선택</label>
+													</div>
+													<button type="button" class="tree-name tree-float js-fold">Session</button>
+												</div>
+
+												<ul class="tree-depth">
+
+													<li class="tree-list is-depth">
+														<div class="tree-item">
+															<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+															<div class="check-wrap tree-check tree-float">
+																<input id="chk-label-5-1" class="check-box small" type="checkbox">
+																<label for="chk-label-5-1" class="check-label small blind">선택</label>
+															</div>
+															<button type="button" class="tree-name tree-float js-fold">Transaction1</button>
+														</div>
+
+														<ul class="tree-depth">
+
+															<li class="tree-list is-depth">
+																<div class="tree-item">
+																	<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+																	<div class="check-wrap tree-check tree-float">
+																		<input id="chk-label-6-1" class="check-box small" type="checkbox">
+																		<label for="chk-label-6-1" class="check-label small blind">선택</label>
+																	</div>
+																	<button type="button" class="tree-name tree-float js-fold">VNFM1A</button>
+																</div>
+
+																<ul class="tree-depth">
+
+																	<li class="tree-list is-depth no-children">
+																		<div class="tree-item">
+																			<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+																			<div class="check-wrap tree-check tree-float">
+																				<input id="chk-label-7-1" class="check-box small" type="checkbox">
+																				<label for="chk-label-7-1" class="check-label small blind">선택</label>
+																			</div>
+																			<button type="button" class="tree-name tree-float js-fold">VNFM1A</button>
+																		</div>
+																	</li>
+
+																	<li class="tree-list is-depth no-children last">
+																		<div class="tree-item">
+																			<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+																			<div class="check-wrap tree-check tree-float">
+																				<input id="chk-label-7-2" class="check-box small" type="checkbox">
+																				<label for="chk-label-7-2" class="check-label small blind">선택</label>
+																			</div>
+																			<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+																		</div>
+																	</li>
+
+																</ul>
+															</li>
+
+															<li class="tree-list is-depth no-children last">
+																<div class="tree-item">
+																	<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+																	<div class="check-wrap tree-check tree-float">
+																		<input id="chk-label-6-2" class="check-box small" type="checkbox">
+																		<label for="chk-label-6-2" class="check-label small blind">선택</label>
+																	</div>
+																	<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+																</div>
+															</li>
+
+														</ul>
+													</li>
+
+													<li class="tree-list is-depth no-children">
+														<div class="tree-item">
+															<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+															<div class="check-wrap tree-check tree-float">
+																<input id="chk-label-5-2" class="check-box small" type="checkbox">
+																<label for="chk-label-5-2" class="check-label small blind">선택</label>
+															</div>
+															<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+														</div>
+													</li>
+
+													<li class="tree-list is-depth no-children last">
+														<div class="tree-item">
+															<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+															<div class="check-wrap tree-check tree-float">
+																<input id="chk-label-5-3" class="check-box small" type="checkbox">
+																<label for="chk-label-5-3" class="check-label small blind">선택</label>
+															</div>
+															<button type="button" class="tree-name tree-float js-fold">Transaction</button>
+														</div>
+													</li>
+
+												</ul>
+
+											</li>
+
+										</ul>
+
+									</li>
+
+									<li class="tree-list is-depth no-children">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-3-2" class="check-box small" type="checkbox">
+												<label for="chk-label-3-2" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+										</div>
+									</li>
+
+									<li class="tree-list is-depth last">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-3-3" class="check-box small" type="checkbox">
+												<label for="chk-label-3-3" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+										</div>
+
+										<ul class="tree-depth">
+
+											<li class="tree-list is-depth no-children">
+												<div class="tree-item">
+													<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+													<div class="check-wrap tree-check tree-float">
+														<input id="chk-label-8-1" class="check-box small" type="checkbox">
+														<label for="chk-label-8-1" class="check-label small blind">선택</label>
+													</div>
+													<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+												</div>
+											</li>
+
+											<li class="tree-list is-depth no-children last">
+												<div class="tree-item">
+													<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+													<div class="check-wrap tree-check tree-float">
+														<input id="chk-label-8-2" class="check-box small" type="checkbox">
+														<label for="chk-label-8-2" class="check-label small blind">선택</label>
+													</div>
+													<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+												</div>
+											</li>
+
+										</ul>
+									</li>
+
+								</ul>
+
+							</li>
+
+							<li class="tree-list depth1 no-children">
+								<div class="tree-item">
+									<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+									<div class="check-wrap tree-check tree-float">
+										<input id="chk-label-2-2" class="check-box small" type="checkbox">
+										<label for="chk-label-2-2" class="check-label small blind">선택</label>
+									</div>
+									<button type="button" class="tree-name tree-float js-fold">Auto-Scale 판단 지표</button>
+								</div>
+							</li>
+
+							<li class="tree-list depth1 last">
+								<div class="tree-item">
+									<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+									<div class="check-wrap tree-check tree-float">
+										<input id="chk-label-2-3" class="check-box small" type="checkbox">
+										<label for="chk-label-2-3" class="check-label small blind">선택</label>
+									</div>
+									<button type="button" class="tree-name tree-float js-fold">서비스 품질 지표</button>
+								</div>
+
+								<ul class="tree-depth">
+
+									<li class="tree-list is-depth no-children">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-9-1" class="check-box small" type="checkbox">
+												<label for="chk-label-9-1" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+										</div>
+									</li>
+
+									<li class="tree-list is-depth no-children">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-9-2" class="check-box small" type="checkbox">
+												<label for="chk-label-9-2" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+										</div>
+									</li>
+
+									<li class="tree-list is-depth no-children last">
+										<div class="tree-item">
+											<button type="button" class="tree-btn-fold tree-float js-fold"></button>
+											<div class="check-wrap tree-check tree-float">
+												<input id="chk-label-9-3" class="check-box small" type="checkbox">
+												<label for="chk-label-9-3" class="check-label small blind">선택</label>
+											</div>
+											<button type="button" class="tree-name tree-float js-fold">VNFM1B</button>
+										</div>
+									</li>
+
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-width-5 left-float">
+				<div class=" popup-white-wrap popup-table-section popup-add-graph-table">
+					<div class="popup-table-section-top">
+						<h3 class="popup-section-heading">선택된 통계 항목 (5항목 / 20항목)</h3>
+					</div>
+					<div class="popup-table-section-inner">
+
+						<table class="vt-table">
+
+							<caption class="hide">선택된 통계 항목 (5항목 / 20항목)</caption>
+
+							<colgroup>
+								<col width="50px">
+								<col width="180px">
+								<col width="auto">
+								<col width="50px">
+							</colgroup>
+
+							<thead>
+								<tr>
+									<th scope="col" class="first">No</th>
+									<th scope="col">시스템 명</th>
+									<th scope="col">통계 항목</th>
+									<th scope="col" class="center">
+										<button type="button" class="tb-form-btn-del">삭제</button>
+									</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>MSS1</td>
+									<td>Session</td>
+									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>MSS1</td>
+									<td>Session</td>
+									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>MSS1</td>
+									<td>Session</td>
+									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>MSS1</td>
+									<td>Session</td>
+									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+								</tr>
+							</tbody>
+
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popup-content-section">
+			<div class="col-width-4 left-float">
+				<div class="popup-input-wrap">
+					<label class="popup-label width-normal left-float">시간 라인 수 :</label>
+					<input type="text" class="input-form left-float" value="60" />
+				</div>
+				<div class="popup-input-wrap">
+					<label class="popup-label width-normal left-float">Threshold :</label>
+					<input type="text" class="input-form left-float" />
+				</div>
+			</div>
+
+			<div class="col-width-6 left-float">
+				<div class="popup-input-wrap">
+					<label class="popup-label width-normal left-float">그래프 크기 :</label>
+					<div class="left-float left wheelbox">
+						<input type="text" class="wheelbox-input left-float" value="2">
+						<div class="wheelbox-sort right-float">
+							<button type="button" class="wheelbox-sort-btn asc">asc</button>
+							<button type="button" class="wheelbox-sort-btn desc">desc</button>
+						</div>
+					</div>
+					<div class="left-float popup-label">
+						X
+					</div>
+					<div class="left-float left wheelbox">
+						<input type="text" class="wheelbox-input left-float" value="2">
+						<div class="wheelbox-sort right-float">
+							<button type="button" class="wheelbox-sort-btn asc">asc</button>
+							<button type="button" class="wheelbox-sort-btn desc">desc</button>
+						</div>
+					</div>
+				</div>
+				<div class="stats-map-wrap">
+					<div class="stats-map popup-white-wrap">
+						<div class="stats-map-row">
+							<div class="stats-map-item left-float">
+								<!-- [D] 상태별 클래스 추가 : 현재 선택됨 - active, 사용중 - used -->
+								<div class="stats-map-item-state active"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state active"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+						</div>
+						<div class="stats-map-row">
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state active"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state active"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state used">Used</div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+						</div>
+						<div class="stats-map-row">
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state used">Used</div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+						</div>
+						<div class="stats-map-row">
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-stroke-orange left-float left">확인</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+include "footer.html"

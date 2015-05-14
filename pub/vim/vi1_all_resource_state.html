@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../../css/common.css" />
 <link rel="stylesheet" href="../../css/table_ori.css" />
 <link rel="stylesheet" href="../../css/pagination.css" />
-<link rel="stylesheet" href="../../css/vnf.css">
+<link rel="stylesheet" href="../../css/vim.css">
 <script src="../../js/lib/jquery-1.11.0.min.js"></script>
 <script src="../../js/lib/jquery-ui.min.js"></script>
 <script src="../../js/lib/jquery.selectric.min.js"></script>
@@ -181,55 +181,169 @@
 	<div class="main-header">
 		<div class="wrapper">
 			<div class="main-heading">
-				<h2 class="main-heading-title">VNF 패키지 목록</h2>
-				<p class="main-heading-overview">VNF Instantiation을 하기 위한 VNF들의 패키지 목록을 제공합니다.</p>
+				<h2 class="main-heading-title">가상 자원 운용 현황</h2>
+				<p class="main-heading-overview">VIM이 관리하는 모든 가상 자원에 대한 사용 현황을 제공합니다.</p>
+			</div>
+
+			<div class="right-float">
+				<div class="main-heading-form-group left-float">
+					<button type="button" class="vnf-btn-refresh left-float">새로고침</button>
+				</div>
 			</div>
 
 		</div>
 	</div>
 
 	<div class="main-content">
+
 		<div class="wrapper">
 
-		<section class="contents-section">
+			<section class="contents-section instance-general">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">전체 가상 자원 운용 현황</h3>
+				</div>
+				<div class="contents-section-inner no-border">
 
-			<div class="contents-section-top">
-
-				<div class="left-float">
-
-					<select id="selectboxid" class="select default left-float-left">
-
-					</select>
-
-					<select id="selectboxid2" class="select default left-float-left">
-
-					</select>
-
-					<select id="selectboxid3" class="select default left-float">
-
-					</select>
-
-					<script>
-						$.get('./select.html', function(data){
-							$('#selectboxid').html(data).selectric();
-						});
-
-						$.get('./select2.html', function(data){
-							$('#selectboxid2').html(data).selectric();
-						});
-
-						$.get('./select3.html', function(data){
-							$('#selectboxid3').html(data).selectric();
-						});
-					</script>
+					<div class="dbpopup-section-inner">
+						<div class="dbpopup-roundbox dbpopup-circle left-float">
+							<div class="dbpopup-circle-title">CPU</div>
+							<div class="dbpopup-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square dbpopup-circle-chart-bar red"></div>
+								<div class="dbpopup-circle-chart-text red">75%</div>
+							</div>
+							<div class="dbpopup-circle-info right-float">
+								<div class="dbpopup-circle-info-label">used</div>
+								<div class="dbpopup-circle-info-text">14 Cores</div>
+								<div class="dbpopup-circle-info-label">total</div>
+								<div class="dbpopup-circle-info-text">86 Cores</div>
+							</div>
+						</div>
+						<div class="dbpopup-roundbox dbpopup-circle left-float">
+							<div class="dbpopup-circle-title">Memory</div>
+							<div class="dbpopup-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square dbpopup-circle-chart-bar yellow"></div>
+								<div class="dbpopup-circle-chart-text orange">55%</div>
+							</div>
+							<div class="dbpopup-circle-info right-float">
+								<div class="dbpopup-circle-info-label">used</div>
+								<div class="dbpopup-circle-info-text">68 GBytes</div>
+								<div class="dbpopup-circle-info-label">total</div>
+								<div class="dbpopup-circle-info-text">128 GBytes</div>
+							</div>
+						</div>
+						<div class="dbpopup-roundbox dbpopup-circle left-float">
+							<div class="dbpopup-circle-title">Disk</div>
+							<div class="dbpopup-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square dbpopup-circle-chart-bar green"></div>
+								<div class="dbpopup-circle-chart-text green">25%</div>
+							</div>
+							<div class="dbpopup-circle-info right-float">
+								<div class="dbpopup-circle-info-label">used</div>
+								<div class="dbpopup-circle-info-text">250 GBytes</div>
+								<div class="dbpopup-circle-info-label">total</div>
+								<div class="dbpopup-circle-info-text">1,000 GBytes</div>
+							</div>
+						</div>
+						<div class="dbpopup-roundbox dbpopup-circle left-float">
+							<div class="dbpopup-circle-title">Disk</div>
+							<div class="dbpopup-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square dbpopup-circle-chart-bar green"></div>
+								<div class="dbpopup-circle-chart-text green">25%</div>
+							</div>
+							<div class="dbpopup-circle-info right-float">
+								<div class="dbpopup-circle-info-label">used</div>
+								<div class="dbpopup-circle-info-text">250 GBytes</div>
+								<div class="dbpopup-circle-info-label">total</div>
+								<div class="dbpopup-circle-info-text">1,000 GBytes</div>
+							</div>
+						</div>
+					</div>
 
 				</div>
+			</section>
 
-			</div>
+			<section class="contents-section instance-list">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Compute Host</h3>
+				</div>
 
-		</section>
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="280px" />
+							<col width="280px" />
+							<col width="280px" />
+							<col width="200px" />
+							<col width="auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="first">No</th>
+								<th scope="col">VNF Instance Name</th>
+								<th scope="col">Network Service Name</th>
+								<th scope="col">Create Time</th>
+								<th scope="col">Flavor</th>
+								<th scope="col">State</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>HD_Voice</td>
+								<td>2015/02/24 13:00:12</td>
+								<td>Gold</td>
+								<td>
+									<div class="vnf-icon-green">In-Service</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>HD_Voice</td>
+								<td>2015/02/24 13:00:12</td>
+								<td>Gold</td>
+								<td>
+									<div class="vnf-icon-red">Stopped</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="contents-section-bottom">
+
+					<div class="left-float">
+
+						<div class="form-label left-float left small-font">페이지당</div>
+
+						<select class="select small left-float">
+							<option>20</option>
+						</select>
+
+						<div class="form-label left-float right small-font">항목 출력</div>
+
+					</div>
+
+					<div class="pagination right-float">
+						<a href="#" class="page-item page-first">처음페이지</a>
+						<a href="#" class="page-item page-prev">이전페이지</a>
+						<a href="#" class="page-item current">1</a>
+						<a href="#" class="page-item">2</a>
+						<a href="#" class="page-item">3</a>
+						<a href="#" class="page-item">4</a>
+						<a href="#" class="page-item">5</a>
+						<a href="#" class="page-item page-next">다음페이지</a>
+						<a href="#" class="page-item page-last">마지막페이지</a>
+					</div>
+
+				</div>
+			</section>
 
 		</div>
+
 	</div>
 
 </section>
