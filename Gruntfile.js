@@ -88,6 +88,16 @@ module.exports = function(grunt) {
         }
       },
 
+      vim: {
+        cwd:'pub_src/vim',
+        src: ['*.html'],
+        dest: 'pub/vim',
+        options: {
+          flatten:true,
+          includePath: 'pub_src/_include'
+        }
+      },
+
       vnfManagement: {
         cwd:'pub_src/vnf_management',
         src: ['*.html'],
