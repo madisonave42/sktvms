@@ -6,26 +6,151 @@
 var HEADER_HEIGHT = 160;
 var DASHBOARD_MIN_HEIGHT = 756;
 
-var $ALERT_DOM = '<div class="dimmed on"></div>';
-$ALERT_DOM += '<section class="popup popup-small-width on">';
-$ALERT_DOM += ' <div class="popup-content">';
-$ALERT_DOM += '   <div class="popup-content-section">';
-$ALERT_DOM += '     <div class="popup-input-wrap">';
-$ALERT_DOM += '       <div class="popup-msg">';
-$ALERT_DOM += '         <div class="popup-msg-icon left-float">';
-$ALERT_DOM += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
-$ALERT_DOM += '         </div>';
-$ALERT_DOM += '         <div class="popup-msg-text left-float">완료되었습니다.</div>';
-$ALERT_DOM += '       </div>';
-$ALERT_DOM += '     </div>';
-$ALERT_DOM += '   </div>';
-$ALERT_DOM += ' </div>';
-$ALERT_DOM += ' <div class="popup-bottom">';
-$ALERT_DOM += '   <div class="right-float">';
-$ALERT_DOM += '     <button type="button" class="js-close-alert btn-stroke-orange left-float left">확인</button>';
-$ALERT_DOM += '   </div>';
-$ALERT_DOM += ' </div>';
-$ALERT_DOM += '</section>';
+// Popup return function
+var popAlert = function( alertMsg ){
+
+  var $alert = '<div class="dimmed on"></div>';
+  $alert += '<section class="popup popup-small-width on">';
+  $alert += ' <div class="popup-content">';
+  $alert += '   <div class="popup-content-section">';
+  $alert += '     <div class="popup-input-wrap">';
+  $alert += '       <div class="popup-msg">';
+  $alert += '         <div class="popup-msg-icon left-float">';
+  $alert += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
+  $alert += '         </div>';
+  $alert += '         <div class="popup-msg-text left-float">'+ alertMsg +'</div>';
+  $alert += '       </div>';
+  $alert += '     </div>';
+  $alert += '   </div>';
+  $alert += ' </div>';
+  $alert += ' <div class="popup-bottom">';
+  $alert += '   <div class="right-float">';
+  $alert += '     <button type="button" class="js-close-alert btn-stroke-orange left-float left">확인</button>';
+  $alert += '   </div>';
+  $alert += ' </div>';
+  $alert += '</section>';
+
+  return $alert;
+
+};
+
+var popAdd = function(){
+
+  var $add = '<div class="dimmed on"></div>';
+  $add += '<section class="popup popup-small-width on">';
+  $add += '<h1 class="popup-heading">Statistics Monitoring > 페이지 추가</h1>';
+  $add += ' <div class="popup-content">';
+  $add += '   <div class="popup-content-section">';
+  $add += '     <div class="popup-input-wrap">';
+  $add += '       <label class="popup-label width-small left-float">페이지명 :</label>';
+  $add += '       <input type="text" class="input-form left-float js-page-title" />';
+  $add += '     </div>';
+  $add += '   </div>';
+  $add += ' </div>';
+  $add += ' <div class="popup-bottom">';
+  $add += '   <div class="right-float">';
+  $add += '     <button type="button" class="btn-stroke-orange left-float left js-btn-add-page">추가</button>';
+  $add += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
+  $add += '   </div>';
+  $add += ' </div>';
+  $add += '</section>';
+
+  return $add;
+
+};
+
+var popDelete = function(pageTitle){
+  var $popDelete = '<div class="dimmed on"></div>';
+  $popDelete += '<section class="popup popup-small-width on">';
+  $popDelete += ' <h1 class="popup-heading">Statistics Monitoring > 페이지 삭제</h1>';
+  $popDelete += ' <div class="popup-content">';
+  $popDelete += '   <div class="popup-content-section">';
+  $popDelete += '     <div class="popup-input-wrap">';
+  $popDelete += '       <div class="popup-msg">';
+  $popDelete += '         <div class="popup-msg-icon left-float">';
+  $popDelete += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
+  $popDelete += '         </div>';
+  $popDelete += '         <div class="left-float">‘' + pageTitle + '’ 페이지를 삭제하시겠습니까?</div>';
+  $popDelete += '       </div>';
+  $popDelete += '     </div>';
+  $popDelete += '   </div>';
+  $popDelete += ' </div>';
+  $popDelete += ' <div class="popup-bottom">';
+  $popDelete += '   <div class="right-float">';
+  $popDelete += '     <button type="button" class="btn-stroke-orange left-float left js-btn-del-page">삭제</button>';
+  $popDelete += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
+  $popDelete += '   </div>';
+  $popDelete += ' </div>';
+  $popDelete += '</section>';
+
+  return $popDelete;
+
+};
+
+// DOM about page & tab return function
+var tabItem = function( pageTitle ){
+
+  var $tabItem = '<li class="tab-item js-tab current">';
+  $tabItem += '<div class="tab-item-title">' + pageTitle + '</div>';
+  $tabItem += '<button type="button" class="btn-del js-del">delete</button>';
+  $tabItem += '</li>';
+
+  return $tabItem;
+
+};
+
+var pageItem = function(){
+
+  var $pageItem = '<section class="contents-section stats-monitoring current">';
+  $pageItem += '<div class="contents-section-inner stats-monitoring fill-gray">';
+  $pageItem += '<ul class="container-list">';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '<li class="container-item"></li>';
+  $pageItem += '</ul>';
+
+
+  $pageItem += '<ul class="graph-list">';
+  /*
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+  $pageItem += '<div class="graph-item"></div>';
+   */
+  $pageItem += '</ul>';
+  $pageItem += '</div>';
+  $pageItem += '</section>';
+
+
+  return $pageItem;
+
+};
+
 
 // Resize box with drag
 var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
@@ -237,83 +362,31 @@ var smTab = function(){
   var $btnDelPage = '';
 
   var _showAddPopup = function(){
-
-    var $addPopup = '<div class="dimmed on"></div>';
-    $addPopup += '<section class="popup popup-small-width on">';
-    $addPopup += ' <div class="popup-content">';
-    $addPopup += '   <div class="popup-content-section">';
-    $addPopup += '     <div class="popup-input-wrap">';
-    $addPopup += '       <label class="popup-label width-small left-float">페이지명 :</label>';
-    $addPopup += '       <input type="text" class="input-form left-float js-page-title" />';
-    $addPopup += '     </div>';
-    $addPopup += '   </div>';
-    $addPopup += ' </div>';
-    $addPopup += ' <div class="popup-bottom">';
-    $addPopup += '   <div class="right-float">';
-    $addPopup += '     <button type="button" class="btn-stroke-orange left-float left js-btn-add-page">추가</button>';
-    $addPopup += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
-    $addPopup += '   </div>';
-    $addPopup += ' </div>';
-    $addPopup += '</section>';
-
-    $('body').append( $addPopup );
+    $('body').append( popAdd() );
     $('.js-page-title').focus();
-
   };
 
   var _showDeletePopup = function( $btnDelete ){
-
     var pageTitle = $btnDelete.prev('.tab-item-title').text();
-
-    var $deletePopup = '<div class="dimmed on"></div>';
-    $deletePopup += '<section class="popup popup-small-width on">';
-    $deletePopup += ' <h1 class="popup-heading">Statistics Monitoring > 페이지 삭제</h1>';
-    $deletePopup += ' <div class="popup-content">';
-    $deletePopup += '   <div class="popup-content-section">';
-    $deletePopup += '     <div class="popup-input-wrap">';
-    $deletePopup += '       <div class="popup-msg">';
-    $deletePopup += '         <div class="popup-msg-icon left-float">';
-    $deletePopup += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
-    $deletePopup += '         </div>';
-    $deletePopup += '         <div class="left-float">‘' + pageTitle + '’ 페이지를 삭제하시겠습니까?</div>';
-    $deletePopup += '       </div>';
-    $deletePopup += '     </div>';
-    $deletePopup += '   </div>';
-    $deletePopup += ' </div>';
-    $deletePopup += ' <div class="popup-bottom">';
-    $deletePopup += '   <div class="right-float">';
-    $deletePopup += '     <button type="button" class="btn-stroke-orange left-float left js-btn-del-page">삭제</button>';
-    $deletePopup += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
-    $deletePopup += '   </div>';
-    $deletePopup += ' </div>';
-    $deletePopup += '</section>';
-
-    $('body').append( $deletePopup );
-
+    $('body').append( popDelete(pageTitle) );
   };
 
   var _showAlert = function( alertMsg ){
-    $('body').append( $ALERT_DOM );
-    $('.popup-msg-text').text( alertMsg );
+    $('body').append( popAlert(alertMsg) );
   };
 
   var _checkNum = function( $tabParent, status ){
-
     var tabNum = $tabParent.find('.tab-item').length;
-
     if( status == 'add' ) {
       return tabNum < 10;
     } else {
       return tabNum > 0;
     }
-
   };
 
   var _checkCurrent = function(){
-
     var $tabItem = $('.tab-item');
     var $pageItem = $('.contents-section.stats-monitoring');
-
     if( !$tabItem.hasClass('current') ){
       $tabItem.eq(0).addClass('current');
       $pageItem.eq(1).addClass('current');
@@ -322,7 +395,6 @@ var smTab = function(){
 
   // privileged
   this.showPopup = function( $tabParent, status, $btnDelete ){
-
     if( status == 'add' ){
       if( _checkNum( $tabParent, status ) ){
         _showAddPopup();
@@ -337,68 +409,16 @@ var smTab = function(){
         _showAlert( '삭제할 페이지가 없습니다.' );
       }
     }
-
   };
 
   this.addPage = function( $tabParent, pageTitle, $pageParent ){
-
     $tabParent.find('.tab-item').removeClass('current');
     $pageParent.find('.contents-section.stats-monitoring').removeClass('current');
-
-    var $tabItemDom = '<li class="tab-item js-tab current">';
-    $tabItemDom += '<div class="tab-item-title">' + pageTitle + '</div>';
-    $tabItemDom += '<button type="button" class="btn-del js-del">delete</button>';
-    $tabItemDom += '</li>';
-
-    var $pageItemDom = '<section class="contents-section stats-monitoring current">';
-    $pageItemDom += '<div class="contents-section-inner stats-monitoring fill-gray">';
-    $pageItemDom += '<ul class="container-list">';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '<li class="container-item"></li>';
-    $pageItemDom += '</ul>';
-    $pageItemDom += '<ul class="graph-list">';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '<div class="graph-item"></div>';
-    //$pageItemDom += '</ul>';
-    //$pageItemDom += '</div>';
-    //$pageItemDom += '</section>';
-
-    $tabParent.append( $tabItemDom );
-    $pageParent.append( $pageItemDom );
-
+    $tabParent.append( tabItem( pageTitle ) );
+    $pageParent.append( pageItem() );
     $('.dimmed').remove();
     $('.popup').remove();
-
     $(window).trigger('addPage');
-
   };
 
   this.delPage = function(){
@@ -406,15 +426,11 @@ var smTab = function(){
     var $pageItem = $('.contents-section.stats-monitoring');
     var $delTab = $btnDelPage.parents('.tab-item');
     var delPageIndex = $tabItem.index( $delTab ) + 1;
-
     $delTab.remove();
     $pageItem.eq(delPageIndex).remove();
-
     $('.dimmed').remove();
     $('.popup').remove();
-
     _checkCurrent();
-
   };
 
   this.active = function( $activeTab ){
@@ -515,12 +531,17 @@ var ResizeGraph = function(){
 // Add graph
 var Graph = function(){
 
-  var _dragNDrop = function(parentOffset, firstParentOffset ){
+  // private
+  var $globalContainer;
 
-    var top = parentOffset.top - firstParentOffset.top;
-    var left = parentOffset.left - firstParentOffset.left;
+  var _dragNDrop = function(currentGridOffset, firstGridOffset ){
 
-    $('.graph-item').eq( $('.graph-item').length-1 ).draggable({
+    var top = currentGridOffset.top - firstGridOffset.top;
+    var left = currentGridOffset.left - firstGridOffset.left;
+
+    var $graphItem = $('.graph-item');
+
+    $graphItem.eq( $graphItem.length-1 ).draggable({
       snap: '.container-item',
       snapMode: 'inner'
     }).css({
@@ -533,22 +554,34 @@ var Graph = function(){
     $('.container-item').droppable();
   };
 
-  //var _showAddPopup = function(){
+  // privileged
 
-  //};
+  this.showPopup = function( $containerCurrent ){
 
-  //this.showPopup = function(){
+    $globalContainer = $containerCurrent;
 
-  //  _showAddPopup();
+    $.get('mp7-1_add_graph_test.html ', function(data){
 
-  //};
+      $('body').append( data );
 
-  this.addGraph = function( $containerItem ){
+      $('.select').selectric();
+      $('.spinner').spinner();
+
+      var addIndex = $('.container-item').index( $globalContainer );
+      $('.stats-map-item-state').eq(addIndex).addClass('active');
+    });
+
+  };
+
+  this.addGraph = function(){
+
+    console.log( $globalContainer );
 
     var floor;
-    var index = $('.container-item').index( $containerItem );
-    var firstGridOffset = $('.container-item').eq(0).offset();
-    var gridOffset = $containerItem.offset();
+    var containerItem = $('.container-item');
+    var index = containerItem.index( $globalContainer );
+    var firstGridOffset = containerItem.eq(0).offset();
+    var currentGridOffset = $globalContainer.offset();
 
     var $graphNode = $('<div class="graph-item"></div>');
 
@@ -559,8 +592,10 @@ var Graph = function(){
 
     $graphNode.attr('data-floor', floor).appendTo( '.graph-list' );
 
-    _dragNDrop(gridOffset, firstGridOffset);
+    _dragNDrop(currentGridOffset, firstGridOffset);
 
+    $('.dimmed').remove();
+    $('.popup').remove();
     $(window).trigger('addGraph');
 
   };
@@ -611,6 +646,9 @@ $(function(){
 
 	// Apply selectric library
 	$('.select').selectric();
+
+	// Apply spinner library
+	$('.spinner').spinner();
 
 	// Tree
 	(function(){
@@ -670,12 +708,16 @@ $(function(){
 	// Add Graph
 	(function(){
 
-		$('body').on('click', '.container-item', function(){
+		var $body = $('body');
+		var ct = new Graph();;
 
-			var ct = new Graph();
+		$body.on('click', '.container-item', function(){
+			//ct = new Graph();
+			ct.showPopup( $(this) );
+		});
 
-			ct.addGraph( $(this) );
-
+		$body.on('click', '.js-btn-add-graph', function(){
+			ct.addGraph();
 		});
 
 	})();
@@ -886,8 +928,8 @@ $(function(){
 
 		// Close general popup
 		$('body').on('click', '.js-close-popup', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 
@@ -900,15 +942,15 @@ $(function(){
 
 		// Confirm OK
 		$('body').on('click', '.js-confirm-ok', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 
 		// Confirm Cancel
 		$('body').on('click', '.js-confirm-cancel', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 

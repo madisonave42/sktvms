@@ -112,6 +112,7 @@ img {
   display: block;
 }
 
+/* selectric style */
 .selectric-mini {
   width: 50px;
 }
@@ -436,6 +437,40 @@ img {
   height: 30px;
   line-height: 27px;
   color: #777;
+}
+
+.ui-spinner {
+  display: block;
+  width: 80px;
+  height: 30px;
+  position: relative;
+  float: left;
+  border: 1px solid #c2cbcb;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.ui-spinner-input {
+  width: 70%;
+  height: 100%;
+  border: 0;
+}
+.ui-spinner-button {
+  display: block;
+  width: 13px;
+  height: 14px;
+  position: absolute;
+  right: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+.ui-spinner-button .ui-button-text {
+  font-size: 10px;
+}
+.ui-spinner-up {
+  top: -1px;
+}
+.ui-spinner-down {
+  bottom: 2px;
 }
 
 .tree-item {
@@ -969,10 +1004,14 @@ html.ie10 .check-box {
   box-sizing: border-box;
   padding-right: 9px;
   height: 30px;
-  line-height: 27px;
+  line-height: 28px;
   color: #576363;
   font-weight: bold;
   text-align: right;
+}
+.popup-label.operator {
+  font-size: 21px;
+  font-weight: normal;
 }
 .popup-graph {
   margin: 5px 10px;

@@ -22,10 +22,10 @@
 </section>
 
 <!-- [D] 팝업 배경 -->
-<div class="dimmed"></div>
+<div class="dimmed on"></div>
 
 <!-- [D] 팝업 : S -->
-<section class="popup popup-wide-width">
+<section class="popup popup-wide-width on">
 	<h1 class="popup-heading">Statistics Monitoring > 그래프 추가</h1>
 	<div class="popup-content">
 
@@ -361,41 +361,41 @@
 							</colgroup>
 
 							<thead>
-								<tr>
-									<th scope="col" class="first">No</th>
-									<th scope="col">시스템 명</th>
-									<th scope="col">통계 항목</th>
-									<th scope="col" class="center">
-										<button type="button" class="tb-form-btn-del">삭제</button>
-									</th>
-								</tr>
+							<tr>
+								<th scope="col" class="first">No</th>
+								<th scope="col">시스템 명</th>
+								<th scope="col">통계 항목</th>
+								<th scope="col" class="center">
+									<button type="button" class="tb-form-btn-del">삭제</button>
+								</th>
+							</tr>
 							</thead>
 
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>MSS1</td>
-									<td>Session</td>
-									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>MSS1</td>
-									<td>Session</td>
-									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>MSS1</td>
-									<td>Session</td>
-									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>MSS1</td>
-									<td>Session</td>
-									<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
-								</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>Session</td>
+								<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>Session</td>
+								<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>Session</td>
+								<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>Session</td>
+								<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+							</tr>
 							</tbody>
 
 						</table>
@@ -418,35 +418,40 @@
 			</div>
 
 			<div class="col-width-6 left-float">
+
 				<div class="popup-input-wrap">
+
 					<label class="popup-label width-normal left-float">그래프 크기 :</label>
-					<div class="left-float left wheelbox">
-						<input type="text" class="wheelbox-input left-float" value="2">
-						<div class="wheelbox-sort right-float">
-							<button type="button" class="wheelbox-sort-btn asc">asc</button>
-							<button type="button" class="wheelbox-sort-btn desc">desc</button>
-						</div>
-					</div>
-					<div class="left-float popup-label">
-						X
-					</div>
-					<div class="left-float left wheelbox">
-						<input type="text" class="wheelbox-input left-float" value="2">
-						<div class="wheelbox-sort right-float">
-							<button type="button" class="wheelbox-sort-btn asc">asc</button>
-							<button type="button" class="wheelbox-sort-btn desc">desc</button>
-						</div>
-					</div>
+					<input type="text" class="input spinner col">
+					<div class="left-float right popup-label operator">×</div>
+					<input type="text" class="input spinner row">
+
 				</div>
 				<div class="stats-map-wrap">
 					<div class="stats-map popup-white-wrap">
 						<div class="stats-map-row">
+
 							<div class="stats-map-item left-float">
 								<!-- [D] 상태별 클래스 추가 : 현재 선택됨 - active, 사용중 - used -->
-								<div class="stats-map-item-state active"></div>
+								<div class="stats-map-item-state"></div>
+							</div>
+
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
 							</div>
 							<div class="stats-map-item left-float">
-								<div class="stats-map-item-state active"></div>
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+						</div>
+						<div class="stats-map-row">
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
+							</div>
+							<div class="stats-map-item left-float">
+								<div class="stats-map-item-state"></div>
 							</div>
 							<div class="stats-map-item left-float">
 								<div class="stats-map-item-state"></div>
@@ -457,21 +462,7 @@
 						</div>
 						<div class="stats-map-row">
 							<div class="stats-map-item left-float">
-								<div class="stats-map-item-state active"></div>
-							</div>
-							<div class="stats-map-item left-float">
-								<div class="stats-map-item-state active"></div>
-							</div>
-							<div class="stats-map-item left-float">
-								<div class="stats-map-item-state used">Used</div>
-							</div>
-							<div class="stats-map-item left-float">
 								<div class="stats-map-item-state"></div>
-							</div>
-						</div>
-						<div class="stats-map-row">
-							<div class="stats-map-item left-float">
-								<div class="stats-map-item-state used">Used</div>
 							</div>
 							<div class="stats-map-item left-float">
 								<div class="stats-map-item-state"></div>
@@ -505,7 +496,7 @@
 	</div>
 	<div class="popup-bottom">
 		<div class="right-float">
-			<button type="button" class="btn-stroke-orange left-float left">확인</button>
+			<button type="button" class="btn-stroke-orange left-float left js-btn-add-graph">확인</button>
 			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
 		</div>
 	</div>

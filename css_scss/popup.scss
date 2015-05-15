@@ -488,10 +488,15 @@ $pop-dark-blue:#0057b9;
     box-sizing:border-box;
     padding-right:9px;
     height:30px;
-    line-height:27px;
+    line-height:28px;
     color:$dark;
     font-weight:bold;
     text-align:right;
+
+    &.operator{
+      font-size:21px;
+      font-weight:normal;
+    }
   }
 
   &-graph {

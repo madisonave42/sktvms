@@ -44,6 +44,9 @@ $(function(){
 	// Apply selectric library
 	$('.select').selectric();
 
+	// Apply spinner library
+	$('.spinner').spinner();
+
 	// Tree
 	(function(){
 
@@ -102,12 +105,16 @@ $(function(){
 	// Add Graph
 	(function(){
 
-		$('body').on('click', '.container-item', function(){
+		var $body = $('body');
+		var ct = new Graph();;
 
-			var ct = new Graph();
+		$body.on('click', '.container-item', function(){
+			//ct = new Graph();
+			ct.showPopup( $(this) );
+		});
 
-			ct.addGraph( $(this) );
-
+		$body.on('click', '.js-btn-add-graph', function(){
+			ct.addGraph();
 		});
 
 	})();
@@ -318,8 +325,8 @@ $(function(){
 
 		// Close general popup
 		$('body').on('click', '.js-close-popup', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 
@@ -332,15 +339,15 @@ $(function(){
 
 		// Confirm OK
 		$('body').on('click', '.js-confirm-ok', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 
 		// Confirm Cancel
 		$('body').on('click', '.js-confirm-cancel', function(e){
-			$('.dimmed').removeClass('on');
-			$('.popup').removeClass('on');
+			$('.dimmed').remove();
+			$('.popup').remove();
 			e.preventDefault();
 		});
 

@@ -1,3 +1,5 @@
+/* selectric style */
+
 .selectric{
 
   &-mini{
@@ -320,4 +322,53 @@
   height:30px;
   line-height:27px;
   color:$dark-gray;
+}
+
+.ui-spinner{
+
+  display:block;
+  width:80px;
+  height:30px;
+
+  position:relative;
+
+  float:left;
+
+  border:1px solid $light-gray;
+  background:$white;
+
+  box-sizing:border-box;
+
+  &-input{
+    width:70%;
+    height:100%;
+
+    border:0;
+  }
+
+  &-button{
+
+    display:block;
+    width:13px;
+    height:14px;
+
+    position:absolute;
+    right:3px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    .ui-button-text{
+      font-size:10px;
+    }
+  }
+
+  &-up{
+    top:-1px;
+  }
+
+  &-down{
+    bottom:2px;
+  }
 }
