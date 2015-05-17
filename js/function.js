@@ -87,7 +87,7 @@ var popDelete = function(pageTitle){
 
 };
 
-// DOM about page & tab return function
+// DOM about page & tab & graph return function
 var tabItem = function( pageTitle ){
 
   var $tabItem = '<li class="tab-item js-tab current">';
@@ -99,7 +99,7 @@ var tabItem = function( pageTitle ){
 
 };
 
-var pageItem = function(){
+var pageItem = function( pageIndex ){
 
   var $pageItem = '<section class="contents-section stats-monitoring current">';
   $pageItem += '<div class="contents-section-inner stats-monitoring fill-gray">';
@@ -123,7 +123,7 @@ var pageItem = function(){
   $pageItem += '</ul>';
 
 
-  $pageItem += '<ul class="graph-list">';
+  $pageItem += '<ul class="graph-list page' + pageIndex + '">';
   /*
   $pageItem += '<div class="graph-item"></div>';
   $pageItem += '<div class="graph-item"></div>';
@@ -148,6 +148,24 @@ var pageItem = function(){
 
 
   return $pageItem;
+
+};
+
+var graphItemNode = function( graphGridClass, graphTitle ){
+
+  var $graphItem = '<div class="graph-item ' + graphGridClass + '">' +
+    '<div class="graph-top">' +
+      '<div class="graph-title">' + graphTitle + '</div>' +
+      '<div class="graph-btn">' +
+        '<button type="button" class="graph-btn"></button>' +
+        '<button type="button" class="graph-btn"></button>' +
+        '<button type="button" class="graph-btn-close">close</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="graph-content"></div>' +
+  '</div>';
+
+  return $graphItem;
 
 };
 
@@ -360,6 +378,7 @@ var smTab = function(){
 
   // private
   var $btnDelPage = '';
+  var pageIndex = 0;
 
   var _showAddPopup = function(){
     $('body').append( popAdd() );
@@ -412,10 +431,11 @@ var smTab = function(){
   };
 
   this.addPage = function( $tabParent, pageTitle, $pageParent ){
+    pageIndex++;
     $tabParent.find('.tab-item').removeClass('current');
     $pageParent.find('.contents-section.stats-monitoring').removeClass('current');
     $tabParent.append( tabItem( pageTitle ) );
-    $pageParent.append( pageItem() );
+    $pageParent.append( pageItem( pageIndex ) );
     $('.dimmed').remove();
     $('.popup').remove();
     $(window).trigger('addPage');
@@ -533,15 +553,14 @@ var Graph = function(){
 
   // private
   var $globalContainer;
+  var $globalContainerParent;
 
-  var _dragNDrop = function(currentGridOffset, firstGridOffset ){
+  var _dragNDrop = function($graphNode, currentGridOffset, firstGridOffset ){
 
     var top = currentGridOffset.top - firstGridOffset.top;
     var left = currentGridOffset.left - firstGridOffset.left;
 
-    var $graphItem = $('.graph-item');
-
-    $graphItem.eq( $graphItem.length-1 ).draggable({
+    $graphNode.draggable({
       snap: '.container-item',
       snapMode: 'inner'
     }).css({
@@ -556,43 +575,46 @@ var Graph = function(){
 
   // privileged
 
-  this.showPopup = function( $containerCurrent ){
+  this.showPopup = function( $containerCurrent, $containerCurrentParent ){
 
     $globalContainer = $containerCurrent;
+    $globalContainerParent = $containerCurrentParent;
 
     $.get('mp7-1_add_graph_test.html ', function(data){
 
       $('body').append( data );
 
       $('.select').selectric();
-      $('.spinner').spinner();
+      $('.spinner').spinner({
+        max:4,
+        min:1
+      });
 
-      var addIndex = $('.container-item').index( $globalContainer );
+      var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
       $('.stats-map-item-state').eq(addIndex).addClass('active');
     });
 
   };
 
-  this.addGraph = function(){
-
-    console.log( $globalContainer );
+  this.addGraph = function( graphTitle, gridCol, gridRow ){
 
     var floor;
-    var containerItem = $('.container-item');
-    var index = containerItem.index( $globalContainer );
-    var firstGridOffset = containerItem.eq(0).offset();
+    var pageIndex = $('.contents-section-inner.stats-monitoring').index( $globalContainerParent );
+    var index = $globalContainerParent.find('.container-item').index( $globalContainer );
+    var firstGridOffset = $globalContainerParent.find('.container-item').eq(0).offset();
     var currentGridOffset = $globalContainer.offset();
+    var graphGridClass = 'm' + gridCol + 'x' + gridRow;
 
-    var $graphNode = $('<div class="graph-item"></div>');
+    var $graphNode = $( graphItemNode( graphGridClass, graphTitle ) );
 
     if( (index-4) < 0 ){ floor = 0; }
     else if( (index-4) < 4 ){ floor = 1; }
     else if( (index-4) < 8 ){ floor = 2; }
     else if( (index-4) < 12 ){ floor = 3; }
 
-    $graphNode.attr('data-floor', floor).appendTo( '.graph-list' );
+    $graphNode.attr('data-floor', floor).appendTo( $('.graph-list.page' + pageIndex) );
 
-    _dragNDrop(currentGridOffset, firstGridOffset);
+    _dragNDrop($graphNode, currentGridOffset, firstGridOffset);
 
     $('.dimmed').remove();
     $('.popup').remove();
@@ -648,7 +670,10 @@ $(function(){
 	$('.select').selectric();
 
 	// Apply spinner library
-	$('.spinner').spinner();
+	$('.spinner').spinner({
+		max:4,
+		min:1
+	});
 
 	// Tree
 	(function(){
@@ -713,11 +738,15 @@ $(function(){
 
 		$body.on('click', '.container-item', function(){
 			//ct = new Graph();
-			ct.showPopup( $(this) );
+			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
 		});
 
 		$body.on('click', '.js-btn-add-graph', function(){
-			ct.addGraph();
+			var graphTitle = $('.popup-graph-title').val();
+			var gridCol = $('.spinner.col').val();
+			var gridRow = $('.spinner.row').val();
+
+			ct.addGraph( graphTitle, gridCol, gridRow );
 		});
 
 	})();

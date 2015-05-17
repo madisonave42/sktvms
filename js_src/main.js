@@ -45,7 +45,10 @@ $(function(){
 	$('.select').selectric();
 
 	// Apply spinner library
-	$('.spinner').spinner();
+	$('.spinner').spinner({
+		max:4,
+		min:1
+	});
 
 	// Tree
 	(function(){
@@ -110,11 +113,15 @@ $(function(){
 
 		$body.on('click', '.container-item', function(){
 			//ct = new Graph();
-			ct.showPopup( $(this) );
+			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
 		});
 
 		$body.on('click', '.js-btn-add-graph', function(){
-			ct.addGraph();
+			var graphTitle = $('.popup-graph-title').val();
+			var gridCol = $('.spinner.col').val();
+			var gridRow = $('.spinner.row').val();
+
+			ct.addGraph( graphTitle, gridCol, gridRow );
 		});
 
 	})();
