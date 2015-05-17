@@ -181,8 +181,17 @@
 	<div class="main-header">
 		<div class="wrapper">
 			<div class="main-heading">
-				<h2 class="main-heading-title">가상 자원 운용 현황</h2>
+				<h2 class="main-heading-title">Host별 가상 자원 운용 현황</h2>
 				<p class="main-heading-overview">VIM이 관리하는 모든 가상 자원에 대한 사용 현황을 제공합니다.</p>
+			</div>
+
+			<div class="left-float right group">
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">Compute Host</div>
+					<select class="select default">
+						<option>COMP1</option>
+					</select>
+				</div>
 			</div>
 
 			<div class="right-float">
@@ -200,7 +209,7 @@
 
 			<section class="contents-section instance-general">
 				<div class="contents-section-top">
-					<h3 class="section-heading color eng left-float">전체 가상 자원 운용 현황</h3>
+					<h3 class="section-heading color eng left-float">가상 자원 운용 현황</h3>
 				</div>
 				<div class="contents-section-inner no-border">
 
@@ -244,19 +253,6 @@
 								<div class="vim-circle-info-text">1,000 GBytes</div>
 							</div>
 						</div>
-						<div class="vim-circle">
-							<div class="vim-circle-title">Storage</div>
-							<div class="vim-circle-chart left-float js-pie-chart">
-								<div class="ct-chart ct-square vim-circle-chart-bar green"></div>
-								<div class="vim-circle-chart-text green">25%</div>
-							</div>
-							<div class="vim-circle-info right-float">
-								<div class="vim-circle-info-label">used</div>
-								<div class="vim-circle-info-text">250 GBytes</div>
-								<div class="vim-circle-info-label">total</div>
-								<div class="vim-circle-info-text">1,000 GBytes</div>
-							</div>
-						</div>
 					</div>
 
 				</div>
@@ -264,7 +260,7 @@
 
 			<section class="contents-section computehost">
 				<div class="contents-section-top">
-					<h3 class="section-heading color eng left-float">Compute Host</h3>
+					<h3 class="section-heading color eng left-float">VM별 가상 자원 할당 현황</h3>
 				</div>
 
 				<div class="contents-section-inner no-border">
@@ -272,26 +268,20 @@
 						<caption class="hide">목록</caption>
 						<colgroup>
 							<col width="60px" />
-							<col width="180px" />
-							<col width="0px" />
-							<col width="280px" />
-							<col width="170px" />
-							<col width="280px" />
-							<col width="170px" />
-							<col width="280px" />
 							<col width="auto" />
+							<col width="200px" />
+							<col width="400px" />
+							<col width="400px" />
+							<col width="400px" />
 						</colgroup>
 						<thead>
 							<tr>
 								<th scope="col" class="first">No</th>
-								<th scope="col">Host Name</th>
-								<th scope="col">vCPU (전체)</th>
-								<th scope="col">vCPU (사용중)</th>
-								<th scope="col">Memory (전체)</th>
-								<th scope="col">Memory (사용중)</th>
-								<th scope="col">Disk (전체)</th>
-								<th scope="col">Disk (사용중)</th>
-								<th scope="col">인스턴스</th>
+								<th scope="col">VNF Instance Name</th>
+								<th scope="col">VNFC Name</th>
+								<th scope="col">vCPU</th>
+								<th scope="col">Memory</th>
+								<th scope="col">Disk</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -300,15 +290,14 @@
 								<td>
 									<a href="" class="vim-table-link">COMP-001</a>
 								</td>
-								<td>96 Cores</td>
+								<td>LBCM1A</td>
 								<td>
 									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar orange" style="width:70%"></div>
-										<div class="vim-graph-msg">70%</div>
+										<div class="vim-graph-bar orange" style="width:75%"></div>
+										<div class="vim-graph-msg">75%</div>
 									</div>
 									<div class="left-float vim-graph-label">45 Core</div>
 								</td>
-								<td>128G</td>
 								<td>
 									<div class="vim-graph small left-float">
 										<div class="vim-graph-bar" style="width:50%"></div>
@@ -316,30 +305,27 @@
 									</div>
 									<div class="left-float vim-graph-label">45G</div>
 								</td>
-								<td>2,000G</td>
 								<td>
 									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
+										<div class="vim-graph-bar" style="width:45%"></div>
+										<div class="vim-graph-msg">45%</div>
 									</div>
 									<div class="left-float vim-graph-label">45G</div>
 								</td>
-								<td>4</td>
 							</tr>
 							<tr>
-								<td>1</td>
+								<td>2</td>
 								<td>
 									<a href="" class="vim-table-link">COMP-001</a>
 								</td>
-								<td>96 Cores</td>
+								<td>LBCM1A</td>
 								<td>
 									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar orange" style="width:80%"></div>
-										<div class="vim-graph-msg">80%</div>
+										<div class="vim-graph-bar orange" style="width:75%"></div>
+										<div class="vim-graph-msg">75%</div>
 									</div>
 									<div class="left-float vim-graph-label">45 Core</div>
 								</td>
-								<td>128G</td>
 								<td>
 									<div class="vim-graph small left-float">
 										<div class="vim-graph-bar" style="width:50%"></div>
@@ -347,48 +333,18 @@
 									</div>
 									<div class="left-float vim-graph-label">45G</div>
 								</td>
-								<td>2,000G</td>
 								<td>
 									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
+										<div class="vim-graph-bar" style="width:45%"></div>
+										<div class="vim-graph-msg">45%</div>
 									</div>
 									<div class="left-float vim-graph-label">45G</div>
 								</td>
-								<td>4</td>
 							</tr>
-
 						</tbody>
 					</table>
 				</div>
 
-				<div class="contents-section-bottom">
-
-					<div class="left-float">
-
-						<div class="form-label left-float left small-font">페이지당</div>
-
-						<select class="select small left-float">
-							<option>20</option>
-						</select>
-
-						<div class="form-label left-float right small-font">항목 출력</div>
-
-					</div>
-
-					<div class="pagination right-float">
-						<a href="#" class="page-item page-first">처음페이지</a>
-						<a href="#" class="page-item page-prev">이전페이지</a>
-						<a href="#" class="page-item current">1</a>
-						<a href="#" class="page-item">2</a>
-						<a href="#" class="page-item">3</a>
-						<a href="#" class="page-item">4</a>
-						<a href="#" class="page-item">5</a>
-						<a href="#" class="page-item page-next">다음페이지</a>
-						<a href="#" class="page-item page-last">마지막페이지</a>
-					</div>
-
-				</div>
 			</section>
 
 		</div>

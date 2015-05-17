@@ -255,6 +255,12 @@ img {
 .gnb-item:hover .gnb-main-link06:after {
   left: 79px;
 }
+.gnb-item:hover .gnb-main-link07 {
+  background-position: 43px -766px;
+}
+.gnb-item:hover .gnb-main-link07:after {
+  left: 79px;
+}
 .gnb-item:hover .gnb-main-link:hover + .gnb-sub-wrap {
   display: block;
 }
@@ -289,6 +295,9 @@ img {
 .gnb-main-link06 {
   background-position: 43px -589px;
 }
+.gnb-main-link07 {
+  background-position: 43px -708px;
+}
 .gnb-sub-wrap {
   display: none;
   position: absolute;
@@ -304,14 +313,14 @@ img {
 .gnb-sub-wrap:hover {
   display: block;
 }
-.gnb-sub01, .gnb-sub02, .gnb-sub03, .gnb-sub04, .gnb-sub05 {
+.gnb-sub01, .gnb-sub02, .gnb-sub03, .gnb-sub04, .gnb-sub05, .gnb-sub07 {
   display: block;
   margin: 0 auto;
   width: 1760px;
   box-sizing: border-box;
   padding-left: 498px;
 }
-.gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after {
+.gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after, .gnb-sub07:after {
   content: ".";
   display: block;
   height: 0;
@@ -322,13 +331,16 @@ img {
   padding-left: 636px;
 }
 .gnb-sub03 {
-  padding-left: 839px;
+  padding-left: 1005px;
 }
 .gnb-sub04 {
-  padding-left: 856px;
+  padding-left: 1027px;
 }
 .gnb-sub05 {
-  padding-left: 1050px;
+  padding-left: 1220px;
+}
+.gnb-sub07 {
+  padding-left: 670px;
 }
 .gnb-sub-item {
   position: relative;

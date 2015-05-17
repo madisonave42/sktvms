@@ -1,0 +1,56 @@
+include "header_pop.html"
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup popup-small-width">
+	<h1 class="popup-heading">VM Image 수정</h1>
+	<div class="popup-content">
+
+		<div class="popup-content-section">
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">이름 :</label>
+				<input type="text" class="input-form left-float" value="REDHAT-6.0" />
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Image 파일 :</label>
+				<input type="text" class="input-form left-float" disabled="disabled" value="vMSS_R101.qcow" />
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">포맷 :</label>
+				<select class="select default left-float">
+					<option>qcow2</option>
+				</select>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">최소 디스크 :</label>
+				<input type="text" class="input-form left-float with-unit" value="20" />
+				<div class="popup-unit left-float">GB</div>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">최소 RAM :</label>
+				<input type="text" class="input-form left-float with-unit" value="1024" />
+				<div class="popup-unit left-float">MB</div>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Description :</label>
+				<input type="text" class="input-form left-float" value="" />
+			</div>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-fill-orange left-float left">확인</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+include "footer.html"

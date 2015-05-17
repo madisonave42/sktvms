@@ -1,0 +1,69 @@
+include "header_pop.html"
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup popup-small-width">
+	<h1 class="popup-heading">Compute Host 추가</h1>
+	<div class="popup-content">
+
+		<div class="popup-content-section">
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Host Name :</label>
+				<input type="text" class="input-form left-float" />
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Vendor :</label>
+				<input type="text" class="input-form left-float" />
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Model :</label>
+				<input type="text" class="input-form left-float" />
+			</div>
+			<div class="popup-input-wrap">
+				<div class="col-width-6 left-float">
+					<label class="popup-label width-small left-float">CPU :</label>
+					<input type="text" class="input-form left-float with-unit" />
+					<div class="popup-unit left-float">GHz</div>
+				</div>
+				<div class="col-width-4 left-float">
+					<input type="text" class="input-form left-float with-unit" />
+					<div class="popup-unit left-float">Cores</div>
+				</div>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Memory :</label>
+				<input type="text" class="input-form left-float with-unit" />
+				<div class="popup-unit left-float">GB</div>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Disk :</label>
+				<input type="text" class="input-form left-float with-unit" />
+				<div class="popup-unit left-float">GB</div>
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">관리 IP :</label>
+				<input type="text" class="input-form left-float" />
+			</div>
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">Description :</label>
+				<input type="text" class="input-form left-float" />
+			</div>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-fill-orange left-float left">확인</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+include "footer.html"

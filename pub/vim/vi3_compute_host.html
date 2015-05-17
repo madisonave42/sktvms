@@ -181,16 +181,9 @@
 	<div class="main-header">
 		<div class="wrapper">
 			<div class="main-heading">
-				<h2 class="main-heading-title">가상 자원 운용 현황</h2>
-				<p class="main-heading-overview">VIM이 관리하는 모든 가상 자원에 대한 사용 현황을 제공합니다.</p>
+				<h2 class="main-heading-title">Compute Host 관리</h2>
+				<p class="main-heading-overview">VM을 생성을 위한 Compute Host에 대한 등록 관리 기능을 제공합니다.</p>
 			</div>
-
-			<div class="right-float">
-				<div class="main-heading-form-group left-float">
-					<button type="button" class="vim-btn-refresh left-float">새로고침</button>
-				</div>
-			</div>
-
 		</div>
 	</div>
 
@@ -198,164 +191,122 @@
 
 		<div class="wrapper">
 
-			<section class="contents-section instance-general">
+			<section class="contents-section">
 				<div class="contents-section-top">
-					<h3 class="section-heading color eng left-float">전체 가상 자원 운용 현황</h3>
-				</div>
-				<div class="contents-section-inner no-border">
+					<div class="contents-section-top">
 
-					<div class="vim-circle-wrap">
-						<div class="vim-circle">
-							<div class="vim-circle-title">CPU</div>
-							<div class="vim-circle-chart left-float js-pie-chart">
-								<div class="ct-chart ct-square vim-circle-chart-bar red"></div>
-								<div class="vim-circle-chart-text red">75%</div>
-							</div>
-							<div class="vim-circle-info right-float">
-								<div class="vim-circle-info-label">used</div>
-								<div class="vim-circle-info-text">14 Cores</div>
-								<div class="vim-circle-info-label">total</div>
-								<div class="vim-circle-info-text">86 Cores</div>
-							</div>
+						<div class="left-float">
+
+							<select class="select default left-float-left">
+								<option>모든 Vendor</option>
+							</select>
+
+							<select class="select default left-float">
+								<option>모든 Model</option>
+							</select>
+
 						</div>
-						<div class="vim-circle">
-							<div class="vim-circle-title">Memory</div>
-							<div class="vim-circle-chart left-float js-pie-chart">
-								<div class="ct-chart ct-square vim-circle-chart-bar yellow"></div>
-								<div class="vim-circle-chart-text orange">55%</div>
-							</div>
-							<div class="vim-circle-info right-float">
-								<div class="vim-circle-info-label">used</div>
-								<div class="vim-circle-info-text">68 GBytes</div>
-								<div class="vim-circle-info-label">total</div>
-								<div class="vim-circle-info-text">128 GBytes</div>
-							</div>
+
+						<div class="right-float">
+
+							<button type="button" class="btn-stroke-dark left-float left">Host 추가</button>
+							<button type="button" class="btn-fill-orange left-float">Host 삭제</button>
+
 						</div>
-						<div class="vim-circle">
-							<div class="vim-circle-title">Disk</div>
-							<div class="vim-circle-chart left-float js-pie-chart">
-								<div class="ct-chart ct-square vim-circle-chart-bar green"></div>
-								<div class="vim-circle-chart-text green">25%</div>
-							</div>
-							<div class="vim-circle-info right-float">
-								<div class="vim-circle-info-label">used</div>
-								<div class="vim-circle-info-text">250 GBytes</div>
-								<div class="vim-circle-info-label">total</div>
-								<div class="vim-circle-info-text">1,000 GBytes</div>
-							</div>
-						</div>
-						<div class="vim-circle">
-							<div class="vim-circle-title">Storage</div>
-							<div class="vim-circle-chart left-float js-pie-chart">
-								<div class="ct-chart ct-square vim-circle-chart-bar green"></div>
-								<div class="vim-circle-chart-text green">25%</div>
-							</div>
-							<div class="vim-circle-info right-float">
-								<div class="vim-circle-info-label">used</div>
-								<div class="vim-circle-info-text">250 GBytes</div>
-								<div class="vim-circle-info-label">total</div>
-								<div class="vim-circle-info-text">1,000 GBytes</div>
-							</div>
-						</div>
+
 					</div>
-
 				</div>
-			</section>
-
-			<section class="contents-section computehost">
-				<div class="contents-section-top">
-					<h3 class="section-heading color eng left-float">Compute Host</h3>
-				</div>
-
 				<div class="contents-section-inner no-border">
+
 					<table class="vt-table">
 						<caption class="hide">목록</caption>
 						<colgroup>
+							<col width="50px" />
 							<col width="60px" />
-							<col width="180px" />
-							<col width="0px" />
-							<col width="280px" />
+							<col width="150px" />
+							<col width="100px" />
+							<col width="120px" />
+							<col width="150px" />
+							<col width="120px" />
+							<col width="120px" />
+							<col width="150px" />
 							<col width="170px" />
-							<col width="280px" />
-							<col width="170px" />
-							<col width="280px" />
+							<col width="150px" />
 							<col width="auto" />
+							<col width="75px" />
 						</colgroup>
 						<thead>
 							<tr>
+								<th scope="col" class="first center chkbox">
+									<div class="check-wrap center">
+										<input id="chk-label-1" class="check-box" type="checkbox">
+										<label for="chk-label-1" class="check-label blind">선택</label>
+									</div>
+								</th>
 								<th scope="col" class="first">No</th>
 								<th scope="col">Host Name</th>
-								<th scope="col">vCPU (전체)</th>
-								<th scope="col">vCPU (사용중)</th>
-								<th scope="col">Memory (전체)</th>
-								<th scope="col">Memory (사용중)</th>
-								<th scope="col">Disk (전체)</th>
-								<th scope="col">Disk (사용중)</th>
-								<th scope="col">인스턴스</th>
+								<th scope="col">Vendor</th>
+								<th scope="col">Model</th>
+								<th scope="col">CPU</th>
+								<th scope="col">Memory</th>
+								<th scope="col">Disk</th>
+								<th scope="col">관리 IP</th>
+								<th scope="col">Create Time</th>
+								<th scope="col">VM Instance 수</th>
+								<th scope="col">Description</th>
+								<th scope="col" class="center">실행</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
+								<td class="center">
+									<div class="check-wrap center">
+										<input id="chk-label-1" class="check-box" type="checkbox">
+										<label for="chk-label-1" class="check-label blind">선택</label>
+									</div>
+								</td>
 								<td>1</td>
 								<td>
 									<a href="" class="vim-table-link">COMP-001</a>
 								</td>
-								<td>96 Cores</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar orange" style="width:70%"></div>
-										<div class="vim-graph-msg">70%</div>
-									</div>
-									<div class="left-float vim-graph-label">45 Core</div>
-								</td>
+								<td>HP</td>
+								<td>DL580G8</td>
+								<td>64 Cores (2.3GHz)</td>
 								<td>128G</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
-									</div>
-									<div class="left-float vim-graph-label">45G</div>
+								<td>600G</td>
+								<td>10.10.102.13</td>
+								<td>2015/02/12 13:22:03</td>
+								<td>2</td>
+								<td>EMS 전용</td>
+								<td class="vt-table-td center">
+									<button type="button" class="tb-form-btn-edit">수정</button>
+									<button type="button" class="tb-form-btn-del">삭제</button>
 								</td>
-								<td>2,000G</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
-									</div>
-									<div class="left-float vim-graph-label">45G</div>
-								</td>
-								<td>4</td>
 							</tr>
 							<tr>
+								<td class="center">
+									<div class="check-wrap center">
+										<input id="chk-label-2" class="check-box" type="checkbox">
+										<label for="chk-label-2" class="check-label blind">선택</label>
+									</div>
+								</td>
 								<td>1</td>
 								<td>
 									<a href="" class="vim-table-link">COMP-001</a>
 								</td>
-								<td>96 Cores</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar orange" style="width:80%"></div>
-										<div class="vim-graph-msg">80%</div>
-									</div>
-									<div class="left-float vim-graph-label">45 Core</div>
-								</td>
+								<td>HP</td>
+								<td>DL580G8</td>
+								<td>64 Cores (2.3GHz)</td>
 								<td>128G</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
-									</div>
-									<div class="left-float vim-graph-label">45G</div>
+								<td>600G</td>
+								<td>10.10.102.13</td>
+								<td>2015/02/12 13:22:03</td>
+								<td>2</td>
+								<td>EMS 전용</td>
+								<td class="vt-table-td center">
+									<button type="button" class="tb-form-btn-edit">수정</button>
+									<button type="button" class="tb-form-btn-del">삭제</button>
 								</td>
-								<td>2,000G</td>
-								<td>
-									<div class="vim-graph small left-float">
-										<div class="vim-graph-bar" style="width:50%"></div>
-										<div class="vim-graph-msg">50%</div>
-									</div>
-									<div class="left-float vim-graph-label">45G</div>
-								</td>
-								<td>4</td>
 							</tr>
 
 						</tbody>
@@ -389,6 +340,7 @@
 					</div>
 
 				</div>
+
 			</section>
 
 		</div>

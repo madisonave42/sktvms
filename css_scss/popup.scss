@@ -6,7 +6,6 @@ $pop-green:#00b9b0;
 $pop-red:#e70000;
 $pop-dark-blue:#0057b9;
 
-
 /* form element style in popup : S */
 
 .input-text{
@@ -47,6 +46,14 @@ $pop-dark-blue:#0057b9;
 
   cursor:text;
 
+  &.with-unit {
+    width:calc(100% - 70px);
+  }
+
+  &[disabled] {
+    background-color:$white-bg-gray;
+  }
+
 }
 
 .file-form{
@@ -60,6 +67,14 @@ $pop-dark-blue:#0057b9;
 	color:#888;
 	font-size:11px;
 	font-weight:bold;
+
+  &.with-unit {
+    width:calc(100% - 70px);
+  }
+
+  &[disabled] {
+    background-color:$white-bg-gray;
+  }
 
 }
 
@@ -216,6 +231,10 @@ $pop-dark-blue:#0057b9;
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 95px);
+
+      &.with-unit {
+        width:calc(100% - 95px - 70px);
+      }
     }
   }
 
@@ -227,6 +246,10 @@ $pop-dark-blue:#0057b9;
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 118px);
+
+      &.with-unit {
+        width:calc(100% - 118px - 70px);
+      }
     }
   }
 
@@ -238,6 +261,10 @@ $pop-dark-blue:#0057b9;
     & + .popup-gray-wrap,
     & + .popup-white-wrap {
       width:calc(100% - 170px);
+
+      &.with-unit {
+        width:calc(100% - 170px - 70px);
+      }
     }
   }
 
@@ -401,6 +428,16 @@ $pop-dark-blue:#0057b9;
       font-size:21px;
       font-weight:normal;
     }
+  }
+
+  &-unit {
+    box-sizing:border-box;
+    padding-left:9px;
+    width:70px;
+    height:30px;
+    line-height:28px;
+    color:$dark;
+    font-weight:bold;
   }
 
   &-graph {

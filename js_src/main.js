@@ -310,6 +310,20 @@ $(function(){
 	})();
 
 	/*
+	 * vim
+	 */
+
+	 // vim chart
+	 (function(){
+	 	$('.js-pie-chart').each(function() {
+	 		var el = $(this).find('.vim-circle-chart-bar')[0],
+	 			num = parseInt($(this).find('.vim-circle-chart-text').text(), 10);
+
+	 		initPie(el, num);
+	 	});
+	 })();
+
+	 /*
 	 * popup
 	 */
 
