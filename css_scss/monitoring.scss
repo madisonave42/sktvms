@@ -688,6 +688,7 @@
     float: left;
 
     margin: 0 6px 6px 0;
+    padding:17px;
     border: 1px solid $white-gray;
     background:$white;
     box-sizing: border-box;
@@ -761,6 +762,105 @@
       width:423px * 4 + 18px;
       height:191.75px * 4 + 18px;
     }
+  }
+
+  &-top{
+    height:35px;
+  }
+
+  &-title{
+    font-size:20px;
+    font-weight:bold;
+    color:$blue-green;
+
+    float:left;
+  }
+
+  &-btn-group{
+    float:right;
+  }
+
+  &-btn{
+    width:18px;
+    height:17px;
+
+    float:left;
+    text-indent:-99999em;
+
+    margin-left:10px;
+    border:0;
+    background:url(../images/sprite_btn_graph_item.png) no-repeat;
+
+    &.enlarge{
+      background-position:-25px 0;
+    }
+
+    &.close{
+      background-position:-50px 0;
+    }
+
+  }
+
+  &-content{
+    border-top:2px solid $blue-gray;
+  }
+}
+
+.enlarge-graph{
+  &-item {
+    width:100%;
+    height:100%;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    padding:17px;
+    border: 5px solid $orange;
+    background:$white;
+    box-sizing: border-box;
+
+  }
+
+  &-top{
+    height:35px;
+  }
+
+  &-title{
+    font-size:20px;
+    font-weight:bold;
+    color:$blue-green;
+
+    float:left;
+  }
+
+  &-btn-group{
+    float:right;
+  }
+
+  &-btn{
+    width:18px;
+    height:17px;
+
+    float:left;
+    text-indent:-99999em;
+
+    margin-left:10px;
+    border:0;
+    background:url(../images/sprite_btn_graph_item.png) no-repeat;
+
+    &.enlarge{
+      background-position:-25px 0;
+    }
+
+    &.close{
+      background-position:-50px 0;
+    }
+
+  }
+
+  &-content{
+    border-top:2px solid $blue-gray;
   }
 }
 

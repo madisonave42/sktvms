@@ -156,16 +156,32 @@ var graphItemNode = function( graphGridClass, graphTitle ){
   var $graphItem = '<div class="graph-item ' + graphGridClass + '">' +
     '<div class="graph-top">' +
       '<div class="graph-title">' + graphTitle + '</div>' +
-      '<div class="graph-btn">' +
-        '<button type="button" class="graph-btn"></button>' +
-        '<button type="button" class="graph-btn"></button>' +
-        '<button type="button" class="graph-btn-close">close</button>' +
+      '<div class="graph-btn-group">' +
+        '<button type="button" class="graph-btn setting"></button>' +
+        '<button type="button" class="graph-btn enlarge"></button>' +
+        '<button type="button" class="graph-btn close">close</button>' +
       '</div>' +
     '</div>' +
     '<div class="graph-content"></div>' +
   '</div>';
 
   return $graphItem;
+
+};
+
+var enlargeGraphItem = function(graphTitle){
+
+  var $enalrgeGraphItem = '<div class="enlarge-graph-item">' +
+    '<div class="enlarge-graph-top">' +
+    '<div class="enlarge-graph-title">' + graphTitle + '</div>' +
+    '<div class="enlarge-graph-btn-group">' +
+    '<button type="button" class="enlarge-graph-btn close">close</button>' +
+    '</div>' +
+    '</div>' +
+    '<div class="enlarge-graph-content"></div>' +
+    '</div>';
+
+  return $enalrgeGraphItem;
 
 };
 
@@ -555,19 +571,25 @@ var Graph = function(){
   var $globalContainer;
   var $globalContainerParent;
 
-  var _dragNDrop = function($graphNode, currentGridOffset, firstGridOffset ){
+  var _dragNDrop = function($graphNode, graphTitle, index, gridCol, gridRow, currentGridOffset, firstGridOffset ){
 
     var top = currentGridOffset.top - firstGridOffset.top;
     var left = currentGridOffset.left - firstGridOffset.left;
 
-    $graphNode.draggable({
+    $graphNode.data({
+      'top' : top,
+      'left' : left,
+      'graphTitle' : graphTitle,
+      'index' : index,
+      'gridCol' : gridCol,
+      'gridRow' : gridRow
+    }).draggable({
       snap: '.container-item',
       snapMode: 'inner'
     }).css({
       position:'absolute',
       top: top,
-      left:left,
-      background:'red'
+      left:left
     });
 
     $('.container-item').droppable();
@@ -580,7 +602,7 @@ var Graph = function(){
     $globalContainer = $containerCurrent;
     $globalContainerParent = $containerCurrentParent;
 
-    $.get('mp7-1_add_graph_test.html ', function(data){
+    $.get('mp7-1_add_graph_test.html', function(data){
 
       $('body').append( data );
 
@@ -592,6 +614,7 @@ var Graph = function(){
 
       var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
       $('.stats-map-item-state').eq(addIndex).addClass('active');
+      $('.js-btn-add-graph').addClass('new');
     });
 
   };
@@ -614,7 +637,7 @@ var Graph = function(){
 
     $graphNode.attr('data-floor', floor).appendTo( $('.graph-list.page' + pageIndex) );
 
-    _dragNDrop($graphNode, currentGridOffset, firstGridOffset);
+    _dragNDrop($graphNode, graphTitle, index, gridCol, gridRow, currentGridOffset, firstGridOffset);
 
     $('.dimmed').remove();
     $('.popup').remove();
@@ -622,4 +645,67 @@ var Graph = function(){
 
   };
 
+};
+
+// Setting Change
+var SetGraph = function(){
+
+  var $changeGraphItem;
+
+  this.showSetPopup = function( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow ){
+
+    $changeGraphItem = $thisGraphItem;
+
+    $.get('mp7-1_add_graph_test.html ', function(data){
+
+      $('body').append( data );
+
+      $('.select').selectric();
+      $('.spinner').spinner({
+        max:4,
+        min:1
+      });
+
+      $('.popup-graph-title').val(thisTitle);
+      $('.spinner.col').val(thisGridCol);
+      $('.spinner.row').val(thisGridRow);
+
+      $('.stats-map-item-state').eq(thisIndex).addClass('active');
+      $('.js-btn-add-graph').addClass('change');
+    });
+
+  };
+
+  this.changeGraph = function( changeGraphTitle, changeGridCol, changeGridRow ){
+
+    var changeClassName = 'm' + changeGridCol + 'x' + changeGridRow;
+
+    $changeGraphItem.find('.graph-title').val(changeGraphTitle);
+
+    for( var i=1; i<=4; i++ ){
+      for( var j=1; j<=4; j++ ){
+        var className = 'm' + i + 'x' + j;
+        $changeGraphItem.removeClass( className );
+      }
+    }
+
+    $changeGraphItem.addClass(changeClassName).data({
+      'graphTitle' : changeGraphTitle,
+      'gridCol' : changeGridCol,
+      'gridRow' : changeGridRow
+    }).draggable({
+      snap: '.container-item',
+      snapMode: 'inner'
+    });
+
+    $('.dimmed').remove();
+    $('.popup').remove();
+    $(window).trigger('addGraph');
+
+  };
+};
+
+// Enlarge graph
+var EnlargeGraph = function( $contentsSection, graphTitle ){
+  $contentsSection.append( enlargeGraphItem(graphTitle) );
 };

@@ -516,6 +516,7 @@
   height: 213px;
   float: left;
   margin: 0 6px 6px 0;
+  padding: 17px;
   border: 1px solid #afbdbd;
   background: #ffffff;
   box-sizing: border-box;
@@ -584,6 +585,78 @@
 .graph-item.m4x4 {
   width: 1710px;
   height: 785px;
+}
+.graph-top {
+  height: 35px;
+}
+.graph-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00b9b0;
+  float: left;
+}
+.graph-btn-group {
+  float: right;
+}
+.graph-btn {
+  width: 18px;
+  height: 17px;
+  float: left;
+  text-indent: -99999em;
+  margin-left: 10px;
+  border: 0;
+  background: url(../images/sprite_btn_graph_item.png) no-repeat;
+}
+.graph-btn.enlarge {
+  background-position: -25px 0;
+}
+.graph-btn.close {
+  background-position: -50px 0;
+}
+.graph-content {
+  border-top: 2px solid #becacc;
+}
+
+.enlarge-graph-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 17px;
+  border: 5px solid #ee6247;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.enlarge-graph-top {
+  height: 35px;
+}
+.enlarge-graph-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00b9b0;
+  float: left;
+}
+.enlarge-graph-btn-group {
+  float: right;
+}
+.enlarge-graph-btn {
+  width: 18px;
+  height: 17px;
+  float: left;
+  text-indent: -99999em;
+  margin-left: 10px;
+  border: 0;
+  background: url(../images/sprite_btn_graph_item.png) no-repeat;
+}
+.enlarge-graph-btn.enlarge {
+  background-position: -25px 0;
+}
+.enlarge-graph-btn.close {
+  background-position: -50px 0;
+}
+.enlarge-graph-content {
+  border-top: 2px solid #becacc;
 }
 
 /* monitoring dashboard popup */

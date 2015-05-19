@@ -112,11 +112,10 @@ $(function(){
 		var ct = new Graph();;
 
 		$body.on('click', '.container-item', function(){
-			//ct = new Graph();
 			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
 		});
 
-		$body.on('click', '.js-btn-add-graph', function(){
+		$body.on('click', '.js-btn-add-graph.new', function(){
 			var graphTitle = $('.popup-graph-title').val();
 			var gridCol = $('.spinner.col').val();
 			var gridRow = $('.spinner.row').val();
@@ -190,6 +189,56 @@ $(function(){
 
 	})();
 
+	// Button event graph container
+	(function(){
+
+		var $body = $('body');
+		var setGraph = new SetGraph();
+
+		$body.on('click', '.graph-btn.setting', function(){
+
+			var $thisGraphItem = $(this).parents('.graph-item');
+			var thisTitle = $thisGraphItem.data('graphTitle');
+			var thisIndex = $thisGraphItem.data('index');
+			var thisGridCol = $thisGraphItem.data('gridCol');
+			var thisGridRow = $thisGraphItem.data('gridRow');
+
+			setGraph.showSetPopup( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow );
+
+		});
+
+		$body.on('click','.js-btn-add-graph.change', function(){
+
+			var graphTitle = $('.popup-graph-title').val();
+			var gridCol = $('.spinner.col').val();
+			var gridRow = $('.spinner.row').val();
+
+			setGraph.changeGraph(graphTitle, gridCol, gridRow);
+		});
+
+		$body.on('click', '.graph-btn.enlarge', function(){
+			var graphTitle = $(this).parents('.graph-top').find('.graph-title').text();
+			var enlarge = new EnlargeGraph( $(this).parents('.contents-section-inner.stats-monitoring'), graphTitle );
+		});
+
+		$body.on('click', '.graph-btn.close', function(){
+			$(this).parents('.graph-item').remove();
+		});
+
+	})();
+
+	// Close Enlarge graph container
+	(function(){
+
+		var $body = $('body');
+
+		$body.on('click', '.enlarge-graph-btn.close', function(){
+			$(this).parents('.enlarge-graph-item').remove();
+		});
+
+	})();
+
+
 	// Resize dashboard list
 	(function(){
 		var $btnExpand = $('.js-expand');
@@ -220,7 +269,7 @@ $(function(){
 	})();
 
 	// dashboard popup
-	(function() {
+	(function(){
 
 		// open vnf-manager popup
 		$('.js-open-vnf-manager').on('click', function(e) {
