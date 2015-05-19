@@ -832,6 +832,9 @@ table.emphasis > tbody > tr > td.email > span {
 .selectric-default {
   width: 120px;
 }
+.selectric-wide {
+  width: 150px;
+}
 .selectric .label {
   color: #777;
   font-size: 11px;
@@ -1395,13 +1398,13 @@ table.emphasis > tbody > tr > td.email > span {
   margin: 20px 0;
 }
 .vm.critical {
-  background-color: #ff7575;
+  background-color: #e70000;
 }
 .vm.major {
-  background-color: #d59b72;
+  background-color: #ee6247;
 }
 .vm.minor {
-  background-color: #eedb73;
+  background-color: #fcb63c;
 }
 .vm.normal {
   background-color: #00b9b0;

@@ -1,0 +1,186 @@
+include "header_top.html"
+include "css_log.html"
+include "header_bottom.html"
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">로그 이력 조회</h2>
+				<p class="main-heading-overview">각 로그들에 대해 기간 내역 조회 기능을 제공합니다.</p>
+			</div>
+
+			<div class="left-float right group">
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">로그 유형</div>
+					<select class="select wide">
+						<option>가상 자원 관리 로그</option>
+					</select>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper">
+
+		<section class="contents-section">
+
+			<div class="contents-section-top">
+
+				<div class="left-float">
+
+					<select class="select wide left-float-left">
+						<option>모든 Target Object</option>
+					</select>
+
+					<select class="select wide left-float-left">
+						<option>모든 result</option>
+					</select>
+
+				</div>
+
+				<div class="right-float">
+
+					<div class="left-float left">
+
+						<input type="text" class="input med left-float left half js-cal-start" value="2015-03-06">
+
+						<button type="button" class="btn-calendar left-float left half js-btn-cal-start">calendar</button>
+
+						<select class="select mini left-float">
+							<option>06</option>
+						</select>
+
+						<div class="form-label left-float left right half">:</div>
+
+						<select class="select mini left-float">
+							<option>00</option>
+						</select>
+
+						<div class="form-label left-float right half">~</div>
+
+						<input type="text" class="input med left-float right half js-cal-end" value="2015-03-06">
+
+						<button type="button" class="btn-calendar left-float left right half js-btn-cal-end">calendar</button>
+
+						<select class="select mini left-float">
+							<option>06</option>
+						</select>
+
+						<div class="form-label left-float left right half">:</div>
+
+						<select class="select mini left-float">
+							<option>00</option>
+						</select>
+
+					</div>
+
+					<div class="left-float">
+						<button type="button" class="btn-stroke-orange left-float">조회</button>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="contents-section-inner no-border">
+				<table class="vt-table">
+					<caption class="hide">목록</caption>
+					<colgroup>
+						<col width="50px" />
+						<col width="190px" />
+						<col width="190px" />
+						<col width="170px" />
+						<col width="170px" />
+						<col width="170px" />
+						<col width="250px" />
+						<col width="100px" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="first">No</th>
+							<th scope="col">Begin Time</th>
+							<th scope="col">End Time</th>
+							<th scope="col">From</th>
+							<th scope="col">Target Object</th>
+							<th scope="col">Operation</th>
+							<th scope="col">Operation Info</th>
+							<th scope="col">Result</th>
+							<th scope="col">Reason</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2015/02/12 13:22:03</td>
+							<td>2015/02/12 13:22:03</td>
+							<td>NFVO</td>
+							<td>VIM</td>
+							<td>Create</td>
+							<td>
+								<div class="log-table-detail">Package Name : vMSS.Telcoware</div>
+								<div class="log-table-detail">Version : R1.0.0</div>
+								<div class="log-table-detail">Flavor : Silver</div>
+							</td>
+							<td>Succ</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>2015/02/12 13:22:03</td>
+							<td>2015/02/12 13:22:03</td>
+							<td>NFVO</td>
+							<td>VIM</td>
+							<td>Create</td>
+							<td>
+								<div class="log-table-detail">Package Name : vMSS.Telcoware</div>
+								<div class="log-table-detail">Version : R1.0.0</div>
+								<div class="log-table-detail">Flavor : Silver</div>
+							</td>
+							<td>Succ</td>
+							<td></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+			<div class="contents-section-bottom">
+
+				<div class="left-float">
+
+					<div class="form-label left-float left small-font">페이지당</div>
+
+					<select class="select small left-float">
+						<option>20</option>
+					</select>
+
+					<div class="form-label left-float right small-font">항목 출력</div>
+
+				</div>
+
+				<div class="pagination right-float">
+					<a href="#" class="page-item page-first">처음페이지</a>
+					<a href="#" class="page-item page-prev">이전페이지</a>
+					<a href="#" class="page-item current">1</a>
+					<a href="#" class="page-item">2</a>
+					<a href="#" class="page-item">3</a>
+					<a href="#" class="page-item">4</a>
+					<a href="#" class="page-item">5</a>
+					<a href="#" class="page-item page-next">다음페이지</a>
+					<a href="#" class="page-item page-last">마지막페이지</a>
+				</div>
+
+			</div>
+
+		</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"

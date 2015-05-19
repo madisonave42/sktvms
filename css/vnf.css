@@ -208,13 +208,13 @@
   border-radius: 2px;
 }
 .state-box-cri {
-  background: #ff7575;
+  background: #e70000;
 }
 .state-box-maj {
-  background: #d59b72;
+  background: #ee6247;
 }
 .state-box-min {
-  background: #eedb73;
+  background: #fcb63c;
 }
 .state-box-normal {
   background: #00b9b0;

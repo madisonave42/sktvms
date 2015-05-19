@@ -1,0 +1,46 @@
+@import "variables";
+@import "mixins";
+
+.state-box {
+
+  &-cri,
+  &-maj,
+  &-min,
+  &-normal {
+    @include size(77, 30);
+    box-sizing:border-box;
+    line-height:30px;
+    text-align:center;
+    color:$white;
+    font-weight:bold;
+    border-radius:2px;
+  }
+
+  &-cri {
+    background:$critical;
+  }
+
+  &-maj {
+    background:$major;
+  }
+
+  &-min {
+    background:$minor;
+  }
+
+  &-normal {
+    background:$normal;
+  }
+}
+
+.log {
+
+  &-table {
+
+    &-detail {
+      margin:5px 0;
+    }
+
+  }
+
+}
