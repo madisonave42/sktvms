@@ -882,6 +882,16 @@
     top:0;
   }
 
+  &.dbpopup-graph-detail {
+    left:-3px;
+
+    &-inner {
+      height:508px;
+      border-top:2px solid #C2CBCB;
+      overflow:auto;
+    }
+  }
+
   &-heading {
     margin-bottom:10px;
     font-size:20px;

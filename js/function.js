@@ -1007,6 +1007,30 @@ $(function(){
 			e.preventDefault();
 		});
 
+		// open graph popup cpu
+		$('.js-open-graph-cpu').on('click', function(e) {
+			$('.js-graph-cpu-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open graph popup memory
+		$('.js-open-graph-mem').on('click', function(e) {
+			$('.js-graph-mem-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open graph popup disk
+		$('.js-open-graph-disk').on('click', function(e) {
+			$('.js-graph-disk-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open graph popup network
+		$('.js-open-graph-net').on('click', function(e) {
+			$('.js-graph-net-popup').addClass('on');
+			e.preventDefault();
+		});
+
 		// close dashboard popup (common)
 		$('.dbpopup-close').on('click', function(e) {
 			$('.dbpopup').removeClass('on');

@@ -676,6 +676,14 @@
 .dbpopup.on {
   top: 0;
 }
+.dbpopup.dbpopup-graph-detail {
+  left: -3px;
+}
+.dbpopup.dbpopup-graph-detail-inner {
+  height: 508px;
+  border-top: 2px solid #C2CBCB;
+  overflow: auto;
+}
 .dbpopup-heading {
   margin-bottom: 10px;
   font-size: 20px;
