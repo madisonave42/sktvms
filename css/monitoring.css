@@ -160,13 +160,13 @@
   border-radius: 2px;
 }
 .state-box-cri {
-  background: #ff7575;
+  background: #e70000;
 }
 .state-box-maj {
-  background: #d59b72;
+  background: #ee6247;
 }
 .state-box-min {
-  background: #eedb73;
+  background: #fcb63c;
 }
 .state-box-normal {
   background: #00b9b0;
@@ -317,13 +317,13 @@
   margin-right: 0;
 }
 .diag-instance.critical {
-  background-color: #ff7575;
+  background-color: #e70000;
 }
 .diag-instance.major {
-  background-color: #d59b72;
+  background-color: #ee6247;
 }
 .diag-instance.minor {
-  background-color: #eedb73;
+  background-color: #fcb63c;
 }
 .diag-instance.normal {
   background-color: #00b9b0;
