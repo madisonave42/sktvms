@@ -6,86 +6,47 @@
 var HEADER_HEIGHT = 160;
 var DASHBOARD_MIN_HEIGHT = 756;
 
-// Popup return function
+// Popup function
+
+/* 변경 */
+var popHide = function(){
+  $('.dimmed').removeClass('on');
+  $('.popup').removeClass('on');
+};
+
 var popAlert = function( alertMsg ){
+  $('.dimmed').addClass('on');
+  $('.popup.alert').addClass('on');
 
-  var $alert = '<div class="dimmed on"></div>';
-  $alert += '<section class="popup popup-small-width on">';
-  $alert += ' <div class="popup-content">';
-  $alert += '   <div class="popup-content-section">';
-  $alert += '     <div class="popup-input-wrap">';
-  $alert += '       <div class="popup-msg">';
-  $alert += '         <div class="popup-msg-icon left-float">';
-  $alert += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
-  $alert += '         </div>';
-  $alert += '         <div class="popup-msg-text left-float">'+ alertMsg +'</div>';
-  $alert += '       </div>';
-  $alert += '     </div>';
-  $alert += '   </div>';
-  $alert += ' </div>';
-  $alert += ' <div class="popup-bottom">';
-  $alert += '   <div class="right-float">';
-  $alert += '     <button type="button" class="js-close-alert btn-stroke-orange left-float left">확인</button>';
-  $alert += '   </div>';
-  $alert += ' </div>';
-  $alert += '</section>';
-
-  return $alert;
+  $('.popup-msg-text').text(alertMsg);
 
 };
 
-var popAdd = function(){
+var popAddPage = function(){
+  $('.dimmed').addClass('on');
+  $('.popup.add-page').addClass('on');
 
-  var $add = '<div class="dimmed on"></div>';
-  $add += '<section class="popup popup-small-width on">';
-  $add += '<h1 class="popup-heading">Statistics Monitoring > 페이지 추가</h1>';
-  $add += ' <div class="popup-content">';
-  $add += '   <div class="popup-content-section">';
-  $add += '     <div class="popup-input-wrap">';
-  $add += '       <label class="popup-label width-small left-float">페이지명 :</label>';
-  $add += '       <input type="text" class="input-form left-float js-page-title" />';
-  $add += '     </div>';
-  $add += '   </div>';
-  $add += ' </div>';
-  $add += ' <div class="popup-bottom">';
-  $add += '   <div class="right-float">';
-  $add += '     <button type="button" class="btn-stroke-orange left-float left js-btn-add-page">추가</button>';
-  $add += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
-  $add += '   </div>';
-  $add += ' </div>';
-  $add += '</section>';
-
-  return $add;
-
+  $('.js-page-title').val('').focus();
 };
 
 var popDelete = function(pageTitle){
-  var $popDelete = '<div class="dimmed on"></div>';
-  $popDelete += '<section class="popup popup-small-width on">';
-  $popDelete += ' <h1 class="popup-heading">Statistics Monitoring > 페이지 삭제</h1>';
-  $popDelete += ' <div class="popup-content">';
-  $popDelete += '   <div class="popup-content-section">';
-  $popDelete += '     <div class="popup-input-wrap">';
-  $popDelete += '       <div class="popup-msg">';
-  $popDelete += '         <div class="popup-msg-icon left-float">';
-  $popDelete += '           <img src="../../images/popup/ico_caution.png" alt="실패">';
-  $popDelete += '         </div>';
-  $popDelete += '         <div class="left-float">‘' + pageTitle + '’ 페이지를 삭제하시겠습니까?</div>';
-  $popDelete += '       </div>';
-  $popDelete += '     </div>';
-  $popDelete += '   </div>';
-  $popDelete += ' </div>';
-  $popDelete += ' <div class="popup-bottom">';
-  $popDelete += '   <div class="right-float">';
-  $popDelete += '     <button type="button" class="btn-stroke-orange left-float left js-btn-del-page">삭제</button>';
-  $popDelete += '     <button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>';
-  $popDelete += '   </div>';
-  $popDelete += ' </div>';
-  $popDelete += '</section>';
+  $('.dimmed').addClass('on');
+  $('.popup.delete-page').addClass('on');
 
-  return $popDelete;
-
+  $('.js-tab-title').text( pageTitle );
 };
+
+var popAddGraph = function(){
+  $('.dimmed').addClass('on');
+  $('.popup.add-graph').addClass('on');
+
+  $('.select').selectric();
+  $('.spinner').spinner({
+    max:4,
+    min:1
+  });
+};
+/* 변경 */
 
 // DOM about page & tab & graph return function
 var tabItem = function( pageTitle ){
@@ -122,30 +83,10 @@ var pageItem = function( pageIndex ){
   $pageItem += '<li class="container-item"></li>';
   $pageItem += '</ul>';
 
-
   $pageItem += '<ul class="graph-list page' + pageIndex + '">';
-  /*
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-  $pageItem += '<div class="graph-item"></div>';
-   */
   $pageItem += '</ul>';
   $pageItem += '</div>';
   $pageItem += '</section>';
-
 
   return $pageItem;
 
@@ -396,19 +337,24 @@ var smTab = function(){
   var $btnDelPage = '';
   var pageIndex = 0;
 
+  /* 삭제
+
   var _showAddPopup = function(){
-    $('body').append( popAdd() );
-    $('.js-page-title').focus();
+    //$('body').append( popAddPage() );
+    popAddPage();
   };
 
   var _showDeletePopup = function( $btnDelete ){
     var pageTitle = $btnDelete.prev('.tab-item-title').text();
-    $('body').append( popDelete(pageTitle) );
+    //$('body').append( popDelete(pageTitle) );
+    popDelete( $btnDelete.prev('.tab-item-title').text() );
   };
 
-  var _showAlert = function( alertMsg ){
-    $('body').append( popAlert(alertMsg) );
-  };
+   var _showAlert = function( alertMsg ){
+   popAlert(alertMsg);
+   };
+
+  */
 
   var _checkNum = function( $tabParent, status ){
     var tabNum = $tabParent.find('.tab-item').length;
@@ -429,19 +375,21 @@ var smTab = function(){
   };
 
   // privileged
+
+  /* 변경 */
   this.showPopup = function( $tabParent, status, $btnDelete ){
     if( status == 'add' ){
       if( _checkNum( $tabParent, status ) ){
-        _showAddPopup();
+        popAddPage();
       } else {
-        _showAlert( '페이지는 10개까지 추가 할 수 있습니다.' );
+        popAlert( '페이지는 10개까지 추가 할 수 있습니다.' );
       }
     } else {
       if( _checkNum( $tabParent, status ) ){
         $btnDelPage = $btnDelete;
-        _showDeletePopup( $btnDelete );
+        popDelete( $btnDelete.prev('.tab-item-title').text() );
       } else {
-        _showAlert( '삭제할 페이지가 없습니다.' );
+        popAlert( '삭제할 페이지가 없습니다.' );
       }
     }
   };
@@ -452,8 +400,7 @@ var smTab = function(){
     $pageParent.find('.contents-section.stats-monitoring').removeClass('current');
     $tabParent.append( tabItem( pageTitle ) );
     $pageParent.append( pageItem( pageIndex ) );
-    $('.dimmed').remove();
-    $('.popup').remove();
+    popHide();
     $(window).trigger('addPage');
   };
 
@@ -464,10 +411,10 @@ var smTab = function(){
     var delPageIndex = $tabItem.index( $delTab ) + 1;
     $delTab.remove();
     $pageItem.eq(delPageIndex).remove();
-    $('.dimmed').remove();
-    $('.popup').remove();
+    popHide();
     _checkCurrent();
   };
+  /* 변경 */
 
   this.active = function( $activeTab ){
     var activeIndex = $('.tab-item').index( $activeTab ) + 1;
@@ -597,25 +544,19 @@ var Graph = function(){
 
   // privileged
 
+  /* 변경 */
   this.showPopup = function( $containerCurrent, $containerCurrentParent ){
 
     $globalContainer = $containerCurrent;
     $globalContainerParent = $containerCurrentParent;
 
-    $.get('mp7-1_add_graph_test.html', function(data){
+    var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
 
-      $('body').append( data );
+    popAddGraph();
 
-      $('.select').selectric();
-      $('.spinner').spinner({
-        max:4,
-        min:1
-      });
-
-      var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
-      $('.stats-map-item-state').eq(addIndex).addClass('active');
-      $('.js-btn-add-graph').addClass('new');
-    });
+    $('.stats-map-item-state').eq(addIndex).addClass('active');
+    $('.js-btn-add-graph').addClass('new');
+    $('.popup-graph-title').val('').focus();
 
   };
 
@@ -639,11 +580,11 @@ var Graph = function(){
 
     _dragNDrop($graphNode, graphTitle, index, gridCol, gridRow, currentGridOffset, firstGridOffset);
 
-    $('.dimmed').remove();
-    $('.popup').remove();
+    popHide();
     $(window).trigger('addGraph');
 
   };
+  /* 변경 */
 
 };
 
@@ -652,27 +593,19 @@ var SetGraph = function(){
 
   var $changeGraphItem;
 
+  /* 변경 */
   this.showSetPopup = function( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow ){
 
     $changeGraphItem = $thisGraphItem;
 
-    $.get('mp7-1_add_graph_test.html ', function(data){
+    popAddGraph();
 
-      $('body').append( data );
+    $('.popup-graph-title').val(thisTitle).focus();
+    $('.spinner.col').val(thisGridCol);
+    $('.spinner.row').val(thisGridRow);
 
-      $('.select').selectric();
-      $('.spinner').spinner({
-        max:4,
-        min:1
-      });
-
-      $('.popup-graph-title').val(thisTitle);
-      $('.spinner.col').val(thisGridCol);
-      $('.spinner.row').val(thisGridRow);
-
-      $('.stats-map-item-state').eq(thisIndex).addClass('active');
-      $('.js-btn-add-graph').addClass('change');
-    });
+    $('.stats-map-item-state').eq(thisIndex).addClass('active');
+    $('.js-btn-add-graph').addClass('change');
 
   };
 
@@ -698,11 +631,12 @@ var SetGraph = function(){
       snapMode: 'inner'
     });
 
-    $('.dimmed').remove();
-    $('.popup').remove();
+    popHide();
     $(window).trigger('addGraph');
 
   };
+  /* 변경 */
+
 };
 
 // Enlarge graph
@@ -1131,29 +1065,29 @@ $(function(){
 
 		// Close general popup
 		$('body').on('click', '.js-close-popup', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Close Alert
 		$('body').on('click', '.js-close-alert', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Confirm OK
 		$('body').on('click', '.js-confirm-ok', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Confirm Cancel
 		$('body').on('click', '.js-confirm-cancel', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 

@@ -419,29 +419,29 @@ $(function(){
 
 		// Close general popup
 		$('body').on('click', '.js-close-popup', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Close Alert
 		$('body').on('click', '.js-close-alert', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Confirm OK
 		$('body').on('click', '.js-confirm-ok', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
 		// Confirm Cancel
 		$('body').on('click', '.js-confirm-cancel', function(e){
-			$('.dimmed').remove();
-			$('.popup').remove();
+			$('.dimmed').removeClass('on');
+			$('.popup').removeClass('on');
 			e.preventDefault();
 		});
 
