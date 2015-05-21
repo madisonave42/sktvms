@@ -1042,6 +1042,15 @@ table.emphasis > tbody > tr > td.email > span {
   border: 0;
   text-indent: -9999px;
 }
+.btn-add {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  padding: 0;
+  background: url(../images/icon_btn_add.png) no-repeat 50% 50%;
+  border: 0;
+  text-indent: -9999px;
+}
 
 .check-wrap {
   position: relative;
