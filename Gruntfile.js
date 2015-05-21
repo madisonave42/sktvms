@@ -191,7 +191,22 @@ module.exports = function(grunt) {
 					cwd: 'css/',
 					src: ['**', '!*.map'],
 					dest: '_output/css/'
-				}]
+				}],
+				options:{
+					process: function(content){
+						content = content.replace('/*# sourceMappingURL=common.css.map */', '')
+							.replace('/*# sourceMappingURL=log.css.map */', '')
+							.replace('/*# sourceMappingURL=monitoring.css.map */', '')
+							.replace('/*# sourceMappingURL=pagination.css.map */', '')
+							.replace('/*# sourceMappingURL=popup.css.map */', '')
+							.replace('/*# sourceMappingURL=stats.css.map */', '')
+							.replace('/*# sourceMappingURL=table_ori.css.map */', '')
+							.replace('/*# sourceMappingURL=vim.css.map */', '')
+							.replace('/*# sourceMappingURL=vnf.css.map */', '');
+
+						return content;
+					}
+				}
     	},
 
     	images: {
