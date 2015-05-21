@@ -413,7 +413,7 @@ $(function(){
 		// Open general popup
 		$('body').on('click', '.js-open-popup', function(e){
 			$('.dimmed').addClass('on');
-			$('.popup').addClass('on');
+			$('.popup').addClass('on').trigger('loadPopup');
 			e.preventDefault();
 		});
 

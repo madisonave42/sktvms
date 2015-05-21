@@ -9,12 +9,13 @@
 }
 
 .header {
-	@include size(auto, 56);
+
+	@include size(100%, 56);
 	border-bottom:2px solid $orange;
 	background-color:#141414;
 	min-width:1760px;
 
-	position:relative;
+	position:fixed;
 
 	z-index:90;
 
@@ -332,14 +333,26 @@
 	min-width:1760px;
 
 	&-header {
-		@include size(auto, 72);
+		@include size(100%, 72);
+		min-width:1760px;
+
+		position:fixed;
+
+		margin-top:58px;
 		border-bottom:1px solid #708080;
 		background-color:$white;
+
+		box-shadow:0 3px #cbcfd2;
+
+		z-index:80;
 	}
 
 	&-content {
-		padding:5px 0 15px;
-		border-top:3px solid #cbcfd2;
+		position:relative;
+		top:131px;
+
+		padding:8px 0 15px;
+		//border-top:3px solid #cbcfd2;
 	}
 }
 

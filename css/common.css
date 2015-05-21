@@ -126,11 +126,12 @@ img {
 }
 
 .header {
+  width: 100%;
   height: 56px;
   border-bottom: 2px solid #ee6247;
   background-color: #141414;
   min-width: 1760px;
-  position: relative;
+  position: fixed;
   z-index: 90;
 }
 .header-user {
@@ -386,13 +387,20 @@ img {
   min-width: 1760px;
 }
 .main-header {
+  width: 100%;
   height: 72px;
+  min-width: 1760px;
+  position: fixed;
+  margin-top: 58px;
   border-bottom: 1px solid #708080;
   background-color: #ffffff;
+  box-shadow: 0 3px #cbcfd2;
+  z-index: 80;
 }
 .main-content {
-  padding: 5px 0 15px;
-  border-top: 3px solid #cbcfd2;
+  position: relative;
+  top: 131px;
+  padding: 8px 0 15px;
 }
 
 .main-heading {

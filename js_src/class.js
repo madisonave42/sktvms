@@ -16,7 +16,7 @@ var popHide = function(){
 
 var popAlert = function( alertMsg ){
   $('.dimmed').addClass('on');
-  $('.popup.alert').addClass('on');
+  $('.popup.alert').addClass('on').trigger('loadPopup');
 
   $('.popup-msg-text').text(alertMsg);
 
@@ -24,21 +24,21 @@ var popAlert = function( alertMsg ){
 
 var popAddPage = function(){
   $('.dimmed').addClass('on');
-  $('.popup.add-page').addClass('on');
+  $('.popup.add-page').addClass('on').trigger('loadPopup');
 
   $('.js-page-title').val('').focus();
 };
 
 var popDelete = function(pageTitle){
   $('.dimmed').addClass('on');
-  $('.popup.delete-page').addClass('on');
+  $('.popup.delete-page').addClass('on').trigger('loadPopup');
 
   $('.js-tab-title').text( pageTitle );
 };
 
 var popAddGraph = function(){
   $('.dimmed').addClass('on');
-  $('.popup.add-graph').addClass('on');
+  $('.popup.add-graph').addClass('on').trigger('loadPopup');
 
   $('.select').selectric();
   $('.spinner').spinner({
