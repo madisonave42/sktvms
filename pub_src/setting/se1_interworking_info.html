@@ -1,0 +1,194 @@
+include "header_top.html"
+include "css_setting.html"
+include "header_bottom.html"
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+
+			<div class="main-heading">
+				<h2 class="main-heading-title">기간 통계</h2>
+				<p class="main-heading-overview">복수의 통계 항목에 대해 기간 통계 정보를 그래프와 표 형식으로 제공합니다.</p>
+			</div>
+
+			<div class="right-float">
+
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">통계 주기</div>
+					<select class="select default">
+						<option>1분 통계</option>
+					</select>
+				</div>
+
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">기간 유형</div>
+					<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 1시간</button>
+					<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 3시간</button>
+					<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 6시간</button>
+					<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 12시간</button>
+					<button type="button" class="btn-fill-green-med btn-small left-float left half">임의 지정</button>
+				</div>
+
+				<div class="main-heading-form-group left-float left">
+
+					<input type="text" class="input med left-float left half js-cal-start" value="2015-03-06">
+
+					<button type="button" class="btn-calendar left-float left half js-btn-cal-start">calendar</button>
+
+					<select class="select mini left-float">
+						<option>06</option>
+					</select>
+
+					<div class="form-label left-float left right half">:</div>
+
+					<select class="select mini left-float">
+						<option>00</option>
+					</select>
+
+					<div class="form-label left-float right half">~</div>
+
+					<input type="text" class="input med left-float right half js-cal-end" value="2015-03-06">
+
+					<button type="button" class="btn-calendar left-float left right half js-btn-cal-end">calendar</button>
+
+					<select class="select mini left-float">
+						<option>06</option>
+					</select>
+
+					<div class="form-label left-float left right half">:</div>
+
+					<select class="select mini left-float">
+						<option>00</option>
+					</select>
+
+				</div>
+
+				<div class="main-heading-form-group left-float">
+					<button type="button" class="btn-stroke-orange left-float">조회</button>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper setting">
+
+			<section class="contents-section setting narrow">
+				<div class="contents-section-inner">
+
+
+				</div>
+			</section>
+
+			<section class="contents-section setting wide heading">
+				<div class="contents-section-top">
+					<h3 class="section-heading setting-category left-float">VNFM <> NFVO 연동 정보</h3>
+				</div>
+			</section>
+
+			<section class="contents-section setting wide">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">VNFM > NFVO 연동 정보</h3>
+					<button type="button" class="btn-refresh right-float">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-auth">Auth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+			<section class="contents-section setting wide">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">NFVO > VNFM 연동 정보</h3>
+					<button type="button" class="btn-refresh right-float">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-unauth">Unauth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"

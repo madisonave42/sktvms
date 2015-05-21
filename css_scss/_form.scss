@@ -151,6 +151,14 @@
     background:url(../images/btn_tb_setting.png);
   }
 
+  &-refresh {
+    @include size(24, 25);
+    padding:0;
+    background:url(../images/ico_refresh.png) no-repeat 50% 50%;
+    border:0;
+    text-indent:-9999px;
+  }
+
 }
 
 .check{

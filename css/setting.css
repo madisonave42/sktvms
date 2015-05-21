@@ -1,0 +1,41 @@
+.wrapper.setting {
+  position: relative;
+}
+
+.contents-section.setting.narrow {
+  width: 390px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contents-section.setting.narrow .contents-section-inner {
+  margin: 0;
+}
+.contents-section.setting.wide {
+  width: 1280px;
+  float: right;
+  margin-bottom: 6px;
+  padding-bottom: 40px;
+}
+.contents-section.setting.wide.heading {
+  padding-bottom: 10px;
+}
+
+.section-heading.setting {
+  font-size: 16px;
+}
+.section-heading.setting-category {
+  font-size: 20px;
+  color: #00b9b0;
+}
+
+.status-auth {
+  font-weight: bold;
+  color: #479dee;
+}
+.status-unauth {
+  font-weight: bold;
+  color: #e70000;
+}
+
+/*# sourceMappingURL=setting.css.map */

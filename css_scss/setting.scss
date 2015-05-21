@@ -1,0 +1,65 @@
+@import "variables";
+
+.wrapper.setting{
+  position:relative;
+}
+
+.contents{
+
+  &-section {
+
+    &.setting{
+
+      &.narrow {
+        width: 390px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .contents-section-inner{
+          margin:0;
+        }
+      }
+
+      &.wide {
+        width: 1280px;
+        float:right;
+        margin-bottom:6px;
+        padding-bottom:40px;
+
+        &.heading{
+          padding-bottom:10px;
+        }
+      }
+    }
+  }
+}
+
+.section-heading{
+
+  &.setting{
+
+    font-size:16px;
+
+    &-category{
+      font-size:20px;
+      color:$blue-green;
+    }
+
+  }
+
+}
+
+.status{
+
+  &-auth{
+    font-weight:bold;
+    color:$blue;
+  }
+
+  &-unauth{
+    font-weight:bold;
+    color:$red;
+  }
+
+}
