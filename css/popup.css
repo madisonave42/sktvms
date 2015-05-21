@@ -1,9 +1,4 @@
-/* form element style in popup : S */
-.input-text {
-  color: #777;
-  resize: none;
-}
-
+/* popup common : S */
 .dimmed {
   display: none;
   position: fixed;
@@ -18,12 +13,8 @@
   display: block;
 }
 
-.hide {
-  display: none;
-}
-
 .input-form {
-  width: 100%;
+  width: 90%;
   height: 27px;
   padding-top: 1px;
   border: 1px solid #c2cbcb;
@@ -72,6 +63,11 @@
   background-color: #f5f8f8;
 }
 
+.input-text {
+  color: #777;
+  resize: none;
+}
+
 .btn-fill-dark {
   width: 106px;
   height: 27px;
@@ -86,109 +82,6 @@
   cursor: pointer;
 }
 
-.left-float {
-  float: left;
-}
-.left-float.left {
-  margin-right: 10px;
-}
-.left-float.left.group {
-  margin-right: 20px;
-}
-.left-float.right {
-  margin-left: 10px;
-}
-.left-float.right.group {
-  margin-left: 20px;
-}
-
-.right-float {
-  float: right;
-}
-.right-float.left {
-  margin-right: 10px;
-}
-.right-float.left.group {
-  margin-right: 20px;
-}
-.right-float.right {
-  margin-left: 10px;
-}
-.right-float.right.group {
-  margin-left: 20px;
-}
-
-/* form element style in popup : E */
-/* table element style in popup : S */
-.vt-table {
-  width: 100%;
-  border-top: 2px solid #c2cbcb;
-}
-.vt-table caption {
-  display: none;
-}
-.vt-table.out-border {
-  border-top: 0;
-}
-.vt-table th {
-  height: 40px;
-  position: relative;
-  padding-left: 10px;
-  font-weight: bold;
-  color: #576363;
-  text-align: left;
-  line-height: 38px;
-  border-bottom: 1px solid #c2cbcb;
-}
-.vt-table th.chkbox {
-  line-height: 0;
-}
-.vt-table th.center {
-  padding: 0;
-  text-align: center;
-}
-.vt-table th.first:after {
-  display: none;
-}
-.vt-table th .area-btn-sort {
-  margin-top: 11px;
-}
-.vt-table th:after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 15px;
-  position: absolute;
-  top: 14px;
-  left: 0;
-  background: #c2cbcb;
-}
-.vt-table td {
-  height: 39px;
-  padding-left: 10px;
-  border-bottom: 1px solid #e8e8e8;
-}
-.vt-table td.center {
-  padding: 0;
-  text-align: center;
-}
-.vt-table td.vt-border {
-  border-left: 1px solid #e8e8e8;
-  border-right: 1px solid #e8e8e8;
-}
-.vt-table td.bg-stats-beige {
-  background: #f8f2e5;
-}
-.vt-table td.bg-stats-white {
-  background: #ffffff;
-}
-.vt-table.stats {
-  width: auto;
-  background: #f5f8f8;
-}
-
-/* table element style in popup : E */
-/* popup common : S */
 .width-small {
   width: 95px;
 }
@@ -267,7 +160,7 @@
 
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 150px;
   left: 50%;
   margin-left: -400px;
@@ -325,6 +218,9 @@
   overflow: hidden;
   clear: both;
 }
+.popup-content-section:first-child {
+  margin-top: 0;
+}
 .popup-bottom {
   margin-top: 22px;
 }
@@ -358,8 +254,8 @@
 .popup-label {
   box-sizing: border-box;
   padding-right: 9px;
-  height: 30px;
-  line-height: 28px;
+  height: 27px;
+  line-height: 23px;
   color: #576363;
   font-weight: bold;
   text-align: right;
@@ -372,8 +268,8 @@
   box-sizing: border-box;
   padding-left: 9px;
   width: 70px;
-  height: 30px;
-  line-height: 28px;
+  height: 27px;
+  line-height: 23px;
   color: #576363;
   font-weight: bold;
 }
@@ -498,6 +394,14 @@
 
 .updatable-list {
   height: 110px;
+}
+
+.as-policy {
+  height: 400px;
+  overflow: auto;
+}
+.as-policy-table, .as-policy-in {
+  margin-top: 18px;
 }
 
 /* vnf : E */

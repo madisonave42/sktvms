@@ -164,6 +164,15 @@
     text-indent:-9999px;
   }
 
+  &-add {
+    @include size(20);
+    margin-top:2px;
+    padding:0;
+    background:url(../images/icon_btn_add.png) no-repeat 50% 50%;
+    border:0;
+    text-indent:-9999px;
+  }
+
 }
 
 .check{

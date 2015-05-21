@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/popup.css" />
+
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup">
+	<h1 class="popup-heading">Auto Scale Policy 설정</h1>
+	<div class="popup-content as-policy">
+
+		<div class="popup-content-section">
+			<div class="popup-input-wrap">
+				<label class="popup-label width-normal left-float">대상 VNFC :</label>
+				<select class="select default left-float">
+					<option>CSCM</option>
+					<option>CSCM</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="as-policy-table">
+			<div class="table-top">
+				<h4 class="table-heading">Scale-Out</h4>
+				<div class="right-float left">
+					<button type="button" class="btn-add">조건추가</button>
+				</div>
+			</div>
+
+			<table class="vt-table">
+				<caption class="hide">config parameter</caption>
+				<colgroup>
+					<col width="140px" />
+					<col width="auto" />
+					<col width="120px" />
+					<col width="130px" />
+					<col width="130px" />
+					<col width="50px;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="first">Group Operation</th>
+						<th scope="col">Resource</th>
+						<th scope="col">Condition</th>
+						<th scope="col">Threshold (%)</th>
+						<th scope="col">Duration (min)</th>
+						<th scope="col" class="center">실행</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">
+							<select class="select med left-float">
+								<option>OR</option>
+								<option>OR</option>
+							</select>
+						</td>
+						<td>
+							<select class="select wide">
+								<option>CSCM_CPU_LOAD</option>
+								<option>CSCM_MEM_LOAD</option>
+							</select>
+						</td>
+						<td>
+							<select class="select med left-float">
+								<option>>=</option>
+								<option>>=</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="70">
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="5">
+						</td>
+						<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+					</tr>
+					<tr>
+						<td>
+							<select class="select wide">
+								<option>CSCM_CPU_LOAD</option>
+								<option>CSCM_MEM_LOAD</option>
+							</select>
+						</td>
+						<td>
+							<select class="select med left-float">
+								<option>>=</option>
+								<option>>=</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="70">
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="5">
+						</td>
+						<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="table-top as-policy-in">
+				<h4 class="table-heading">Scale-In</h4>
+				<div class="right-float left">
+					<button type="button" class="btn-add">조건추가</button>
+				</div>
+			</div>
+
+			<table class="vt-table">
+				<caption class="hide">config parameter</caption>
+				<colgroup>
+					<col width="140px" />
+					<col width="auto" />
+					<col width="120px" />
+					<col width="130px" />
+					<col width="130px" />
+					<col width="50px;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="first">Group Operation</th>
+						<th scope="col">Resource</th>
+						<th scope="col">Condition</th>
+						<th scope="col">Threshold (%)</th>
+						<th scope="col">Duration (min)</th>
+						<th scope="col" class="center">실행</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">
+							<select class="select med left-float">
+								<option>AND</option>
+								<option>AND</option>
+							</select>
+						</td>
+						<td>
+							<select class="select wide">
+								<option>CSCM_CPU_LOAD</option>
+								<option>CSCM_MEM_LOAD</option>
+							</select>
+						</td>
+						<td>
+							<select class="select med left-float">
+								<option>>=</option>
+								<option>>=</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="70">
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="5">
+						</td>
+						<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+					</tr>
+					<tr>
+						<td>
+							<select class="select wide">
+								<option>CSCM_CPU_LOAD</option>
+								<option>CSCM_MEM_LOAD</option>
+							</select>
+						</td>
+						<td>
+							<select class="select med left-float">
+								<option>>=</option>
+								<option>>=</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="70">
+						</td>
+						<td>
+							<input type="text" class="input-form left-float" value="5">
+						</td>
+						<td class="center"><button type="button" class="tb-form-btn-del">삭제</button></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-fill-orange left-float left">저장</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+</body>
+</html>
