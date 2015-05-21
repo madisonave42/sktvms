@@ -8,8 +8,8 @@
   .page-item {
     display:inline-block;
     box-sizing:border-box;
-    @include size(30);
-    line-height:28px;
+    @include size(27);
+    line-height:25px;
     text-align:center;
     font-size: $font-size-mini;
     font-weight:bold;
@@ -31,10 +31,10 @@
   .page-next,
   .page-last {
     text-indent:-9999px;
-    background:url(../images/sprite_pagination.png) no-repeat;
+    background:url(../images/sprite_pagination.png) no-repeat -2px -2px;
 
     &.disabled{
-      background-position:0 -32px;
+      background-position:-2px -34px;
       cursor:default;
 
       &:hover{
@@ -44,26 +44,26 @@
   }
 
   .page-prev {
-    background-position:-28px 0;
+    background-position:-30px -2px;
 
     &.disabled{
-      background-position:-28px -32px;
+      background-position:-30px -34px;
     }
   }
 
   .page-next {
-    background-position:-56px 0;
+    background-position:-58px -2px;
 
     &.disabled{
-      background-position:-56px -32px;
+      background-position:-58px -34px;
     }
   }
 
   .page-last {
-    background-position:-84px 0;
+    background-position:-86px -2px;
 
     &.disabled{
-      background-position:-84px 32px;
+      background-position:-86px -34px;
     }
   }
 

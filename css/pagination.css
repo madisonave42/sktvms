@@ -5,9 +5,9 @@
 .pagination .page-item {
   display: inline-block;
   box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  line-height: 28px;
+  width: 27px;
+  height: 27px;
+  line-height: 25px;
   text-align: center;
   font-size: 11px;
   font-weight: bold;
@@ -26,13 +26,13 @@
 .pagination .page-next,
 .pagination .page-last {
   text-indent: -9999px;
-  background: url(../images/sprite_pagination.png) no-repeat;
+  background: url(../images/sprite_pagination.png) no-repeat -2px -2px;
 }
 .pagination .page-first.disabled,
 .pagination .page-prev.disabled,
 .pagination .page-next.disabled,
 .pagination .page-last.disabled {
-  background-position: 0 -32px;
+  background-position: -2px -34px;
   cursor: default;
 }
 .pagination .page-first.disabled:hover,
@@ -42,22 +42,22 @@
   border-color: transparent;
 }
 .pagination .page-prev {
-  background-position: -28px 0;
+  background-position: -30px -2px;
 }
 .pagination .page-prev.disabled {
-  background-position: -28px -32px;
+  background-position: -30px -34px;
 }
 .pagination .page-next {
-  background-position: -56px 0;
+  background-position: -58px -2px;
 }
 .pagination .page-next.disabled {
-  background-position: -56px -32px;
+  background-position: -58px -34px;
 }
 .pagination .page-last {
-  background-position: -84px 0;
+  background-position: -86px -2px;
 }
 .pagination .page-last.disabled {
-  background-position: -84px 32px;
+  background-position: -86px -34px;
 }
 .pagination .page-item.current {
   color: #ee6247;

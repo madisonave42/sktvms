@@ -5,15 +5,14 @@
 
   &.general{
     width:896px;
-    height:230px;
-
+    height:240px;
     margin-bottom:6px;
     box-sizing:border-box;
   }
 
   &.config{
     width:600px;
-    height:230px;
+    height:240px;
 
     margin-bottom:6px;
     box-sizing:border-box;
@@ -21,7 +20,7 @@
 
   &.upgrade{
     width:252px;
-    height:230px;
+    height:240px;
 
     margin-bottom:6px;
     box-sizing:border-box;
@@ -72,7 +71,7 @@
 
 .vnf {
   &-btn-refresh {
-    @include size(24, 30);
+    @include size(24, 27);
     padding:0;
     background:url(../images/ico_refresh.png) no-repeat 50% 50%;
     border:0;

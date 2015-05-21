@@ -1,18 +1,18 @@
 .contents-section.general {
   width: 896px;
-  height: 230px;
+  height: 240px;
   margin-bottom: 6px;
   box-sizing: border-box;
 }
 .contents-section.config {
   width: 600px;
-  height: 230px;
+  height: 240px;
   margin-bottom: 6px;
   box-sizing: border-box;
 }
 .contents-section.upgrade {
   width: 252px;
-  height: 230px;
+  height: 240px;
   margin-bottom: 6px;
   box-sizing: border-box;
 }
@@ -48,7 +48,7 @@
 
 .vnf-btn-refresh {
   width: 24px;
-  height: 30px;
+  height: 27px;
   padding: 0;
   background: url(../images/ico_refresh.png) no-repeat 50% 50%;
   border: 0;

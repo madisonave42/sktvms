@@ -849,8 +849,8 @@
 }
 .dbpopup-input-form {
   width: 100%;
-  height: 30px;
-  padding-top: 2.5px;
+  height: 27px;
+  padding-top: 1px;
   border: 1px solid #c2cbcb;
   border-radius: 2px;
   box-sizing: border-box;

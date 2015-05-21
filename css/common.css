@@ -386,12 +386,12 @@ img {
   min-width: 1760px;
 }
 .main-header {
-  height: 73px;
+  height: 72px;
   border-bottom: 1px solid #708080;
   background-color: #ffffff;
 }
 .main-content {
-  padding: 10px 0 15px;
+  padding: 5px 0 15px;
   border-top: 3px solid #cbcfd2;
 }
 
@@ -414,11 +414,11 @@ img {
 }
 .main-heading-form-group {
   position: relative;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 .main-heading-form-group > .group-label {
   position: absolute;
-  top: 8px;
+  top: 10px;
   left: 5px;
   white-space: nowrap;
 }
@@ -436,8 +436,8 @@ img {
 
 .contents-section {
   width: 1718px;
-  padding: 10px 20px;
-  border: 1px solid #c2cbcb;
+  padding: 15px 18px;
+  border: 1px solid #afbdbd;
   border-radius: 3px;
   background: #ffffff;
 }
@@ -471,15 +471,16 @@ img {
   height: calc(100% - 45px);
   overflow: auto;
   padding: 20px;
-  margin-top: 10px;
-  border: 1px solid #c2cbcb;
+  margin-top: 15px;
+  border: 1px solid #e5e5e5;
   border-radius: 3px;
   box-sizing: border-box;
   background: #fff;
 }
 .contents-section-inner.fill-gray {
-  background: #e8e8e8;
+  background: #f2f2f2;
   padding: 6px;
+  border-color: #dcdcdc;
 }
 .contents-section-inner.no-border {
   padding: 0;
@@ -491,8 +492,11 @@ img {
   border-bottom: 1px solid #c2cbcb;
 }
 .contents-section-inner.inside-section {
-  padding: 10px 15px 15px 15px;
+  padding: 10px 14px;
   margin: 0 0 6px 0;
+}
+.contents-section-inner.inside-section .contents-section-inner {
+  margin-top: 8px;
 }
 .contents-section-inner.inside-section.solitary {
   margin: 0;
@@ -507,7 +511,9 @@ img {
 .section-heading {
   font-weight: bold;
   color: #576363;
-  line-height: 25px;
+  height: 18px;
+  line-height: 1;
+  margin-top: -4px;
 }
 .section-heading.color {
   font-size: 16px;
@@ -517,6 +523,8 @@ img {
   font-size: 20px;
 }
 .section-heading.small-eng {
+  margin-top: -3px;
+  height: 16px;
   font-size: 16px;
   color: #64aca8;
 }
@@ -839,9 +847,11 @@ table.emphasis > tbody > tr > td.email > span {
   color: #777;
   font-size: 11px;
   font-weight: bold;
+  line-height: 25px;
+  height: 25px;
 }
 .selectric-items li {
-  padding: 4px 6px;
+  padding: 3px 6px 2px;
   font-size: 11px;
   color: #777;
 }
@@ -877,8 +887,8 @@ table.emphasis > tbody > tr > td.email > span {
 
 .btn-fill-orange {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #ffffff;
   background: #ee6247;
   border: 0;
@@ -890,8 +900,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-fill-green-med {
   width: 80px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #ffffff;
   background: #0bc17a;
   border: 0;
@@ -904,8 +914,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-fill-blue {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #ffffff;
   background: #479dee;
   border: 0;
@@ -917,8 +927,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-fill-blue:disabled {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
@@ -931,8 +941,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-stroke-light {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
@@ -947,8 +957,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-stroke-light-gray {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #777;
   background: #ffffff;
   border: 1px solid #c2cbcb;
@@ -960,8 +970,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-stroke-light-gray-med {
   width: 80px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #777;
   background: #ffffff;
   border: 1px solid #c2cbcb;
@@ -974,8 +984,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-stroke-dark {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #576363;
   background: #ffffff;
   border: 1px solid #576363;
@@ -987,8 +997,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-stroke-orange {
   width: 120px;
-  height: 30px;
-  line-height: 25px;
+  height: 27px;
+  line-height: 22px;
   color: #ee6247;
   background: #ffffff;
   border: 1px solid #ee6247;
@@ -1144,8 +1154,8 @@ table.emphasis > tbody > tr > td.email > span {
 }
 
 .form-label {
-  height: 30px;
-  line-height: 27px;
+  height: 27px;
+  line-height: 25px;
   color: #777;
 }
 

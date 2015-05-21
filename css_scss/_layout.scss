@@ -332,13 +332,13 @@
 	min-width:1760px;
 
 	&-header {
-		@include size(auto, 73);
+		@include size(auto, 72);
 		border-bottom:1px solid #708080;
 		background-color:$white;
 	}
 
 	&-content {
-		padding:10px 0 15px;
+		padding:5px 0 15px;
 		border-top:3px solid #cbcfd2;
 	}
 }
@@ -364,11 +364,11 @@
 
 	&-form-group {
 		position:relative;
-		padding-top:30px;
+		padding-top:35px;
 
 		>.group-label{
 			position:absolute;
-			top:8px;
+			top:10px;
 			left:5px;
 
 			white-space:nowrap;
@@ -391,8 +391,8 @@
 .contents-section{
 	@include clear();
 	width:1718px;
-	padding:10px 20px;
-	border:1px solid $light-gray;
+	padding:15px 18px;
+	border:1px solid $white-gray;
 	border-radius:3px;
 	background:$white;
 
@@ -413,16 +413,17 @@
 		overflow:auto;
 
 		padding:20px;
-		margin-top:10px;
+		margin-top:15px;
 
-		border:1px solid #c2cbcb;
+		border:1px solid $inner-border;
 		border-radius:3px;
 		box-sizing:border-box;
 		background:#fff;
 
 		&.fill-gray{
-			background:$clean-gray;
+			background:$fill-gray-bg;
 			padding:6px;
+			border-color:$fill-gray-border;
 		}
 
 		&.no-border{
@@ -437,8 +438,12 @@
 		}
 
 		&.inside-section{
-			padding:10px 15px 15px 15px;
+			padding:10px 14px;
 			margin:0 0 6px 0;
+
+			.contents-section-inner {
+				margin-top:8px;
+			}
 
 			&.solitary{
 				margin:0;
@@ -453,12 +458,15 @@
 	&.left-float.left{
 		margin-right:6px;
 	}
+
 }
 
 .section-heading{
 	font-weight:bold;
 	color:$dark;
-	line-height:25px;
+	height:18px;
+	line-height:1;
+	margin-top:-4px;
 
 	&.color{
 		font-size:16px;
@@ -470,6 +478,8 @@
 	}
 
 	&.small-eng{
+		margin-top:-3px;
+		height:16px;
 		font-size:16px;
 		color:#64aca8;
 	}

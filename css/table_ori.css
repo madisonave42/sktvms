@@ -8,7 +8,7 @@
 
 .vt-table {
   width: 100%;
-  border-top: 2px solid #c2cbcb;
+  border-top: 2px solid #becacc;
 }
 .vt-table caption {
   display: none;
@@ -24,7 +24,7 @@
   color: #576363;
   text-align: left;
   line-height: 38px;
-  border-bottom: 1px solid #c2cbcb;
+  border-bottom: 1px solid #becacc;
 }
 .vt-table th.chkbox {
   line-height: 0;
