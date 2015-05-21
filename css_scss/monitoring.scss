@@ -73,7 +73,7 @@
 }
 
 .dashboard {
-  min-height:756px;
+  min-height:766px;
 
   &-list {
     position:absolute;
@@ -84,8 +84,8 @@
   &-tab {
     @include clear();
     position:absolute;
-    top:20px;
-    left:20px;
+    top:27px;
+    left:18px;
 
     &-item {
       float:left;
@@ -135,9 +135,9 @@
   }
 
   &-btn-expand {
-    @include size(24, 30);
+    @include size(24, 27);
     padding:0;
-    background:url(../images/ico_arrow_up.png) no-repeat 0 0;
+    background:url(../images/ico_arrow_up.png) no-repeat 0 -2px;
     border:0;
     text-indent:-9999px;
 
@@ -188,7 +188,7 @@
       padding:0;
       padding-left:22px;
       width:130px;
-      background:url(../images/ico_alarm_btn.png) no-repeat 10px -39px;
+      background:url(../images/ico_alarm_btn.png) no-repeat 10px -40px;
       text-align:left;
     }
   }

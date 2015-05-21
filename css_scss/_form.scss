@@ -1,6 +1,7 @@
 /* selectric style */
 
 .selectric{
+  border-radius:2px;
 
   &-mini{
     //@include form-frame(50px, $box-default-height, 1px, solid, $light-gray, 2px);
@@ -36,7 +37,7 @@
     color: $dark-gray;
     font-size: 11px;
     font-weight: bold;
-    line-height: 25px;
+    line-height: 24px;
     height: 25px;
   }
 
@@ -83,6 +84,10 @@
 
   &.default{
     width:$box-default-width;
+  }
+
+  &.hasDatepicker {
+    height:27px;
   }
 }
 
@@ -132,11 +137,11 @@
 
   &-calendar{
     width:14px;
-    height:30px;
+    height:27px;
 
     text-indent:-99999em;
     border:0;
-    background:url(../images/icon_btn_calendar.gif) no-repeat;
+    background:url(../images/icon_btn_calendar.gif) no-repeat 0 -1px;
   }
 
   &-table-setting{

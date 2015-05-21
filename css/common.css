@@ -435,8 +435,8 @@ img {
 }
 
 .contents-section {
-  width: 1718px;
-  padding: 15px 18px;
+  width: 1722px;
+  padding: 10px 18px;
   border: 1px solid #afbdbd;
   border-radius: 3px;
   background: #ffffff;
@@ -471,7 +471,7 @@ img {
   height: calc(100% - 45px);
   overflow: auto;
   padding: 20px;
-  margin-top: 15px;
+  margin-top: 10px;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   box-sizing: border-box;
@@ -511,9 +511,7 @@ img {
 .section-heading {
   font-weight: bold;
   color: #576363;
-  height: 18px;
-  line-height: 1;
-  margin-top: -4px;
+  line-height: 25px;
 }
 .section-heading.color {
   font-size: 16px;
@@ -523,10 +521,9 @@ img {
   font-size: 20px;
 }
 .section-heading.small-eng {
-  margin-top: -3px;
-  height: 16px;
   font-size: 16px;
   color: #64aca8;
+  line-height: 15px;
 }
 
 .table-top:after {
@@ -828,6 +825,9 @@ table.emphasis > tbody > tr > td.email > span {
 }
 
 /* selectric style */
+.selectric {
+  border-radius: 2px;
+}
 .selectric-mini {
   width: 50px;
 }
@@ -847,7 +847,7 @@ table.emphasis > tbody > tr > td.email > span {
   color: #777;
   font-size: 11px;
   font-weight: bold;
-  line-height: 25px;
+  line-height: 24px;
   height: 25px;
 }
 .selectric-items li {
@@ -883,6 +883,9 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .input.default {
   width: 120px;
+}
+.input.hasDatepicker {
+  height: 27px;
 }
 
 .btn-fill-orange {
@@ -1010,10 +1013,10 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .btn-calendar {
   width: 14px;
-  height: 30px;
+  height: 27px;
   text-indent: -99999em;
   border: 0;
-  background: url(../images/icon_btn_calendar.gif) no-repeat;
+  background: url(../images/icon_btn_calendar.gif) no-repeat 0 -1px;
 }
 .btn-table-setting {
   width: 23px;
