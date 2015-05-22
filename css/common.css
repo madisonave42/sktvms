@@ -851,6 +851,9 @@ table.emphasis > tbody > tr > td.email > span {
 .selectric-wide {
   width: 150px;
 }
+.selectric-large {
+  width: 180px;
+}
 .selectric .label {
   color: #777;
   font-size: 11px;
