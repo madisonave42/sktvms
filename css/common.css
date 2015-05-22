@@ -456,6 +456,9 @@ img {
   overflow: hidden;
   clear: both;
 }
+.contents-section-top {
+  position: relative;
+}
 .contents-section-top:after {
   content: ".";
   display: block;
@@ -519,7 +522,8 @@ img {
 .section-heading {
   font-weight: bold;
   color: #576363;
-  line-height: 25px;
+  line-height: 1;
+  margin: 3px 0 5px;
 }
 .section-heading.color {
   font-size: 16px;
@@ -1063,7 +1067,7 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .check-box {
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 1px;
   margin: 0;
 }
@@ -1100,6 +1104,12 @@ table.emphasis > tbody > tr > td.email > span {
   line-height: 15px;
   padding-left: 15px;
 }
+.check-label.small.heading {
+  height: auto;
+  line-height: 1;
+  padding-left: 21px;
+  margin: 3px 0 5px;
+}
 .check-label.blind {
   width: 0;
   text-indent: -99999em;
@@ -1121,6 +1131,9 @@ table.emphasis > tbody > tr > td.email > span {
   width: 13px;
   height: 13px;
   margin: 0;
+}
+.check-label.small.heading:after {
+  top: 1px;
 }
 .check-label-blank {
   width: 0;
@@ -1369,6 +1382,12 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .right-float.right.half {
   margin-left: 5px;
+}
+
+.right-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .hide {

@@ -191,7 +191,7 @@
 
   &-box{
     position:absolute;
-    top:1px;
+    top:2px;
     left:1px;
 
     margin:0;
@@ -235,6 +235,13 @@
       height:15px;
       line-height:15px;
       padding-left:15px;
+
+      &.heading{
+        height:auto;
+        line-height:1;
+        padding-left:21px;
+        margin:3px 0 5px;
+      }
     }
 
     &.blind{
@@ -264,6 +271,10 @@
         width:13px;
         height:13px;
         margin:0;
+      }
+
+      &.heading:after{
+        top:1px;
       }
     }
   }
