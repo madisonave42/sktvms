@@ -26,6 +26,10 @@
     width:150px;
   }
 
+  &-large{
+    width:180px;
+  }
+
   //display:inline-block;
   //width:100%;
   //height:21px;
@@ -211,8 +215,8 @@
       display:block;
       position:absolute;
       z-index:10;
-      top:7px;
-      left:6px;
+      top:3px;
+      left:1px;
       width:12px;
       height:10px;
       background:url(../images/icon_checked.png) no-repeat 0 0;
@@ -228,6 +232,10 @@
       background:$light-gray;
     }
 
+    &:checked + .check-label.heading:before{
+      top:5px;
+    }
+
     &:disabled + .check-label:after {
       background-color:$light-gray;
     }
@@ -236,13 +244,13 @@
   &-label{
     display:block;
 
-    height:25px;
-    line-height:23px;
+    height:auto;
+    line-height:15px;
 
-    padding-left:30px;
+    padding-left:21px;
 
     &.small{
-      height:15px;
+      height:auto;
       line-height:15px;
       padding-left:15px;
 
@@ -255,17 +263,19 @@
     }
 
     &.blind{
+      padding-left:15px;
       width:0;
       text-indent:-99999em;
       overflow:hidden;
+      line-height:1;
     }
 
     &:after{
       content:"";
       display:block;
 
-      width:23px;
-      height:23px;
+      width:13px;
+      height:13px;
 
       position:absolute;
       top:0;
@@ -284,7 +294,7 @@
       }
 
       &.heading:after{
-        top:1px;
+        top:2px;
       }
     }
   }

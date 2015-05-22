@@ -181,6 +181,11 @@
 .popup.on {
   display: block;
 }
+.popup.popup-standalone {
+  display: block;
+  position: static;
+  margin: 0;
+}
 .popup-heading {
   margin-bottom: 20px;
   font-size: 20px;
@@ -223,6 +228,13 @@
 }
 .popup-bottom {
   margin-top: 22px;
+}
+.popup-bottom:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
 }
 .popup-input-wrap {
   margin-top: 10px;
@@ -511,5 +523,14 @@
 }
 
 /* monitoring : E */
+/* setting : S */
+.set-arrow-label {
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  color: #00b9b0;
+}
+
+/* setting : E */
 
 /*# sourceMappingURL=popup.css.map */

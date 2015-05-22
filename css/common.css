@@ -855,6 +855,9 @@ table.emphasis > tbody > tr > td.email > span {
 .selectric-wide {
   width: 150px;
 }
+.selectric-large {
+  width: 180px;
+}
 .selectric .label {
   color: #777;
   font-size: 11px;
@@ -1085,8 +1088,8 @@ table.emphasis > tbody > tr > td.email > span {
   display: block;
   position: absolute;
   z-index: 10;
-  top: 7px;
-  left: 6px;
+  top: 3px;
+  left: 1px;
   width: 12px;
   height: 10px;
   background: url(../images/icon_checked.png) no-repeat 0 0;
@@ -1099,17 +1102,20 @@ table.emphasis > tbody > tr > td.email > span {
 .check-box.small.partial:checked + .check-label:after {
   background: #c2cbcb;
 }
+.check-box:checked + .check-label.heading:before {
+  top: 5px;
+}
 .check-box:disabled + .check-label:after {
   background-color: #c2cbcb;
 }
 .check-label {
   display: block;
-  height: 25px;
-  line-height: 23px;
-  padding-left: 30px;
+  height: auto;
+  line-height: 15px;
+  padding-left: 21px;
 }
 .check-label.small {
-  height: 15px;
+  height: auto;
   line-height: 15px;
   padding-left: 15px;
 }
@@ -1120,15 +1126,17 @@ table.emphasis > tbody > tr > td.email > span {
   margin: 3px 0 5px;
 }
 .check-label.blind {
+  padding-left: 15px;
   width: 0;
   text-indent: -99999em;
   overflow: hidden;
+  line-height: 1;
 }
 .check-label:after {
   content: "";
   display: block;
-  width: 23px;
-  height: 23px;
+  width: 13px;
+  height: 13px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1142,7 +1150,7 @@ table.emphasis > tbody > tr > td.email > span {
   margin: 0;
 }
 .check-label.small.heading:after {
-  top: 1px;
+  top: 2px;
 }
 .check-label-blank {
   width: 0;

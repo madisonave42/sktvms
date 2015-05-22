@@ -60,6 +60,7 @@
   position: absolute;
   top: 17px;
   left: 18px;
+  z-index: 1;
 }
 .dashboard-tab:after {
   content: ".";
