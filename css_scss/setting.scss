@@ -12,17 +12,26 @@
 
       &.narrow {
         width: 390px;
+        height:100%;
+
         position: absolute;
         top: 0;
         left: 0;
 
+        box-sizing:border-box;
+
         .contents-section-inner{
+          height:auto;
           margin:0;
+
+          &.last{
+            margin-top:10px;
+          }
         }
       }
 
       &.wide {
-        width: 1280px;
+        width: 1326px;
         float:right;
         margin-bottom:6px;
         padding-bottom:40px;
@@ -30,7 +39,20 @@
         &.heading{
           padding-bottom:10px;
         }
+
+        &.last{
+          margin-bottom:0;
+        }
       }
+
+    }
+
+    &-inner{
+
+      &.setting{
+        padding:0;
+      }
+
     }
   }
 }
@@ -67,7 +89,69 @@
 .setting-nav{
 
   &-top{
+    font-weight:bold;
 
+    padding:10px;
+    color:$dark;
+    line-height:1;
+
+    background:#fbfbfb;
+
+    &.fold{
+      .btn-nav-fold.setting{
+        background-position:0 -16px;
+      }
+    }
+  }
+
+  &-content{
+    border-top:1px solid $inner-border;
+
+    &.fold{
+      display:none;
+    }
+
+    .setting-list{
+      cursor:pointer;
+      padding:15px 20px;
+
+      &-item{
+        height:26px;
+
+        position:relative;
+        padding-left:15px;
+        margin-bottom:15px;
+
+        line-height:26px;
+
+        &.selected{
+          color:$white;
+          background:$blue-green;
+
+          &:after{
+            background:$white;
+          }
+        }
+
+        &.last{
+          margin-bottom:0;
+        }
+
+        &:after{
+          content:"";
+          width:4px;
+          height:4px;
+
+          position:absolute;
+          top:11px;
+          left:5px;
+
+          border-radius:4px;
+          background:$dark;
+        }
+
+      }
+    }
   }
 
 }

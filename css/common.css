@@ -483,7 +483,7 @@ img {
   overflow: auto;
   padding: 20px;
   margin-top: 10px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dcdcdc;
   border-radius: 3px;
   box-sizing: border-box;
   background: #fff;
@@ -1054,6 +1054,18 @@ table.emphasis > tbody > tr > td.email > span {
   background: url(../images/icon_btn_add.png) no-repeat 50% 50%;
   border: 0;
   text-indent: -9999px;
+}
+.btn-nav-fold {
+  width: 15px;
+  height: 15px;
+  text-indent: -99999em;
+  border: 0;
+  background: url(../images/icon_btn_fold.png);
+}
+.btn-nav-fold.setting {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 .check-wrap {

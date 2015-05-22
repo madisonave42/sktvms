@@ -73,27 +73,45 @@ include "header_bottom.html"
 	</div>
 
 	<div class="main-content">
-		<div class="wrapper setting">
+		<div class="wrapper setting var-height">
 
 			<section class="contents-section setting narrow">
 				<h3 class="hide">연동정보 리스트</h3>
 
-				<div class="contents-section-inner">
+				<div class="contents-section-inner setting">
 					<div class="setting-nav-top">
 						<h4 class="setting-nav-heading">VNVO/VNFM/VIM 연동</h4>
-						<button type="button" class="btn-nav-fold">접힘/펼침</button>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
 					</div>
 
 					<div class="setting-nav-content">
 						<ul class="setting-list">
-							<li>VNFM &lt;&gt; NFVO 연동정보</li>
-							<li>VNFM &lt;&gt; NFVO 연동정보</li>
-							<li>VNFM &lt;&gt; NFVO 연동정보</li>
-							<li>VNFM &lt;&gt; NFVO 연동정보</li>
+							<li class="setting-list-item">VNFM &lt;&gt; NFVO 연동정보</li>
+							<li class="setting-list-item">VNFM &lt;&gt; VIM 연동정보</li>
+							<li class="setting-list-item">VIM &lt;&gt; NFVO 연동정보</li>
 						</ul>
 					</div>
 
 				</div>
+
+				<div class="contents-section-inner setting last">
+					<div class="setting-nav-top">
+						<h4 class="setting-nav-heading">Threshold 관리</h4>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
+					</div>
+
+					<div class="setting-nav-content">
+						<ul class="setting-list">
+							<li class="setting-list-item">Default</li>
+							<li class="setting-list-item">VNFM Workload</li>
+							<li class="setting-list-item">VIM Workload</li>
+							<li class="setting-list-item">Compute Host Workload</li>
+							<li class="setting-list-item last">VNF</li>
+						</ul>
+					</div>
+
+				</div>
+
 			</section>
 
 			<section class="contents-section setting wide heading">
@@ -143,7 +161,7 @@ include "header_bottom.html"
 							<td>VNFM</td>
 							<td>2015/02/12 13:22:03</td>
 							<td><span class="status-auth">Auth</span></td>
-							<td class="center"><button type="button" class="tb-form-btn-edit">수정</button></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit" onclick="window.open('', '', 'width=200, height=100')">수정</button></td>
 						</tr>
 						</tbody>
 					</table>
@@ -151,7 +169,7 @@ include "header_bottom.html"
 
 			</section>
 
-			<section class="contents-section setting wide">
+			<section class="contents-section setting wide last">
 
 				<div class="contents-section-top">
 					<h3 class="section-heading setting left-float">NFVO &gt; VNFM 연동 정보</h3>

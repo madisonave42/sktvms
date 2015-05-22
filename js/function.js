@@ -672,7 +672,14 @@ $(function(){
 	// Set height of main-content
 	(function(){
 		var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
-		$('.main-content .wrapper.fix-height').css({height: mainHeight});
+		var $fixWrapper = $('.main-content .wrapper.fix-height');
+		var $varWrapper = $('.main-content .wrapper.var-height');
+
+		$fixWrapper.css({height: mainHeight});
+		if( $varWrapper.height() <= mainHeight ){
+			$varWrapper.css({height: mainHeight});
+		}
+
 	})();
 
 	// React about event of user-menu in header
@@ -1049,6 +1056,42 @@ $(function(){
 	 	});
 	 })();
 
+	/*
+	 * Setting
+	 */
+
+	(function(){
+
+		$('.setting-list-item').data('selected', 'false').on('click', function(){
+			if( $(this).data('selected') == 'false' ){
+				$(this).addClass('selected').data('selected', 'true');
+			} else {
+				$(this).removeClass('selected').data('selected', 'false');
+			}
+		});
+
+	})();
+
+	(function(){
+
+		$('.btn-nav-fold.setting').data('fold', 'false').on('click', function(){
+			if( $(this).data('fold') == 'false' ) {
+
+				$(this).parents('.setting-nav-top').addClass('fold')
+					.next('.setting-nav-content').addClass('fold');
+				$(this).data('fold', 'true');
+
+			} else {
+
+				$(this).parents('.setting-nav-top').removeClass('fold')
+					.next('.setting-nav-content').removeClass('fold');
+				$(this).data('fold', 'false');
+
+			}
+		});
+
+	})();
+
 	 /*
 	 * popup
 	 */
@@ -1092,5 +1135,6 @@ $(function(){
 		});
 
 	})();
+
 
 });

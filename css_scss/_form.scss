@@ -173,6 +173,20 @@
     text-indent:-9999px;
   }
 
+  &-nav-fold{
+    @include size(15);
+    text-indent:-99999em;
+    border:0;
+    background:url(../images/icon_btn_fold.png);
+
+    &.setting{
+      position:absolute;
+      top:8px;
+      right:8px;
+    }
+
+  }
+
 }
 
 .check{
