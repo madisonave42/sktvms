@@ -216,10 +216,10 @@
   overflow: hidden;
 }
 .diagram-dashboard-wrap {
+  float: left;
   position: relative;
-  padding: 35px 25px;
+  padding-top: 46px;
   box-sizing: border-box;
-  width: 100%;
 }
 .diagram-dashboard-wrap:after {
   content: ".";
@@ -237,35 +237,11 @@
 }
 
 .diag-group {
-  margin-left: 90px;
-  width: 180px;
-}
-.diag-group-item {
-  margin-top: 90px;
-  box-sizing: border-box;
-  height: 110px;
-  border: 1px solid #c2cbcb;
-  border-radius: 3px;
-  text-align: center;
-  background: #ffffff;
-}
-.diag-group-item.orchestrator {
-  margin-top: 0;
-  background: #e8e8e8;
-  font-weight: bold;
-  line-height: 108px;
-}
-.diag-group-title {
-  margin-top: 13px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1;
-}
-.diag-group-cont {
-  margin-top: 10px;
+  margin-left: 35px;
+  width: 400px;
+  height: 100%;
 }
 .diag-list {
-  margin-left: 144px;
   width: 369px;
 }
 .diag-list-item:first-child {
