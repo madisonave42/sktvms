@@ -1,0 +1,169 @@
+include "header_top.html"
+include "css_setting.html"
+include "header_bottom.html"
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+
+			<div class="main-heading">
+				<h2 class="main-heading-title">설정</h2>
+				<p class="main-heading-overview">vIMS 운용에 필요한 각 설정 정보 조회 및 변경 기능을 제공합니다.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper setting var-height">
+
+			<section class="contents-section setting narrow">
+				<h3 class="hide">연동정보 리스트</h3>
+
+				<div class="contents-section-inner setting">
+					<div class="setting-nav-top">
+						<h4 class="setting-nav-heading">VNVO/VNFM/VIM 연동</h4>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
+					</div>
+
+					<div class="setting-nav-content">
+						<ul class="setting-list">
+							<li class="setting-list-item selected">VNFM &lt;&gt; NFVO 연동정보</li>
+							<li class="setting-list-item">VNFM &lt;&gt; VIM 연동정보</li>
+							<li class="setting-list-item">VIM &lt;&gt; NFVO 연동정보</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="contents-section-inner setting last">
+					<div class="setting-nav-top">
+						<h4 class="setting-nav-heading">Threshold 관리</h4>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
+					</div>
+
+					<div class="setting-nav-content">
+						<ul class="setting-list">
+							<li class="setting-list-item">Default</li>
+							<li class="setting-list-item">VNFM Workload</li>
+							<li class="setting-list-item">VIM Workload</li>
+							<li class="setting-list-item">Compute Host Workload</li>
+							<li class="setting-list-item">가상 자원 Capacity</li>
+							<li class="setting-list-item last">VNF</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</section>
+
+			<section class="contents-section setting wide heading">
+				<div class="contents-section-top">
+					<h3 class="section-heading setting-category left-float">VNFM &lt;&gt; NFVO 연동 정보</h3>
+				</div>
+			</section>
+
+			<section class="contents-section setting wide">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">VNFM &gt; NFVO 연동 정보</h3>
+					<button type="button" class="btn-refresh right-absolute">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-auth">Auth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit" onclick="window.open('sep1_vnfm_nfvo.html', '_blank', 'width=590, height=360')">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+			<section class="contents-section setting wide last">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">NFVO &gt; VNFM 연동 정보</h3>
+					<button type="button" class="btn-refresh right-absolute">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-unauth">Unauth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit" onclick="window.open('sep2_nfvo_vnfm.html', '_blank', 'width=590, height=323')">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"
