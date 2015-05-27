@@ -150,7 +150,7 @@
   text-align: left;
 }
 
-.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
+.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal, .state-box-disabled {
   width: 77px;
   height: 30px;
   box-sizing: border-box;
@@ -171,6 +171,9 @@
 }
 .state-box-normal {
   background: #00b9b0;
+}
+.state-box-disabled {
+  background: #c2cbcb;
 }
 
 .overload-pannel {
@@ -213,10 +216,10 @@
   overflow: hidden;
 }
 .diagram-dashboard-wrap {
+  float: left;
   position: relative;
-  padding: 35px 25px;
+  padding-top: 46px;
   box-sizing: border-box;
-  width: 100%;
 }
 .diagram-dashboard-wrap:after {
   content: ".";
@@ -234,35 +237,11 @@
 }
 
 .diag-group {
-  margin-left: 90px;
-  width: 180px;
-}
-.diag-group-item {
-  margin-top: 90px;
-  box-sizing: border-box;
-  height: 110px;
-  border: 1px solid #c2cbcb;
-  border-radius: 3px;
-  text-align: center;
-  background: #ffffff;
-}
-.diag-group-item.orchestrator {
-  margin-top: 0;
-  background: #e8e8e8;
-  font-weight: bold;
-  line-height: 108px;
-}
-.diag-group-title {
-  margin-top: 13px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1;
-}
-.diag-group-cont {
-  margin-top: 10px;
+  margin-left: 35px;
+  width: 400px;
+  height: 100%;
 }
 .diag-list {
-  margin-left: 144px;
   width: 369px;
 }
 .diag-list-item:first-child {
@@ -284,7 +263,19 @@
   top: 2px;
   left: 0;
   border-radius: 100%;
+  background: #c2cbcb;
+}
+.diag-list-title.critical:after {
   background: #e70000;
+}
+.diag-list-title.major:after {
+  background: #ee6247;
+}
+.diag-list-title.minor:after {
+  background: #fcb63c;
+}
+.diag-list-title.normal:after {
+  background: #00b9b0;
 }
 .diag-list-cont {
   box-sizing: border-box;
@@ -328,6 +319,9 @@
 }
 .diag-instance.normal {
   background-color: #00b9b0;
+}
+.diag-instance.disabled {
+  background-color: #c2cbcb;
 }
 .diag-instance-so, .diag-instance-te {
   display: inline-block;

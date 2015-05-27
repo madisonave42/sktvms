@@ -200,7 +200,8 @@
   &-cri,
   &-maj,
   &-min,
-  &-normal {
+  &-normal,
+  &-disabled {
     @include size(77, 30);
     box-sizing:border-box;
     line-height:30px;
@@ -224,6 +225,10 @@
 
   &-normal {
     background:$normal;
+  }
+
+  &-disabled {
+    background:$light-gray;
   }
 }
 
@@ -277,10 +282,10 @@
 
 	&-wrap {
 		@include clear();
-		position:relative;
-		padding:35px 25px;
-		box-sizing:border-box;
-		width:100%;
+    float:left;
+    position:relative;
+    padding-top:46px;
+    box-sizing:border-box;
 	}
 
 	&-lines {
@@ -296,41 +301,41 @@
 .diag {
 
   &-group {
-    margin-left:90px;
-    width:180px;
+    margin-left:35px;
+    width:400px;
+    height:100%;
 
-    &-item {
-      margin-top:90px;
-      box-sizing:border-box;
-      height:110px;
-      border:1px solid $light-gray;
-      border-radius:3px;
-      text-align:center;
-      background:$white;
+    // &-item {
+    //   margin-top:90px;
+    //   box-sizing:border-box;
+    //   height:110px;
+    //   border:1px solid $light-gray;
+    //   border-radius:3px;
+    //   text-align:center;
+    //   background:$white;
 
-      &.orchestrator {
-        margin-top:0;
-        background:$clean-gray;
-        font-weight:bold;
-        line-height:108px;
-      }
-    }
+    //   &.orchestrator {
+    //     margin-top:0;
+    //     background:$clean-gray;
+    //     font-weight:bold;
+    //     line-height:108px;
+    //   }
+    // }
 
-    &-title {
-      margin-top:13px;
-      font-size:14px;
-      font-weight:bold;
-      line-height:1;
-    }
+    // &-title {
+    //   margin-top:13px;
+    //   font-size:14px;
+    //   font-weight:bold;
+    //   line-height:1;
+    // }
 
-    &-cont {
-      margin-top:10px;
-    }
+    // &-cont {
+    //   margin-top:10px;
+    // }
 
   }
 
   &-list {
-    margin-left:144px;
     width:369px;
 
     &-item {
@@ -354,7 +359,23 @@
         top:2px;
         left:0;
         border-radius:100%;
-        background:$red;
+        background:$light-gray;
+      }
+
+      &.critical:after {
+        background:$critical;
+      }
+
+      &.major:after {
+        background:$major;
+      }
+
+      &.minor:after {
+        background:$minor;
+      }
+
+      &.normal:after {
+        background:$normal;
       }
     }
 
@@ -408,6 +429,10 @@
 
     &.normal {
       background-color:$normal;
+    }
+
+    &.disabled {
+      background-color:$light-gray;
     }
 
     &-so,

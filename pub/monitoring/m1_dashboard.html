@@ -198,6 +198,9 @@
 
 				<div class="contents-section-inner no-border diagram-dashboard">
 
+					<div id="t1NTopology" class="diag-group left-float">
+					</div>
+					<!--
 					<div class="diagram-dashboard-lines">
 						<div class="diag-line-dash-orvi">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -267,9 +270,10 @@
 						</div>
 
 					</div>
+					-->
 
 					<div class="diagram-dashboard-wrap">
-
+						<!--
 						<div class="diag-group left-float">
 
 							<div class="diag-group-item orchestrator">Orchestrator</div>
@@ -309,11 +313,13 @@
 							</div>
 
 						</div>
+						-->
 
 						<div class="diag-list left-float">
 
 							<div class="diag-list-item">
-								<div class="diag-list-title">VNF Instance</div>
+								<!-- [D] 상태 클래스추가: critical, major, minor, normal - 각상황에 맞는 클래스를 추가하면 장애등급 컬러가 변경됨 -->
+								<div class="diag-list-title critical">VNF Instance</div>
 
 								<div class="diag-list-cont">
 									<button type="button" class="diag-instance normal">
@@ -329,6 +335,8 @@
 									</button>
 
 									<button type="button" class="diag-instance minor">vMSS1</button>
+
+									<button type="button" class="diag-instance disabled">vMSS1</button>
 								</div>
 							</div>
 
@@ -348,6 +356,9 @@
 									</div>
 									<div class="vm-wrap">
 										<button type="button" class="vm normal">NOMAL</button>
+									</div>
+									<div class="vm-wrap">
+										<button type="button" class="vm disabled">DISABLED</button>
 									</div>
 
 								</div>
@@ -595,7 +606,7 @@
 									<td>VIM1A</td>
 									<td>-</td>
 									<td>
-										<div class="state-box-min">MINOR</div>
+										<div class="state-box-normal">NORMAL</div>
 									</td>
 									<td>CPU Overload</td>
 									<td>System CPU load critical alarm (95%)</td>
@@ -609,7 +620,7 @@
 									<td>VIM1A</td>
 									<td>-</td>
 									<td>
-										<div class="state-box-cri">CRITICAL</div>
+										<div class="state-box-disabled">DISABLED</div>
 									</td>
 									<td>DB Fault</td>
 									<td>Telcobase replication status abnormal alarm.</td>
