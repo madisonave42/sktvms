@@ -64,6 +64,11 @@ html{
 html.login{
   background:#fff;
 }
+
+html.window-popup{
+  overflow:hidden;
+}
+
 body {
   // global font style
   font-family:$font-stack;

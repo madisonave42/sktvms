@@ -396,6 +396,27 @@ $(function(){
 		});
 	})();
 
+	// Select date type
+	(function(){
+		$('.selectric-date-type').on('change', function(){
+
+			var indexSelectedOption = $(this).find('option').index( $(this).find('option:selected') );
+
+			$('.period-type').addClass('hide');
+			$('.select-type').addClass('hide');
+
+			$('.period-type').eq(indexSelectedOption).removeClass('hide');
+			$('.select-type').eq(indexSelectedOption).removeClass('hide');
+
+		});
+	})();
+
+	// spinner
+	(function(){
+
+		$('.spinner-year').spinner();
+
+	})();
 	/*
 	 * vim
 	 */
@@ -416,8 +437,16 @@ $(function(){
 
 	(function(){
 
+
+
 		$('.setting-list-item').data('selected', 'false').on('click', function(){
+
+			if( $(this).hasClass('selected') ){
+				$(this).data('selected', 'true');
+			}
+
 			if( $(this).data('selected') == 'false' ){
+				$('.setting-list-item').data('selected', 'false').removeClass('selected');
 				$(this).addClass('selected').data('selected', 'true');
 			} else {
 				$(this).removeClass('selected').data('selected', 'false');
