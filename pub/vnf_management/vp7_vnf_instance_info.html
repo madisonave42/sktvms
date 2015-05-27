@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/popup.css" />
+
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup">
+	<h1 class="popup-heading">vMSS1.LBCM1A 정보</h1>
+	<div class="popup-content js-popup-tab">
+
+		<ul class="popupinfo-tab">
+			<li class="popupinfo-tab-item">
+				<a href="#popupinfo-tab-monitoring" class="popupinfo-tab-link on js-tab-link">Monitoring</a>
+			</li>
+			<li class="popupinfo-tab-item">
+				<a href="#popupinfo-tab-alarm" class="popupinfo-tab-link js-tab-link">Alarm</a>
+			</li>
+			<li class="popupinfo-tab-item">
+				<a href="#popupinfo-tab-sr" class="popupinfo-tab-link js-tab-link">System Resource</a>
+			</li>
+			<li class="popupinfo-tab-item">
+				<a href="#popupinfo-tab-hwinfo" class="popupinfo-tab-link js-tab-link">HW Info</a>
+			</li>
+		</ul>
+
+		<div id="popupinfo-tab-monitoring" class="popupinfo-tab-cont on js-tab-cont">
+			<div class="popupinfo-tab-cont-inner">
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">CPU</h2>
+
+					<div class="popupinfo-section-inner">
+						<div class="popupinfo-roundbox">
+							<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Memory</h2>
+
+					<div class="popupinfo-section-inner">
+						<div class="popupinfo-roundbox">
+							<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Disk</h2>
+
+					<div class="popupinfo-section-inner">
+						<div class="popupinfo-roundbox">
+							<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Network</h2>
+
+					<div class="popupinfo-section-inner">
+						<div class="popupinfo-roundbox">
+							<img src="../../images/temp/dashboard_popup_graph.png" alt="" />
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div id="popupinfo-tab-alarm" class="popupinfo-tab-cont js-tab-cont">
+			<div class="popupinfo-tab-cont-inner">
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Alarm List</h2>
+
+					<div class="popupinfo-section-inner">
+						<table class="vt-table">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="170px" />
+								<col width="120px" />
+								<col width="170px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first">발생시각</th>
+									<th scope="col">알람 등급</th>
+									<th scope="col">알람 분류</th>
+									<th scope="col">알람 내역</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2015/02/24 13:00:12</td>
+									<td>
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td>DB Fault</td>
+									<td>Telcobase replication status abnormal alarm.</td>
+								</tr>
+								<tr>
+									<td>2015/02/24 13:00:12</td>
+									<td>
+										<div class="state-box-maj">MAJOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td>2015/02/24 13:00:12</td>
+									<td>
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td>2015/02/24 13:00:12</td>
+									<td>
+										<div class="state-box-normal">NORMAL</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div id="popupinfo-tab-sr" class="popupinfo-tab-cont js-tab-cont">
+
+			<div class="popupinfo-tab-cont-top">
+				<div class="right-float">
+					<button type="button" class="popupinfo-btn-refresh" title="새로고침">새로고침</button>
+				</div>
+			</div>
+
+			<div class="popupinfo-tab-cont-inner">
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">CPU</h2>
+
+					<div class="popupinfo-section-inner">
+						<table class="vt-table">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="140px" />
+								<col width="170px" />
+								<col width="150px" />
+								<col width="150px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first">Resource</th>
+									<th scope="col">Usage</th>
+									<th scope="col">User</th>
+									<th scope="col">System</th>
+									<th scope="col">Wait I/O</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>CPU</td>
+									<td>
+										<div class="popupinfo-graph">
+											<div class="popupinfo-graph-bar" style="width:10%"></div>
+											<div class="popupinfo-graph-msg">10%</div>
+										</div>
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Memory</h2>
+
+					<div class="popupinfo-section-inner">
+						<table class="vt-table">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="140px" />
+								<col width="170px" />
+								<col width="150px" />
+								<col width="150px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first">Resource</th>
+									<th scope="col">Usage</th>
+									<th scope="col">Total Size</th>
+									<th scope="col">Used Size</th>
+									<th scope="col">Free Size</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>CPU</td>
+									<td>
+										<div class="popupinfo-graph">
+											<div class="popupinfo-graph-bar" style="width:10%"></div>
+											<div class="popupinfo-graph-msg">10%</div>
+										</div>
+									</td>
+									<td>8G</td>
+									<td>2.4G</td>
+									<td>5.6G</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<div class="popupinfo-section">
+
+					<h2 class="popupinfo-section-title">Disk</h2>
+
+					<div class="popupinfo-section-inner">
+						<table class="vt-table">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="140px" />
+								<col width="170px" />
+								<col width="150px" />
+								<col width="150px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first">Resource</th>
+									<th scope="col">Usage</th>
+									<th scope="col">Total Size</th>
+									<th scope="col">Used Size</th>
+									<th scope="col">Free Size</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>/</td>
+									<td>
+										<div class="popupinfo-graph">
+											<div class="popupinfo-graph-bar orange" style="width:75%"></div>
+											<div class="popupinfo-graph-msg">75%</div>
+										</div>
+									</td>
+									<td>600G</td>
+									<td>200G</td>
+									<td>400G</td>
+								</tr>
+								<tr>
+									<td>/home</td>
+									<td>
+										<div class="popupinfo-graph">
+											<div class="popupinfo-graph-bar" style="width:10%"></div>
+											<div class="popupinfo-graph-msg">10%</div>
+										</div>
+									</td>
+									<td>1000G</td>
+									<td>250.5G</td>
+									<td>749.5G</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="popupinfo-tab-hwinfo" class="popupinfo-tab-cont js-tab-cont">
+
+			<div class="popupinfo-tab-cont-inner">
+				<table class="hr-table popupinfo-table-hwinfo">
+					<caption class="hide">HardWare Information</caption>
+					<colgroup>
+						<col width="150px">
+						<col width="auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">CPU</th>
+							<td>4 CPU x 2.33 GHz</td>
+						</tr>
+						<tr>
+							<th scope="row">Memory</th>
+							<td>8G</td>
+						</tr>
+						<tr>
+							<th scope="row">Disk</th>
+							<td>600G</td>
+						</tr>
+						<tr>
+							<th scope="row">Volume</th>
+							<td>
+								<div class="popupinfo-table-hwinfo-text">700G</div>
+								<div class="popupinfo-table-hwinfo-text">900G</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Number of NICs</th>
+							<td>2</td>
+						</tr>
+						<tr>
+							<th scope="row">N/W Interface</th>
+							<td>
+								<div class="popupinfo-table-hwinfo-text">10.10.1.234 (VNF Network)</div>
+								<div class="popupinfo-table-hwinfo-text">192.10.1.111 ( … )</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Compute Host</th>
+							<td>COMP1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-stroke-orange left-float left js-close-popup">확인</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+</body>
+</html>

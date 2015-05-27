@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/popup.css" />
+
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup popup-small-width">
+	<h1 class="popup-heading">VNF 패키지 활성화</h1>
+	<div class="popup-content">
+
+		<h2 class="popup-subheading">활성화 VNF 패키지 목록</h2>
+		<table class="vt-table">
+			<caption class="hide">config parameter</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="30%">
+				<col width="auto">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="first">VNF Package Name</th>
+					<th scope="col">Version</th>
+					<th scope="col">State</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>MSS1</td>
+					<td>1.2.0</td>
+					<td>Disabled</td>
+				</tr>
+				<tr>
+					<td>ABC1</td>
+					<td>1.1.0</td>
+					<td>Disabled</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="popup-content-section">
+			<div class="popup-input-wrap">
+				<div class="popup-msg">
+					<div class="popup-msg-icon left-float">
+						<img src="../../images/popup/ico_caution.png" alt="실패">
+					</div>
+					<div class="left-float">위 목록의 VNF 패키지들을 활성화 하시겠습니까?</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="right-float">
+			<button type="button" class="btn-fill-orange left-float left">확인</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+</body>
+</html>

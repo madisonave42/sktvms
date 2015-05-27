@@ -358,6 +358,44 @@ $pop-dark-blue:#0057b9;
   }
 
 }
+
+.state-box {
+
+  &-cri,
+  &-maj,
+  &-min,
+  &-normal,
+  &-disabled {
+    @include size(77, 30);
+    box-sizing:border-box;
+    line-height:30px;
+    text-align:center;
+    color:$white;
+    font-weight:bold;
+    border-radius:2px;
+  }
+
+  &-cri {
+    background:$critical;
+  }
+
+  &-maj {
+    background:$major;
+  }
+
+  &-min {
+    background:$minor;
+  }
+
+  &-normal {
+    background:$normal;
+  }
+
+  &-disabled {
+    background:$light-gray;
+  }
+}
+
 /* popup common : E */
 
 /* vnf : S */
@@ -462,6 +500,190 @@ $pop-dark-blue:#0057b9;
   }
 
 }
+
+.popupinfo {
+  @include size(877, 600);
+  position:absolute;
+  top:-9999px;
+  left:50%;
+  margin-left:3px;
+  padding:15px 18px;
+  box-sizing:border-box;
+  border:1px solid #C2CBCB;
+  border-radius:3px;
+  background:$white;
+
+  &-heading {
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:$blue-green;
+    line-height:1;
+  }
+
+  &-content {
+    position:relative;
+  }
+
+  &-tab {
+    @include clear();
+
+    &-item {
+      float:left;
+    }
+
+
+    &-link {
+      @include size(130, 30);
+      display:block;
+      box-sizing:border-box;
+      line-height:30px;
+      color:$dark;
+      font-weight:bold;
+      text-align:center;
+      border:1px solid $light-gray;
+      border-bottom:0;
+
+      &.on {
+        color:$white;
+        background:$light-gray;
+      }
+
+    }
+
+    &-cont {
+      position:absolute;
+      top:-9999px;
+
+      &.on {
+        position:relative;
+        top:0;
+      }
+
+      &-top {
+        position:absolute;
+        top:-30px;
+        right:0;
+      }
+
+      &-inner {
+        padding-top:10px;
+        height:400px;
+        border-top:2px solid $light-gray;
+        overflow:auto;
+      }
+
+    }
+  }
+
+  &-section {
+    margin-top:20px;
+
+    &:first-child {
+      margin-top:0;
+    }
+
+    &.half-width {
+      width:49%;
+    }
+
+    &.left-float,
+    &.right-float {
+      margin-top:0;
+    }
+
+    &-title {
+      padding:0 10px;
+      height:32px;
+      line-height:32px;
+      color:$dark;
+      font-weight:bold;
+      background:$light-yellow;
+      border-radius:2px;
+
+      &-state {
+        @include size(77, 22);
+        float:right;
+        margin-top:5px;
+        line-height:22px;
+        color:$white;
+        font-weight:bold;
+        text-align:center;
+        background:$orange;
+        border-radius:2px;
+      }
+    }
+
+    &-inner {
+      @include clear();
+      margin-top:10px;
+    }
+
+  }
+
+  &-roundbox {
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+  }
+
+  &-btn-refresh {
+    @include size(24, 30);
+    padding:0;
+    background:url("../images/ico_refresh.png") no-repeat scroll 50% 50%;
+    background-size:14px;
+    border:0px none;
+    text-indent:-9999px;
+  }
+
+  &-graph {
+    position:relative;
+    width:90%;
+    height:20px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+
+    &.small {
+      width:65%;
+    }
+
+    &-bar {
+      height:20px;
+      background:$blue-green;
+
+      &.orange {
+        background:$orange;
+      }
+    }
+
+    &-msg {
+      position:absolute;
+      top:0;
+      right:10px;
+      line-height:20px;
+      font-weight:bold;
+      color:$dark;
+    }
+
+    &-label {
+      margin-left:10px;
+      line-height:20px;
+    }
+  }
+
+  &-table-hwinfo {
+    width:100%;
+    border-top-width:1px;
+
+    &-text {
+      margin:10px 0;
+    }
+
+  }
+
+}
+
 /* vnf : E */
 
 /* monitoring : S */

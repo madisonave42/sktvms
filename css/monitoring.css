@@ -865,6 +865,7 @@
 .dbpopup-roundbox {
   border: 1px solid #c2cbcb;
   border-radius: 2px;
+  overflow: hidden;
 }
 .dbpopup-btn-refresh {
   width: 24px;

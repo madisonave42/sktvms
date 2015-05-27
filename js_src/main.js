@@ -490,5 +490,10 @@ $(function(){
 
 	})();
 
+	// initialize tab
+	(function(){
+		initTab( $('.js-popup-tab') );
+	})();
+
 
 });
