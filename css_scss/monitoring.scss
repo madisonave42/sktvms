@@ -200,7 +200,8 @@
   &-cri,
   &-maj,
   &-min,
-  &-normal {
+  &-normal,
+  &-disabled {
     @include size(77, 30);
     box-sizing:border-box;
     line-height:30px;
@@ -224,6 +225,10 @@
 
   &-normal {
     background:$normal;
+  }
+
+  &-disabled {
+    background:$light-gray;
   }
 }
 
@@ -354,7 +359,23 @@
         top:2px;
         left:0;
         border-radius:100%;
-        background:$red;
+        background:$light-gray;
+      }
+
+      &.critical:after {
+        background:$critical;
+      }
+
+      &.major:after {
+        background:$major;
+      }
+
+      &.minor:after {
+        background:$minor;
+      }
+
+      &.normal:after {
+        background:$normal;
       }
     }
 
@@ -408,6 +429,10 @@
 
     &.normal {
       background-color:$normal;
+    }
+
+    &.disabled {
+      background-color:$light-gray;
     }
 
     &-so,

@@ -150,7 +150,7 @@
   text-align: left;
 }
 
-.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
+.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal, .state-box-disabled {
   width: 77px;
   height: 30px;
   box-sizing: border-box;
@@ -171,6 +171,9 @@
 }
 .state-box-normal {
   background: #00b9b0;
+}
+.state-box-disabled {
+  background: #c2cbcb;
 }
 
 .overload-pannel {
@@ -284,7 +287,19 @@
   top: 2px;
   left: 0;
   border-radius: 100%;
+  background: #c2cbcb;
+}
+.diag-list-title.critical:after {
   background: #e70000;
+}
+.diag-list-title.major:after {
+  background: #ee6247;
+}
+.diag-list-title.minor:after {
+  background: #fcb63c;
+}
+.diag-list-title.normal:after {
+  background: #00b9b0;
 }
 .diag-list-cont {
   box-sizing: border-box;
@@ -328,6 +343,9 @@
 }
 .diag-instance.normal {
   background-color: #00b9b0;
+}
+.diag-instance.disabled {
+  background-color: #c2cbcb;
 }
 .diag-instance-so, .diag-instance-te {
   display: inline-block;

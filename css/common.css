@@ -1492,6 +1492,9 @@ table.emphasis > tbody > tr > td.email > span {
 .vm.empty {
   background-color: #c2cbcb;
 }
+.vm.disabled {
+  background-color: #c2cbcb;
+}
 .vm-line-label {
   width: 180px;
   height: 30px;
