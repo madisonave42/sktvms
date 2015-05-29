@@ -926,49 +926,85 @@ $(function(){
 
 		// open vnf-manager popup
 		$('.js-open-vnf-manager').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-vnf-manager-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open vim popup
 		$('.js-open-vim').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-vim-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open NFVI popup
 		$('.js-open-nfvi').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-nfvi-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open vnf-instance popup
 		$('.js-open-vnf-instance').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-vnf-instance-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open graph popup cpu
 		$('.js-open-graph-cpu').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-graph-cpu-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open graph popup memory
 		$('.js-open-graph-mem').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-graph-mem-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open graph popup disk
 		$('.js-open-graph-disk').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-graph-disk-popup').addClass('on');
 			e.preventDefault();
 		});
 
 		// open graph popup network
 		$('.js-open-graph-net').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
 			$('.js-graph-net-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open overload popup cpu
+		$('.js-open-overload-cpu').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
+			$('.js-overload-cpu-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open overload popup memory
+		$('.js-open-overload-mem').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
+			$('.js-overload-mem-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open overload popup disk
+		$('.js-open-overload-disk').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
+			$('.js-overload-disk-popup').addClass('on');
+			e.preventDefault();
+		});
+
+		// open overload popup network
+		$('.js-open-overload-net').on('click', function(e) {
+			$('.dbpopup').removeClass('on');
+			$('.js-overload-net-popup').addClass('on');
 			e.preventDefault();
 		});
 
@@ -978,6 +1014,13 @@ $(function(){
 			e.preventDefault();
 		});
 
+	})();
+
+	// overload top popup btn toggle
+	(function(){
+		$('.js-btn-overload-item').on('click', function() {
+			$(this).toggleClass('on');
+		});
 	})();
 
 	// dashboard popup chart
@@ -997,6 +1040,22 @@ $(function(){
 	// initialize tab
 	(function(){
 		initTab( $('.state-list') );
+	})();
+
+	// host pannel
+	(function(){
+		var radio = $('.js-vnf-host-pannel input'),
+			pannel = $('.vnf-host-list');
+
+		radio.on('change', function() {
+			var id = radio.filter(':checked').attr('value');
+			pannel.removeClass('on');
+			$('#' + id).addClass('on');
+		});
+
+		$(window).on('load', function() {
+			radio.trigger('change');
+		});
 	})();
 
 	/*

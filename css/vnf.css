@@ -1,3 +1,7 @@
+.wrapper.vnf-host {
+  position: relative;
+}
+
 .contents-section.general {
   width: 896px;
   height: 230px;
@@ -45,6 +49,29 @@
 .contents-section.instance-list {
   margin-bottom: 6px;
 }
+.contents-section.narrow {
+  width: 390px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.contents-section.narrow .contents-section-inner {
+  height: 100%;
+  margin: 0;
+}
+.contents-section.wide {
+  width: 1326px;
+  float: right;
+  margin-bottom: 6px;
+}
+.contents-section.wide.heading {
+  padding: 5px 18px;
+}
+.contents-section.wide.last {
+  margin-bottom: 0;
+}
 
 .vnf-btn-refresh {
   width: 24px;
@@ -85,6 +112,188 @@
 }
 .vnf-autoscale {
   width: 850px;
+}
+.vnf-host-input-wrap {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 11px 10px 6px 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+}
+.vnf-host-input-wrap:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.vnf-host-list {
+  display: none;
+  height: calc(100% - 80px);
+}
+.vnf-host-list.on {
+  display: block;
+}
+.vnf-host-list-inner {
+  height: 100%;
+  overflow: auto;
+}
+.vnf-host-row {
+  margin-top: 10px;
+  height: 167px;
+  font-size: 0;
+  white-space: nowrap;
+}
+.vnf-host-row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.vnf-host-row:first-child {
+  margin-top: 0;
+}
+.vnf-host-row.workload {
+  height: 140px;
+}
+.vnf-host-data.left-float {
+  width: 147px;
+}
+.vnf-host-data.workload {
+  margin-top: 10px;
+}
+.vnf-host-data-row {
+  margin-top: 10px;
+}
+.vnf-host-data-row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.vnf-host-data-row:first-child {
+  margin-top: 0;
+}
+.vnf-host-data-label {
+  height: 22px;
+  line-height: 20px;
+  color: #576363;
+  font-weight: bold;
+}
+.vnf-host-data-label:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.vnf-host-data-label.left-float {
+  width: 40px;
+}
+.vnf-host-data-label.first-item-label {
+  height: auto;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.vnf-host-data-label-detail {
+  font-weight: normal;
+}
+.vnf-host-item-first {
+  width: 314px;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 11px 15px;
+  border: 1px solid #ee6247;
+  font-size: 13px;
+  border-radius: 3px;
+  vertical-align: top;
+}
+.vnf-host-name {
+  margin: 15px 30px 0 15px;
+}
+.vnf-host-name.workload {
+  margin-top: 0;
+}
+.vnf-host-img {
+  width: 88px;
+  height: 88px;
+  background-color: #e8e8e8;
+}
+.vnf-host-title {
+  margin-top: 15px;
+  text-align: center;
+  color: #576363;
+  font-weight: bold;
+}
+.vnf-host-item {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 9px 10px;
+  width: 209px;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 13px;
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  vertical-align: top;
+}
+.vnf-host-item:first-child {
+  margin-left: 0;
+}
+.vnf-host-item-wrap {
+  display: inline-block;
+  margin-left: 4px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 6px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+  vertical-align: top;
+}
+.vnf-host-item-name {
+  margin-bottom: 15px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #576363;
+  font-weight: bold;
+  background-color: #e8e8e8;
+  border-radius: 2px;
+}
+.vnf-host-item-name.blue {
+  background-color: #d2e7f6;
+}
+.vnf-graph {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.vnf-graph.left-float {
+  width: calc(100% - 42px);
+}
+.vnf-graph-bar {
+  height: 20px;
+  background: #00b9b0;
+}
+.vnf-graph-bar.orange {
+  background: #ee6247;
+}
+.vnf-graph-msg {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #576363;
 }
 
 .scale-group:after {
