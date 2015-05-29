@@ -110,7 +110,13 @@
   &-fill{
     &-orange{
       @include btn($box-default-width, $box-default-height, $box-default-height, 0, $white, $orange, 2px);
+
+      &:disabled{
+        background:#f6b0a3;
+        cursor:auto;
+      }
     }
+
     &-green-med{
       @include btn(80px, $box-default-height, $box-default-height, 0, $white, $green, 2px);
       font-size:$font-size-mini;
@@ -199,6 +205,10 @@
       right:8px;
     }
 
+  }
+
+  &-cancel-update{
+    width:140px;
   }
 
 }

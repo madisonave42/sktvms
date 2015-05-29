@@ -71,7 +71,7 @@
 .btn-fill-dark {
   width: 106px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #ffffff;
   background: #777;
   border: 0;
@@ -225,6 +225,10 @@
 }
 .popup-content-section:first-child {
   margin-top: 0;
+}
+.popup-content-log {
+  height: 300px;
+  overflow-y: auto;
 }
 .popup-bottom {
   margin-top: 22px;

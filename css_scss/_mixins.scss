@@ -21,7 +21,7 @@
 
 	@include size($width, $height);
 
-	line-height: $line-height - 5px;
+	line-height: $line-height - 4px;
 	color:$color;
 	background:$background;
 	border:$border;

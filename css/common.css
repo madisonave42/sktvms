@@ -409,7 +409,7 @@ img {
 
 .main-heading {
   float: left;
-  margin-top: 13px;
+  margin: 13px 50px 0 0;
 }
 .main-heading-title {
   font-size: 24px;
@@ -918,7 +918,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-fill-orange {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #ffffff;
   background: #ee6247;
   border: 0;
@@ -928,10 +928,14 @@ table.emphasis > tbody > tr > td.email > span {
   box-sizing: border-box;
   cursor: pointer;
 }
+.btn-fill-orange:disabled {
+  background: #f6b0a3;
+  cursor: auto;
+}
 .btn-fill-green-med {
   width: 80px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #ffffff;
   background: #0bc17a;
   border: 0;
@@ -945,7 +949,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-fill-blue {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #ffffff;
   background: #479dee;
   border: 0;
@@ -958,7 +962,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-fill-blue:disabled {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
@@ -972,7 +976,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-stroke-light {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #afbdbd;
   background: #ffffff;
   border: 1px solid #afbdbd;
@@ -988,7 +992,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-stroke-light-gray {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #777;
   background: #ffffff;
   border: 1px solid #c2cbcb;
@@ -1001,7 +1005,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-stroke-light-gray-med {
   width: 80px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #777;
   background: #ffffff;
   border: 1px solid #c2cbcb;
@@ -1015,7 +1019,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-stroke-dark {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #576363;
   background: #ffffff;
   border: 1px solid #576363;
@@ -1028,7 +1032,7 @@ table.emphasis > tbody > tr > td.email > span {
 .btn-stroke-orange {
   width: 120px;
   height: 27px;
-  line-height: 22px;
+  line-height: 23px;
   color: #ee6247;
   background: #ffffff;
   border: 1px solid #ee6247;
@@ -1081,6 +1085,9 @@ table.emphasis > tbody > tr > td.email > span {
   position: absolute;
   top: 8px;
   right: 8px;
+}
+.btn-cancel-update {
+  width: 140px;
 }
 
 .check-wrap {

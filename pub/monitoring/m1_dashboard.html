@@ -321,23 +321,51 @@
 								<!-- [D] 상태 클래스추가: critical, major, minor, normal - 각상황에 맞는 클래스를 추가하면 장애등급 컬러가 변경됨 -->
 								<div class="diag-list-title critical">VNF Instance</div>
 
+								<!-- 진행중 이벤트 상태 추가 : S -->
 								<div class="diag-list-cont">
 									<button type="button" class="diag-instance normal">
-										<span class="diag-instance-so">SO</span>
+										<span class="diag-instance-in normal">IN</span>
 										vMSS1
 									</button>
 
-									<button type="button" class="diag-instance major">vMSS1</button>
+									<button type="button" class="diag-instance normal">
+										<span class="diag-instance-in error">IN</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance major">
+										<span class="diag-instance-te normal">TE</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance major">
+										<span class="diag-instance-te error">TE</span>
+										vMSS1
+									</button>
 
 									<button type="button" class="diag-instance critical">
-										<span class="diag-instance-te">TE</span>
+										<span class="diag-instance-si normal">SI</span>
 										vMSS1
 									</button>
 
-									<button type="button" class="diag-instance minor">vMSS1</button>
+									<button type="button" class="diag-instance critical">
+										<span class="diag-instance-si error">SI</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance minor">
+										<span class="diag-instance-so normal">SO</span>
+										vMSS1
+									</button>
+
+									<button type="button" class="diag-instance minor">
+										<span class="diag-instance-so error">SO</span>
+										vMSS1
+									</button>
 
 									<button type="button" class="diag-instance disabled">vMSS1</button>
 								</div>
+								<!-- 진행중 이벤트 상태 추가 : E -->
 							</div>
 
 							<div class="diag-list-item">

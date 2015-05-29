@@ -435,23 +435,29 @@
       background-color:$light-gray;
     }
 
-    &-so,
-    &-te {
+    &-in,
+    &-te,
+    &-si,
+    &-so {
       display:inline-block;
       line-height:1;
       padding:0 1px;
       font-size:11px;
       vertical-align:1px;
+
+      &.normal{
+        background:$white;
+        color:$normal;
+      }
+
+      &.error {
+        border:1px solid $white;
+        background:$red;
+      }
+
     }
 
-    &-so {
-      background:$white;
-      color:$normal;
-    }
 
-    &-te {
-      border:1px solid $white;
-    }
   }
 
   &-line {

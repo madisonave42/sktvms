@@ -1,0 +1,208 @@
+include "header_top.html"
+include "css_vnf.html"
+include "header_bottom.html"
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">VNF 패키지 업데이트</h2>
+				<p class="main-heading-overview">VNF 패키지 업데이트 작업을 진행합니다.</p>
+			</div>
+
+			<div class="left-float right group">
+
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">VNF 인스턴스</div>
+					<input type="text" class="input default" value="vMSS1" disabled />
+				</div>
+
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">현재 버전</div>
+					<input type="text" class="input default" value="1.0.0" disabled />
+				</div>
+
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">신규 버전</div>
+					<input type="text" class="input default" value="1.2.0" disabled />
+				</div>
+
+			</div>
+
+			<div class="right-float">
+
+				<div class="main-heading-form-group left-float left">
+					<button type="button" class="btn-fill-orange btn-cancel-update">패키지 업데이트 취소</button>
+				</div>
+
+				<div class="main-heading-form-group left-float left">
+					<button type="button" class="btn-fill-orange" disabled>패키지 원복</button>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper vnf-package fix-height">
+
+			<section class="contents-section vnf-update">
+
+				<div class="update-module-group">
+
+					<div class="update-module blue">
+						<div class="update-module-title blue">LBCM1A</div>
+					</div>
+
+					<div class="update-module red">
+						<div class="update-module-title red">LBCM1A</div>
+					</div>
+
+					<div class="update-module orange">
+						<div class="update-module-title orange">LBCM1A</div>
+					</div>
+
+					<div class="update-module violet">
+						<div class="update-module-title violet">LBCM1A</div>
+					</div>
+
+					<div class="update-module yellow">
+						<div class="update-module-title yellow">LBCM1A</div>
+					</div>
+
+					<div class="update-module green">
+						<div class="update-module-title green">LBCM1A</div>
+					</div>
+
+					<div class="update-module green">
+						<div class="update-module-title green">LBCM1A</div>
+					</div>
+
+				</div>
+
+				<div class="update-flow">
+
+					<!-- flow start : S -->
+					<div class="update-flow-start">
+						<button type="button" class="flow-btn start" disabled>업데이트 시작</button>
+					</div>
+					<!-- flow start : E -->
+
+					<!-- flow module (반복) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar">
+							<div class="update-flow-log-group">
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log" disabled>pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log" disabled>pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log" disabled>pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+							</div>
+						</div>
+						<div class="update-flow-module-diagram">
+							<div class="process-status">시스템 점검</div>
+							<button type="button" class="flow-btn rollback" disabled>Rollback</button>
+							<button type="button" class="flow-btn next" disabled>다음</button>
+						</div>
+					</div>
+					<!-- flow module (반복) : E -->
+
+					<!-- flow module (반복) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar success">
+
+							<div class="update-flow-log-group">
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log success">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log fail">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+								</div>
+
+							</div>
+
+						</div>
+						<div class="update-flow-module-diagram">
+							<div class="process-status processing">시스템 점검</div>
+							<button type="button" class="flow-btn rollback">Rollback</button>
+							<button type="button" class="flow-btn next">다음</button>
+						</div>
+					</div>
+					<!-- flow module (반복) : E -->
+
+					<!-- flow module (반복) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar fail"></div>
+						<div class="update-flow-module-diagram">
+							<div class="process-status processing">시스템 점검</div>
+							<button type="button" class="flow-btn rollback">Rollback</button>
+							<button type="button" class="flow-btn next">다음</button>
+						</div>
+					</div>
+					<!-- flow module (반복) : E -->
+
+					<!-- flow module (finish) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar"></div>
+						<div class="update-flow-module-diagram finish">
+							<div class="process-status">시스템 점검</div>
+							<button type="button" class="flow-btn rollback">Rollback</button>
+							<button type="button" class="flow-btn finish" disabled>패키지 업데이트 완료</button>
+						</div>
+					</div>
+					<!-- flow module (finish) : E -->
+
+				</div>
+
+			</section>
+
+		</div>
+	</div>
+
+</section>
+
+include "footer.html"

@@ -45,6 +45,13 @@
 .contents-section.instance-list {
   margin-bottom: 6px;
 }
+.contents-section.vnf-update {
+  width: 1760px;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: auto;
+}
 
 .vnf-btn-refresh {
   width: 24px;
@@ -82,6 +89,10 @@
   position: relative;
   padding-left: 22px;
   background: url(../images/ico_caution.png) no-repeat 0 50%;
+}
+.vnf-icon-waiting {
+  position: relative;
+  padding-left: 22px;
 }
 .vnf-autoscale {
   width: 850px;
@@ -366,6 +377,252 @@
   position: absolute;
   top: 63px;
   left: 50px;
+}
+
+.update-module {
+  width: 192px;
+  height: 100%;
+  float: left;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+.update-module-group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 20px 20px 304px;
+  box-sizing: border-box;
+}
+.update-module-group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.update-module.blue {
+  background: #e9f4fc;
+}
+.update-module.red {
+  background: #fdedea;
+}
+.update-module.orange {
+  background: #fbeee5;
+}
+.update-module.violet {
+  background: #f4ebf7;
+}
+.update-module.yellow {
+  background: #fef9e5;
+}
+.update-module.green {
+  background: #e8f7ee;
+}
+.update-module-title {
+  height: 43px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #576363;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 3px;
+}
+.update-module-title.blue {
+  background: #deebf7;
+}
+.update-module-title.red {
+  background: #f9d4d4;
+}
+.update-module-title.orange {
+  background: #fee6d4;
+}
+.update-module-title.violet {
+  background: #e6e2fe;
+}
+.update-module-title.yellow {
+  background: #fff6cf;
+}
+.update-module-title.green {
+  background: #e1efd9;
+}
+.update-flow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.update-flow .process-status {
+  width: 144px;
+  height: 42px;
+  position: absolute;
+  top: 56px;
+  left: 135px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 42px;
+  background: url(../images/ico_flow.png) no-repeat;
+}
+.update-flow .process-status.processing {
+  background-position: 0 -58px;
+}
+.update-flow .flow-btn {
+  width: 100px;
+  height: 27px;
+  line-height: 23px;
+  color: #576363;
+  background: #dcdcdc;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+.update-flow .flow-btn.start {
+  top: 45px;
+  left: 86px;
+}
+.update-flow .flow-btn.rollback {
+  top: 35px;
+  left: 16px;
+}
+.update-flow .flow-btn.next {
+  top: 123px;
+  left: 158px;
+}
+.update-flow .flow-btn.finish {
+  width: 140px;
+  height: 27px;
+  line-height: 23px;
+  color: #ffffff;
+  background: #ee6247;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  top: 140px;
+  left: 75px;
+}
+.update-flow .flow-btn.finish:disabled {
+  background: #f6b0a3;
+  color: #ffffff;
+}
+.update-flow .flow-btn:disabled {
+  color: #afbdbd;
+  cursor: auto;
+}
+.update-flow-start {
+  width: 294px;
+  height: 114px;
+  position: relative;
+}
+.update-flow-start:after {
+  content: "";
+  display: block;
+  width: 294px;
+  height: 59px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url(../images/line_flow.png) no-repeat 62px 0;
+}
+.update-flow-module-bar {
+  width: 100%;
+  height: 5px;
+  position: relative;
+  border-radius: 2px;
+  background: #becacc;
+}
+.update-flow-module-bar.success {
+  background: #83afe1;
+}
+.update-flow-module-bar.fail {
+  background: #e18383;
+}
+.update-flow-module-diagram {
+  width: 294px;
+  height: 185px;
+  position: relative;
+}
+.update-flow-module-diagram:after {
+  content: "";
+  display: block;
+  width: 294px;
+  height: 185px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/line_flow.png) no-repeat 62px -146px;
+}
+.update-flow-module-diagram.finish {
+  width: 294px;
+  height: 185px;
+  position: relative;
+}
+.update-flow-module-diagram.finish:after {
+  content: "";
+  display: block;
+  width: 294px;
+  height: 140px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/line_flow.png) no-repeat 62px -404px;
+}
+.update-flow-log {
+  width: 192px;
+  height: 27px;
+  float: left;
+  margin-left: 10px;
+}
+.update-flow-log-group {
+  width: 100%;
+  position: absolute;
+  top: -11px;
+  left: 0;
+  padding: 0 0 0 284px;
+  box-sizing: border-box;
+}
+.update-flow-log .btn-log {
+  width: 152px;
+  height: 27px;
+  line-height: 23px;
+  color: #777;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+.update-flow-log .btn-log:disabled {
+  color: #e8e8e8;
+  cursor: auto;
+}
+.update-flow-log .btn-log.success {
+  color: #ffffff;
+  border: 0;
+  background: #539df1;
+}
+.update-flow-log .btn-log.fail {
+  color: #ffffff;
+  border: 0;
+  background: #e66161;
 }
 
 /*# sourceMappingURL=vnf.css.map */

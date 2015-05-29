@@ -323,19 +323,20 @@
 .diag-instance.disabled {
   background-color: #c2cbcb;
 }
-.diag-instance-so, .diag-instance-te {
+.diag-instance-in, .diag-instance-te, .diag-instance-si, .diag-instance-so {
   display: inline-block;
   line-height: 1;
   padding: 0 1px;
   font-size: 11px;
   vertical-align: 1px;
 }
-.diag-instance-so {
+.diag-instance-in.normal, .diag-instance-te.normal, .diag-instance-si.normal, .diag-instance-so.normal {
   background: #ffffff;
   color: #00b9b0;
 }
-.diag-instance-te {
+.diag-instance-in.error, .diag-instance-te.error, .diag-instance-si.error, .diag-instance-so.error {
   border: 1px solid #ffffff;
+  background: #e70000;
 }
 .diag-line-dash-orvi {
   position: absolute;

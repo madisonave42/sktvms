@@ -37,7 +37,7 @@
   display: none;
 }
 .vt-table th .area-btn-sort {
-  margin-top: 11px;
+  margin-top: 2px;
 }
 .vt-table th:after {
   content: "";
@@ -94,7 +94,7 @@
 .tb-form-btn-sort {
   width: 7px;
   height: 4px;
-  line-height: 2px;
+  line-height: 3px;
   color: #c2cbcb;
   background: #ffffff;
   border: 0;
@@ -124,7 +124,7 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  line-height: 20px;
+  line-height: 21px;
   color: #ffffff;
   background: #479dee;
   border: 0;
@@ -140,7 +140,7 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  line-height: 20px;
+  line-height: 21px;
   color: #ffffff;
   background: #ee6247;
   border: 0;

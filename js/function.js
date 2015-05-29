@@ -132,6 +132,11 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 
   // private
   var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+
+  // Set height of each section in stats
+  $divTop.css({height:(mainHeight/2 - 23)});
+  $divBottom.css({height:(mainHeight/2 - 23)});
+
   var lastTopHeight = $divTop.height();
   var currentMainHeight =$(window).outerHeight() - HEADER_HEIGHT;
   var prevMainHeight = $(window).outerHeight() - HEADER_HEIGHT;
@@ -139,10 +144,6 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 
   var divMinHeight = 100;
   var divMaxHeight = mainHeight - (divMinHeight + 22*2);
-
-  // Set height of each section in stats
-  $divTop.css({height:(mainHeight/2 - 23)});
-  $divBottom.css({height:(mainHeight/2 - 23)});
 
   var _deltaUAHeight = function(mainHeight){
     prevMainHeight = currentMainHeight;
@@ -483,16 +484,12 @@ var ResizeGraph = function(){
 
   // reposition
   var _repositionGraphContainer = function(){
-    //var o = $('.container-item').eq(0).offset();
-    //console.log( $('.container-item').eq(1 * 4).offset().top );
 
     $('.graph-item').each(function(i){
 
       var floorIndex = $(this).attr('data-floor') * 4;
       var firstFloorTop = $('.container-item').eq(0).offset().top;
       var floorTop = $('.container-item').eq(floorIndex).offset().top - firstFloorTop;
-
-      console.log( floorTop );
 
       $(this).css({
         top: floorTop
@@ -836,8 +833,10 @@ $(function(){
 		});
 
 		$(window).on('resize', function(){
-			dragContainer.resizeContainerFitWin();
-			dragGraph.resizeGraphContainer();
+			try{
+				dragContainer.resizeContainerFitWin();
+				dragGraph.resizeGraphContainer();
+			} catch(e) {}
 		});
 
 	})();
@@ -901,7 +900,9 @@ $(function(){
 
 		// Resize dashboard list to fit in height of window
 		$(window).on('resize', function(){
-			resizeDashboardList.resizeDashboardListFitWin();
+			try {
+				resizeDashboardList.resizeDashboardListFitWin();
+			} catch(e) {}
 		});
 
 		// Expand height of dashboard list up to height of main content
@@ -1011,8 +1012,10 @@ $(function(){
 		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
 
 		$(window).on('resize',function(){
-			statsResizeNarrow.resizeDivFitWin();
-			statsResizeWide.resizeDivFitWin();
+			try {
+				statsResizeNarrow.resizeDivFitWin();
+				statsResizeWide.resizeDivFitWin();
+			} catch(e) {}
 		});
 
 		$('.ui-resizable-handle').on({

@@ -256,6 +256,11 @@ $pop-dark-blue:#0057b9;
         margin-top:0;
       }
     }
+
+    &-log{
+      height:300px;
+      overflow-y:auto;
+    }
   }
 
   &-bottom {

@@ -190,8 +190,10 @@ $(function(){
 		});
 
 		$(window).on('resize', function(){
-			dragContainer.resizeContainerFitWin();
-			dragGraph.resizeGraphContainer();
+			try{
+				dragContainer.resizeContainerFitWin();
+				dragGraph.resizeGraphContainer();
+			} catch(e) {}
 		});
 
 	})();
@@ -255,7 +257,9 @@ $(function(){
 
 		// Resize dashboard list to fit in height of window
 		$(window).on('resize', function(){
-			resizeDashboardList.resizeDashboardListFitWin();
+			try {
+				resizeDashboardList.resizeDashboardListFitWin();
+			} catch(e) {}
 		});
 
 		// Expand height of dashboard list up to height of main content
@@ -365,8 +369,10 @@ $(function(){
 		var statsResizeWide = new ResizeDiv( $wrapper, $('.stats-resizable.wide.top'), $('.stats-resizable.wide.bottom'));
 
 		$(window).on('resize',function(){
-			statsResizeNarrow.resizeDivFitWin();
-			statsResizeWide.resizeDivFitWin();
+			try {
+				statsResizeNarrow.resizeDivFitWin();
+				statsResizeWide.resizeDivFitWin();
+			} catch(e) {}
 		});
 
 		$('.ui-resizable-handle').on({
