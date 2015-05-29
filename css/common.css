@@ -1200,6 +1200,9 @@ table.emphasis > tbody > tr > td.email > span {
   text-indent: -99999em;
   overflow: hidden;
 }
+.radio-label.with-text {
+  padding-left: 21px;
+}
 .radio-label:after {
   content: "";
   display: block;
