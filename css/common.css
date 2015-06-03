@@ -428,6 +428,15 @@ img {
   position: relative;
   padding-top: 35px;
 }
+.main-heading-form-group.select-date {
+  width: 460px;
+  text-align: center;
+}
+.main-heading-form-group .select-type {
+  content: "";
+  display: block;
+  clear: both;
+}
 .main-heading-form-group > .group-label {
   position: absolute;
   top: 10px;

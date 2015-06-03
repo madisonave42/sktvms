@@ -379,6 +379,23 @@
 		position:relative;
 		padding-top:35px;
 
+		&.select{
+			&-date {
+				width: 460px;
+				text-align: center;
+			}
+		}
+
+		.select{
+
+			&-type{
+				content:"";
+				display:block;
+				clear:both;
+			}
+
+		}
+
 		>.group-label{
 			position:absolute;
 			top:10px;
