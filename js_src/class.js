@@ -640,3 +640,13 @@ var SetGraph = function(){
 var EnlargeGraph = function( $contentsSection, graphTitle ){
   $contentsSection.append( enlargeGraphItem(graphTitle) );
 };
+
+// set height overload popup graph
+var setOverloadGraphHeight = function(part) {
+  var targetPop = $('.js-overload-' + part + '-popup'),
+    listHeight = targetPop.find('.dbpopup-overload-list-wrap').height();
+    graphArea = targetPop.find('.dbpopup-overload-graph');
+
+    console.log(listHeight, ' ', 526 - listHeight);
+    graphArea.height(524 - listHeight);
+};
