@@ -690,6 +690,10 @@
 .dbpopup-content {
   position: relative;
 }
+.dbpopup-content .dbpopup-graph-detail-inner {
+  height: 536px;
+  overflow: auto;
+}
 .dbpopup-tab:after {
   content: ".";
   display: block;
@@ -1027,13 +1031,7 @@
 .dbpopup-overload-list-wrap {
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 138px;
-}
-.dbpopup-overload-list-wrap.row-2 {
-  height: 64px;
-}
-.dbpopup-overload-list-wrap.row-2 + .dbpopup-overload-graph {
-  height: 460px;
+  max-height: 138px;
 }
 .dbpopup-overload-list-item {
   width: 263px;
@@ -1085,7 +1083,7 @@
   height: 385px;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /*# sourceMappingURL=monitoring.css.map */

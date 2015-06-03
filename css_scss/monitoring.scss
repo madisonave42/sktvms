@@ -934,6 +934,11 @@
 
   &-content {
     position:relative;
+
+    .dbpopup-graph-detail-inner {
+      height:536px;
+      overflow:auto;
+    }
   }
 
   &-tab {
@@ -1310,17 +1315,7 @@
       &-wrap {
         overflow-x:hidden;
         overflow-y:scroll;
-        height:138px;
-
-        &.row-2 {
-          height:64px;
-
-          & + .dbpopup-overload-graph {
-            height:460px;
-          }
-        }
-
-
+        max-height:138px;
       }
 
       &-item {
@@ -1387,7 +1382,7 @@
       height:385px;
       border:1px solid $light-gray;
       border-radius:3px;
-      overflow:hidden;
+      overflow:auto;
     }
 
   }
