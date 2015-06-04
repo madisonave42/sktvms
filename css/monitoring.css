@@ -73,7 +73,7 @@
   float: left;
 }
 .dashboard-tab-link {
-  width: 80px;
+  width: 100px;
   height: 30px;
   display: block;
   box-sizing: border-box;
@@ -93,11 +93,11 @@
   background: #ffffff;
 }
 .dashboard-tab-link .notice-num {
-  width: 18px;
-  height: 18px;
   display: inline-block;
   margin-left: 6px;
-  border-radius: 100%;
+  padding: 0 5px;
+  height: 18px;
+  border-radius: 9px;
   text-align: center;
   line-height: 18px;
   background: #e8e8e8;

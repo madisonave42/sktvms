@@ -93,7 +93,7 @@
     }
 
     &-link {
-      @include size(80, 30);
+      @include size(100, 30);
       display:block;
       box-sizing:border-box;
       line-height:30px;
@@ -114,10 +114,11 @@
       }
 
       .notice-num {
-        @include size(18);
         display:inline-block;
         margin-left:6px;
-        border-radius:100%;
+        padding:0 5px;
+        height:18px;
+        border-radius:9px;
         text-align:center;
         line-height:18px;
         background:$clean-gray;
