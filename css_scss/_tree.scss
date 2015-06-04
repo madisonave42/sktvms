@@ -16,6 +16,7 @@
 
     border:0;
     background:#fff url(../images/icon_tree_fold.png) no-repeat 0 -16px;
+    z-index:1;
 
     &.unfold{
       background:#fff url(../images/icon_tree_fold.png) no-repeat 0 0;
@@ -31,8 +32,10 @@
     line-height:15px;
 
     &.is-select{
-      padding:0 7px;
-      margin:0;
+      position:relative;
+      top:-3px;
+      padding:3px 4px;
+      margin-left:3px;
       background:$blue-green;
     }
   }
@@ -44,7 +47,7 @@
 
   &-list{
     position:relative;
-    padding-bottom:15px;
+    padding-bottom:7px;
 
     &:after{
       content:"";
@@ -120,7 +123,7 @@
 
   &-depth{
     position:relative;
-    padding:15px 0 0 15px;
+    padding:7px 0 0 15px;
     overflow:hidden;
     //background:url(../images/sprite_tree_line.png) repeat-y -93px;
     display:none;

@@ -1,8 +1,8 @@
 .state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
   width: 77px;
-  height: 30px;
+  height: 27px;
   box-sizing: border-box;
-  line-height: 30px;
+  line-height: 27px;
   text-align: center;
   color: #ffffff;
   font-weight: bold;

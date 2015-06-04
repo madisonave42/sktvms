@@ -3,7 +3,7 @@
 }
 
 .contents-section.narrow {
-  width: 390px;
+  width: 300px;
   position: absolute;
 }
 .contents-section.narrow.top {
@@ -17,7 +17,7 @@
   height: 561px;
 }
 .contents-section.wide {
-  width: 1288px;
+  width: 1378px;
   position: absolute;
 }
 .contents-section.wide.top {

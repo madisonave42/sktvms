@@ -204,7 +204,7 @@ img {
 
 .gnb {
   float: left;
-  margin-left: 280px;
+  margin-left: 140px;
   padding-top: 26px;
 }
 .gnb-item {
@@ -323,7 +323,7 @@ img {
   margin: 0 auto;
   width: 1760px;
   box-sizing: border-box;
-  padding-left: 498px;
+  padding-left: 313px;
 }
 .gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after, .gnb-sub07:after {
   content: ".";
@@ -333,19 +333,19 @@ img {
   clear: both;
 }
 .gnb-sub02 {
-  padding-left: 636px;
+  padding-left: 375px;
 }
 .gnb-sub03 {
-  padding-left: 1005px;
+  padding-left: 852px;
 }
 .gnb-sub04 {
-  padding-left: 1027px;
+  padding-left: 817px;
 }
 .gnb-sub05 {
-  padding-left: 1220px;
+  padding-left: 1074px;
 }
 .gnb-sub07 {
-  padding-left: 670px;
+  padding-left: 555px;
 }
 .gnb-sub-item {
   position: relative;
@@ -1294,6 +1294,7 @@ table.emphasis > tbody > tr > td.email > span {
   padding: 0;
   border: 0;
   background: #fff url(../images/icon_tree_fold.png) no-repeat 0 -16px;
+  z-index: 1;
 }
 .tree-btn-fold.unfold {
   background: #fff url(../images/icon_tree_fold.png) no-repeat 0 0;
@@ -1306,8 +1307,10 @@ table.emphasis > tbody > tr > td.email > span {
   line-height: 15px;
 }
 .tree-name.is-select {
-  padding: 0 7px;
-  margin: 0;
+  position: relative;
+  top: -3px;
+  padding: 3px 4px;
+  margin-left: 3px;
   background: #00b9b0;
 }
 .tree-radio, .tree-check {
@@ -1315,7 +1318,7 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .tree-list {
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 7px;
 }
 .tree-list:after {
   content: "";
@@ -1361,7 +1364,7 @@ table.emphasis > tbody > tr > td.email > span {
 }
 .tree-depth {
   position: relative;
-  padding: 15px 0 0 15px;
+  padding: 7px 0 0 15px;
   overflow: hidden;
   display: none;
 }
