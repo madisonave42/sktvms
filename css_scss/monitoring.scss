@@ -202,9 +202,9 @@
   &-min,
   &-normal,
   &-disabled {
-    @include size(77, 30);
+    @include size(77, 27);
     box-sizing:border-box;
-    line-height:30px;
+    line-height:27px;
     text-align:center;
     color:$white;
     font-weight:bold;
@@ -239,9 +239,10 @@
     box-sizing:border-box;
     padding:9px;
     width:415px;
-    height:113px;
+    height:231px;
     border:1px solid $light-gray;
     border-radius:3px;
+    overflow:auto;
 
     &:nth-child(1),
     &:nth-child(2) {
@@ -906,9 +907,10 @@
   margin-left:3px;
   padding:15px 18px;
   box-sizing:border-box;
-  border:1px solid #C2CBCB;
+  border:3px solid $orange;
   border-radius:3px;
   background:$white;
+  box-shadow:0 0 15px rgba(0,0,0,.3);
 
   &.on {
     top:0;
@@ -1186,7 +1188,7 @@
   }
 
   &-circle {
-    @include size(273, 174);
+    @include size(271, 174);
     box-sizing:border-box;
     margin-left:10px;
     padding:10px;

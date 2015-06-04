@@ -7,9 +7,9 @@
   &-maj,
   &-min,
   &-normal {
-    @include size(77, 30);
+    @include size(77, 27);
     box-sizing:border-box;
-    line-height:30px;
+    line-height:27px;
     text-align:center;
     color:$white;
     font-weight:bold;

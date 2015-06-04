@@ -152,9 +152,9 @@
 
 .state-box-cri, .state-box-maj, .state-box-min, .state-box-normal, .state-box-disabled {
   width: 77px;
-  height: 30px;
+  height: 27px;
   box-sizing: border-box;
-  line-height: 30px;
+  line-height: 27px;
   text-align: center;
   color: #ffffff;
   font-weight: bold;
@@ -181,9 +181,10 @@
   box-sizing: border-box;
   padding: 9px;
   width: 415px;
-  height: 113px;
+  height: 231px;
   border: 1px solid #c2cbcb;
   border-radius: 3px;
+  overflow: auto;
 }
 .overload-pannel:nth-child(1), .overload-pannel:nth-child(2) {
   margin-bottom: 5px;
@@ -665,9 +666,10 @@
   margin-left: 3px;
   padding: 15px 18px;
   box-sizing: border-box;
-  border: 1px solid #C2CBCB;
+  border: 3px solid #ee6247;
   border-radius: 3px;
   background: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .dbpopup.on {
   top: 0;
@@ -930,7 +932,7 @@
   line-height: 20px;
 }
 .dbpopup-circle {
-  width: 273px;
+  width: 271px;
   height: 174px;
   box-sizing: border-box;
   margin-left: 10px;

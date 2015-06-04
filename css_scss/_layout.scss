@@ -103,7 +103,7 @@
 
 .gnb {
 	float:left;
-	margin-left:280px;
+	margin-left:140px;
 	padding-top:26px;
 
 	&-item {
@@ -252,32 +252,32 @@
 		@include center();
 		@include size(1760, auto);
 		box-sizing:border-box;
-		padding-left:498px;
+		padding-left:313px;
 	}
 
 	&-sub02 {
 		@extend .gnb-sub01;
-		padding-left:636px;
+		padding-left:375px;
 	}
 
 	&-sub03 {
 		@extend .gnb-sub01;
-		padding-left:1005px;
+		padding-left:852px;
 	}
 
 	&-sub04 {
 		@extend .gnb-sub01;
-		padding-left:1027px;
+		padding-left:817px;
 	}
 
 	&-sub05 {
 		@extend .gnb-sub01;
-		padding-left:1220px;
+		padding-left:1074px;
 	}
 
 	&-sub07 {
 		@extend .gnb-sub01;
-		padding-left:670px;
+		padding-left:555px;
 	}
 
 	&-sub-item {
