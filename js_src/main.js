@@ -506,8 +506,6 @@ $(function(){
 
 	(function(){
 
-
-
 		$('.setting-list-item').data('selected', 'false').on('click', function(){
 
 			if( $(this).hasClass('selected') ){

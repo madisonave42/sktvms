@@ -1368,6 +1368,9 @@
       width:188px;
       border-top:1px solid $inner-border;
       border-bottom:1px solid $inner-border;
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &-per {
