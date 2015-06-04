@@ -560,7 +560,7 @@ var Graph = function(){
   this.addGraph = function( graphTitle, gridCol, gridRow ){
 
     var floor;
-    var pageIndex = $('.contents-section-inner.stats-monitoring').index( $globalContainerParent );
+    var pageIndex = $('.contents-section-inner.stats-monitoring').index($globalContainerParent);
     var index = $globalContainerParent.find('.container-item').index( $globalContainer );
     var firstGridOffset = $globalContainerParent.find('.container-item').eq(0).offset();
     var currentGridOffset = $globalContainer.offset();
