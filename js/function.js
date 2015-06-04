@@ -642,12 +642,11 @@ var EnlargeGraph = function( $contentsSection, graphTitle ){
 };
 
 // set height overload popup graph
-var setOverloadGraphHeight = function(part) {
-  var targetPop = $('.js-overload-' + part + '-popup'),
+var setOverloadGraphHeight = function() {
+  var targetPop = $('.js-overload-popup'),
     listHeight = targetPop.find('.dbpopup-overload-list-wrap').height();
     graphArea = targetPop.find('.dbpopup-overload-graph');
 
-    console.log(listHeight, ' ', 526 - listHeight);
     graphArea.height(524 - listHeight);
 };
 
@@ -769,7 +768,7 @@ $(function(){
 	(function(){
 
 		var $body = $('body');
-		var ct = new Graph();;
+		var ct = new Graph();
 
 		$body.on('click', '.container-item', function(){
 			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
@@ -993,33 +992,9 @@ $(function(){
 
 		// open overload popup cpu
 		$('.js-open-overload-cpu').on('click', function(e) {
-			setOverloadGraphHeight('cpu');
+			setOverloadGraphHeight();
 			$('.dbpopup').removeClass('on');
-			$('.js-overload-cpu-popup').addClass('on');
-			e.preventDefault();
-		});
-
-		// open overload popup memory
-		$('.js-open-overload-mem').on('click', function(e) {
-			setOverloadGraphHeight('mem');
-			$('.dbpopup').removeClass('on');
-			$('.js-overload-mem-popup').addClass('on');
-			e.preventDefault();
-		});
-
-		// open overload popup disk
-		$('.js-open-overload-disk').on('click', function(e) {
-			setOverloadGraphHeight('disk');
-			$('.dbpopup').removeClass('on');
-			$('.js-overload-disk-popup').addClass('on');
-			e.preventDefault();
-		});
-
-		// open overload popup network
-		$('.js-open-overload-net').on('click', function(e) {
-			setOverloadGraphHeight('net');
-			$('.dbpopup').removeClass('on');
-			$('.js-overload-net-popup').addClass('on');
+			$('.js-overload-popup').addClass('on');
 			e.preventDefault();
 		});
 
