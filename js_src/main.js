@@ -34,6 +34,14 @@ $(function(){
 			$varWrapper.css({height: mainHeight});
 		}
 
+		$(window).on('resize', function(){
+			var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+			if( mainHeight < 400 ){
+				mainHeight = 400;
+			}
+			$('.main-content .wrapper.fix-height').css({height: mainHeight});
+		});
+
 	})();
 
 	// React about event of user-menu in header

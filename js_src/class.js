@@ -158,10 +158,10 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
     divMaxHeight = mainHeight - (divMinHeight + 22*2);
 
     mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
-    if( mainHeight < 245 ){
-      mainHeight = 245;
+
+    if( mainHeight < 400 ){
+      mainHeight = 400;
     }
-    $('.main-content .wrapper.fix-height').css({height: mainHeight});
 
     var dUAHeight = _deltaUAHeight(mainHeight);
 
