@@ -401,9 +401,12 @@ img {
   box-shadow: 0 3px #cbcfd2;
   z-index: 80;
 }
+.main-header + .main-content {
+  top: 131px;
+}
 .main-content {
   position: relative;
-  top: 131px;
+  top: 58px;
   padding: 8px 0 15px;
 }
 
@@ -1507,6 +1510,9 @@ table.emphasis > tbody > tr > td.email > span {
 .vm-name {
   font-weight: bold;
   margin: 20px 0;
+}
+.vm-name-small {
+  margin: 10px 0 0 0;
 }
 .vm.critical {
   background-color: #e70000;

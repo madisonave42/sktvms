@@ -345,11 +345,15 @@
 		box-shadow:0 3px #cbcfd2;
 
 		z-index:80;
+
+		& + .main-content {
+			top:131px;
+		}
 	}
 
 	&-content {
 		position:relative;
-		top:131px;
+		top:58px;
 
 		padding:8px 0 15px;
 		//border-top:3px solid #cbcfd2;
