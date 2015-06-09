@@ -320,14 +320,18 @@
   float: left;
   margin: 0 12px 10px 0;
 }
-.diag-list-cont .vm-wrap:nth-child(8n) {
+.diag-list-cont .vm-wrap:nth-child(11n) {
   margin-right: 0;
 }
 .diag-instance {
   width: 150px;
   height: 32px;
+  position: relative;
   float: left;
+  display: block;
+  box-sizing: border-box;
   margin: 0 5px 5px 0;
+  padding: 0 40px 0 5px;
   line-height: 32px;
   text-align: left;
   color: #ffffff;
@@ -356,18 +360,22 @@
   background-color: #c2cbcb;
 }
 .diag-instance-in, .diag-instance-te, .diag-instance-si, .diag-instance-so {
-  display: inline-block;
-  line-height: 1;
-  padding: 0 1px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
   font-size: 11px;
-  vertical-align: 1px;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
 }
 .diag-instance-in.normal, .diag-instance-te.normal, .diag-instance-si.normal, .diag-instance-so.normal {
   background: #ffffff;
   color: #00b9b0;
 }
 .diag-instance-in.error, .diag-instance-te.error, .diag-instance-si.error, .diag-instance-so.error {
-  border: 1px solid #ffffff;
   background: #e70000;
 }
 .diag-line-dash-orvi {

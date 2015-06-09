@@ -17,22 +17,29 @@
 
 	position:fixed;
 
-	z-index:100;
+	z-index:110;
 
 	&-user {
 		float:right;
 		margin-top:10px;
+		padding-top:17px;
 		position:relative;
+		min-width:70px;
 
 		&-name {
-			//text-align:right;
+			position:absolute;
+			top:0;
+			right:0;
+			padding-right:15px;
+			text-align:right;
 			font-size:$font-size-base;
 			color:#919191;
+			white-space:nowrap;
 		}
 
 		&-path {
 			position:relative;
-			//text-align:right;
+			text-align:right;
 			margin-top:3px;
 			height:16px;
 			font-size:$font-size-base;
@@ -71,13 +78,15 @@
 				display:none;
 
 				position:absolute;
+				right:0;
 				width:100%;
-				//text-align:right;
-				padding:5px 3px;
+				text-align:right;
+				padding:5px 15px 5px 3px;
 				border:1px solid $light-gray;
 				border-top:none;
 				background:#141414;
 				box-sizing:border-box;
+				white-space:nowrap;
 
 				&.on{
 					display:block;
