@@ -351,6 +351,7 @@
   position: absolute;
   top: 17px;
   left: 18px;
+  z-index: 1;
 }
 .state-tab:after {
   content: ".";
@@ -364,6 +365,8 @@
 }
 .state-tab-link {
   width: 80px;
+  height: 30px;
+  min-width: 100px;
   height: 30px;
   display: block;
   box-sizing: border-box;

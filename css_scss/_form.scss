@@ -91,6 +91,10 @@
     width:80px;
   }
 
+  &.med-large{
+    width:100px;
+  }
+
   &.default{
     width:$box-default-width;
   }
@@ -409,6 +413,13 @@
   height:27px;
   line-height:25px;
   color:$dark-gray;
+
+  &.date-wave{
+    width:10px;
+    position:absolute;
+    left:50%;
+    margin-left:-5px;
+  }
 }
 
 .ui-spinner{

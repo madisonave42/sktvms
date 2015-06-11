@@ -225,7 +225,7 @@
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 3시간</button>
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 6시간</button>
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 12시간</button>
-						<button type="button" class="btn-fill-green-med btn-small left-float left half">임의 지정</button>
+						<button type="button" class="btn-fill-green-med btn-small left-float">임의 지정</button>
 					</div>
 
 					<div class="period-type hide">
@@ -233,62 +233,86 @@
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 2년</button>
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 3년</button>
 						<button type="button" class="btn-stroke-light-gray-med left-float left half">최근 4년</button>
-						<button type="button" class="btn-fill-green-med btn-small left-float left half">임의 지정</button>
+						<button type="button" class="btn-fill-green-med btn-small left-float">임의 지정</button>
 					</div>
 
 				</div>
 
 				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">비교 주기</div>
+					<select class="select med date-type">
+						<option>1</option>
+						<option>1</option>
+					</select>
+				</div>
+
+				<div class="main-heading-form-group left-float left select-date">
 
 					<div class="select-type">
 
-						<input type="text" class="input med left-float left half js-cal-start" value="2015-03-06">
+						<div class="left-float">
+							<input type="text" class="input med left-float left half js-cal-start" value="2015-03-06">
 
-						<button type="button" class="btn-calendar left-float left half js-btn-cal-start">calendar</button>
+							<button type="button" class="btn-calendar left-float left half js-btn-cal-start">calendar</button>
 
-						<select class="select mini left-float">
-							<option>06</option>
-						</select>
+							<select class="select mini left-float">
+								<option>06</option>
+							</select>
 
-						<div class="form-label left-float left right half">:</div>
+							<div class="form-label left-float left right half">:</div>
 
-						<select class="select mini left-float">
-							<option>00</option>
-						</select>
+							<select class="select mini left-float">
+								<option>00</option>
+							</select>
+						</div>
 
-						<div class="form-label left-float right half">~</div>
+						<div class="form-label date-wave">~</div>
 
-						<input type="text" class="input med left-float right half js-cal-end" value="2015-03-06">
+						<div class="right-float">
+							<input type="text" class="input med left-float js-cal-end" value="2015-03-06">
 
-						<button type="button" class="btn-calendar left-float left right half js-btn-cal-end">calendar</button>
+							<button type="button" class="btn-calendar left-float left right half js-btn-cal-end">calendar</button>
 
-						<select class="select mini left-float">
-							<option>06</option>
-						</select>
+							<select class="select mini left-float">
+								<option>06</option>
+							</select>
 
-						<div class="form-label left-float left right half">:</div>
+							<div class="form-label left-float left right half">:</div>
 
-						<select class="select mini left-float">
-							<option>00</option>
-						</select>
+							<select class="select mini left-float">
+								<option>00</option>
+							</select>
+						</div>
 
 					</div>
 
 					<div class="select-type hide">
 
-						<input type="text" class="input med spinner-year">
+						<div class="left-float">
+							<input type="text" class="input med spinner-year">
 
-						<select class="select default spin-month">
-							<option>00</option>
-						</select>
+							<div class="form-label left-float right half">년</div>
 
-						<div class="form-label left-float left right half">~</div>
+							<select class="select med spin-month">
+								<option>00</option>
+							</select>
 
-						<input type="text" class="input med spinner-year">
+							<div class="form-label left-float right half">월</div>
+						</div>
 
-						<select class="select default spin-month">
-							<option>00</option>
-						</select>
+						<div class="form-label date-wave">~</div>
+
+						<div class="right-float">
+							<input type="text" class="input med spinner-year">
+
+							<div class="form-label left-float right half">년</div>
+
+							<select class="select med spin-month">
+								<option>00</option>
+							</select>
+
+							<div class="form-label left-float right half">월</div>
+						</div>
 
 					</div>
 
