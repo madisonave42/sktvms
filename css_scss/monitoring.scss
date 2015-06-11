@@ -403,7 +403,7 @@
         float:left;
         margin:0 12px 10px 0;
 
-        &:nth-child(8n) {
+        &:nth-child(11n) {
           margin-right:0;
         }
       }
@@ -413,8 +413,12 @@
 
   &-instance {
     @include size(150, 32);
+    position:relative;
     float:left;
+    display:block;
+    box-sizing:border-box;
     margin:0 5px 5px 0;
+    padding:0 40px 0 5px;
     line-height:32px;
     text-align:left;
     color:$white;
@@ -452,11 +456,16 @@
     &-te,
     &-si,
     &-so {
-      display:inline-block;
-      line-height:1;
-      padding:0 1px;
+      position:absolute;
+      top:3px;
+      right:3px;
+      width:24px;
+      height:24px;
+      line-height:24px;
       font-size:11px;
-      vertical-align:1px;
+      text-align:center;
+      border-radius:2px;
+      border:1px solid $white;
 
       &.normal{
         background:$white;
@@ -464,7 +473,6 @@
       }
 
       &.error {
-        border:1px solid $white;
         background:$red;
       }
 
