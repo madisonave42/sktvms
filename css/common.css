@@ -136,25 +136,11 @@ img {
   background-color: #141414;
   min-width: 1760px;
   position: fixed;
-<<<<<<< HEAD
-  z-index: 100;
-=======
   z-index: 110;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .header-user {
   float: right;
   margin-top: 10px;
-<<<<<<< HEAD
-  position: relative;
-}
-.header-user-name {
-  font-size: 13px;
-  color: #919191;
-}
-.header-user-path {
-  position: relative;
-=======
   padding-top: 17px;
   position: relative;
   min-width: 70px;
@@ -172,7 +158,6 @@ img {
 .header-user-path {
   position: relative;
   text-align: right;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
   margin-top: 3px;
   height: 16px;
   font-size: 13px;
@@ -204,23 +189,15 @@ img {
 .header-user-path-submenu {
   display: none;
   position: absolute;
-<<<<<<< HEAD
-  width: 100%;
-  padding: 5px 3px;
-=======
   right: 0;
   width: 100%;
   text-align: right;
   padding: 5px 15px 5px 3px;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
   border: 1px solid #c2cbcb;
   border-top: none;
   background: #141414;
   box-sizing: border-box;
-<<<<<<< HEAD
-=======
   white-space: nowrap;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .header-user-path-submenu.on {
   display: block;
@@ -231,12 +208,9 @@ img {
 .header-user-path-submenu .submenu-link:hover {
   color: #ffffff;
 }
-<<<<<<< HEAD
 .header.no-title {
   box-shadow: 0 3px #cbcfd2;
 }
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 
 .logo {
   float: left;
@@ -453,11 +427,7 @@ img {
 
 .main-heading {
   float: left;
-<<<<<<< HEAD
   margin: 13px 0 0 0;
-=======
-  margin: 13px 50px 0 0;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .main-heading-title {
   font-size: 24px;
@@ -480,17 +450,11 @@ img {
   width: 460px;
   text-align: center;
 }
-<<<<<<< HEAD
 .main-heading-form-group .select-type:after {
   content: ".";
   display: block;
   height: 0;
   overflow: hidden;
-=======
-.main-heading-form-group .select-type {
-  content: "";
-  display: block;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
   clear: both;
 }
 .main-heading-form-group > .group-label {
@@ -969,12 +933,9 @@ table.emphasis > tbody > tr > td.email > span {
 .input.med {
   width: 80px;
 }
-<<<<<<< HEAD
 .input.med-large {
   width: 100px;
 }
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 .input.default {
   width: 120px;
 }
@@ -1312,15 +1273,12 @@ table.emphasis > tbody > tr > td.email > span {
   line-height: 25px;
   color: #777;
 }
-<<<<<<< HEAD
 .form-label.date-wave {
   width: 10px;
   position: absolute;
   left: 50%;
   margin-left: -5px;
 }
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 
 .ui-spinner {
   display: block;
@@ -1359,10 +1317,7 @@ table.emphasis > tbody > tr > td.email > span {
 .tree-item {
   height: 15px;
   position: relative;
-<<<<<<< HEAD
   white-space: nowrap;
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .tree-item:after {
   content: ".";
@@ -1372,10 +1327,7 @@ table.emphasis > tbody > tr > td.email > span {
   clear: both;
 }
 .tree-btn-fold {
-<<<<<<< HEAD
   display: inline-block;
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
   width: 15px;
   height: 15px;
   position: relative;
@@ -1388,21 +1340,14 @@ table.emphasis > tbody > tr > td.email > span {
   background: #fff url(../images/icon_tree_fold.png) no-repeat 0 0;
 }
 .tree-name {
-<<<<<<< HEAD
   display: inline-block;
   padding: 0 20px 0 0;
-=======
-  padding: 0;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
   margin: 0 0 0 7px;
   border: 0;
   background: transparent;
   line-height: 15px;
-<<<<<<< HEAD
   white-space: nowrap;
   vertical-align: top;
-=======
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .tree-name.is-select {
   position: relative;
@@ -1412,13 +1357,9 @@ table.emphasis > tbody > tr > td.email > span {
   background: #00b9b0;
 }
 .tree-radio, .tree-check {
-<<<<<<< HEAD
   display: inline-block;
   margin-left: 5px;
   vertical-align: top;
-=======
-  margin-left: 5px;
->>>>>>> ceaa43d803e0cbe6afb51cf0b706089a8c9c5992
 }
 .tree-list {
   position: relative;
