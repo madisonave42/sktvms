@@ -421,6 +421,7 @@
     position:absolute;
     top:17px;
     left:18px;
+    z-index:1;
 
     &-item {
       float:left;
@@ -428,6 +429,8 @@
 
     &-link {
       @include size(80, 30);
+      min-width:100px;
+      height:30px;
       display:block;
       box-sizing:border-box;
       line-height:30px;

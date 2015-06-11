@@ -103,6 +103,10 @@
 			}
 		}
 	}
+
+	&.no-title{
+		box-shadow:0 3px #cbcfd2;
+	}
 }
 
 .logo {
@@ -371,7 +375,7 @@
 
 .main-heading {
 	float:left;
-	margin:13px 50px 0 0;
+	margin:13px 0 0 0;
 
 	&-title {
 		font-size:24px;
@@ -402,9 +406,7 @@
 		.select{
 
 			&-type{
-				content:"";
-				display:block;
-				clear:both;
+				@include clear();
 			}
 
 		}

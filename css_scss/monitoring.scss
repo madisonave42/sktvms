@@ -93,8 +93,11 @@
     }
 
     &-link {
-      @include size(100, 30);
+      //@include size(100, 30);
+      min-width:100px;
+      height:30px;
       display:block;
+      padding:0 10px;
       box-sizing:border-box;
       line-height:30px;
       color:$dark;
@@ -592,6 +595,13 @@
             background:url(../images/ico_btn_del.png) no-repeat left top;
           }
         }
+
+        &-input{
+          width:110px;
+          position:absolute;
+          top:14px;
+          left:5px;
+        }
       }
 
     }
@@ -749,6 +759,10 @@
     box-sizing: border-box;
 
     cursor:move;
+
+    &-draggable{
+      width:423px;
+    }
 
     &.m1x1{
       width:423px;

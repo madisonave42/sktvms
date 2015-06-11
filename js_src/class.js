@@ -4,7 +4,8 @@
 
 // Constant
 var HEADER_HEIGHT = 160;
-var DASHBOARD_MIN_HEIGHT = 756;
+var TITLE_HEIGHT = 73;
+var DASHBOARD_MIN_HEIGHT = 766;
 
 // Popup function
 
@@ -51,8 +52,9 @@ var popAddGraph = function(){
 // DOM about page & tab & graph return function
 var tabItem = function( pageTitle ){
 
-  var $tabItem = '<li class="tab-item js-tab current">';
-  $tabItem += '<div class="tab-item-title">' + pageTitle + '</div>';
+  var $tabItem = '<li id="tab-item" class="tab-item js-tab current">';
+  $tabItem += '<div class="tab-item-title js-title">' + pageTitle + '</div>';
+  $tabItem += '<input type="text" value="'+ pageTitle +'" class="tab-item-input hide" />';
   $tabItem += '<button type="button" class="btn-del js-del">delete</button>';
   $tabItem += '</li>';
 
@@ -94,17 +96,20 @@ var pageItem = function( pageIndex ){
 
 var graphItemNode = function( graphGridClass, graphTitle ){
 
-  var $graphItem = '<div class="graph-item ' + graphGridClass + '">' +
-    '<div class="graph-top">' +
-      '<div class="graph-title">' + graphTitle + '</div>' +
-      '<div class="graph-btn-group">' +
-        '<button type="button" class="graph-btn setting"></button>' +
-        '<button type="button" class="graph-btn enlarge"></button>' +
-        '<button type="button" class="graph-btn close">close</button>' +
+  var $graphItem =
+    '<div class="graph-item-draggable">' +
+      '<div class="graph-item ' + graphGridClass + '">' +
+        '<div class="graph-top">' +
+          '<div class="graph-title">' + graphTitle + '</div>' +
+          '<div class="graph-btn-group">' +
+            '<button type="button" class="graph-btn setting"></button>' +
+            '<button type="button" class="graph-btn enlarge"></button>' +
+            '<button type="button" class="graph-btn close">close</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="graph-content"></div>' +
       '</div>' +
-    '</div>' +
-    '<div class="graph-content"></div>' +
-  '</div>';
+    '</div>';
 
   return $graphItem;
 
@@ -246,6 +251,12 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
   // private
   var graphHeight = 628;
   var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+  if( $('.main-header').length == 0 ) {
+    mainHeight += TITLE_HEIGHT;
+  }
+  if( mainHeight <= 766 ){
+    mainHeight = 766;
+  }
   var dashboardListHeight = mainHeight - graphHeight;
 
   // Set expand button status data
@@ -256,6 +267,9 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
 
   var _resizeDashboardListExpand = function(){
     mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    if( $('.main-header').length == 0 ) {
+      mainHeight += TITLE_HEIGHT;
+    }
     if( mainHeight < DASHBOARD_MIN_HEIGHT ){
       mainHeight = DASHBOARD_MIN_HEIGHT;
     }
@@ -265,6 +279,12 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
 
   var _resizeDashboardListReduce = function( $dashboardList ){
     mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+    if( $('.main-header').length == 0 ) {
+      mainHeight += TITLE_HEIGHT;
+    }
+    if( mainHeight <= 766 ){
+      mainHeight = 766;
+    }
     dashboardListHeight = mainHeight - graphHeight;
     $divDashboard.css({height:dashboardListHeight});
     $btnExpand.data( 'expand', 'false' );
@@ -459,6 +479,10 @@ var ResizeGraph = function(){
     // resize
     var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
 
+    $('.graph-item-draggable').css({
+      //width:
+      height:  (mainHeight - 68) / 4
+    });
     $('.graph-item').css({height:  (mainHeight - 68) / 4});
     $('.graph-item.m1x1').css({height:  (mainHeight - 68) / 4});
 
@@ -515,28 +539,115 @@ var Graph = function(){
   var $globalContainer;
   var $globalContainerParent;
 
-  var _dragNDrop = function($graphNode, graphTitle, index, gridCol, gridRow, currentGridOffset, firstGridOffset ){
+  var graphIndex = 0;
 
-    var top = currentGridOffset.top - firstGridOffset.top;
+  var _addMarkGrid = function(firstGridIndex, gridCol, gridRow){
+
+    for(var i=0; i<gridRow; i++){
+      for( var j=0; j<gridCol; j++ ){
+
+        var firstLinearIndex = firstGridIndex + ( j + 4 * i );
+        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + firstLinearIndex );
+        $('.contents-section.stats-monitoring.current')
+          .find('.container-list').find('.container-item').eq(firstLinearIndex).attr('data-used', 'used');
+
+      }
+    }
+
+  };
+
+  var _reMarkGrid = function(originGridIndex, destinationGridIndex, gridCol, gridRow){
+
+    console.log('====================== reMark!!');
+
+    for(var i=0; i<gridRow; i++){
+      for( var j=0; j<gridCol; j++ ){
+
+        var originLinearIndex = originGridIndex + ( j + 4 * i );
+        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + originLinearIndex );
+        $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').eq(originLinearIndex).removeAttr('data-used');
+
+        var destinationLinearIndex = destinationGridIndex + ( j + 4 * i );
+        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + destinationLinearIndex );
+        $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').eq(destinationLinearIndex).attr('data-used', 'used');
+
+      }
+    }
+
+  };
+
+  var _dragNDrop = function($graphNode, graphTitle, gridIndex, graphIndex, gridCol, gridRow, currentGridOffset, firstGridOffset ){
+
     var left = currentGridOffset.left - firstGridOffset.left;
+    var top = currentGridOffset.top - firstGridOffset.top;
 
-    $graphNode.data({
-      'top' : top,
+    var viaGrid = [];
+    var viaIndex = 0;
+
+    _addMarkGrid(gridIndex, gridCol, gridRow);
+
+    // draggable
+    $graphNode.attr({
+      'data-graph' : graphIndex,
+      'data-grid' : gridIndex,
+      'data-col' : gridCol,
+      'data-row' : gridRow
+
+    }).data({
       'left' : left,
-      'graphTitle' : graphTitle,
-      'index' : index,
-      'gridCol' : gridCol,
-      'gridRow' : gridRow
+      'top' : top,
+      'graphTitle' : graphTitle
+
     }).draggable({
+      addClasses: false,
       snap: '.container-item',
-      snapMode: 'inner'
+      snapMode: 'inner',
+      snapTolerance: 35,
+      revert: function(obj){
+        console.log('revert : ' + obj);
+
+        if( obj === false ){
+          return true;
+        }
+      },
+      revertDuration:100
+
     }).css({
       position:'absolute',
-      top: top,
-      left:left
+      left:left,
+      top: top
     });
 
-    $('.container-item').droppable();
+    // droppable
+    $('.container-item').droppable({
+      tolerance:'fit',
+
+      out: function(event, ui){
+        viaGrid[viaIndex] = $('.container-item').index( $(this) );
+        console.log('current' + viaIndex + ' : ' + viaGrid[viaIndex]);
+        viaIndex++;
+      },
+
+      drop: function(event, ui){
+        var destinationPosition = ui.position;
+        var destinationIndex = $('.container-item').index( $(this) );
+        var $droppedGraph = $(ui.draggable);
+
+        $droppedGraph.attr({
+          'data-grid' : destinationIndex
+        }).data({
+          'left' : destinationPosition.left,
+          'top' : destinationPosition.top
+        });
+
+        console.log('origin : ' + viaGrid[0] + ' : destination : ' + destinationIndex);
+        console.log('graph : ' + $(ui.draggable).attr('data-graph') + ' : Col : ' + $droppedGraph.attr('data-col') + ' : Row : ' + $droppedGraph.attr('data-row'));
+
+        viaIndex = 0;
+
+        _reMarkGrid(viaGrid[0], destinationIndex, $droppedGraph.attr('data-col'), $droppedGraph.attr('data-row'));
+      }
+    });
   };
 
   // privileged
@@ -547,35 +658,32 @@ var Graph = function(){
     $globalContainer = $containerCurrent;
     $globalContainerParent = $containerCurrentParent;
 
-    var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
+    //var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
 
     popAddGraph();
 
-    $('.stats-map-item-state').eq(addIndex).addClass('active');
-    $('.js-btn-add-graph').addClass('new');
+    //$('.stats-map-item-state').eq(addIndex).addClass('active');
+    $('.js-btn-add-graph').removeClass('change').addClass('new');
     $('.popup-graph-title').val('').focus();
 
   };
 
   this.addGraph = function( graphTitle, gridCol, gridRow ){
 
-    var floor;
+    //var floor;
     var pageIndex = $('.contents-section-inner.stats-monitoring').index($globalContainerParent);
-    var index = $globalContainerParent.find('.container-item').index( $globalContainer );
+    var gridIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
     var firstGridOffset = $globalContainerParent.find('.container-item').eq(0).offset();
     var currentGridOffset = $globalContainer.offset();
     var graphGridClass = 'm' + gridCol + 'x' + gridRow;
 
     var $graphNode = $( graphItemNode( graphGridClass, graphTitle ) );
 
-    if( (index-4) < 0 ){ floor = 0; }
-    else if( (index-4) < 4 ){ floor = 1; }
-    else if( (index-4) < 8 ){ floor = 2; }
-    else if( (index-4) < 12 ){ floor = 3; }
+    graphIndex++;
 
-    $graphNode.attr('data-floor', floor).appendTo( $('.graph-list.page' + pageIndex) );
+    $graphNode.appendTo( $('.graph-list.page' + pageIndex) );
 
-    _dragNDrop($graphNode, graphTitle, index, gridCol, gridRow, currentGridOffset, firstGridOffset);
+    _dragNDrop($graphNode, graphTitle, gridIndex, graphIndex, gridCol, gridRow, currentGridOffset, firstGridOffset);
 
     popHide();
     $(window).trigger('addGraph');
@@ -589,11 +697,60 @@ var Graph = function(){
 var SetGraph = function(){
 
   var $changeGraphItem;
+  var orignCol;
+  var orignRow;
+
+  var _dragNDrop = function($changeGraphItem, changeGraphTitle, newGridCol, newGridRow){
+
+    $changeGraphItem.attr({
+
+      'data-col' : newGridCol,
+      'data-row' : newGridRow
+
+    }).data({
+
+      'graphTitle' : changeGraphTitle,
+      'gridCol' : newGridCol,
+      'gridRow' : newGridRow
+
+    }).draggable({
+
+      addClasses: false,
+      snap: '.container-item',
+      snapMode: 'inner',
+      snapTolerance: 60,
+      revert: 'invalid',
+      revertDuration:100
+
+    });
+
+    $('.container-item').droppable({
+      tolerance:'fit',
+      drop: function(event, ui){
+        var destinationPosition = ui.position;
+        var destinationIndex = $('.container-item').index( $(this) );
+
+        $changeGraphItem.attr({
+
+          'data-index' : destinationIndex
+
+        }).data({
+
+          'left' : destinationPosition.left,
+          'top' : destinationPosition.top,
+          'index' : destinationIndex
+
+        });
+      }
+    });
+  };
 
   /* 변경 */
   this.showSetPopup = function( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow ){
 
     $changeGraphItem = $thisGraphItem;
+    orignCol = thisGridCol;
+    orignRow = thisGridRow;
 
     popAddGraph();
 
@@ -601,32 +758,20 @@ var SetGraph = function(){
     $('.spinner.col').val(thisGridCol);
     $('.spinner.row').val(thisGridRow);
 
-    $('.stats-map-item-state').eq(thisIndex).addClass('active');
-    $('.js-btn-add-graph').addClass('change');
+    //$('.stats-map-item-state').eq(thisIndex).addClass('active');
+    $('.js-btn-add-graph').removeClass('new').addClass('change');
 
   };
 
-  this.changeGraph = function( changeGraphTitle, changeGridCol, changeGridRow ){
+  this.changeGraph = function( changeGraphTitle, newGridCol, newGridRow ){
 
-    var changeClassName = 'm' + changeGridCol + 'x' + changeGridRow;
+    var className4Origin = 'm' + orignCol + 'x' + orignRow;
+    var className4New = 'm' + newGridCol + 'x' + newGridRow;
 
     $changeGraphItem.find('.graph-title').val(changeGraphTitle);
+    $changeGraphItem.find('.graph-item').removeClass(className4Origin).addClass(className4New);
 
-    for( var i=1; i<=4; i++ ){
-      for( var j=1; j<=4; j++ ){
-        var className = 'm' + i + 'x' + j;
-        $changeGraphItem.removeClass( className );
-      }
-    }
-
-    $changeGraphItem.addClass(changeClassName).data({
-      'graphTitle' : changeGraphTitle,
-      'gridCol' : changeGridCol,
-      'gridRow' : changeGridRow
-    }).draggable({
-      snap: '.container-item',
-      snapMode: 'inner'
-    });
+    _dragNDrop($changeGraphItem, changeGraphTitle, newGridCol, newGridRow);
 
     popHide();
     $(window).trigger('addGraph');

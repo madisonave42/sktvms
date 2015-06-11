@@ -29,13 +29,26 @@ $(function(){
 		var $fixWrapper = $('.main-content .wrapper.fix-height');
 		var $varWrapper = $('.main-content .wrapper.var-height');
 
+		if( $('.main-header').length == 0 ) {
+			mainHeight += TITLE_HEIGHT;
+			$('.header').addClass('no-title');
+		}
+
+		// fix wrapper
 		$fixWrapper.css({height: mainHeight});
-		if( $varWrapper.height() <= mainHeight ){
+
+		// variable wrapper
+		if( $varWrapper.length !=0 && $varWrapper.height() <= mainHeight ){
 			$varWrapper.css({height: mainHeight});
 		}
 
 		$(window).on('resize', function(){
 			var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
+
+			if( $('.main-header').length == 0 ) {
+				mainHeight += TITLE_HEIGHT;
+			}
+
 			if( mainHeight < 400 ){
 				mainHeight = 400;
 			}
@@ -156,6 +169,21 @@ $(function(){
 			tab.showPopup( $tabParent, 'del', $(this) );
 		});
 
+		$body.on('dblclick', '.js-title', function(){
+			$(this).next('.tab-item-input').removeClass('hide').focus();
+		});
+
+		$body.on('click', function(e){
+			if( !$(e.target).closest('#tab-item').length ){
+
+				$('.tab-item-input').each(function(){
+					var inputVal = $(this).addClass('hide').val();
+					$(this).prev('.tab-item-title').text( inputVal );
+				});
+
+			}
+		});
+
 		$body.on('click', '.js-btn-add-page', function(){
 			var pageTitle = $('.js-page-title').val();
 			tab.addPage( $tabParent, pageTitle, $pageParent );
@@ -214,7 +242,7 @@ $(function(){
 
 		$body.on('click', '.graph-btn.setting', function(){
 
-			var $thisGraphItem = $(this).parents('.graph-item');
+			var $thisGraphItem = $(this).parents('.graph-item-draggable');
 			var thisTitle = $thisGraphItem.data('graphTitle');
 			var thisIndex = $thisGraphItem.data('index');
 			var thisGridCol = $thisGraphItem.data('gridCol');

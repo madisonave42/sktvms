@@ -5,9 +5,11 @@
     height: 15px;
     position: relative;
     @include clear();
+    white-space:nowrap;
   }
 
   &-btn-fold{
+    display:inline-block;
     width:15px;
     height:15px;
     position:relative;
@@ -24,12 +26,16 @@
   }
 
   &-name{
-    padding:0;
+    display:inline-block;
+    padding:0 20px 0 0;
     margin:0 0 0 7px;
 
     border:0;
     background:transparent;
     line-height:15px;
+
+    white-space:nowrap;
+    vertical-align:top;
 
     &.is-select{
       position:relative;
@@ -42,7 +48,9 @@
 
   &-radio,
   &-check{
+    display:inline-block;
     margin-left:5px;
+    vertical-align:top;
   }
 
   &-list{

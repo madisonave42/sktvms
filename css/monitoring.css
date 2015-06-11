@@ -73,9 +73,10 @@
   float: left;
 }
 .dashboard-tab-link {
-  width: 100px;
+  min-width: 100px;
   height: 30px;
   display: block;
+  padding: 0 10px;
   box-sizing: border-box;
   line-height: 30px;
   color: #576363;
@@ -460,6 +461,12 @@
 .sm-tab .tab-item.current .btn-del {
   background: url(../images/ico_btn_del.png) no-repeat left top;
 }
+.sm-tab .tab-item-input {
+  width: 110px;
+  position: absolute;
+  top: 14px;
+  left: 5px;
+}
 .sm-tab .btn-del {
   width: 14px;
   height: 14px;
@@ -558,6 +565,9 @@
   background: #ffffff;
   box-sizing: border-box;
   cursor: move;
+}
+.graph-item-draggable {
+  width: 423px;
 }
 .graph-item.m1x1 {
   width: 423px;
