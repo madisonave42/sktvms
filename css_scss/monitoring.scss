@@ -183,17 +183,17 @@
 
     &-off {
       padding:0;
-      padding-left:30px;
-      width:130px;
-      background:url(../images/ico_alarm_btn.png) no-repeat 13px 8px;
+      padding-left:32px;
+      width:140px;
+      background:url(../images/ico_alarm_btn.png) no-repeat 17px -40px;
       text-align:left;
     }
 
     &-on {
       padding:0;
-      padding-left:22px;
-      width:130px;
-      background:url(../images/ico_alarm_btn.png) no-repeat 10px -40px;
+      padding-left:27px;
+      width:140px;
+      background:url(../images/ico_alarm_btn.png) no-repeat 10px 8px;
       text-align:left;
     }
   }
@@ -239,11 +239,12 @@
 .overload {
 
   &-pannel {
-    margin-top:0;
+    margin-top:-5px;
     box-sizing:border-box;
     padding:9px;
+    padding-bottom:0;
     width:415px;
-    height:231px;
+    height:244px;
     border:1px solid $light-gray;
     border-radius:3px;
     overflow:auto;
@@ -273,10 +274,10 @@
     font-weight:bold;
   }
 
-  &-graph {
-    margin-top:8px;
-    height:62px;
-  }
+  // &-graph {
+  //   margin-top:8px;
+  //   height:62px;
+  // }
 
 }
 

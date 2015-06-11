@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko" class="window-popup">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/popup.css" />
+
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<!-- [D] <section class="main"> 부분이 컨텐츠 전체 영역이므로 레이어 팝업은 그 하단에 위치해야 함.  -->
+
+<section class="main">
+	<button type="button" class="js-open-popup">팝업열기</button>
+</section>
+
+<!-- [D] 팝업 배경 -->
+<div class="dimmed"></div>
+
+<!-- [D] 팝업 : S -->
+<section class="popup">
+	<h1 class="popup-heading">VNF 패키지 추가</h1>
+	<div class="popup-content">
+
+		<div class="popup-content-section">
+			<div class="popup-input-wrap">
+				<label class="popup-label width-small left-float">패키지파일</label>
+				<input type="file" class="file-form left-float" />
+			</div>
+		</div>
+
+		<div class="popup-content-section">
+			<ol class="add-vnf-step col-width-4 left-float">
+				<li class="add-vnf-step-item">
+					<div class="add-vnf-step-icon left-float">
+						<img src="../../images/popup/ico_chk_dark.png" alt="완료" />
+					</div>
+					<div class="add-vnf-step-text text-dark left-float left">패키지 파일을 서버로 업로드</div>
+					<div class="add-vnf-state-ok left-float">OK</div>
+				</li>
+				<li class="add-vnf-step-item">
+					<div class="add-vnf-step-icon left-float">
+						<img src="../../images/popup/ico_chk_dark.png" alt="완료" />
+					</div>
+					<div class="add-vnf-step-text text-dark left-float left">패키지의 구성 파일을 확인</div>
+					<div class="add-vnf-state-ok left-float">OK</div>
+				</li>
+				<li class="add-vnf-step-item">
+					<div class="add-vnf-step-icon left-float">
+						<img src="../../images/popup/ico_caution.png" alt="실패" />
+					</div>
+					<div class="add-vnf-step-text text-red left-float left">Descriptor들의 Syntax 검사</div>
+					<div class="add-vnf-state-fail left-float">Fail</div>
+				</li>
+				<li class="add-vnf-step-item">
+					<div class="add-vnf-step-icon left-float">
+						<img src="../../images/popup/ico_chk_gray.png" alt="대기" />
+					</div>
+					<div class="add-vnf-step-text text-gray left-float left">VM 이미지의 등록 여부 확인</div>
+				</li>
+				<li class="add-vnf-step-item">
+					<div class="add-vnf-step-icon left-float">
+						<img src="../../images/popup/ico_chk_gray.png" alt="대기" />
+					</div>
+					<div class="add-vnf-step-text text-gray left-float left">패키지 업데이트 관련 정보 확인</div>
+				</li>
+			</ol>
+
+			<!-- [D] 현재단계 꼭지표시할 경우 stage 클래스추가. 1단계: stage01 ~ 5단계: stage05 -->
+			<div class="add-vnf-detail stage03 popup-white-wrap left-float col-width-6">
+				<p>내력출력</p>
+				<p>내력출력</p>
+			</div>
+
+		</div>
+
+		<div class="popup-content-section">
+			<div class="col-width-4 left-float">
+				<div class="popup-input-wrap">
+					<label class="popup-label width-small left-float">패키지명 :</label>
+					<input type="text" class="input-form left-float">
+				</div>
+				<div class="popup-input-wrap">
+					<label class="popup-label width-small left-float">버전 :</label>
+					<input type="text" class="input-form left-float">
+				</div>
+				<div class="popup-input-wrap">
+					<label class="popup-label width-small left-float">Vendor :</label>
+					<input type="text" class="input-form left-float">
+				</div>
+			</div>
+
+			<div class="col-width-6 right-float">
+				<div class="popup-label width-wide left-float">업데이트 가능 대상 버전 :</div>
+				<textarea class="input-text popup-gray-wrap left-float updatable-list"></textarea>
+			</div>
+		</div>
+
+	</div>
+	<div class="popup-bottom">
+		<div class="left-float">
+			<button type="button" class="btn-stroke-light left-float left group">패키지 검사</button>
+		</div>
+		<div class="right-float">
+			<button type="button" class="btn-stroke-light left-float left">등록</button>
+			<button type="button" class="btn-stroke-dark left-float left js-close-popup">취소</button>
+		</div>
+	</div>
+</section>
+<!-- [D] 팝업 : E -->
+
+</body>
+</html>

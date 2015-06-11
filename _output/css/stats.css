@@ -1,0 +1,49 @@
+.wrapper.stats {
+  position: relative;
+}
+
+.contents-section.narrow {
+  width: 300px;
+  position: absolute;
+}
+.contents-section.narrow.top {
+  top: 0;
+  left: 0;
+  height: 303px;
+}
+.contents-section.narrow.bottom {
+  bottom: 0;
+  left: 0;
+  height: 561px;
+}
+.contents-section.wide {
+  width: 1378px;
+  position: absolute;
+}
+.contents-section.wide.top {
+  top: 0;
+  right: 0;
+  height: 453px;
+}
+.contents-section.wide.bottom {
+  bottom: 0;
+  right: 0;
+  height: 411px;
+}
+.contents-section-top.stats {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contents-section .ui-resizable-handle.ui-resizable-s {
+  position: absolute;
+  width: 83px;
+  height: 13px;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -40px;
+  cursor: ns-resize;
+  background: url(../images/icon_resizable.gif) no-repeat;
+}
+
+

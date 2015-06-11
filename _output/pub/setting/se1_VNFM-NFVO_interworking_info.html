@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/lib/chartist.min.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/pagination.css" />
+<link rel="stylesheet" href="../../css/setting.css">
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/lib/chartist.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrapper">
+    <h1 class="logo">
+      <a href="#"><img src="../../images/logo.png" alt="SKT vIMS CENTER"></a>
+    </h1>
+    <ul class="gnb">
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link01">모니터링</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub01">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Dashboard</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Statistics Monitoring</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link02">VNF 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub02">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF Instance 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 업데이트 작업 목록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF별 Host 배치도</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link07">VIM 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub07">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">가상 자원 운용 현황</a>
+                </li>
+                <li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">Host별 가상 자원 운용 현황</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 추가</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 추가</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link03">통계</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub03">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">기간 통계</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">비교 통계</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link04">로그</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub04">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">알람로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">VNF 이벤트 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">운용 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">가상 자원 관리 로그</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link05">운용자</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub05">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 등록</a>
+              	</li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Session 목록</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 IP 목록</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link06">설정</a>
+      </li>
+    </ul>
+
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</header>
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+
+			<div class="main-heading">
+				<h2 class="main-heading-title">설정</h2>
+				<p class="main-heading-overview">vIMS 운용에 필요한 각 설정 정보 조회 및 변경 기능을 제공합니다.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="wrapper setting var-height">
+
+			<section class="contents-section setting narrow">
+				<h3 class="hide">연동정보 리스트</h3>
+
+				<div class="contents-section-inner setting">
+					<div class="setting-nav-top">
+						<h4 class="setting-nav-heading">VNVO/VNFM/VIM 연동</h4>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
+					</div>
+
+					<div class="setting-nav-content">
+						<ul class="setting-list">
+							<li class="setting-list-item selected">VNFM &lt;&gt; NFVO 연동정보</li>
+							<li class="setting-list-item">VNFM &lt;&gt; VIM 연동정보</li>
+							<li class="setting-list-item">VIM &lt;&gt; NFVO 연동정보</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="contents-section-inner setting last">
+					<div class="setting-nav-top">
+						<h4 class="setting-nav-heading">Threshold 관리</h4>
+						<button type="button" class="btn-nav-fold setting">접힘/펼침</button>
+					</div>
+
+					<div class="setting-nav-content">
+						<ul class="setting-list">
+							<li class="setting-list-item">Default</li>
+							<li class="setting-list-item">VNFM Workload</li>
+							<li class="setting-list-item">VIM Workload</li>
+							<li class="setting-list-item">Compute Host Workload</li>
+							<li class="setting-list-item">가상 자원 Capacity</li>
+							<li class="setting-list-item last">VNF</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</section>
+
+			<section class="contents-section setting wide heading">
+				<div class="contents-section-top">
+					<h3 class="section-heading setting-category left-float">VNFM &lt;&gt; NFVO 연동 정보</h3>
+				</div>
+			</section>
+
+			<section class="contents-section setting wide">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">VNFM &gt; NFVO 연동 정보</h3>
+					<button type="button" class="btn-refresh right-absolute">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-auth">Auth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit" onclick="window.open('sep1_vnfm_nfvo.html', '_blank', 'width=590, height=360')">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+			<section class="contents-section setting wide last">
+
+				<div class="contents-section-top">
+					<h3 class="section-heading setting left-float">NFVO &gt; VNFM 연동 정보</h3>
+					<button type="button" class="btn-refresh right-absolute">새로고침</button>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="190px" />
+							<col width="auto" />
+							<col width="75px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">NFVO Name</th>
+							<th scope="col">NFVO IP</th>
+							<th scope="col">NFVO Port</th>
+							<th scope="col">접속 ID</th>
+							<th scope="col">마지막 인증된 시각</th>
+							<th scope="col">Status</th>
+							<th scope="col" class="center">실행</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>HP_NFVO</td>
+							<td>10.10.1.283</td>
+							<td>30124</td>
+							<td>VNFM</td>
+							<td>2015/02/12 13:22:03</td>
+							<td><span class="status-unauth">Unauth</span></td>
+							<td class="center"><button type="button" class="tb-form-btn-edit" onclick="window.open('sep2_nfvo_vnfm.html', '_blank', 'width=590, height=323')">수정</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+		</div>
+	</div>
+
+</section>
+
+</body>
+</html>
