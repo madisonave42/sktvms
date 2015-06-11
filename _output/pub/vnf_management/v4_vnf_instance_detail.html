@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/lib/chartist.min.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/pagination.css" />
+<link rel="stylesheet" href="../../css/vnf.css">
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/lib/chartist.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrapper">
+    <h1 class="logo">
+      <a href="#"><img src="../../images/logo.png" alt="SKT vIMS CENTER"></a>
+    </h1>
+    <ul class="gnb">
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link01">모니터링</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub01">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Dashboard</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Statistics Monitoring</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link02">VNF 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub02">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF Instance 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 업데이트 작업 목록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF별 Host 배치도</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link07">VIM 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub07">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">가상 자원 운용 현황</a>
+                </li>
+                <li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">Host별 가상 자원 운용 현황</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 추가</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 추가</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link03">통계</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub03">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">기간 통계</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">비교 통계</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link04">로그</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub04">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">알람로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">VNF 이벤트 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">운용 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">가상 자원 관리 로그</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link05">운용자</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub05">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 등록</a>
+              	</li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Session 목록</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 IP 목록</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link06">설정</a>
+      </li>
+    </ul>
+
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</header>
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">VNF Instance 상세 보기</h2>
+				<p class="main-heading-overview">VNF Instance의 상세 정보를 제공합니다.</p>
+			</div>
+
+			<div class="left-float right group">
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">NS Name</div>
+					<select class="select default">
+						<option>모든 NS</option>
+					</select>
+				</div>
+
+				<div class="main-heading-form-group left-float">
+					<div class="group-label em-dark">VNF Instance Name</div>
+					<select class="select default">
+						<option>MSS1</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="right-float">
+				<div class="main-heading-form-group left-float left group">
+					<div class="group-label em-dark">Auto Scale Mode</div>
+					<button type="button" class="btn-fill-blue left-float left">Enable</button>
+					<button type="button" class="btn-stroke-light left-float">Disable</button>
+				</div>
+				<div class="main-heading-form-group left-float">
+					<button type="button" class="btn-fill-orange left-float left">Stop</button>
+					<button type="button" class="vnf-btn-refresh left-float">새로고침</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+
+		<div class="wrapper">
+
+			<section class="contents-section instance-general">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">General</h3>
+				</div>
+				<div class="contents-section-inner no-border">
+
+					<table class="hr-table left-float left">
+						<caption class="hide">general</caption>
+						<colgroup>
+							<col width="150px"/>
+							<col width="270px"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">VNF Instance Name</th>
+								<td>MSS1</td>
+							</tr>
+							<tr>
+								<th scope="row">NS Name</th>
+								<td>HD Voice</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="hr-table left-float left">
+						<caption class="hide">general</caption>
+						<colgroup>
+							<col width="150px"/>
+							<col width="270px"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">Version</th>
+								<td><a href="#" class="table-link">2.0.0</a></td>
+							</tr>
+							<tr>
+								<th scope="row">Vender</th>
+								<td>Telcoware</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="hr-table left-float left">
+						<caption class="hide">general</caption>
+						<colgroup>
+							<col width="150px"/>
+							<col width="270px"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">Flavor</th>
+								<td>Gold</td>
+							</tr>
+							<tr>
+								<th scope="row">Create Time</th>
+								<td>2015-03-24 13:00:11</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="hr-table left-float">
+						<caption class="hide">general</caption>
+						<colgroup>
+							<col width="150px"/>
+							<col width="270px"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">State</th>
+								<td class="status-blue">In-Service</td>
+							</tr>
+							<tr>
+								<th scope="row">Auto-Scale Mode</th>
+								<td class="status-blue">Enabled</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</section>
+
+			<section class="contents-section assurance">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Assurance Parameter</h3>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">Assurance Parameter List</caption>
+						<colgroup>
+							<col width="30%" />
+							<col width="30%" />
+							<col width="auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="first">파라메타</th>
+								<th scope="col">설정 값</th>
+								<th scope="col">현재 값</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Session</td>
+								<td>1,000,000</td>
+								<td>800,000 (80%)</td>
+							</tr>
+							<tr>
+								<td>Transaction</td>
+								<td>5,000</td>
+								<td>270,000 (55%)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="contents-section auto-scaling">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Auto Scale > CSCM</h3>
+					<div class="right-float">
+						<div class="scale-group left-float left">
+							<div class="scale-text"><span class="scale-text-out">Scale-Out</span> :</div>
+							<div class="scale-box">or</div>
+						</div>
+						<div class="scale-group left-float left group">
+							<div class="scale-text"><span class="scale-text-in">Scale-In</span> :</div>
+							<div class="scale-box">and</div>
+						</div>
+						<button type="button" class="btn-table-setting">setting</button>
+					</div>
+				</div>
+
+				<div class="contents-section-inner fill-gray">
+
+					<div class="contents-section-inner inside-section solitary vnf-autoscale left-float">
+
+						<div class="contents-section-top">
+							<h3 class="section-heading small left-float">CPU_LOAD</h3>
+						</div>
+
+						<div class="contents-section-inner no-border no-scroll">
+
+							<img src="../../images/temp/instance_graph.png" alt="" />
+
+						</div>
+
+					</div>
+
+					<div class="contents-section-inner inside-section solitary vnf-autoscale right-float">
+
+						<div class="contents-section-top">
+							<h3 class="section-heading small left-float">MEM_USAGE</h3>
+						</div>
+
+						<div class="contents-section-inner no-border no-scroll">
+
+							<img src="../../images/temp/instance_graph.png" alt="" />
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+			<section class="contents-section section-topology">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">Topology</h3>
+				</div>
+
+				<div class="contents-section-inner no-border topology">
+
+					<div class="topology-lines">
+
+						<div class="vm-line round-top-opened">
+
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="557.009px" height="334.409px" viewBox="0 0 557.009 334.409" enable-background="new 0 0 557.009 334.409"
+								 xml:space="preserve">
+								<g>
+									<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M47.025,7.396H11.838c0,0-6.625,0.625-6.625,8.625
+										v303.75c0,0-0.5,8.875,9.5,8.875h263.042"/>
+									<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M508.484,7.396h35.188c0,0,6.625,0.625,6.625,8.625
+										v303.75c0,0,0.5,8.875-9.5,8.875H277.755"/>
+								</g>
+								<circle fill="#06B9AF" cx="505.775" cy="7.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="48.025" cy="7.396" r="5.396"/>
+							</svg>
+
+						</div>
+
+						<div class="vm-line router-hr-left">
+
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="244.326px" height="12.615px" viewBox="0 0 244.326 12.615" enable-background="new 0 0 244.326 12.615"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.396" y1="6.396" x2="237.146" y2="6.396"/>
+								<circle fill="#06B9AF" cx="238.146" cy="6.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.396" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-router hr">router</div>
+
+						</div>
+
+						<div class="vm-line router-hr-right">
+
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="244.326px" height="12.615px" viewBox="0 0 244.326 12.615" enable-background="new 0 0 244.326 12.615"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.396" y1="6.396" x2="237.146" y2="6.396"/>
+								<circle fill="#06B9AF" cx="238.146" cy="6.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.396" cy="6.396" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-router hr">router</div>
+
+						</div>
+
+						<div class="vm-line router-cross">
+
+							<svg class="svg-arc-left" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="51.459px" height="51.933px" viewBox="0 0 51.459 51.933" enable-background="new 0 0 51.459 51.933" xml:space="preserve">
+								<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M6.396,6.396h35.5c0,0,7,0.333,7,9.167
+									s0,35.833,0,35.833"/>
+								<circle fill="#06B9AF" cx="6.396" cy="6.396" r="5.396"/>
+							</svg>
+
+							<svg class="svg-arc-right" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="53.012px" height="52.065px" viewBox="0 0 53.012 52.065" enable-background="new 0 0 53.012 52.065" xml:space="preserve">
+								<path fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" d="M45.263,6.396h-35.5c0,0-7,0.333-7,9.167
+									s0,35.833,0,35.833"/>
+								<circle fill="#06B9AF" cx="46.929" cy="6.396" r="5.396"/>
+							</svg>
+
+							<svg class="svg-vt-short" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="12.979px" height="52.958px" viewBox="0 0 12.979 52.958" enable-background="new 0 0 12.979 52.958" xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.583" y1="1" x2="6.583" y2="44.833"/>
+								<circle fill="#06B9AF" cx="6.584" cy="46.5" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-router cross">router</div>
+
+						</div>
+
+						<div class="vm-line router-vt">
+
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="12.453px" height="177.406px" viewBox="0 0 12.453 177.406" enable-background="new 0 0 12.453 177.406"
+								 xml:space="preserve">
+								<line fill="none" stroke="#06B9AF" stroke-width="4" stroke-miterlimit="10" x1="6.229" y1="5.396" x2="6.229" y2="169.396"/>
+								<circle fill="#06B9AF" cx="6.396" cy="6.396" r="5.396"/>
+								<circle fill="#06B9AF" cx="6.396" cy="171.646" r="5.396"/>
+							</svg>
+
+							<div class="vm-line-router vt">router</div>
+
+						</div>
+
+						<div class="vm-line network">
+
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+width="804px" height="536px" viewBox="0 0 804 536" enable-background="new 0 0 804 536"
+xml:space="preserve">
+								<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M402.667,5H14c0,0-9,0.333-9,14.333S5,521,5,521
+									s-0.667,9,13.333,9s391.333,0,391.333,0"/>
+								<path fill="none" stroke="#B9C3C2" stroke-width="4" stroke-miterlimit="10" d="M400.396,5h388.667c0,0,9,0.333,9,14.333
+									s0,501.667,0,501.667s0.666,9-13.334,9s-391.333,0-391.333,0"/>
+							</svg>
+
+							<div class="vm-line-label vt">TEXTERMINAL NETWORK</div>
+							<div class="vm-line-label vt invert">TEXTERMINAL NETWORK</div>
+							<div class="vm-line-label hr">TEXTERMINAL NETWORK</div>
+
+						</div>
+
+					</div>
+
+					<div class="topology-wrap">
+
+						<div class="vm-section small left-float">
+
+							<div class="vm-section-cont no-title">
+
+								<div class="vm-wrap">
+									<button type="button" class="vm external">external</button>
+									<div class="vm-name">ABC</div>
+								</div>
+
+								<div class="vm-wrap">
+									<button type="button" class="vm external">external</button>
+									<div class="vm-name">TAS</div>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="topology-center left-float">
+
+							<div class="clearfix">
+								<div class="vm-section small left-float">
+
+									<div class="vm-section-title">LBCM</div>
+
+									<div class="vm-section-cont">
+
+										<div class="vm-wrap">
+											<button type="button" class="vm critical">CRITICAL</button>
+											<div class="vm-icon-a">A</div>
+											<div class="vm-name">LBCM1A</div>
+										</div>
+
+										<div class="vm-wrap">
+											<button type="button" class="vm normal">NORMAL</button>
+											<div class="vm-icon-s">S</div>
+											<div class="vm-name">LBCM1B</div>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="vm-section small right-float">
+
+									<div class="vm-section-title">CRCM</div>
+
+									<div class="vm-section-cont">
+
+										<div class="vm-wrap">
+											<button type="button" class="vm critical">CRITICAL</button>
+											<div class="vm-icon-a">A</div>
+											<div class="vm-name">CRCM1A</div>
+										</div>
+
+										<div class="vm-wrap">
+											<button type="button" class="vm normal">NORMAL</button>
+											<div class="vm-icon-s">S</div>
+											<div class="vm-name">CRCM1B</div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+
+							<div class="vm-section large">
+
+								<div class="vm-section-title">CSCM</div>
+
+								<div class="vm-section-cont">
+
+									<div class="vm-wrap">
+										<button type="button" class="vm critical">CRITICAL</button>
+										<div class="vm-name">COM1</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm major">NORMAL</button>
+										<div class="vm-name">COM2</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm minor">CRITICAL</button>
+										<div class="vm-name">COM3</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm normal">NORMAL</button>
+										<div class="vm-name">COM4</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm empty">EMPTY</button>
+										<div class="vm-name">COM5</div>
+									</div>
+
+									<div class="vm-wrap">
+										<button type="button" class="vm empty">EMPTY</button>
+										<div class="vm-name">COM6</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="vm-section small center">
+
+								<div class="vm-section-cont no-title">
+
+									<div class="vm-wrap">
+										<button type="button" class="vm external">external</button>
+										<div class="vm-name">EMS</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="vm-section small left-float">
+
+							<div class="vm-section-cont no-title">
+
+								<div class="vm-wrap">
+									<button type="button" class="vm external">external</button>
+									<div class="vm-name">HSS</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<section class="contents-section state-list">
+				<ul class="state-tab">
+					<li class="state-tab-item">
+						<a href="#state-box" class="state-tab-link on js-tab-link">Alarm <span class="notice-num">3</span></a>
+					</li>
+					<li class="state-tab-item">
+						<a href="#state-event" class="state-tab-link js-tab-link">Event <span class="notice-num">3</span></a>
+					</li>
+				</ul>
+
+				<div id="state-box" class="state-tab-cont on js-tab-cont">
+					<div class="contents-section-top state-table-top">
+						<div class="right-float">
+							<button type="button" class="btn-fill-orange btn-alarm-off left-float left">알람 전체 인지</button>
+							<button type="button" class="btn-stroke-light btn-alarm-on left-float">알람 전체 미인지</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border state-table-wrap">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first center chkbox">
+										<div class="state-icon-alarm-off">알람</div>
+									</th>
+									<th scope="col">발생시각</th>
+									<th scope="col">시스템 유형</th>
+									<th scope="col">시스템</th>
+									<th scope="col">서브 시스템</th>
+									<th scope="col">알람 등급</th>
+									<th scope="col">알람 분류</th>
+									<th scope="col">알람 내역</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center">
+										<div class="state-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>VNF</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td>DB Fault</td>
+									<td>Telcobase replication status abnormal alarm.</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>
+										<div class="state-box-maj">MAJOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="state-icon-alarm-on">알람 인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-min">MINOR</div>
+									</td>
+									<td>CPU Overload</td>
+									<td>System CPU load critical alarm (95%)</td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="state-icon-alarm-off">알람 미인지</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>VNF</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>
+										<div class="state-box-cri">CRITICAL</div>
+									</td>
+									<td>DB Fault</td>
+									<td>Telcobase replication status abnormal alarm.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="state-event" class="state-tab-cont js-tab-cont">
+					<div class="contents-section-top state-table-top">
+						<div class="right-float">
+							<div class="left-float left">
+								<select class="select default">
+									<option>전체 시스템 유형</option>
+								</select>
+							</div>
+							<button type="button" class="btn-stroke-orange left-float">이벤트 삭제</button>
+						</div>
+					</div>
+
+					<div class="contents-section-inner no-border out-border state-table-wrap">
+						<table class="vt-table out-border">
+							<caption class="hide">목록</caption>
+							<colgroup>
+								<col width="50px" />
+								<col width="210px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="130px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="240px" />
+								<col width="auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="first center chkbox">
+										<div class="check-wrap center">
+											<input id="chk-label-1" class="check-box" type="checkbox">
+											<label for="chk-label-1" class="check-label blind">선택</label>
+										</div>
+									</th>
+									<th scope="col">발생시각</th>
+									<th scope="col">시스템 유형</th>
+									<th scope="col">시스템</th>
+									<th scope="col">서브 시스템</th>
+									<th scope="col">이벤트</th>
+									<th scope="col">진행 상태</th>
+									<th scope="col">실패 사유</th>
+									<th scope="col">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-2" class="check-box" type="checkbox">
+											<label for="chk-label-2" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-3" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-3" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-4" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-4" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-5" class="check-box" type="checkbox">
+											<label for="chk-label-5" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>CRCM1A</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="center">
+										<div class="check-wrap center">
+											<input id="chk-label-6" class="check-box" type="checkbox" disabled="disable">
+											<label for="chk-label-6" class="check-label blind">선택</label>
+										</div>
+									</td>
+									<td>2015/02/24 13:00:12</td>
+									<td>NFVI</td>
+									<td>VIM1A</td>
+									<td>-</td>
+									<td>ha::switchover</td>
+									<td>DB Fault</td>
+									<td>-</td>
+									<td></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</section>
+
+			<section class="contents-section instance-list">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">VNF Instance List</h3>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="280px" />
+							<col width="280px" />
+							<col width="280px" />
+							<col width="200px" />
+							<col width="auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="first">No</th>
+								<th scope="col">VNF Instance Name</th>
+								<th scope="col">Network Service Name</th>
+								<th scope="col">Create Time</th>
+								<th scope="col">Flavor</th>
+								<th scope="col">State</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>HD_Voice</td>
+								<td>2015/02/24 13:00:12</td>
+								<td>Gold</td>
+								<td>
+									<div class="vnf-icon-green">In-Service</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>MSS1</td>
+								<td>HD_Voice</td>
+								<td>2015/02/24 13:00:12</td>
+								<td>Gold</td>
+								<td>
+									<div class="vnf-icon-red">Stopped</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="contents-section-bottom">
+
+					<div class="left-float">
+
+						<div class="form-label left-float left small-font">페이지당</div>
+
+						<select class="select small left-float">
+							<option>20</option>
+						</select>
+
+						<div class="form-label left-float right small-font">항목 출력</div>
+
+					</div>
+
+					<div class="pagination right-float">
+						<a href="#" class="page-item page-first">처음페이지</a>
+						<a href="#" class="page-item page-prev">이전페이지</a>
+						<a href="#" class="page-item current">1</a>
+						<a href="#" class="page-item">2</a>
+						<a href="#" class="page-item">3</a>
+						<a href="#" class="page-item">4</a>
+						<a href="#" class="page-item">5</a>
+						<a href="#" class="page-item page-next">다음페이지</a>
+						<a href="#" class="page-item page-last">마지막페이지</a>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+
+</section>
+
+</body>
+</html>

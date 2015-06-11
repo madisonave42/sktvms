@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>SKT vIMS CENTER</title>
+
+<link rel="stylesheet" href="../../css/lib/selectric.css">
+<link rel="stylesheet" href="../../css/lib/chartist.min.css">
+<link rel="stylesheet" href="../../css/common.css" />
+<link rel="stylesheet" href="../../css/table_ori.css" />
+<link rel="stylesheet" href="../../css/pagination.css" />
+<link rel="stylesheet" href="../../css/vim.css">
+<script src="../../js/lib/jquery-1.11.0.min.js"></script>
+<script src="../../js/lib/jquery-ui.min.js"></script>
+<script src="../../js/lib/jquery.selectric.min.js"></script>
+<script src="../../js/lib/chartist.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrapper">
+    <h1 class="logo">
+      <a href="#"><img src="../../images/logo.png" alt="SKT vIMS CENTER"></a>
+    </h1>
+    <ul class="gnb">
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link01">모니터링</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub01">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Dashboard</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Statistics Monitoring</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link02">VNF 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub02">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 등록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF Instance 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF 패키지 업데이트 작업 목록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VNF별 Host 배치도</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link07">VIM 관리</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub07">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">가상 자원 운용 현황</a>
+                </li>
+                <li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">Host별 가상 자원 운용 현황</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">Compute Host 추가</a>
+                </li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 목록</a>
+                </li>
+                <li class="gnb-sub-group-item">
+                  <a href="#" class="gnb-sub-link">VM 이미지 추가</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link03">통계</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub03">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">기간 통계</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">비교 통계</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link04">로그</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub04">
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">알람로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">VNF 이벤트 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">운용 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 로그</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">가상 자원 관리 로그</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link05">운용자</a>
+
+        <div class="gnb-sub-wrap">
+          <ul class="gnb-sub05">
+            <li class="gnb-sub-item">
+              <ul class="gnb-sub-group">
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 목록</a>
+              	</li>
+              	<li class="gnb-sub-group-item">
+              		<a href="#" class="gnb-sub-link">운용자 등록</a>
+              	</li>
+              </ul>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">Session 목록</a>
+            </li>
+            <li class="gnb-sub-item">
+              <a href="#" class="gnb-sub-link">접속 IP 목록</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gnb-item">
+        <a href="#" class="gnb-main-link gnb-main-link06">설정</a>
+      </li>
+    </ul>
+
+    <dl class="header-user">
+      <dt class="header-user-name">system admin</dt>
+      <dd>
+        <div class="header-user-path">root</div>
+        <ul class="header-user-path-submenu">
+          <li><a href="#" class="submenu-link">Log out</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</header>
+
+<section class="main">
+	<div class="main-header">
+		<div class="wrapper">
+			<div class="main-heading">
+				<h2 class="main-heading-title">Host별 가상 자원 운용 현황</h2>
+				<p class="main-heading-overview">VIM이 관리하는 모든 가상 자원에 대한 사용 현황을 제공합니다.</p>
+			</div>
+
+			<div class="left-float right group">
+				<div class="main-heading-form-group left-float left">
+					<div class="group-label em-dark">Compute Host</div>
+					<select class="select default">
+						<option>COMP1</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="right-float">
+				<div class="main-heading-form-group left-float">
+					<button type="button" class="vim-btn-refresh left-float">새로고침</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main-content">
+
+		<div class="wrapper">
+
+			<section class="contents-section instance-general">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">가상 자원 운용 현황</h3>
+				</div>
+				<div class="contents-section-inner no-border">
+
+					<div class="vim-circle-wrap">
+						<div class="vim-circle">
+							<div class="vim-circle-title">CPU</div>
+							<div class="vim-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square vim-circle-chart-bar red"></div>
+								<div class="vim-circle-chart-text red">75%</div>
+							</div>
+							<div class="vim-circle-info right-float">
+								<div class="vim-circle-info-label">used</div>
+								<div class="vim-circle-info-text">14 Cores</div>
+								<div class="vim-circle-info-label">total</div>
+								<div class="vim-circle-info-text">86 Cores</div>
+							</div>
+						</div>
+						<div class="vim-circle">
+							<div class="vim-circle-title">Memory</div>
+							<div class="vim-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square vim-circle-chart-bar yellow"></div>
+								<div class="vim-circle-chart-text orange">55%</div>
+							</div>
+							<div class="vim-circle-info right-float">
+								<div class="vim-circle-info-label">used</div>
+								<div class="vim-circle-info-text">68 GBytes</div>
+								<div class="vim-circle-info-label">total</div>
+								<div class="vim-circle-info-text">128 GBytes</div>
+							</div>
+						</div>
+						<div class="vim-circle">
+							<div class="vim-circle-title">Disk</div>
+							<div class="vim-circle-chart left-float js-pie-chart">
+								<div class="ct-chart ct-square vim-circle-chart-bar green"></div>
+								<div class="vim-circle-chart-text green">25%</div>
+							</div>
+							<div class="vim-circle-info right-float">
+								<div class="vim-circle-info-label">used</div>
+								<div class="vim-circle-info-text">250 GBytes</div>
+								<div class="vim-circle-info-label">total</div>
+								<div class="vim-circle-info-text">1,000 GBytes</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="contents-section computehost">
+				<div class="contents-section-top">
+					<h3 class="section-heading color eng left-float">VM별 가상 자원 할당 현황</h3>
+				</div>
+
+				<div class="contents-section-inner no-border">
+					<table class="vt-table">
+						<caption class="hide">목록</caption>
+						<colgroup>
+							<col width="60px" />
+							<col width="auto" />
+							<col width="200px" />
+							<col width="400px" />
+							<col width="400px" />
+							<col width="400px" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="first">No</th>
+								<th scope="col">VNF Instance Name</th>
+								<th scope="col">VNFC Name</th>
+								<th scope="col">vCPU</th>
+								<th scope="col">Memory</th>
+								<th scope="col">Disk</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>
+									<a href="" class="vim-table-link">COMP-001</a>
+								</td>
+								<td>LBCM1A</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar orange" style="width:75%"></div>
+										<div class="vim-graph-msg">75%</div>
+									</div>
+									<div class="left-float vim-graph-label">45 Core</div>
+								</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar" style="width:50%"></div>
+										<div class="vim-graph-msg">50%</div>
+									</div>
+									<div class="left-float vim-graph-label">45G</div>
+								</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar" style="width:45%"></div>
+										<div class="vim-graph-msg">45%</div>
+									</div>
+									<div class="left-float vim-graph-label">45G</div>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>
+									<a href="" class="vim-table-link">COMP-001</a>
+								</td>
+								<td>LBCM1A</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar orange" style="width:75%"></div>
+										<div class="vim-graph-msg">75%</div>
+									</div>
+									<div class="left-float vim-graph-label">45 Core</div>
+								</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar" style="width:50%"></div>
+										<div class="vim-graph-msg">50%</div>
+									</div>
+									<div class="left-float vim-graph-label">45G</div>
+								</td>
+								<td>
+									<div class="vim-graph small left-float">
+										<div class="vim-graph-bar" style="width:45%"></div>
+										<div class="vim-graph-msg">45%</div>
+									</div>
+									<div class="left-float vim-graph-label">45G</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</section>
+
+		</div>
+
+	</div>
+
+</section>
+
+</body>
+</html>

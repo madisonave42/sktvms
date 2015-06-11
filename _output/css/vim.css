@@ -1,0 +1,133 @@
+.contents-section.computehost {
+  margin-top: 6px;
+}
+
+.vim-btn-refresh {
+  width: 24px;
+  height: 30px;
+  padding: 0;
+  background: url(../images/ico_refresh.png) no-repeat 50% 50%;
+  border: 0;
+  text-indent: -9999px;
+}
+.vim-circle {
+  width: 350px;
+  height: 220px;
+  display: inline-block;
+  margin: 0 25px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+}
+.vim-circle-wrap {
+  text-align: center;
+}
+.vim-circle-title {
+  margin-bottom: 20px;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+.vim-circle-chart {
+  position: relative;
+  margin-top: 2px;
+  margin-left: 20px;
+}
+.vim-circle-chart-bar {
+  position: absolute !important;
+  width: 150px !important;
+  height: 150px;
+}
+.vim-circle-chart-bar.red .ct-series.ct-series-a .ct-area, .vim-circle-chart-bar.red .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #e70000;
+}
+.vim-circle-chart-bar.yellow .ct-series.ct-series-a .ct-area, .vim-circle-chart-bar.yellow .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #fcb63c;
+}
+.vim-circle-chart-bar.green .ct-series.ct-series-a .ct-area, .vim-circle-chart-bar.green .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+  fill: #00b9b0;
+}
+.vim-circle-chart-bar .ct-series.ct-series-b .ct-area,
+.vim-circle-chart-bar .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+  fill: #e8e8e8;
+}
+.vim-circle-chart-text {
+  width: 84px;
+  height: 84px;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  line-height: 84px;
+  text-align: center;
+  border-radius: 100%;
+  background: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.vim-circle-chart-text.red {
+  color: #e70000;
+}
+.vim-circle-chart-text.orange {
+  color: #fcb63c;
+}
+.vim-circle-chart-text.green {
+  color: #00b9b0;
+}
+.vim-circle-info {
+  margin-top: 30px;
+  margin-right: 5px;
+  min-width: 100px;
+  text-align: left;
+}
+.vim-circle-info-label {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #576363;
+}
+.vim-circle-info-label:first-child {
+  margin-top: 0;
+}
+.vim-circle-info-text {
+  color: #576363;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+.vim-graph {
+  position: relative;
+  width: 90%;
+  height: 20px;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.vim-graph.small {
+  width: 65%;
+}
+.vim-graph-bar {
+  height: 20px;
+  background: #00b9b0;
+}
+.vim-graph-bar.orange {
+  background: #ee6247;
+}
+.vim-graph-msg {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #576363;
+}
+.vim-graph-label {
+  margin-left: 10px;
+  line-height: 20px;
+}
+.vim-table-link {
+  color: #777;
+  text-decoration: underline;
+}
+
+
