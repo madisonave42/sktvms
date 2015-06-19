@@ -334,6 +334,10 @@
       }
     }
 
+    &-refresh {
+      margin-top:6px;
+    }
+
   }
 
   &-graph {
@@ -350,10 +354,26 @@
 
     &-bar {
       height:20px;
-      background:$blue-green;
+      background:$normal;
 
       &.orange {
         background:$orange;
+      }
+
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.normal {
+        background:$normal;
       }
     }
 

@@ -280,6 +280,9 @@
 .vnf-host-item-name.blue {
   background-color: #d2e7f6;
 }
+.vnf-host-refresh {
+  margin-top: 6px;
+}
 .vnf-graph {
   position: relative;
   width: 100%;
@@ -297,6 +300,18 @@
 }
 .vnf-graph-bar.orange {
   background: #ee6247;
+}
+.vnf-graph-bar.critical {
+  background: #e70000;
+}
+.vnf-graph-bar.major {
+  background: #ee6247;
+}
+.vnf-graph-bar.minor {
+  background: #fcb63c;
+}
+.vnf-graph-bar.normal {
+  background: #00b9b0;
 }
 .vnf-graph-msg {
   position: absolute;
