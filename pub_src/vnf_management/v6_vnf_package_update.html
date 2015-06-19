@@ -79,6 +79,14 @@ include "header_bottom.html"
 						<div class="update-module-title green">LBCM1A</div>
 					</div>
 
+					<div class="update-module green">
+						<div class="update-module-title green">LBCM1A</div>
+					</div>
+
+					<div class="update-module yellow">
+						<div class="update-module-title yellow">LBCM1A</div>
+					</div>
+
 				</div>
 
 				<div class="update-flow">
@@ -104,6 +112,10 @@ include "header_bottom.html"
 
 								<div class="update-flow-log">
 									<button type="button" class="btn-log" disabled>pkg-ready</button>
+								</div>
+
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
 								</div>
 
 								<div class="update-flow-log">
@@ -163,9 +175,35 @@ include "header_bottom.html"
 								<div class="update-flow-log">
 								</div>
 
+								<div class="update-flow-log">
+									<button type="button" class="btn-log">pkg-ready</button>
+								</div>
+
 							</div>
 
 						</div>
+						<div class="update-flow-module-diagram">
+							<div class="process-status processing">시스템 점검</div>
+							<button type="button" class="flow-btn rollback">Rollback</button>
+							<button type="button" class="flow-btn next">다음</button>
+						</div>
+					</div>
+					<!-- flow module (반복) : E -->
+
+					<!-- flow module (반복) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar fail"></div>
+						<div class="update-flow-module-diagram">
+							<div class="process-status processing">시스템 점검</div>
+							<button type="button" class="flow-btn rollback">Rollback</button>
+							<button type="button" class="flow-btn next">다음</button>
+						</div>
+					</div>
+					<!-- flow module (반복) : E -->
+
+					<!-- flow module (반복) : S -->
+					<div class="update-flow-module">
+						<div class="update-flow-module-bar fail"></div>
 						<div class="update-flow-module-diagram">
 							<div class="process-status processing">시스템 점검</div>
 							<button type="button" class="flow-btn rollback">Rollback</button>

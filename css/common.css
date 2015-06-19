@@ -2,27 +2,27 @@
   font-family: 'ubuntu';
   font-style: normal;
   font-weight: 400;
-  src: url(../css/fonts/Ubuntu-R.eot) format("eot");
+  src: url(fonts/Ubuntu-R.eot) format("eot");
   /* for IE9 */
-  src: url(../css/fonts/Ubuntu-R.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-R.woff) format("woff"), url(../css/fonts/Ubuntu-R.ttf) format("truetype");
+  src: url(fonts/Ubuntu-R.eot?#iefix) format("embedded-opentype"), url(fonts/Ubuntu-R.woff) format("woff"), url(fonts/Ubuntu-R.ttf) format("truetype");
   /* Safari, Android, Ios */
 }
 @font-face {
   font-family: 'ubuntu';
   font-style: normal;
   font-weight: 700;
-  src: url(../css/fonts/Ubuntu-M.eot) format("eot");
+  src: url(fonts/Ubuntu-M.eot) format("eot");
   /* for IE9 */
-  src: url(../css/fonts/Ubuntu-M.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-M.woff) format("woff"), url(../css/fonts/Ubuntu-M.ttf) format("truetype");
+  src: url(fonts/Ubuntu-M.eot?#iefix) format("embedded-opentype"), url(fonts/Ubuntu-M.woff) format("woff"), url(fonts/Ubuntu-M.ttf) format("truetype");
   /* Safari, Android, Ios */
 }
 @font-face {
   font-family: 'ubuntu';
   font-style: normal;
   font-weight: 800;
-  src: url(../css/fonts/Ubuntu-B.eot) format("eot");
+  src: url(fonts/Ubuntu-B.eot) format("eot");
   /* for IE9 */
-  src: url(../css/fonts/Ubuntu-B.eot?#iefix) format("embedded-opentype"), url(../css/fonts/Ubuntu-B.woff) format("woff"), url(../css/fonts/Ubuntu-B.ttf) format("truetype");
+  src: url(fonts/Ubuntu-B.eot?#iefix) format("embedded-opentype"), url(fonts/Ubuntu-B.woff) format("woff"), url(fonts/Ubuntu-B.ttf) format("truetype");
   /* Safari, Android, Ios */
 }
 /**
@@ -333,14 +333,14 @@ img {
 .gnb-sub-wrap:hover {
   display: block;
 }
-.gnb-sub01, .gnb-sub02, .gnb-sub03, .gnb-sub04, .gnb-sub05, .gnb-sub07 {
+.gnb-sub01, .gnb-sub02, .gnb-sub03, .gnb-sub04, .gnb-sub05, .gnb-sub07, .gnb-sub08 {
   display: block;
   margin: 0 auto;
   width: 1760px;
   box-sizing: border-box;
   padding-left: 313px;
 }
-.gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after, .gnb-sub07:after {
+.gnb-sub01:after, .gnb-sub02:after, .gnb-sub03:after, .gnb-sub04:after, .gnb-sub05:after, .gnb-sub07:after, .gnb-sub08:after {
   content: ".";
   display: block;
   height: 0;
@@ -357,32 +357,35 @@ img {
   padding-left: 817px;
 }
 .gnb-sub05 {
-  padding-left: 1074px;
+  padding-left: 1078px;
 }
 .gnb-sub07 {
   padding-left: 555px;
 }
+.gnb-sub08 {
+  padding-left: 1173px;
+}
 .gnb-sub-item {
   position: relative;
   float: left;
-  margin-left: 15px;
-  padding-left: 15px;
+  margin-right: 15px;
+  padding-right: 15px;
 }
 .gnb-sub-item:after {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 0;
+  top: -1px;
+  right: 0;
   display: block;
   width: 1px;
-  height: 9px;
+  height: 100%;
   background-color: #f7b1a3;
 }
-.gnb-sub-item:first-child {
+.gnb-sub-item:last-child {
   margin-left: 0;
   padding-left: 0;
 }
-.gnb-sub-item:first-child:after {
+.gnb-sub-item:last-child:after {
   display: none;
 }
 .gnb-sub-group-item {

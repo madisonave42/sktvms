@@ -736,6 +736,18 @@
   }
 }
 
+.ui{
+
+  &-draggable{
+
+    &-dragging{
+      z-index:50;
+    }
+
+  }
+
+}
+
 .graph{
   &-list {
     //width: 100%;
@@ -762,6 +774,7 @@
 
     &-draggable{
       width:423px;
+      //width:852px;
     }
 
     &.m1x1{

@@ -66,7 +66,7 @@ var pageItem = function( pageIndex ){
 
   var $pageItem = '<section class="contents-section stats-monitoring current">';
   $pageItem += '<div class="contents-section-inner stats-monitoring fill-gray">';
-  $pageItem += '<ul class="container-list">';
+  $pageItem += '<ul class="container-list page' + pageIndex + '">';
   $pageItem += '<li class="container-item"></li>';
   $pageItem += '<li class="container-item"></li>';
   $pageItem += '<li class="container-item"></li>';
@@ -541,38 +541,133 @@ var Graph = function(){
 
   var graphIndex = 0;
 
-  var _addMarkGrid = function(firstGridIndex, gridCol, gridRow){
+  var destinationIndex;
+  var $droppedGraph;
+
+  var viaGrid = [];
+  var viaIndex = 0;
+
+  var $changeGraphItem;
+  var originCol;
+  var originRow;
+
+  var _addMarkGrid = function(graphIndex, firstGridIndex, gridCol, gridRow){
 
     for(var i=0; i<gridRow; i++){
       for( var j=0; j<gridCol; j++ ){
 
         var firstLinearIndex = firstGridIndex + ( j + 4 * i );
-        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + firstLinearIndex );
+        //console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : origin :' + firstLinearIndex );
         $('.contents-section.stats-monitoring.current')
-          .find('.container-list').find('.container-item').eq(firstLinearIndex).attr('data-used', 'used');
+          .find('.container-list').find('.container-item').eq(firstLinearIndex).attr({
+            'data-used' : 'used',
+            'data-graph' : graphIndex
+          });
 
       }
     }
 
   };
 
-  var _reMarkGrid = function(originGridIndex, destinationGridIndex, gridCol, gridRow){
+  var _reMarkGrid = function(dataGraph, originGridIndex, destinationGridIndex, gridCol, gridRow){
 
-    console.log('====================== reMark!!');
+    var page =  $('.contents-section.stats-monitoring').index(  $('.contents-section.stats-monitoring.current') );
 
     for(var i=0; i<gridRow; i++){
       for( var j=0; j<gridCol; j++ ){
 
-        var originLinearIndex = originGridIndex + ( j + 4 * i );
-        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + originLinearIndex );
-        $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').eq(originLinearIndex).removeAttr('data-used');
-
-        var destinationLinearIndex = destinationGridIndex + ( j + 4 * i );
-        console.log( 'col : ' + j + ' - ' + 'row : ' + i + ' : ' + destinationLinearIndex );
-        $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').eq(destinationLinearIndex).attr('data-used', 'used');
+        var originLinearIndex = parseInt(originGridIndex) + ( j + 4 * i );
+        console.log( 'orgin : ' + originGridIndex + ' : col : ' + j + ' - ' + 'row : ' + i + ' : source : ' + originLinearIndex );
+        //console.log(originLinearIndex);
+        $('.container-list.page' + page).find('.container-item').eq(originLinearIndex).removeAttr('data-used data-graph');
 
       }
     }
+
+    for(var i=0; i<gridRow; i++){
+      for( var j=0; j<gridCol; j++ ){
+
+        var destinationLinearIndex = parseInt(destinationGridIndex) + ( j + 4 * i );
+        console.log( 'dest : ' + destinationGridIndex + ' : col : ' + j + ' - ' + 'row : ' + i + ' : destin : ' + destinationLinearIndex );
+        //console.log(destinationLinearIndex);
+        $('.container-list.page' + page).find('.container-item').eq(destinationLinearIndex).attr({
+          'data-used' : 'used',
+          'data-graph' : dataGraph
+        });
+      }
+    }
+
+  };
+
+  var _reMarkGridResize = function(dataGraph, gridIndex, originGridCol, originGridRow, newGridCol, newGridRow){
+
+    var page =  $('.contents-section.stats-monitoring').index(  $('.contents-section.stats-monitoring.current') );
+
+    for(var i=0; i<originGridRow; i++){
+      for( var j=0; j<originGridCol; j++ ){
+
+        var originLinearIndex = parseInt(gridIndex) + ( j + 4 * i );
+        console.log( 'orgin : ' + gridIndex + ' : col : ' + j + ' - ' + 'row : ' + i + ' : source : ' + originLinearIndex );
+        //console.log(originLinearIndex);
+        $('.container-list.page' + page).find('.container-item').eq(originLinearIndex).removeAttr('data-used data-graph');
+
+      }
+    }
+
+    for(var i=0; i<newGridRow; i++){
+      for( var j=0; j<newGridCol; j++ ){
+
+        var destinationLinearIndex = parseInt(gridIndex) + ( j + 4 * i );
+        console.log( 'dest : ' + gridIndex + ' : col : ' + j + ' - ' + 'row : ' + i + ' : destin : ' + destinationLinearIndex );
+        //console.log(destinationLinearIndex);
+        $('.container-list.page' + page).find('.container-item').eq(destinationLinearIndex).attr({
+          'data-used' : 'used',
+          'data-graph' : dataGraph
+        });
+      }
+    }
+
+  };
+
+  var _delMarkGrid = function(gridIndex, originGridCol, originGridRow){
+
+    var page =  $('.contents-section.stats-monitoring').index(  $('.contents-section.stats-monitoring.current') );
+
+    for(var i=0; i<originGridRow; i++){
+      for( var j=0; j<originGridCol; j++ ){
+
+        var originLinearIndex = parseInt(gridIndex) + ( j + 4 * i );
+        console.log( 'orgin : ' + gridIndex + ' : col : ' + j + ' - ' + 'row : ' + i + ' : source : ' + originLinearIndex );
+        //console.log(originLinearIndex);
+        $('.container-list.page' + page).find('.container-item').eq(originLinearIndex).removeAttr('data-used data-graph');
+
+      }
+    }
+
+  };
+
+  var _checkHasGraph = function( destinationGrid, moveGraph ){
+
+    var checkFlag = false;
+    var destinationGridIndex = $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').index( destinationGrid );
+
+    for(var i=0; i<moveGraph.attr('data-row'); i++){
+      for( var j=0; j<moveGraph.attr('data-col'); j++ ){
+
+        var destinationLinearIndex = destinationGridIndex + ( j + 4 * i );
+
+        var gridGraphNum = $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').eq(destinationLinearIndex).attr('data-graph');
+
+        if( gridGraphNum != undefined && moveGraph.attr('data-graph') != gridGraphNum ){
+          checkFlag = true;
+        } else if( checkFlag != true ) {
+          checkFlag = false;
+        }
+
+      }
+    }
+
+    return checkFlag;
 
   };
 
@@ -580,11 +675,6 @@ var Graph = function(){
 
     var left = currentGridOffset.left - firstGridOffset.left;
     var top = currentGridOffset.top - firstGridOffset.top;
-
-    var viaGrid = [];
-    var viaIndex = 0;
-
-    _addMarkGrid(gridIndex, gridCol, gridRow);
 
     // draggable
     $graphNode.attr({
@@ -603,14 +693,28 @@ var Graph = function(){
       snap: '.container-item',
       snapMode: 'inner',
       snapTolerance: 35,
-      revert: function(obj){
-        console.log('revert : ' + obj);
+      revertDuration:100,
+      create: function(){
 
-        if( obj === false ){
-          return true;
-        }
+        _addMarkGrid(graphIndex, gridIndex, gridCol, gridRow);
+
       },
-      revertDuration:100
+
+      revert: function(ui){
+
+        if( ui === false ){
+          return true;
+
+        } else if(  _checkHasGraph( $(ui[0]), $(this) ) ){
+          //if( $(ui[0]).attr('data-graph') != $(this).attr('data-graph') ) {
+          return true;
+
+        } else {
+          _reMarkGrid($droppedGraph.attr('data-graph'), viaGrid[0], destinationIndex, $droppedGraph.attr('data-col'), $droppedGraph.attr('data-row'));
+          return false;
+        }
+
+      }
 
     }).css({
       position:'absolute',
@@ -623,15 +727,16 @@ var Graph = function(){
       tolerance:'fit',
 
       out: function(event, ui){
-        viaGrid[viaIndex] = $('.container-item').index( $(this) );
-        console.log('current' + viaIndex + ' : ' + viaGrid[viaIndex]);
+        //console.log(viaIndex);
+        viaGrid[viaIndex] = $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').index( $(this) );
+        //console.log('current' + viaIndex + ' : ' + viaGrid[viaIndex]);
         viaIndex++;
       },
 
       drop: function(event, ui){
         var destinationPosition = ui.position;
-        var destinationIndex = $('.container-item').index( $(this) );
-        var $droppedGraph = $(ui.draggable);
+        destinationIndex =  $('.contents-section.stats-monitoring.current').find('.container-list').find('.container-item').index( $(this) );
+        $droppedGraph = $(ui.draggable);
 
         $droppedGraph.attr({
           'data-grid' : destinationIndex
@@ -640,12 +745,12 @@ var Graph = function(){
           'top' : destinationPosition.top
         });
 
-        console.log('origin : ' + viaGrid[0] + ' : destination : ' + destinationIndex);
-        console.log('graph : ' + $(ui.draggable).attr('data-graph') + ' : Col : ' + $droppedGraph.attr('data-col') + ' : Row : ' + $droppedGraph.attr('data-row'));
+        //console.log('origin : ' + viaGrid[0] + ' : destination : ' + destinationIndex);
+        //console.log('graph : ' + $(ui.draggable).attr('data-graph') + ' : Col : ' + $droppedGraph.attr('data-col') + ' : Row : ' + $droppedGraph.attr('data-row'));
 
         viaIndex = 0;
 
-        _reMarkGrid(viaGrid[0], destinationIndex, $droppedGraph.attr('data-col'), $droppedGraph.attr('data-row'));
+//        _reMarkGrid($droppedGraph.attr('data-graph'), viaGrid[0], destinationIndex, $droppedGraph.attr('data-col'), $droppedGraph.attr('data-row'));
       }
     });
   };
@@ -653,16 +758,26 @@ var Graph = function(){
   // privileged
 
   /* 변경 */
+
   this.showPopup = function( $containerCurrent, $containerCurrentParent ){
 
     $globalContainer = $containerCurrent;
     $globalContainerParent = $containerCurrentParent;
 
-    //var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
+    var addIndex = $globalContainerParent.find('.container-item').index( $globalContainer );
+
+    $('.stats-map-item-state').removeClass('used active');
 
     popAddGraph();
 
-    //$('.stats-map-item-state').eq(addIndex).addClass('active');
+    $('.contents-section.stats-monitoring.current .container-list .container-item').each(function(i){
+      if($('.contents-section.stats-monitoring.current .container-list .container-item').eq(i).attr('data-used') == 'used' ){
+        $('.stats-map-item-state').eq(i).addClass('used');
+      }
+    });
+
+    $('.stats-map-item-state').eq(addIndex).addClass('active');
+
     $('.js-btn-add-graph').removeClass('change').addClass('new');
     $('.popup-graph-title').val('').focus();
 
@@ -689,68 +804,12 @@ var Graph = function(){
     $(window).trigger('addGraph');
 
   };
-  /* 변경 */
 
-};
-
-// Setting Change
-var SetGraph = function(){
-
-  var $changeGraphItem;
-  var orignCol;
-  var orignRow;
-
-  var _dragNDrop = function($changeGraphItem, changeGraphTitle, newGridCol, newGridRow){
-
-    $changeGraphItem.attr({
-
-      'data-col' : newGridCol,
-      'data-row' : newGridRow
-
-    }).data({
-
-      'graphTitle' : changeGraphTitle,
-      'gridCol' : newGridCol,
-      'gridRow' : newGridRow
-
-    }).draggable({
-
-      addClasses: false,
-      snap: '.container-item',
-      snapMode: 'inner',
-      snapTolerance: 60,
-      revert: 'invalid',
-      revertDuration:100
-
-    });
-
-    $('.container-item').droppable({
-      tolerance:'fit',
-      drop: function(event, ui){
-        var destinationPosition = ui.position;
-        var destinationIndex = $('.container-item').index( $(this) );
-
-        $changeGraphItem.attr({
-
-          'data-index' : destinationIndex
-
-        }).data({
-
-          'left' : destinationPosition.left,
-          'top' : destinationPosition.top,
-          'index' : destinationIndex
-
-        });
-      }
-    });
-  };
-
-  /* 변경 */
-  this.showSetPopup = function( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow ){
+  this.showSetPopup = function( $thisGraphItem, thisTitle, thisGridCol, thisGridRow ){
 
     $changeGraphItem = $thisGraphItem;
-    orignCol = thisGridCol;
-    orignRow = thisGridRow;
+    originCol = thisGridCol;
+    originRow = thisGridRow;
 
     popAddGraph();
 
@@ -765,18 +824,38 @@ var SetGraph = function(){
 
   this.changeGraph = function( changeGraphTitle, newGridCol, newGridRow ){
 
-    var className4Origin = 'm' + orignCol + 'x' + orignRow;
+    var className4Origin = 'm' + originCol + 'x' + originRow;
     var className4New = 'm' + newGridCol + 'x' + newGridRow;
 
-    $changeGraphItem.find('.graph-title').val(changeGraphTitle);
+    var gridIndex = $changeGraphItem.attr('data-grid');
+    var graphIndex = $changeGraphItem.attr('data-graph');
+    var firstGridOffset = $globalContainerParent.find('.container-item').eq(0).offset();
+    var currentGridOffset = $changeGraphItem.offset();
+
+    _reMarkGridResize( graphIndex, gridIndex, originCol, originRow,  newGridCol, newGridRow);
+
+    $changeGraphItem.find('.graph-title').text(changeGraphTitle);
     $changeGraphItem.find('.graph-item').removeClass(className4Origin).addClass(className4New);
 
-    _dragNDrop($changeGraphItem, changeGraphTitle, newGridCol, newGridRow);
+    _dragNDrop($changeGraphItem, changeGraphTitle, gridIndex, graphIndex, newGridCol, newGridRow, currentGridOffset, firstGridOffset);
 
     popHide();
     $(window).trigger('addGraph');
 
   };
+
+  this.delGraph = function( $delGraphItem ){
+
+    var gridIndex = $delGraphItem.attr('data-grid');
+    var originGridCol = $delGraphItem.attr('data-col');
+    var originGridRow = $delGraphItem.attr('data-row');
+
+    _delMarkGrid(gridIndex, originGridCol, originGridRow);
+
+    $delGraphItem.remove();
+
+  };
+
   /* 변경 */
 
 };
@@ -930,22 +1009,25 @@ $(function(){
 	 * monitoring
 	 */
 
-	// Add Graph
+	var ct = [];
+	var paging = 1;
+
+	// Set container & graph unit height
 	(function(){
 
-		var $body = $('body');
-		var ct = new Graph();
+		var dragContainer = new ResizeContainer( $('.container-item') );
+		var dragGraph;
 
-		$body.on('click', '.container-item', function(){
-			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
+		$(window).on('addPage addGraph', function(){
+			dragContainer = new ResizeContainer( $('.container-item') );
+			dragGraph = new ResizeGraph( $('.graph-item') );
 		});
 
-		$body.on('click', '.js-btn-add-graph.new', function(){
-			var graphTitle = $('.popup-graph-title').val();
-			var gridCol = $('.spinner.col').val();
-			var gridRow = $('.spinner.row').val();
-
-			ct.addGraph( graphTitle, gridCol, gridRow );
+		$(window).on('resize', function(){
+			try{
+				dragContainer.resizeContainerFitWin();
+				dragGraph.resizeGraphContainer();
+			} catch(e) {}
 		});
 
 	})();
@@ -984,6 +1066,8 @@ $(function(){
 		$body.on('click', '.js-btn-add-page', function(){
 			var pageTitle = $('.js-page-title').val();
 			tab.addPage( $tabParent, pageTitle, $pageParent );
+			ct[paging] = new Graph();
+			paging++;
 		});
 
 		$body.on('click', '.js-btn-del-page', function(){
@@ -1011,41 +1095,49 @@ $(function(){
 
 	})();
 
-	// Set container & graph unit height
+	// Add Graph
 	(function(){
 
-		var dragContainer = new ResizeContainer( $('.container-item') );
-		var dragGraph;
+		var $body = $('body');
+		var currentPageIndex;
+		//var ct = new Graph();
 
-		$(window).on('addPage addGraph', function(){
-			dragContainer = new ResizeContainer( $('.container-item') );
-			dragGraph = new ResizeGraph( $('.graph-item') );
+		$body.on('click', '.container-item', function(){
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			ct[currentPageIndex].showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
 		});
 
-		$(window).on('resize', function(){
-			try{
-				dragContainer.resizeContainerFitWin();
-				dragGraph.resizeGraphContainer();
-			} catch(e) {}
+		$body.on('click', '.js-btn-add-graph.new', function(){
+
+			var graphTitle = $('.popup-graph-title').val();
+			var gridCol = $('.spinner.col').val();
+			var gridRow = $('.spinner.row').val();
+
+			ct[currentPageIndex].addGraph( graphTitle, gridCol, gridRow );
 		});
 
 	})();
 
-	// Button event graph container
+	// Edit Graph - Button event graph container
 	(function(){
 
 		var $body = $('body');
-		var setGraph = new SetGraph();
+		var currentPageIndex;
+		//var setGraph = new SetGraph();
 
 		$body.on('click', '.graph-btn.setting', function(){
 
-			var $thisGraphItem = $(this).parents('.graph-item-draggable');
+			var $thisGraphItem = $(this).closest('.graph-item-draggable');
 			var thisTitle = $thisGraphItem.data('graphTitle');
-			var thisIndex = $thisGraphItem.data('index');
-			var thisGridCol = $thisGraphItem.data('gridCol');
-			var thisGridRow = $thisGraphItem.data('gridRow');
+			var thisGridCol = $thisGraphItem.attr('data-col');
+			var thisGridRow = $thisGraphItem.attr('data-row');
 
-			setGraph.showSetPopup( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow );
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			ct[currentPageIndex].showSetPopup( $thisGraphItem, thisTitle, thisGridCol, thisGridRow );
 
 		});
 
@@ -1055,7 +1147,7 @@ $(function(){
 			var gridCol = $('.spinner.col').val();
 			var gridRow = $('.spinner.row').val();
 
-			setGraph.changeGraph(graphTitle, gridCol, gridRow);
+			ct[currentPageIndex].changeGraph(graphTitle, gridCol, gridRow);
 		});
 
 		$body.on('click', '.graph-btn.enlarge', function(){
@@ -1064,7 +1156,12 @@ $(function(){
 		});
 
 		$body.on('click', '.graph-btn.close', function(){
-			$(this).parents('.graph-item').remove();
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			var $delGraphItem = $(this).closest('.graph-item-draggable');
+
+			ct[currentPageIndex].delGraph( $delGraphItem );
 		});
 
 	})();
@@ -1079,6 +1176,7 @@ $(function(){
 		});
 
 	})();
+
 
 
 	// Resize dashboard list
@@ -1227,6 +1325,25 @@ $(function(){
 		$(window).on('load', function() {
 			radio.trigger('change');
 		});
+	})();
+
+	// vnf package module size & horizontal scroll
+	(function(){
+
+		if( $('div').is('.update-module-group') ){
+
+			var moduleLength = $('.update-module').length;
+			var moduleWidth = moduleLength * 202 + 327;
+
+			var flowLength = $('.update-flow-module').length;
+			var flowHeight = flowLength * 190 + 154;
+
+			$('.update-module-group, .update-flow').css({
+				width: moduleWidth,
+				height: flowHeight
+			});
+		}
+
 	})();
 
 	/*

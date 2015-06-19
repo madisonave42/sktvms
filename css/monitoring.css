@@ -550,6 +550,10 @@
   margin-right: 0;
 }
 
+.ui-draggable-dragging {
+  z-index: 50;
+}
+
 .graph-list {
   position: absolute;
   top: 6px;

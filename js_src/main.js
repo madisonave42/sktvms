@@ -133,22 +133,25 @@ $(function(){
 	 * monitoring
 	 */
 
-	// Add Graph
+	var ct = [];
+	var paging = 1;
+
+	// Set container & graph unit height
 	(function(){
 
-		var $body = $('body');
-		var ct = new Graph();
+		var dragContainer = new ResizeContainer( $('.container-item') );
+		var dragGraph;
 
-		$body.on('click', '.container-item', function(){
-			ct.showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
+		$(window).on('addPage addGraph', function(){
+			dragContainer = new ResizeContainer( $('.container-item') );
+			dragGraph = new ResizeGraph( $('.graph-item') );
 		});
 
-		$body.on('click', '.js-btn-add-graph.new', function(){
-			var graphTitle = $('.popup-graph-title').val();
-			var gridCol = $('.spinner.col').val();
-			var gridRow = $('.spinner.row').val();
-
-			ct.addGraph( graphTitle, gridCol, gridRow );
+		$(window).on('resize', function(){
+			try{
+				dragContainer.resizeContainerFitWin();
+				dragGraph.resizeGraphContainer();
+			} catch(e) {}
 		});
 
 	})();
@@ -187,6 +190,8 @@ $(function(){
 		$body.on('click', '.js-btn-add-page', function(){
 			var pageTitle = $('.js-page-title').val();
 			tab.addPage( $tabParent, pageTitle, $pageParent );
+			ct[paging] = new Graph();
+			paging++;
 		});
 
 		$body.on('click', '.js-btn-del-page', function(){
@@ -214,41 +219,49 @@ $(function(){
 
 	})();
 
-	// Set container & graph unit height
+	// Add Graph
 	(function(){
 
-		var dragContainer = new ResizeContainer( $('.container-item') );
-		var dragGraph;
+		var $body = $('body');
+		var currentPageIndex;
+		//var ct = new Graph();
 
-		$(window).on('addPage addGraph', function(){
-			dragContainer = new ResizeContainer( $('.container-item') );
-			dragGraph = new ResizeGraph( $('.graph-item') );
+		$body.on('click', '.container-item', function(){
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			ct[currentPageIndex].showPopup( $(this), $(this).parents('.contents-section-inner.stats-monitoring') );
 		});
 
-		$(window).on('resize', function(){
-			try{
-				dragContainer.resizeContainerFitWin();
-				dragGraph.resizeGraphContainer();
-			} catch(e) {}
+		$body.on('click', '.js-btn-add-graph.new', function(){
+
+			var graphTitle = $('.popup-graph-title').val();
+			var gridCol = $('.spinner.col').val();
+			var gridRow = $('.spinner.row').val();
+
+			ct[currentPageIndex].addGraph( graphTitle, gridCol, gridRow );
 		});
 
 	})();
 
-	// Button event graph container
+	// Edit Graph - Button event graph container
 	(function(){
 
 		var $body = $('body');
-		var setGraph = new SetGraph();
+		var currentPageIndex;
+		//var setGraph = new SetGraph();
 
 		$body.on('click', '.graph-btn.setting', function(){
 
-			var $thisGraphItem = $(this).parents('.graph-item-draggable');
+			var $thisGraphItem = $(this).closest('.graph-item-draggable');
 			var thisTitle = $thisGraphItem.data('graphTitle');
-			var thisIndex = $thisGraphItem.data('index');
-			var thisGridCol = $thisGraphItem.data('gridCol');
-			var thisGridRow = $thisGraphItem.data('gridRow');
+			var thisGridCol = $thisGraphItem.attr('data-col');
+			var thisGridRow = $thisGraphItem.attr('data-row');
 
-			setGraph.showSetPopup( $thisGraphItem, thisTitle, thisIndex, thisGridCol, thisGridRow );
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			ct[currentPageIndex].showSetPopup( $thisGraphItem, thisTitle, thisGridCol, thisGridRow );
 
 		});
 
@@ -258,7 +271,7 @@ $(function(){
 			var gridCol = $('.spinner.col').val();
 			var gridRow = $('.spinner.row').val();
 
-			setGraph.changeGraph(graphTitle, gridCol, gridRow);
+			ct[currentPageIndex].changeGraph(graphTitle, gridCol, gridRow);
 		});
 
 		$body.on('click', '.graph-btn.enlarge', function(){
@@ -267,7 +280,12 @@ $(function(){
 		});
 
 		$body.on('click', '.graph-btn.close', function(){
-			$(this).parents('.graph-item').remove();
+			var $currentPage = $(this).closest('.contents-section.stats-monitoring.current');
+			currentPageIndex = $('.contents-section.stats-monitoring').index( $currentPage );
+
+			var $delGraphItem = $(this).closest('.graph-item-draggable');
+
+			ct[currentPageIndex].delGraph( $delGraphItem );
 		});
 
 	})();
@@ -282,6 +300,7 @@ $(function(){
 		});
 
 	})();
+
 
 
 	// Resize dashboard list
@@ -430,6 +449,25 @@ $(function(){
 		$(window).on('load', function() {
 			radio.trigger('change');
 		});
+	})();
+
+	// vnf package module size & horizontal scroll
+	(function(){
+
+		if( $('div').is('.update-module-group') ){
+
+			var moduleLength = $('.update-module').length;
+			var moduleWidth = moduleLength * 202 + 327;
+
+			var flowLength = $('.update-flow-module').length;
+			var flowHeight = flowLength * 190 + 154;
+
+			$('.update-module-group, .update-flow').css({
+				width: moduleWidth,
+				height: flowHeight
+			});
+		}
+
 	})();
 
 	/*
