@@ -114,6 +114,7 @@
   &-fill{
     &-orange{
       @include btn($box-default-width, $box-default-height, $box-default-height, 0, $white, $orange, 2px);
+      padding:0;
 
       &:disabled{
         background:#f6b0a3;

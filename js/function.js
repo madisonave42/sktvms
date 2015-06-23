@@ -1346,6 +1346,42 @@ $(function(){
 
 	})();
 
+	// vnf package update error menu
+	(function() {
+		var btn = $('.js-show-flow-function'),
+			menus;
+
+		if (btn.length > 0) {
+			menus = $('.update-flow-function-menu');
+
+			btn.each(function() {
+				$(this).on('click', function(e) {
+					e.preventDefault();
+					var menu = $(this).closest('.update-flow-function').find('.update-flow-function-menu');
+
+					if ($(this).hasClass('on')) {
+						$(this).removeClass('on');
+						menu.removeClass('on');
+					}	else {
+						btn.removeClass('on');
+						menus.removeClass('on');
+
+						$(this).addClass('on');
+						menu.addClass('on');
+					}
+
+				});
+			});
+
+			$('body').on('click', function(e) {
+				if (!$(e.target).closest('.update-flow-function').length) {
+					btn.removeClass('on');
+					menus.removeClass('on');
+				}
+			});
+		}
+	})();
+
 	/*
 	 * stats
 	 */
