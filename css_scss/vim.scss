@@ -49,19 +49,24 @@
         width:150px!important;
         height:150px;
 
-        &.red .ct-series.ct-series-a .ct-area,
-        &.red .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-          fill:$red;
+        &.critical .ct-series.ct-series-a .ct-area,
+        &.critical .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$critical;
         }
 
-        &.yellow .ct-series.ct-series-a .ct-area,
-        &.yellow .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-          fill:$yellow;
+        &.major .ct-series.ct-series-a .ct-area,
+        &.major .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$major;
         }
 
-        &.green .ct-series.ct-series-a .ct-area,
-        &.green .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-          fill:$blue-green;
+        &.minor .ct-series.ct-series-a .ct-area,
+        &.minor .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$minor;
+        }
+
+        &.normal .ct-series.ct-series-a .ct-area,
+        &.normal .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$normal;
         }
 
         .ct-series.ct-series-b .ct-area,
@@ -83,16 +88,20 @@
         font-size:20px;
         font-weight:bold;
 
-        &.red {
-          color:$red;
+        &.critical {
+          color:$critical;
         }
 
-        &.orange {
-          color:$yellow;
+        &.major {
+          color:$major;
         }
 
-        &.green {
-          color:$blue-green;
+        &.minor {
+          color:$minor;
+        }
+
+        &.normal {
+          color:$normal;
         }
       }
 
@@ -140,8 +149,20 @@
       height:20px;
       background:$blue-green;
 
-      &.orange {
-        background:$orange;
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.nomal {
+        background:$normal;
       }
     }
 

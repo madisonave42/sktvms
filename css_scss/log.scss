@@ -4,8 +4,11 @@
 .state-box {
 
   &-cri,
+  &-critical,
   &-maj,
+  &-major,
   &-min,
+  &-minor,
   &-normal {
     @include size(77, 27);
     box-sizing:border-box;
@@ -16,15 +19,18 @@
     border-radius:2px;
   }
 
-  &-cri {
+  &-cri,
+  &-critical {
     background:$critical;
   }
 
-  &-maj {
+  &-maj,
+  &-major {
     background:$major;
   }
 
-  &-min {
+  &-min,
+  &-minor {
     background:$minor;
   }
 

@@ -1227,7 +1227,7 @@ $(function(){
 			e.preventDefault();
 		});
 
-		// open NFVI popup
+		// open computehost popup
 		$('.js-open-nfvi').on('click', function(e) {
 			$('.dbpopup').removeClass('on');
 			$('.js-nfvi-popup').addClass('on');

@@ -367,8 +367,11 @@ $pop-dark-blue:#0057b9;
 .state-box {
 
   &-cri,
+  &-critical,
   &-maj,
+  &-major,
   &-min,
+  &-minor,
   &-normal,
   &-disabled {
     @include size(77, 27);
@@ -380,15 +383,18 @@ $pop-dark-blue:#0057b9;
     border-radius:2px;
   }
 
-  &-cri {
+  &-cri,
+  &-critical {
     background:$critical;
   }
 
-  &-maj {
+  &-maj,
+  &-major {
     background:$major;
   }
 
-  &-min {
+  &-min,
+  &-minor {
     background:$minor;
   }
 
@@ -657,8 +663,20 @@ $pop-dark-blue:#0057b9;
       height:20px;
       background:$blue-green;
 
-      &.orange {
-        background:$orange;
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.nomal {
+        background:$normal;
       }
     }
 
