@@ -136,6 +136,10 @@
   text-indent: -9999px;
   background: #479dee url(../images/table/sprite_btn_icons.png) no-repeat 50% 0;
 }
+.tb-form-btn-edit:disabled {
+  background-color: #c5d9ec;
+  cursor: default;
+}
 .tb-form-btn-del {
   display: inline-block;
   width: 25px;

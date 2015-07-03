@@ -179,6 +179,10 @@
 
     border:0;
     background:url(../images/btn_tb_setting.png);
+
+    &:disabled{
+      background-position:0 -22px;
+    }
   }
 
   &-refresh {

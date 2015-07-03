@@ -1093,6 +1093,9 @@ table.emphasis > tbody > tr > td.email > span {
   border: 0;
   background: url(../images/btn_tb_setting.png);
 }
+.btn-table-setting:disabled {
+  background-position: 0 -22px;
+}
 .btn-refresh {
   width: 24px;
   height: 25px;
@@ -1318,6 +1321,9 @@ table.emphasis > tbody > tr > td.email > span {
   bottom: 2px;
 }
 
+.tree {
+  float: left;
+}
 .tree-item {
   height: 15px;
   position: relative;
