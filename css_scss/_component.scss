@@ -152,3 +152,421 @@
   }
 }
 
+.dbpopup {
+
+  &-graph {
+    position:relative;
+    width:90%;
+    height:20px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+
+    &.small {
+      width:65%;
+    }
+
+    &-bar {
+      height:20px;
+      background:$blue-green;
+
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.nomal {
+        background:$normal;
+      }
+    }
+
+    &-msg {
+      position:absolute;
+      top:0;
+      right:10px;
+      line-height:20px;
+      font-weight:bold;
+      color:$dark;
+    }
+
+    &-label {
+      margin-left:10px;
+      line-height:20px;
+    }
+  }
+
+  &-circle {
+    @include size(271, 174);
+    box-sizing:border-box;
+    margin-left:10px;
+    padding:10px;
+
+    &:first-child {
+      margin-left:0;
+    }
+
+    &-title {
+      margin-bottom:20px;
+      line-height:1;
+      font-weight:bold;
+    }
+
+    &-chart {
+      position:relative;
+      margin-top:2px;
+      margin-left:20px;
+
+      &-bar {
+        position:absolute!important;
+        top:-6px;
+        left:-6px;
+        width:107px!important;
+        height:107px;
+
+        &.critical .ct-series.ct-series-a .ct-area,
+        &.critical .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$critical;
+        }
+
+        &.major .ct-series.ct-series-a .ct-area,
+        &.major .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$major;
+        }
+
+        &.minor .ct-series.ct-series-a .ct-area,
+        &.minor .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$minor;
+        }
+
+        &.normal .ct-series.ct-series-a .ct-area,
+        &.normal .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$normal;
+        }
+
+        .ct-series.ct-series-b .ct-area,
+        .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+          fill:$clean-gray;
+        }
+      }
+
+
+      &-text {
+        @include size(63);
+        position:absolute;
+        top:16px;
+        left:16px;
+        line-height:63px;
+        text-align:center;
+        border-radius:100%;
+        background:$white;
+        font-size:20px;
+        font-weight:bold;
+
+        &.critical {
+          color:$critical;
+        }
+
+        &.major {
+          color:$major;
+        }
+
+        &.minor {
+          color:$minor;
+        }
+
+        &.nomal {
+          color:$normal;
+        }
+      }
+
+    }
+
+    &-info {
+      margin-right:5px;
+      min-width:100px;
+
+      &-label {
+        margin-top:12px;
+        font-size:16px;
+        color:$dark;
+
+        &:first-child {
+          margin-top:0;
+        }
+      }
+
+      &-text{
+        color:$dark;
+        line-height:1;
+        font-size:20px;
+        font-weight:bold;
+      }
+    }
+
+  }
+
+}
+
+.vim {
+
+  &-circle {
+    @include size(350, 220);
+    display:inline-block;
+    margin:0 25px;
+    box-sizing:border-box;
+    padding:10px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+
+    &-wrap {
+      text-align:center;
+    }
+
+    &-title {
+      margin-bottom:20px;
+      line-height:1;
+      font-size:14px;
+      font-weight:bold;
+      text-align:left;
+    }
+
+    &-chart {
+      position:relative;
+      margin-top:2px;
+      margin-left:20px;
+
+      &-bar {
+        position:absolute!important;
+        width:150px!important;
+        height:150px;
+
+        &.critical .ct-series.ct-series-a .ct-area,
+        &.critical .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$critical;
+        }
+
+        &.major .ct-series.ct-series-a .ct-area,
+        &.major .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$major;
+        }
+
+        &.minor .ct-series.ct-series-a .ct-area,
+        &.minor .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$minor;
+        }
+
+        &.normal .ct-series.ct-series-a .ct-area,
+        &.normal .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+          fill:$normal;
+        }
+
+        .ct-series.ct-series-b .ct-area,
+        .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+          fill:$clean-gray;
+        }
+      }
+
+
+      &-text {
+        @include size(84);
+        position:absolute;
+        top:32px;
+        left:32px;
+        line-height:84px;
+        text-align:center;
+        border-radius:100%;
+        background:$white;
+        font-size:20px;
+        font-weight:bold;
+
+        &.critical {
+          color:$critical;
+        }
+
+        &.major {
+          color:$major;
+        }
+
+        &.minor {
+          color:$minor;
+        }
+
+        &.normal {
+          color:$normal;
+        }
+      }
+
+    }
+
+    &-info {
+      margin-top:30px;
+      margin-right:5px;
+      min-width:100px;
+      text-align:left;
+
+      &-label {
+        margin-top:12px;
+        font-size:16px;
+        color:$dark;
+
+        &:first-child {
+          margin-top:0;
+        }
+      }
+
+      &-text{
+        color:$dark;
+        line-height:1;
+        font-size:20px;
+        font-weight:bold;
+      }
+    }
+
+  }
+
+  &-graph {
+    position:relative;
+    width:90%;
+    height:20px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+
+    &.small {
+      width:65%;
+    }
+
+    &-bar {
+      height:20px;
+      background:$blue-green;
+
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.nomal {
+        background:$normal;
+      }
+    }
+
+    &-msg {
+      position:absolute;
+      top:0;
+      right:10px;
+      line-height:20px;
+      font-weight:bold;
+      color:$dark;
+    }
+
+    &-label {
+      margin-left:10px;
+      line-height:20px;
+    }
+  }
+
+}
+
+.vnf {
+
+  &-graph {
+    position:relative;
+    width:100%;
+    height:20px;
+    border:1px solid $light-gray;
+    border-radius:2px;
+    overflow:hidden;
+
+    &.left-float {
+      width:calc(100% - 42px);
+    }
+
+    &-bar {
+      height:20px;
+      background:$normal;
+
+      &.orange {
+        background:$orange;
+      }
+
+      &.critical {
+        background:$critical;
+      }
+
+      &.major {
+        background:$major;
+      }
+
+      &.minor {
+        background:$minor;
+      }
+
+      &.normal {
+        background:$normal;
+      }
+    }
+
+    &-msg {
+      position:absolute;
+      top:0;
+      right:10px;
+      line-height:20px;
+      font-weight:bold;
+      color:$dark;
+    }
+
+  }
+
+}
+
+.state-box {
+
+  &-cri,
+  &-critical,
+  &-maj,
+  &-major,
+  &-min,
+  &-minor,
+  &-normal {
+    @include size(77, 27);
+    box-sizing:border-box;
+    line-height:30px;
+    text-align:center;
+    color:$white;
+    font-weight:bold;
+    border-radius:2px;
+  }
+
+  &-cri,
+  &-critical {
+    background:$critical;
+  }
+
+  &-maj,
+  &-major {
+    background:$major;
+  }
+
+  &-min,
+  &-minor {
+    background:$minor;
+  }
+
+  &-normal {
+    background:$normal;
+  }
+}

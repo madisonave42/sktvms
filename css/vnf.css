@@ -435,9 +435,9 @@
   max-height: 444px;
 }
 
-.state-box-cri, .state-box-maj, .state-box-min, .state-box-normal {
+.state-box-cri, .state-box-critical, .state-box-maj, .state-box-major, .state-box-min, .state-box-minor, .state-box-normal {
   width: 77px;
-  height: 30px;
+  height: 27px;
   box-sizing: border-box;
   line-height: 30px;
   text-align: center;
@@ -445,13 +445,13 @@
   font-weight: bold;
   border-radius: 2px;
 }
-.state-box-cri {
+.state-box-cri, .state-box-critical {
   background: #e70000;
 }
-.state-box-maj {
+.state-box-maj, .state-box-major {
   background: #ee6247;
 }
-.state-box-min {
+.state-box-min, .state-box-minor {
   background: #fcb63c;
 }
 .state-box-normal {
