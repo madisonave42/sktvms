@@ -104,10 +104,11 @@
 .vim-graph {
   position: relative;
   width: 90%;
-  height: 20px;
+  height: 21px;
   border: 1px solid #c2cbcb;
   border-radius: 2px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .vim-graph.small {
   width: 65%;
@@ -130,11 +131,14 @@
 }
 .vim-graph-msg {
   position: absolute;
-  top: 0;
-  right: 10px;
-  line-height: 20px;
+  top: 2px;
+  right: 3px;
+  padding: 0 4px 1px;
   font-weight: bold;
-  color: #576363;
+  color: #ffffff;
+  line-height: normal;
+  background: #777;
+  border-radius: 2px;
 }
 .vim-graph-label {
   margin-left: 10px;

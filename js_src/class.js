@@ -5,7 +5,7 @@
 // Constant
 var HEADER_HEIGHT = 160;
 var TITLE_HEIGHT = 73;
-var DASHBOARD_MIN_HEIGHT = 766;
+var DASHBOARD_MIN_HEIGHT = 751;
 
 // Popup function
 
@@ -107,7 +107,7 @@ var graphItemNode = function( graphGridClass, graphTitle ){
             '<button type="button" class="graph-btn close">close</button>' +
           '</div>' +
         '</div>' +
-        '<div class="graph-content"></div>' +
+        '<div class="graph-content"><div class="chart-preloader">로딩중...</div></div>' +
       '</div>' +
     '</div>';
 
@@ -139,8 +139,8 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
   var mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
 
   // Set height of each section in stats
-  $divTop.css({height:(mainHeight/2 - 23)});
-  $divBottom.css({height:(mainHeight/2 - 23)});
+  $divTop.css({height:(mainHeight/2 - 15)});
+  $divBottom.css({height:(mainHeight/2 - 15)});
 
   var lastTopHeight = $divTop.height();
   var currentMainHeight =$(window).outerHeight() - HEADER_HEIGHT;
@@ -183,8 +183,10 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
     $divTop.css({height:lastTopHeight});
 
     var divTopHeight = $divTop.outerHeight();
-    var divBottomHeight = mainHeight - divTopHeight - 24;
+    var divBottomHeight = mainHeight - divTopHeight - 8;
     $divBottom.css({height:divBottomHeight});
+
+    $('.main-content .wrapper.fix-height').css({height: mainHeight + 15});
 
     $divTop.resizable({
       maxHeight:divMaxHeight
@@ -200,7 +202,7 @@ var ResizeDiv = function( $wrapper, $divTop, $divBottom ){
 
     resize: function(){
       var divTopHeight = $divTop.outerHeight();
-      var divBottomHeight = mainHeight - divTopHeight - 24;
+      var divBottomHeight = mainHeight - divTopHeight - 8;
       $divBottom.css({height:divBottomHeight});
     },
     stop: function(e, ui){
@@ -254,8 +256,8 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
   if( $('.main-header').length == 0 ) {
     mainHeight += TITLE_HEIGHT;
   }
-  if( mainHeight <= 766 ){
-    mainHeight = 766;
+  if( mainHeight <= 751 ){
+    mainHeight = 751;
   }
   var dashboardListHeight = mainHeight - graphHeight;
 
@@ -263,7 +265,7 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
   $btnExpand.data('expand', 'false');
 
   // Set height of dashboard list in monitoring
-  $divDashboard.css({height:dashboardListHeight});
+  $divDashboard.css({height:dashboardListHeight + 15});
 
   var _resizeDashboardListExpand = function(){
     mainHeight = $(window).outerHeight() - HEADER_HEIGHT;
@@ -273,7 +275,7 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
     if( mainHeight < DASHBOARD_MIN_HEIGHT ){
       mainHeight = DASHBOARD_MIN_HEIGHT;
     }
-    $divDashboard.css({height:mainHeight - 22});
+    $divDashboard.css({height:mainHeight - 7});
     $btnExpand.data( 'expand', 'true' );
   };
 
@@ -282,11 +284,11 @@ var ResizeDashboardList = function( $divDashboard, $btnExpand ){
     if( $('.main-header').length == 0 ) {
       mainHeight += TITLE_HEIGHT;
     }
-    if( mainHeight <= 766 ){
-      mainHeight = 766;
+    if( mainHeight <= 751 ){
+      mainHeight = 751;
     }
     dashboardListHeight = mainHeight - graphHeight;
-    $divDashboard.css({height:dashboardListHeight});
+    $divDashboard.css({height:dashboardListHeight + 15});
     $btnExpand.data( 'expand', 'false' );
   };
 

@@ -23,33 +23,45 @@
 </section>
 
 <!-- [D] 팝업 배경 -->
-<div class="dimmed"></div>
+<div class="dimmed on"></div>
 
 <!-- [D] 팝업 : S -->
-<section class="popup">
+<section class="popup on">
 	<h1 class="popup-heading">VNF 패키지 업데이트 로그</h1>
 	<div class="popup-content">
 
 		<div class="popup-content-section">
-			<div class="col-width-3 left-float">
-				<label class="popup-label width-normal left-float">Phase :</label>
-				<input type="text" class="input default" />
+			<div class="col-width-3 left-float group left">
+				<label class="popup-label width-small left-float">Phase :</label>
+				<input type="text" class="input default left-float" />
+			</div>
+
+			<div class="col-width-3 left-float group left">
+				<label class="popup-label width-small left-float">VNFC :</label>
+				<input type="text" class="input default left-float" />
 			</div>
 
 			<div class="col-width-3 left-float">
-				<label class="popup-label width-normal left-float">VNFC :</label>
-				<input type="text" class="input default" />
-			</div>
-
-			<div class="col-width-3 left-float">
-				<label class="popup-label width-normal left-float">Command :</label>
-				<input type="text" class="input default" />
+				<label class="popup-label width-small left-float">Command :</label>
+				<input type="text" class="input default left-float" />
 			</div>
 		</div>
 
 		<div class="popup-content-section">
 
-			<div class="popup-content-log"></div>
+			<!-- class:mono-font - 고정폭 ubuntu / class:mono-font-bold - 볼드체 -->
+			<div class="popup-content-log mono-font">
+
+<!-- test -->
+<pre>
+# Operation : Install New Package
+# Result    : Success
+
+# Operation : su - cscf -c echo y|echo y|act_to
+# Result    : Success
+</pre>
+
+			</div>
 
 		</div>
 

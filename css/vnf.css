@@ -88,6 +88,13 @@
   border: 0;
   text-indent: -9999px;
 }
+.vnf-btn-refresh:hover {
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+}
+.vnf-btn-refresh:active {
+  background-color: #e8e8e8;
+}
 .vnf-icon-green, .vnf-icon-red {
   position: relative;
   padding-left: 20px;
@@ -232,7 +239,9 @@
 .vnf-host-img {
   width: 88px;
   height: 88px;
-  background-color: #e8e8e8;
+  border: 1px solid #c2cbcb;
+  border-radius: 2px;
+  background: url(../images/icon_server_host.png) no-repeat;
 }
 .vnf-host-title {
   margin-top: 15px;
@@ -243,7 +252,7 @@
 .vnf-host-item {
   display: inline-block;
   margin-left: 6px;
-  padding: 9px 10px;
+  padding: 3px;
   width: 209px;
   height: 100%;
   box-sizing: border-box;
@@ -267,6 +276,9 @@
   border: 1px solid #dcdcdc;
   vertical-align: top;
 }
+.vnf-host-item-wrap .vnf-host-data {
+  padding: 0 3px;
+}
 .vnf-host-item-name {
   margin-bottom: 15px;
   height: 32px;
@@ -286,16 +298,17 @@
 .vnf-graph {
   position: relative;
   width: 100%;
-  height: 20px;
+  height: 21px;
   border: 1px solid #c2cbcb;
   border-radius: 2px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .vnf-graph.left-float {
   width: calc(100% - 42px);
 }
 .vnf-graph-bar {
-  height: 20px;
+  height: 21px;
   background: #00b9b0;
 }
 .vnf-graph-bar.orange {
@@ -315,11 +328,19 @@
 }
 .vnf-graph-msg {
   position: absolute;
-  top: 0;
-  right: 10px;
-  line-height: 20px;
+  top: 2px;
+  right: 3px;
+  padding: 0 4px 1px;
   font-weight: bold;
-  color: #576363;
+  color: #ffffff;
+  line-height: normal;
+  background: #777;
+  border-radius: 2px;
+}
+
+.vnfc-ip-addr .ip {
+  display: inline-block;
+  width: 200px;
 }
 
 .scale-group:after {

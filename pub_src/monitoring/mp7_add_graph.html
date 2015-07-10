@@ -8,7 +8,7 @@ include "header_pop.html"
 <div class="dimmed on"></div>
 
 <!-- [D] 팝업 : S -->
-<section class="popup popup-wide-width on">
+<section class="popup popup-wide-width add-graph on">
 	<h1 class="popup-heading">Statistics Monitoring > 그래프 추가</h1>
 	<div class="popup-content">
 
@@ -33,7 +33,7 @@ include "header_pop.html"
 		</div>
 
 		<div class="popup-content-section">
-			<div class="col-width-5 left-float">
+			<div class="col-width-4 left-float">
 				<div class="popup-tree-sorting">
 					<select class="select default left-float-left">
 						<option>VNF</option>
@@ -45,7 +45,7 @@ include "header_pop.html"
 						<option>MSS</option>
 						<option>MSS</option>
 					</select>
-					<select class="select default left-float">
+					<select class="select default right-float">
 						<option>MSS1</option>
 						<option>MSS1</option>
 						<option>MSS1</option>
@@ -325,7 +325,7 @@ include "header_pop.html"
 				</div>
 			</div>
 
-			<div class="col-width-5 left-float">
+			<div class="col-width-6 left-float">
 				<div class=" popup-white-wrap popup-table-section popup-add-graph-table">
 					<div class="popup-table-section-top">
 						<h3 class="popup-section-heading">선택된 통계 항목 (5항목 / 20항목)</h3>
@@ -391,11 +391,18 @@ include "header_pop.html"
 		<div class="popup-content-section">
 			<div class="col-width-4 left-float">
 				<div class="popup-input-wrap">
-					<label class="popup-label width-normal left-float">시간 라인 수 :</label>
-					<input type="text" class="input-form left-float" value="60" />
+					<label class="popup-label width-mini left-float">시간 라인 수</label>
+					<input type="text" class="input small left-float left" value="60" />
+					<div class="right-float">
+						<label class="popup-label left-float">최대</label>
+						<input type="text" class="input small left-float left" value="60" />
+						<div class="form-label left-float left">~</div>
+						<label class="popup-label left-float">최소</label>
+						<input type="text" class="input small left-float" value="60" />
+					</div>
 				</div>
 				<div class="popup-input-wrap">
-					<label class="popup-label width-normal left-float">Threshold :</label>
+					<label class="popup-label width-mini left-float">Threshold</label>
 					<input type="text" class="input-form left-float" />
 				</div>
 			</div>
@@ -404,7 +411,7 @@ include "header_pop.html"
 
 				<div class="popup-input-wrap">
 
-					<label class="popup-label width-normal left-float">그래프 크기 :</label>
+					<label class="popup-label width-mini left-float">그래프 크기</label>
 					<input type="text" class="input spinner col">
 					<div class="left-float right popup-label operator">×</div>
 					<input type="text" class="input spinner row">

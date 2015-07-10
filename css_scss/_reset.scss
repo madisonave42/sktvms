@@ -28,6 +28,26 @@
       url(fonts/Ubuntu-B.ttf) format('truetype'); /* Safari, Android, Ios */
 }
 
+@font-face{
+  font-family:'ubuntu mono';
+  font-style:normal;
+  font-weight:normal;
+  src:url(fonts/UbuntuMono-Regular.eot) format('eot'); /* for IE9 */
+  src:url(fonts/UbuntuMono-Regular.eot?#iefix) format("embedded-opentype"), /* IE6 ~ IE8 */
+  url(fonts/UbuntuMono-Regular.woff) format("woff"), /* Modern Browser */
+  url(fonts/UbuntuMono-Regular.ttf) format('truetype'); /* Safari, Android, Ios */
+}
+
+@font-face{
+  font-family:'ubuntu mono';
+  font-style:normal;
+  font-weight:bold;
+  src:url(fonts/UbuntuMono-Bold.eot) format('eot'); /* for IE9 */
+  src:url(fonts/UbuntuMono-Bold.eot?#iefix) format("embedded-opentype"), /* IE6 ~ IE8 */
+  url(fonts/UbuntuMono-Bold.woff) format("woff"), /* Modern Browser */
+  url(fonts/UbuntuMono-Bold.ttf) format('truetype'); /* Safari, Android, Ios */
+}
+
 /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
@@ -59,6 +79,7 @@ footer, header, hgroup, menu, nav, section {
 html{
   overflow-y:scroll;
   background-color:#e6eaeb;
+  height:100%
 }
 
 html.login{
@@ -74,6 +95,7 @@ body {
   font-family:$font-stack;
   font-size:$font-size-base;
   color:$dark-gray;
+  height:100%;
 }
 ol, ul {
   list-style: none;

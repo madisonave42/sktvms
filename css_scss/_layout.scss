@@ -373,7 +373,7 @@
 		position:relative;
 		top:58px;
 
-		padding:8px 0 15px;
+		padding:8px 0 6px;
 		//border-top:3px solid #cbcfd2;
 	}
 }
@@ -510,6 +510,11 @@
 		margin-right:6px;
 	}
 
+}
+
+.vnf-host .contents-section.narrow,
+.setting .contents-section.narrow{
+	padding:18px;
 }
 
 .section-heading{

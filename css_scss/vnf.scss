@@ -121,6 +121,15 @@
     background:url(../images/ico_refresh.png) no-repeat 50% 50%;
     border:0;
     text-indent:-9999px;
+
+    &:hover{
+      border:1px solid $light-gray;
+      border-radius:2px;
+    }
+
+    &:active{
+      background-color:$clean-gray;
+    }
   }
 
   &-icon {
@@ -279,7 +288,10 @@
 
     &-img {
       @include size(88);
-      background-color:$clean-gray;
+
+      border:1px solid #c2cbcb;
+      border-radius:2px;
+      background:url(../images/icon_server_host.png) no-repeat;
     }
 
     &-title {
@@ -292,7 +304,7 @@
     &-item {
       display:inline-block;
       margin-left:6px;
-      padding:9px 10px;
+      padding:3px;
       width:209px;
       height:100%;
       box-sizing:border-box;
@@ -316,6 +328,10 @@
         border-radius:3px;
         border:1px solid $fill-gray-border;
         vertical-align:top;
+
+        .vnf-host-data{
+          padding:0 3px;
+        }
       }
 
       &-name {
@@ -332,6 +348,7 @@
           background-color:$light-blue;
         }
       }
+
     }
 
     &-refresh {
@@ -343,17 +360,18 @@
   &-graph {
     position:relative;
     width:100%;
-    height:20px;
+    height:21px;
     border:1px solid $light-gray;
     border-radius:2px;
     overflow:hidden;
+    box-sizing:border-box;
 
     &.left-float {
       width:calc(100% - 42px);
     }
 
     &-bar {
-      height:20px;
+      height:21px;
       background:$normal;
 
       &.orange {
@@ -379,13 +397,29 @@
 
     &-msg {
       position:absolute;
-      top:0;
-      right:10px;
-      line-height:20px;
+      top:2px;
+      right:3px;
+
+      padding:0 4px 1px;
+
       font-weight:bold;
-      color:$dark;
+      color:$white;
+      line-height:normal;
+      background:#777;
+      border-radius:2px;
     }
 
+  }
+
+}
+
+.vnfc{
+
+  &-ip-addr{
+    .ip {
+      display: inline-block;
+      width: 200px;
+    }
   }
 
 }

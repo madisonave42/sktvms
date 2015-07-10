@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 100;
+  z-index: 120;
 }
 .dimmed.on {
   display: block;
@@ -82,6 +82,15 @@
   cursor: pointer;
 }
 
+.width-mini {
+  width: 82px;
+}
+.width-mini + .input-form, .width-mini + .file-form, .width-mini + .popup-gray-wrap, .width-mini + .popup-white-wrap {
+  width: calc(100% - 82px);
+}
+.width-mini + .input-form.with-unit, .width-mini + .file-form.with-unit, .width-mini + .popup-gray-wrap.with-unit, .width-mini + .popup-white-wrap.with-unit {
+  width: calc(100% - 82px - 70px);
+}
 .width-small {
   width: 95px;
 }
@@ -168,7 +177,7 @@
   width: 750px;
   border: 3px solid #ee6247;
   background: #ffffff;
-  z-index: 100;
+  z-index: 120;
 }
 .popup-small-width {
   margin-left: -270px;
@@ -271,10 +280,9 @@
   box-sizing: border-box;
   padding-right: 9px;
   height: 27px;
-  line-height: 23px;
+  line-height: 25px;
   color: #576363;
   font-weight: bold;
-  text-align: right;
 }
 .popup-label.operator {
   font-size: 21px;
@@ -320,6 +328,18 @@
 .popup-section-heading {
   margin-bottom: 10px;
   font-weight: bold;
+}
+.popup-close {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  padding: 0;
+  text-indent: -9999px;
+  border: 1px solid #576363;
+  border-radius: 100%;
+  background: url(../images/ico_close.png) no-repeat 50% 50%;
 }
 
 .state-box-cri, .state-box-critical, .state-box-maj, .state-box-major, .state-box-min, .state-box-minor, .state-box-normal, .state-box-disabled {
@@ -469,6 +489,9 @@
 .popupinfo-content {
   position: relative;
 }
+.popupinfo-tab {
+  border-left: 1px solid #777;
+}
 .popupinfo-tab:after {
   content: ".";
   display: block;
@@ -488,12 +511,13 @@
   color: #576363;
   font-weight: bold;
   text-align: center;
-  border: 1px solid #c2cbcb;
+  border: 1px solid #777;
+  border-left: 0;
   border-bottom: 0;
 }
 .popupinfo-tab-link.on {
   color: #ffffff;
-  background: #c2cbcb;
+  background: #777;
 }
 .popupinfo-tab-cont {
   position: absolute;
@@ -511,7 +535,7 @@
 .popupinfo-tab-cont-inner {
   padding-top: 10px;
   height: 400px;
-  border-top: 2px solid #c2cbcb;
+  border-top: 2px solid #777;
   overflow: auto;
 }
 .popupinfo-section {
@@ -532,7 +556,7 @@
   line-height: 32px;
   color: #576363;
   font-weight: bold;
-  background: #f9eec1;
+  background: #fefbc6;
   border-radius: 2px;
 }
 .popupinfo-section-title-state {
@@ -620,13 +644,19 @@
 
 /* vnf : E */
 /* monitoring : S */
+.popup.add-graph {
+  top: 56px;
+}
+.popup.add-graph .selectric-default {
+  width: 122px;
+}
 .popup-tree {
   margin-top: 5px;
   padding: 0;
 }
 .popup-tree-inner {
   padding: 15px;
-  height: 130px;
+  height: 336px;
   overflow: auto;
 }
 .popup-tree-sorting:after {
@@ -638,7 +668,13 @@
 }
 .popup-add-graph-table {
   padding: 15px;
-  height: 197px;
+  height: 400px;
+}
+.popup .vt-table th {
+  height: 25px;
+}
+.popup .vt-table td {
+  height: 29px;
 }
 
 .wheelbox {
@@ -685,12 +721,8 @@
 
 .stats-map {
   margin-top: 10px;
-  padding: 10px;
-  padding-right: 5px;
+  padding: 10px 5px 10px 10px;
   height: 133px;
-}
-.stats-map-wrap {
-  padding-left: 30px;
 }
 .stats-map-row {
   margin-top: 5px;

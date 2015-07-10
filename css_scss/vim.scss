@@ -136,10 +136,11 @@
   &-graph {
     position:relative;
     width:90%;
-    height:20px;
+    height:21px;
     border:1px solid $light-gray;
     border-radius:2px;
     overflow:hidden;
+    box-sizing:border-box;
 
     &.small {
       width:65%;
@@ -168,11 +169,16 @@
 
     &-msg {
       position:absolute;
-      top:0;
-      right:10px;
-      line-height:20px;
+      top:2px;
+      right:3px;
+
+      padding:0 4px 1px;
+
       font-weight:bold;
-      color:$dark;
+      color:$white;
+      line-height:normal;
+      background:#777;
+      border-radius:2px;
     }
 
     &-label {

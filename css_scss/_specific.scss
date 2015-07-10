@@ -71,6 +71,14 @@
   font-weight:bold;
 }
 
+.mono-font{
+  font-family:'ubuntu mono', sans-serif;
+
+  &-bold{
+    font-weight:bold;
+  }
+}
+
 .small-font{
   font-size:$font-size-small;
 }

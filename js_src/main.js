@@ -35,7 +35,7 @@ $(function(){
 		}
 
 		// fix wrapper
-		$fixWrapper.css({height: mainHeight});
+		$fixWrapper.css({height: mainHeight + 15});
 
 		// variable wrapper
 		if( $varWrapper.length !=0 && $varWrapper.height() <= mainHeight ){
@@ -52,21 +52,39 @@ $(function(){
 			if( mainHeight < 400 ){
 				mainHeight = 400;
 			}
-			$('.main-content .wrapper.fix-height').css({height: mainHeight});
+
+			$('.main-content .wrapper.fix-height').css({height: mainHeight + 15});
 		});
 
 	})();
 
 	// React about event of user-menu in header
 	(function(){
-		$('.header-user-path').data('open', 'false').on('click', function(e){
-			e.preventDefault();
-			if( $(this).data('open') == 'false' ) {
-				$(this).data('open', 'true').addClass('on').next().addClass('on');
+
+		var $headerUserPath = $('.header-user-path');
+
+		$headerUserPath.data('open', 'false');
+
+		$('body').on('click', function(e){
+
+			if( e.target == $headerUserPath[0] ){
+
+				if( $headerUserPath.data('open') == 'false' ) {
+					$headerUserPath.data('open', 'true').addClass('on').next().addClass('on');
+				} else {
+					$headerUserPath.data('open', 'false').removeClass('on').next().removeClass('on');
+				}
+
 			} else {
-				$(this).data('open', 'false').removeClass('on').next().removeClass('on');
+
+				if( $headerUserPath.data('open') == 'true' ){
+					$headerUserPath.data('open', 'false').removeClass('on').next().removeClass('on');
+				}
+
 			}
+
 		});
+
 	})();
 
 	// Apply selectric library
@@ -127,6 +145,21 @@ $(function(){
 		$('.js-btn-cal-end').on('click', function(e) {
 			$('.js-cal-end').datepicker('show');
 		});
+	})();
+
+	// able toggle button
+	(function(){
+
+		$('.js-able').data('able', 'enable').on('click', function(){
+
+			if( $(this).data('able') == 'enable' ){
+				$(this).text('Disable').addClass('disable').data('able', 'disable');
+			} else {
+				$(this).text('Enable').removeClass('disable').data('able', 'enable');
+			}
+
+		});
+
 	})();
 
 	/*
@@ -301,8 +334,6 @@ $(function(){
 
 	})();
 
-
-
 	// Resize dashboard list
 	(function(){
 		var $btnExpand = $('.js-expand');
@@ -324,6 +355,21 @@ $(function(){
 			} else {
 				resizeDashboardList.reduceDashboardListHeight();
 			}
+		});
+
+	})();
+
+	// alarm toggle
+	(function(){
+
+		$('.dashboard-icon-alarm').data('alarm', 'false').on('click', function(){
+
+			if( $(this).data('alarm') == 'false' ) {
+				$(this).data('alarm', 'true').addClass('on');
+			} else {
+				$(this).data('alarm', 'false').removeClass('on');
+			}
+
 		});
 
 	})();

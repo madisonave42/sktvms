@@ -140,14 +140,28 @@
   }
 
   &-btn-expand {
-    @include size(24, 27);
+    @include size(25, 27);
     padding:0;
-    background:url(../images/ico_arrow_up.png) no-repeat 0 -2px;
+    background:url(../images/ico_arrow_up.png) no-repeat 1px -2px;
     border:0;
     text-indent:-9999px;
 
     &.expand{
-      background-position:0 -31px;
+      background-position:1px -31px;
+
+      &:hover{
+        background-position:0px -32px;
+      }
+    }
+
+    &:hover{
+      border:1px solid $light-gray;
+      border-radius:2px;
+      background-position:0px -3px;
+    }
+
+    &:active{
+      background-color:$clean-gray;
     }
   }
 
@@ -155,21 +169,15 @@
 
     &-alarm {
 
-      &-on,
-      &-off {
-        @include size(25);
-        display:inline-block;
-        text-indent:-9999px;
-        background:url(../images/ico_alarm.png) no-repeat;
-        border:0;
-      }
+      @include size(25);
+      display:inline-block;
+      text-indent:-9999px;
+      border:0;
+      background: url(../images/ico_alarm.png) no-repeat 50% 4px;
+      cursor:pointer;
 
-      &-on {
+      &.on {
         background-position:50% -21px;
-      }
-
-      &-off {
-        background-position:50% 4px;
       }
 
     }
@@ -268,9 +276,17 @@
     height:25px;
     line-height:25px;
     text-indent:-99999em;
-    border:1px solid $light-gray;
+    border:0;
     border-radius:2px;
     background: url(../images/ico_arrow_left.png) no-repeat 50% 50%;
+
+    &:hover{
+      border:1px solid $light-gray;
+    }
+
+    &:active{
+      background-color:$clean-gray;
+    }
   }
 
   &-title {
@@ -739,6 +755,15 @@
     &:nth-child(4n) {
       margin-right: 0;
     }
+
+    &:hover{
+      background-color:#7ca627;
+    }
+
+    &:active{
+      background-color:#5b7f13;
+    }
+
   }
 }
 
@@ -771,7 +796,7 @@
     float: left;
 
     margin: 0 6px 6px 0;
-    padding:17px;
+    padding:12px;
     border: 1px solid $white-gray;
     background:$white;
     box-sizing: border-box;
@@ -853,11 +878,11 @@
   }
 
   &-top{
-    height:35px;
+    height:25px;
   }
 
   &-title{
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
     color:$blue-green;
 
@@ -890,7 +915,26 @@
   }
 
   &-content{
+    width:100%;
+    height:calc(100% - 24px);
+    position:relative;
     border-top:2px solid $blue-gray;
+    box-sizing:border-box;
+
+    .chart-preloader{
+      @include size(220, 20);
+
+      position:absolute;
+      top:50%;
+      left:50%;
+
+      padding:20px 0 0 0;
+      margin:-20px 0 0 -110px;
+
+      font-weight:bold;
+
+      background:url(../images/icon_chart_preloader.gif) no-repeat;
+    }
   }
 }
 
@@ -1000,6 +1044,7 @@
 
   &-tab {
     @include clear();
+    border-left:1px solid #777;
 
     &-item {
       float:left;
@@ -1014,12 +1059,13 @@
       color:$dark;
       font-weight:bold;
       text-align:center;
-      border:1px solid $light-gray;
+      border:1px solid #777;
+      border-left:0;
       border-bottom:0;
 
       &.on {
         color:$white;
-        background:$light-gray;
+        background:#777;
       }
 
     }
@@ -1042,7 +1088,7 @@
       &-inner {
         padding-top:10px;
         height:498px;
-        border-top:2px solid $light-gray;
+        border-top:2px solid #777;
         overflow:auto;
       }
 
@@ -1071,7 +1117,7 @@
       line-height:32px;
       color:$dark;
       font-weight:bold;
-      background:$light-yellow;
+      background:#fefbc6;
       border-radius:2px;
 
       &-state {

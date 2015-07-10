@@ -15,7 +15,7 @@ $pop-dark-blue:#0057b9;
   width:100%;
   height:100%;
   background:rgba(0,0,0,.4);
-  z-index:100;
+  z-index:120;
 
   &.on {
     display:block;
@@ -85,6 +85,22 @@ $pop-dark-blue:#0057b9;
 }
 
 .width {
+
+  &-mini {
+    width:82px;
+
+    & + .input-form,
+    & + .file-form,
+    & + .popup-gray-wrap,
+    & + .popup-white-wrap {
+      width:calc(100% - 82px);
+
+      &.with-unit {
+        width:calc(100% - 82px - 70px);
+      }
+    }
+  }
+
   &-small {
     width:95px;
 
@@ -203,7 +219,7 @@ $pop-dark-blue:#0057b9;
   width:750px;
   border:3px solid $orange;
   background:$white;
-  z-index:100;
+  z-index:120;
 
   &-small-width {
     margin-left:-270px;
@@ -297,10 +313,10 @@ $pop-dark-blue:#0057b9;
     box-sizing:border-box;
     padding-right:9px;
     height:27px;
-    line-height:23px;
+    line-height:25px;
     color:$dark;
     font-weight:bold;
-    text-align:right;
+    //text-align:right;
 
     &.operator{
       font-size:21px;
@@ -362,6 +378,17 @@ $pop-dark-blue:#0057b9;
     font-weight:bold;
   }
 
+  &-close {
+    @include size(23);
+    position:absolute;
+    top:15px;
+    right:18px;
+    padding:0;
+    text-indent:-9999px;
+    border:1px solid #576363;
+    border-radius:100%;
+    background:url(../images/ico_close.png) no-repeat 50% 50%;
+  }
 }
 
 .state-box {
@@ -538,6 +565,7 @@ $pop-dark-blue:#0057b9;
 
   &-tab {
     @include clear();
+    border-left:1px solid #777;
 
     &-item {
       float:left;
@@ -552,12 +580,13 @@ $pop-dark-blue:#0057b9;
       color:$dark;
       font-weight:bold;
       text-align:center;
-      border:1px solid $light-gray;
+      border:1px solid #777;
+      border-left:0;
       border-bottom:0;
 
       &.on {
         color:$white;
-        background:$light-gray;
+        background:#777;
       }
 
     }
@@ -580,7 +609,7 @@ $pop-dark-blue:#0057b9;
       &-inner {
         padding-top:10px;
         height:400px;
-        border-top:2px solid $light-gray;
+        border-top:2px solid #777;
         overflow:auto;
       }
 
@@ -609,7 +638,7 @@ $pop-dark-blue:#0057b9;
       line-height:32px;
       color:$dark;
       font-weight:bold;
-      background:$light-yellow;
+      background:#fefbc6;
       border-radius:2px;
 
       &-state {
@@ -711,13 +740,22 @@ $pop-dark-blue:#0057b9;
 
 /* monitoring : S */
 .popup {
+
+  &.add-graph{
+    top:56px;
+
+    .selectric-default{
+      width:122px;
+    }
+  }
+
   &-tree {
     margin-top:5px;
     padding:0;
 
     &-inner {
       padding:15px;
-      height:130px;
+      height:336px;
       overflow:auto;
     }
 
@@ -729,7 +767,19 @@ $pop-dark-blue:#0057b9;
 
   &-add-graph-table {
     padding:15px;
-    height:197px;
+    height:400px;
+  }
+
+  .vt-table{
+
+    th{
+      height:25px;
+    }
+
+    td{
+      height:29px;
+    }
+
   }
 
 }
@@ -786,12 +836,11 @@ $pop-dark-blue:#0057b9;
 
 .stats-map {
   margin-top:10px;
-  padding:10px;
-  padding-right:5px;
+  padding: 10px 5px 10px 10px;
   height:133px;
 
   &-wrap {
-    padding-left:30px;
+    //padding-left:30px;
   }
 
   &-row {
